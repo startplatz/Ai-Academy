@@ -115,7 +115,7 @@ export default function TeamSection() {
       id="team"
       badge="Unser Netzwerk"
       title="Experten, die <span>begeistern</span>"
-      subtitle="Über 150 Dozenten und Mentoren aus der Praxis. Führende KI-Experten, Tech-Pioniere und erfahrene Coaches."
+      subtitle="Dozenten und Mentoren aus der Praxis. Führende KI-Experten, Tech-Pioniere und erfahrene Coaches."
     >
       <GroupPhotoWrap>
         <CyberCorners $color={tokens.colors.mint} $size={12} />
