@@ -114,7 +114,7 @@ const Overlay = styled.div`
   z-index: 2;
   background: ${({ $active }) =>
     $active
-      ? 'linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.6) 100%)'
+      ? 'linear-gradient(180deg, transparent 20%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.9) 100%)'
       : 'linear-gradient(180deg, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.82) 100%)'};
   transition: background 0.65s ease;
 `;
@@ -186,6 +186,7 @@ const Title = styled.h3`
   margin-bottom: 4px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.95), 0 1px 4px rgba(0,0,0,1);
 `;
 
 const Subtitle = styled.span`
@@ -196,13 +197,16 @@ const Subtitle = styled.span`
   text-transform: uppercase;
   color: ${({ $color }) => $color};
   margin-bottom: ${tokens.spacing.sm};
+  text-shadow: 0 1px 8px rgba(0,0,0,0.9);
+  filter: drop-shadow(0 0 6px rgba(0,0,0,0.8));
 `;
 
 const Desc = styled.p`
   font-size: ${tokens.fontSizes.sm};
-  color: rgba(255,255,255,0.8);
+  color: rgba(255,255,255,0.9);
   line-height: ${tokens.lineHeights.relaxed};
   margin-bottom: ${tokens.spacing.md};
+  text-shadow: 0 1px 8px rgba(0,0,0,0.95), 0 2px 16px rgba(0,0,0,0.8);
 `;
 
 const CTA = styled.span`
@@ -214,6 +218,8 @@ const CTA = styled.span`
   color: ${({ $color }) => $color};
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.9);
+  filter: drop-shadow(0 0 6px rgba(0,0,0,0.7));
 
   svg { width: 14px; height: 14px; }
 `;
@@ -242,12 +248,11 @@ export default function PersonaReveal() {
             tabIndex={0} role="link" aria-label={`${p.title} – ${p.subtitle}`}>
             <PanelImage $src={p.image} $active={isActive} />
             <Overlay $active={isActive} />
-            {/* Vertical label: sichtbar wenn Panel nicht selbst aktiv ist */}
-            <VerticalLabel $visible={!isActive && hasActive}>{p.title}</VerticalLabel>
-            {/* Idle-Label: immer sichtbar wenn kein Panel aktiv ist */}
+            {/* Vertical label: immer sichtbar solange Panel nicht selbst aktiv */}
+            <VerticalLabel $visible={!isActive}>{p.title}</VerticalLabel>
+            {/* Idle accent line: farbiger Balken unten — immer sichtbar wenn kein Panel aktiv */}
             <IdleLabel $visible={!hasActive}>
               <IdleAccent $color={p.color} />
-              <IdleTitle>{p.title}</IdleTitle>
             </IdleLabel>
             <Content $active={isActive}>
               <Title>{p.title}</Title>
