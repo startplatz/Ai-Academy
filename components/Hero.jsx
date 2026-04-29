@@ -115,13 +115,14 @@ const ClaimWrapper = styled.div`
 
 const Headline = styled.h1`
   font-family: ${tokens.fonts.display};
-  font-size: ${tokens.fontSizes.hero};
+  font-size: clamp(2.25rem, 5vw, 4.5rem);
   font-weight: ${tokens.fontWeights.black};
   line-height: ${tokens.lineHeights.tight};
   color: ${tokens.colors.text};
   letter-spacing: 0;
   margin-bottom: ${tokens.spacing.xl};
   text-transform: uppercase;
+  text-align: left;
 `;
 
 const HeadlineWord = styled.span`

@@ -125,7 +125,7 @@ const VerticalLabel = styled.span`
   transform: translate(-50%, -50%) rotate(-90deg);
   z-index: 3;
   font-family: ${tokens.fonts.display};
-  font-size: 11px;
+  font-size: 14px;
   font-weight: ${tokens.fontWeights.bold};
   color: #fff;
   white-space: nowrap;
@@ -134,6 +134,7 @@ const VerticalLabel = styled.span`
   opacity: ${({ $visible }) => ($visible ? 0.9 : 0)};
   transition: opacity 0.5s ease;
   pointer-events: none;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.8);
 `;
 
 const IdleLabel = styled.div`
