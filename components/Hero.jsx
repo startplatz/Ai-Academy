@@ -18,16 +18,16 @@ import { CALENDLY_URL } from '../lib/site';
 
 const KEYWORDS = [
   {
-    word: 'STÄRKEN',
-    sub: 'Für Arbeitssuchende: KI-Ausbildung in 8 Wochen — 100% förderbar über die Agentur für Arbeit, AZAV-zertifiziert, mit persönlicher Karriereberatung inklusive.',
+    word: 'KARRIERE',
+    sub: 'Für Arbeitssuchende: KI-Karriere in 8 Wochen — 100% kostenlos über Bildungsgutschein. AZAV-zertifiziert, geförderter Neustart mit persönlicher Begleitung.',
   },
   {
-    word: 'WIRKUNG',
-    sub: 'Für Berufstätige: Berufsbegleitende KI-Weiterbildung — flexibel abends, staatlich anerkannte Abschlüsse, ab der ersten Woche direkt im Job anwendbar.',
+    word: 'SKILLS',
+    sub: 'Für Berufstätige: KI-Weiterbildung neben dem Job — 2 Abende pro Woche, staatlich anerkannt, ab Woche 1 direkt im Joballtag einsetzbar.',
   },
   {
-    word: 'POTENTIAL',
-    sub: 'Für Unternehmen: Maßgeschneiderte KI-Trainings für dein Team — Inhouse, online oder hybrid, inklusive Change Management Support.',
+    word: 'ZUKUNFT',
+    sub: 'Für Unternehmen: KI-Training für dein Team — Inhouse, online oder hybrid. Vom 1-Tages-Workshop bis zur 12-monatigen Private Academy.',
   },
 ];
 
@@ -429,7 +429,7 @@ export default function Hero() {
     return { opacity: 1, filter: 'blur(0px)' };
   };
 
-  const staticWords = ['ENTDECKE', 'MEHR', null, 'MIT KI.'];
+  const staticWords = ['ENTDECKE', 'DEINE', null, 'MIT KI.'];
 
   return (
     <Section id="hero" aria-label="Hero">
@@ -463,7 +463,7 @@ export default function Hero() {
                   key={word}
                   data-hero-word={i}
                   aria-hidden="true"
-                  className={i === 3 ? 'dim' : ''}
+                  className={i === 3 ? 'highlight' : ''}
                   style={{ transform: `translate(${x * depths[i]}px, ${y * depths[i]}px)` }}
                 >
                   {word}

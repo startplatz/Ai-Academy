@@ -136,6 +136,38 @@ const VerticalLabel = styled.span`
   pointer-events: none;
 `;
 
+const IdleLabel = styled.div`
+  position: absolute;
+  bottom: ${tokens.spacing.lg};
+  left: 0; right: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  opacity: ${({ $visible }) => ($visible ? 1 : 0)};
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+`;
+
+const IdleTitle = styled.span`
+  font-family: ${tokens.fonts.display};
+  font-size: ${tokens.fontSizes.sm};
+  font-weight: ${tokens.fontWeights.bold};
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: center;
+`;
+
+const IdleAccent = styled.span`
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: ${({ $color }) => $color};
+  border-radius: 1px;
+`;
+
 const Content = styled.div`
   position: absolute;
   bottom: 0; left: 0; right: 0;
@@ -210,7 +242,13 @@ export default function PersonaReveal() {
             tabIndex={0} role="link" aria-label={`${p.title} – ${p.subtitle}`}>
             <PanelImage $src={p.image} $active={isActive} />
             <Overlay $active={isActive} />
-            <VerticalLabel $visible={showVertical}>{p.title}</VerticalLabel>
+            {/* Vertical label: sichtbar wenn Panel nicht selbst aktiv ist */}
+            <VerticalLabel $visible={!isActive && hasActive}>{p.title}</VerticalLabel>
+            {/* Idle-Label: immer sichtbar wenn kein Panel aktiv ist */}
+            <IdleLabel $visible={!hasActive}>
+              <IdleAccent $color={p.color} />
+              <IdleTitle>{p.title}</IdleTitle>
+            </IdleLabel>
             <Content $active={isActive}>
               <Title>{p.title}</Title>
               <Subtitle $color={p.color}>{p.subtitle}</Subtitle>
