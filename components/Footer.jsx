@@ -205,7 +205,7 @@ export default function Footer() {
           <Copyright>&copy; 2026 STARTPLATZ AI Academy. Alle Rechte vorbehalten.</Copyright>
           <Contact as="address">
             <span>Im Mediapark 5, 50670 Köln</span>
-            <a href="tel:+4922165082490" aria-label="Telefon: +49 221 650 824 90">+49 221 650 824 90</a>
+            <a href="tel:+4922196881273" aria-label="Telefon: +49 221 96881273">+49 221 96881273</a>
             <a href="mailto:academy@startplatz.de" aria-label="E-Mail: academy@startplatz.de">academy@startplatz.de</a>
           </Contact>
         </Bottom>

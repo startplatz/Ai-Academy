@@ -78,7 +78,7 @@ const jsonLd = [
         addressCountry: 'DE',
       },
     ],
-    telephone: '+4922165082490',
+    telephone: '+4922196881273',
     email: 'academy@startplatz.de',
     sameAs: [
       'https://www.linkedin.com/company/startplatz',

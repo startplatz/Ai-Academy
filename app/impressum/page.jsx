@@ -123,7 +123,7 @@ export default function ImpressumPage() {
             <SectionTitle>Kontakt</SectionTitle>
             <Text>
               E-Mail: <Link href="mailto:academy@startplatz.de">academy@startplatz.de</Link><br />
-              Telefon: <Link href="tel:+4922165082490">+49 221 650 824 90</Link>
+              Telefon: <Link href="tel:+4922196881273">+49 221 96881273</Link>
             </Text>
 
             <SectionTitle>Handelsregister</SectionTitle>
