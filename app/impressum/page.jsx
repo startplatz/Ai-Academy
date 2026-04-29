@@ -138,14 +138,6 @@ export default function ImpressumPage() {
               DE279993463
             </Text>
 
-<SectionTitle>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</SectionTitle>
-            <Text>
-              Jakow Smirin<br />
-              c/o STARTPLATZ GmbH &amp; Co. KG<br />
-              Im Mediapark 5<br />
-              50670 Köln
-            </Text>
-
             <SectionTitle>EU-Streitschlichtung</SectionTitle>
             <Text>
               Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <Link href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr/</Link>.
