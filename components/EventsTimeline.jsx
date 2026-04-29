@@ -12,7 +12,6 @@ import { clipBR, clipTLBR, CHAMFER, CyberCorners } from '../styles/cyberpunk';
    Fallback: static list below if API fails
    ───────────────────────────────────────────── */
 
-const VIDEO_BG = 'https://res.cloudinary.com/startplatz/video/upload/v1776473242/ai-hub/website/AI-Academy-Website-Images/Event_video_2.mp4';
 const ALL_EVENTS_URL = 'https://www.startplatz.de/events?tag=startplatz-ai-hub#kommendeEvents';
 
 /* Fallback shown while loading or if the live feed errors out */
@@ -42,39 +41,10 @@ const Section = styled.section`
   z-index: 1;
   padding: ${tokens.spacing.section} 0;
   overflow: hidden;
-  background: ${tokens.colors.dark};
-`;
-
-const VideoBg = styled.div`
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-
-  video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(10, 10, 10, 0.7) 0%,
-      rgba(10, 10, 10, 0.5) 40%,
-      rgba(10, 10, 10, 0.5) 60%,
-      rgba(10, 10, 10, 0.75) 100%
-    );
-  }
+  background:
+    radial-gradient(ellipse at 20% 60%, rgba(124, 58, 237, 0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 20%, rgba(167, 139, 250, 0.12) 0%, transparent 50%),
+    linear-gradient(155deg, #1A0E3F 0%, #2D1472 40%, #1E0B50 70%, #120830 100%);
 `;
 
 const Container = styled.div`
@@ -413,12 +383,6 @@ export default function EventsTimeline() {
 
   return (
     <Section id="events" aria-label="Veranstaltungen">
-      <VideoBg aria-hidden="true">
-        <video autoPlay loop muted playsInline preload="auto">
-          <source src={VIDEO_BG} type="video/mp4" />
-        </video>
-      </VideoBg>
-
       <Container>
         <SectionBadge>Saison 2026</SectionBadge>
         <SectionTitle>Nächste <span>Events</span></SectionTitle>
