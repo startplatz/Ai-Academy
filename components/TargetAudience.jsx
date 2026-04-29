@@ -54,7 +54,7 @@ const AUDIENCES = [
     href: '/berufstaetige',
     color: SOFT.sky,
     colorBg: SOFT.skyBg,
-    image: 'https://res.cloudinary.com/startplatz/image/upload/f_auto,q_auto,w_600/v1776469600/ai-hub/website/AI-Academy-Website-Images/target-audience-berufstaetige.png',
+    image: 'https://res.cloudinary.com/startplatz/image/upload/f_auto,q_auto,w_600,a_hflip/v1776469600/ai-hub/website/AI-Academy-Website-Images/target-audience-berufstaetige.png',
   },
   {
     badge: 'Individuell',
