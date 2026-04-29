@@ -19,15 +19,15 @@ import { CALENDLY_URL } from '../lib/site';
 const KEYWORDS = [
   {
     word: 'STÄRKEN',
-    sub: 'Starte deine Karriere mit dem FortyDays KI-Manager:in.\n8 Wochen Vollzeit, 100% gefördert, AZAV-zertifiziert.',
+    sub: 'Für Arbeitssuchende: KI-Ausbildung in 8 Wochen — 100% förderbar über die Agentur für Arbeit, AZAV-zertifiziert, mit persönlicher Karriereberatung inklusive.',
   },
   {
     word: 'WIRKUNG',
-    sub: 'Starte deinen Vorsprung mit AfterWork AI Automation. Berufsbegleitend, Di & Do. Ab der ersten Woche anwendbar.',
+    sub: 'Für Berufstätige: Berufsbegleitende KI-Weiterbildung — flexibel abends, staatlich anerkannte Abschlüsse, ab der ersten Woche direkt im Job anwendbar.',
   },
   {
     word: 'POTENTIAL',
-    sub: 'Von OneDay Workshops bis zur AI-Private Academy. Maßgeschneidert für euer Team.',
+    sub: 'Für Unternehmen: Maßgeschneiderte KI-Trainings für dein Team — Inhouse, online oder hybrid, inklusive Change Management Support.',
   },
 ];
 
