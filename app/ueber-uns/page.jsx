@@ -229,7 +229,7 @@ export default function UeberUnsPage() {
         badge="Unsere Geschichte"
         badgeColor={tokens.colors.primary}
         badgeBg={tokens.colors.primaryLighter}
-        title="Vom AI Hub zur <span>AI Academy</span>"
+        title="Vom AI Hub zur <br/><span>AI Academy</span>"
         subtitle="Seit 2017 gestalten wir die KI-Bildungslandschaft in NRW. Unsere Reise von einem kleinen Meetup zum offiziellen KI-Kompetenzzentrum Nordrhein-Westfalens."
         breadcrumbs={breadcrumbs}
         accentColor={tokens.colors.primaryLighter}
