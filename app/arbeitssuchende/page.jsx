@@ -101,15 +101,15 @@ const QuoteSource = styled.figcaption`
 
 export default function ArbeitssuchendePage() {
   const before = [
-    'Bewerbungen führen nirgendwohin.',
-    'KI klingt kompliziert und weit weg.',
+    'Kein Job begeistert dich so wirklich.',
+    'Angst, wieder im selben 9-to-5-Hamsterrad zu landen.',
     'Du fragst dich, ob du noch relevant bist.',
   ];
 
   const after = [
-    'Du verstehst KI und kannst es belegen.',
-    'Du setzt KI-Tools sicher ein - täglich.',
-    'Du hast ein Cert-IT Zertifikat und echte Projekte.',
+    'Du bewegst etwas Sinnvolles — mit KI-Kompetenz und Nachweis.',
+    'Ein Job, der sich deinem Leben anpasst — nicht umgekehrt.',
+    'Cert-IT Zertifikat, eigenes Projekt, klarer Karriereweg.',
   ];
 
   const details = [
@@ -124,41 +124,41 @@ export default function ArbeitssuchendePage() {
   const curriculum = [
     {
       step: '1-2',
-      title: 'KI-Grundlagen',
-      description: 'Prompt Engineering, ChatGPT & Co. Du bekommst Orientierung, Sprache und Sicherheit.',
+      title: 'KI-Grundlagen & Prompt Engineering',
+      description: 'ChatGPT, KI-Geschichte, Fachsprache und Architektur. Du gewinnst Sicherheit und Orientierung im KI-Kosmos.',
     },
     {
       step: '3-4',
-      title: 'Automatisierung',
-      description: 'n8n, GPT-APIs und Agent-Systeme. Du baust erste Workflows statt nur zuzuschauen.',
+      title: 'KI-Tools & Automatisierung',
+      description: 'n8n, GPT-APIs, KI-Agenten und Code-Reviews. Du baust echte Workflows — nicht nur Theorie.',
     },
     {
       step: '5-6',
-      title: 'Strategie & Verantwortung',
-      description: 'KI-Strategie, EU AI Act, Ethik und Datenschutz für echte Anwendung im Job.',
+      title: 'Prozesse, Ethik & Strategie',
+      description: 'Workflow-Optimierung, EU AI Act, Governance und Datenschutz. KI sicher und sinnvoll in echte Abläufe bringen.',
     },
     {
       step: '7-8',
-      title: 'Praxisprojekt & Prüfung',
-      description: 'Du schließt mit einem eigenen Projekt und der Zertifizierungsprüfung ab.',
+      title: 'Praxisprojekt & Zertifizierung',
+      description: 'Eigenes KI-Agenten-Projekt, Präsentation und Abschlussprüfung. Du gehst mit Nachweis und Portfolio raus.',
     },
   ];
 
   const process = [
     {
       step: '1',
-      title: 'Kostenlose Beratung',
-      description: 'Wir klären Ziele, Voraussetzungen und ob FortyDays zu deiner Situation passt.',
+      title: 'Kostenloses Beratungsgespräch',
+      description: 'Dein Ansprechpartner Armin prüft gemeinsam mit dir, ob der KI-Manager zu dir passt und wie du die Förderung optimal nutzt.',
     },
     {
       step: '2',
       title: 'Bildungsgutschein beantragen',
-      description: 'Du bekommst die Kursdetails und Unterstützung für das Gespräch bei der Agentur.',
+      description: 'Du bekommst alle Kursdetails und Argumente, um das Gespräch mit der Agentur für Arbeit oder dem Jobcenter souverän zu führen.',
     },
     {
       step: '3',
       title: 'FortyDays starten',
-      description: '8 Wochen intensive KI-Ausbildung, digital, begleitet und mit klarer Struktur.',
+      description: '8 Wochen intensives Vollzeitprogramm — digital, eng begleitet, mit klarer Struktur von Tag 1.',
     },
   ];
 
@@ -170,22 +170,22 @@ export default function ArbeitssuchendePage() {
   ];
 
   const testimonials = [
-    { quote: 'Ich habe wahnsinnig viel gelernt.', source: 'Tobias, FortyDays Absolvent' },
-    { quote: 'Ein Must Know für uns alle.', source: 'Olga, Absolventin' },
-    { quote: 'Mehr gelernt als je zuvor.', source: 'Oskar, Absolvent' },
-    { quote: 'Ich habe KI endlich verstanden und direkt angewendet.', source: 'Catharina, Kursfeedback' },
-    { quote: 'Die Mischung aus Praxis und Struktur war genau richtig.', source: 'Alex, Kursfeedback' },
-    { quote: 'Das Zertifikat gibt mir Rückenwind in Bewerbungen.', source: 'Aline, Kursfeedback' },
-    { quote: 'Ich bin mit einem echten Projekt aus dem Kurs gegangen.', source: 'Peter, Kursfeedback' },
-    { quote: 'Vorher Respekt vor Tools, jetzt nutze ich sie täglich.', source: 'Birgit, Kursfeedback' },
+    { quote: 'Ich habe nicht einmal Zeit gefunden, mit Freunden zu zocken — weil es mich so gepackt hat. Das Programm hat nicht nur mein Wissen verändert, sondern auch mein Selbstbewusstsein.', source: 'Oskar, Absolvent' },
+    { quote: 'Am meisten hat mich beeindruckt, wie viel Zeit man durch Automatisierungen zurückgewinnen kann. Ich weiß jetzt, wie ich wieder Herrin meiner Zeit werde.', source: 'Aline, Absolventin' },
+    { quote: 'Ich habe 20 Jahre Marketingerfahrung — und war trotzdem überrascht, wie viel Neues ich gelernt habe. Tools, Strategie, echte Prozesse.', source: 'Catharina, Absolventin' },
+    { quote: 'Was ich jemandem sagen würde? Ganz einfach: Mach\'s. Top-Investition — Inhalte, Community, Support und echte Weiterentwicklung.', source: 'Peter, Absolvent' },
+    { quote: 'Mich hat besonders beeindruckt, wie viel Substanz das Programm hatte — und die Gruppe war wirklich auf Top-Level. Eine Community, die sich auch nach dem Kurs vernetzt.', source: 'Olga, Absolventin' },
+    { quote: 'Ich komme aus der IT und dachte, ich kenne die Tools. Das Programm hat mir ganz neue Perspektiven gezeigt — wie KI Prozesse nutzerzentriert gestalten kann.', source: 'Oliver, Absolvent' },
+    { quote: 'Ich bin Mitte 50, Fernsehjournalistin — mit Technik hatte ich wenig zu tun. Trotzdem habe ich alles mitgenommen. Der Zug fährt nicht ohne mich vorbei.', source: 'Birgit, Absolventin' },
+    { quote: 'Ich kann jedem empfehlen mitzumachen. Man bekommt einen Überblick, entdeckt neue Potenziale und kann sich danach gezielt in die Tiefe arbeiten.', source: 'Alex, Absolvent' },
   ];
 
   const faq = [
-    { q: 'Wie bekomme ich den Bildungsgutschein?', a: 'Du sprichst mit deiner Agentur für Arbeit oder deinem Jobcenter. Wir bereiten dich mit Kursdaten, Zielen und Argumenten auf das Gespräch vor.' },
-    { q: 'Wie sieht ein typischer Tag im FortyDays aus?', a: 'Mo-Fr von 9-16 Uhr: Live-Unterricht, Übungen, Projektarbeit und Feedback. Der Kurs ist digital, aber eng begleitet.' },
-    { q: 'Was ist die Cert-IT Zertifizierung?', a: 'Cert-IT zertifiziert Personen nach DIN EN ISO/IEC 17024. Das Zertifikat ist EU-weit anschlussfähig und belegt deine KI-Kompetenz.' },
-    { q: 'Brauche ich einen technischen Hintergrund?', a: 'Nein. Du lernst mit Tools wie ChatGPT, n8n und APIs. Programmierkenntnisse helfen, sind aber keine Voraussetzung.' },
-    { q: 'Was passiert nach den 8 Wochen?', a: 'Du gehst mit Zertifikat, Praxisprojekt und klarer Positionierung in Bewerbungen. Zusätzlich bleibst du im STARTPLATZ Netzwerk.' },
+    { q: 'Wie bekomme ich den Bildungsgutschein?', a: 'Du sprichst mit deiner Agentur für Arbeit oder deinem Jobcenter. Wir bereiten dich in einem kostenlosen Beratungsgespräch mit allen Kursdaten, Zielen und Argumenten gezielt auf dieses Gespräch vor.' },
+    { q: 'Wie sieht ein typischer Tag im FortyDays aus?', a: 'Mo–Fr, 9–16 Uhr (inkl. Mittagspause): Live-Theorie von 9–12 Uhr, betreute Praxis von 13–15 Uhr. 100% digital — du kannst von überall teilnehmen.' },
+    { q: 'Was ist die Cert-IT Zertifizierung?', a: 'Cert-IT zertifiziert Personen nach DIN EN ISO/IEC 17024 — dem internationalen Standard für Personenzertifizierungen. Das Zertifikat ist EU-weit anerkannt und belegt deine KI-Kompetenz offiziell.' },
+    { q: 'Brauche ich einen technischen Hintergrund?', a: 'Nein. Über 1.000 Absolventinnen und Absolventen aus allen Branchen — Marketing, HR, Journalismus, Vertrieb — haben es ohne Vorkenntnisse geschafft. Du lernst mit Tools wie ChatGPT, n8n und APIs.' },
+    { q: 'Was passiert nach den 8 Wochen?', a: 'Du gehst mit einem anerkannten Zertifikat, einem eigenen Praxisprojekt und klarer Positionierung für Bewerbungen. Über 60.000 offene KI-Stellen warten — und du bist bereit.' },
   ];
 
   return (
@@ -211,7 +211,7 @@ export default function ArbeitssuchendePage() {
       <SectionBlock
         badge="Vorher / Nachher"
         title="Aus Unsicherheit wird <span>Nachweis.</span>"
-        subtitle="Der Kurs ist kein Motivationsspruch. Er gibt dir Struktur, Projekte und ein anerkanntes Zertifikat."
+        subtitle="Kein Motivationsspruch. Echte Struktur, echte Projekte, ein anerkanntes Zertifikat — in 8 Wochen."
         accent={tokens.colors.glowMint}
       >
         <BeforeAfter before={before} after={after} accentColor={tokens.colors.mint} />
@@ -287,7 +287,7 @@ export default function ArbeitssuchendePage() {
       <SectionBlock
         badge="Absolventen"
         title="Echte Stimmen aus dem <span>Kursalltag.</span>"
-        subtitle="Kurze Stimmen aus dem Kurs statt großer Karten: mehr Eindruck, weniger Leerlauf."
+        subtitle="Von 290+ Absolventinnen und Absolventen — echte Einblicke, ungefiltert."
         variant="muted"
         accent={tokens.colors.glowMint}
       >
