@@ -19,15 +19,15 @@ import { CALENDLY_URL } from '../lib/site';
 const KEYWORDS = [
   {
     word: 'KARRIERE',
-    sub: 'Für Arbeitssuchende: KI-Karriere in 8 Wochen — 100% kostenlos über Bildungsgutschein. AZAV-zertifiziert, geförderter Neustart mit persönlicher Begleitung.',
+    sub: 'Gefördert. AZAV-zertifiziert. Dein KI-Neustart beginnt hier.',
   },
   {
     word: 'SKILLS',
-    sub: 'Für Berufstätige: KI-Weiterbildung neben dem Job — 2 Abende pro Woche, staatlich anerkannt, ab Woche 1 direkt im Joballtag einsetzbar.',
+    sub: 'Abends lernen, täglich anwenden. Staatlich anerkannt.',
   },
   {
     word: 'ZUKUNFT',
-    sub: 'Für Unternehmen: Euer Team lernt KI direkt an echten Aufgaben — praxisnah, messbar wirksam. Inhouse, online oder hybrid, sofort im Arbeitsalltag einsetzbar.',
+    sub: 'Praxisnah. Messbar wirksam. KI-Kompetenz für euer Team.',
   },
 ];
 

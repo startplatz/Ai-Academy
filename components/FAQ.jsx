@@ -16,11 +16,26 @@ import PlanetSection from './PlanetSection';
 const FAQ_BG = 'https://res.cloudinary.com/startplatz/image/upload/v1767662307/ai-hub/website/website_stock_images/BG-CTA.png';
 
 const QUESTIONS = [
-  { q: 'Was ist die STARTPLATZ AI Academy?', a: 'Die AI Academy ist das Weiterbildungszentrum von STARTPLATZ — Deutschlands ältestem Startup-Inkubator mit über 15 Jahren Erfahrung. Wir bieten drei Format-Linien: OneDay (Tagesworkshops), FortyDays (8 Wochen Vollzeit) und AfterWork (berufsbegleitend abends). Für Arbeitssuchende, Berufstätige und Unternehmen.' },
-  { q: 'Kann ich mit Bildungsgutschein teilnehmen?', a: 'Ja. Der FortyDays KI-Manager:in ist AZAV-zertifiziert und wird bis zu 100% von der Agentur für Arbeit gefördert. 8 Wochen Vollzeit, Mo-Fr 9-16 Uhr, komplett digital. Sprich mit deinem Arbeitsvermittler oder buche eine kostenlose Beratung bei uns.' },
-  { q: 'Brauche ich Programmierkenntnisse?', a: 'Nein. Unsere Programme sind für Menschen ohne technischen Hintergrund konzipiert. Du arbeitest mit Tools wie n8n, ChatGPT und APIs — kein Code nötig. Über 1.000 Absolventen aus allen Branchen haben das bereits geschafft.' },
-  { q: 'Was unterscheidet euch von anderen KI-Kursen?', a: 'Ein anerkanntes Zertifikat (Cert-IT, EU-weit gültig). Echte Projekte ab Woche 1 statt nur Theorie. Und ein Netzwerk aus 10.000+ Teilnehmern und 100+ geschulten Unternehmen. Unsere Bewertung: 4,98 von 5 Sternen.' },
-  { q: 'Gibt es Angebote für Unternehmen?', a: 'Vom eintägigen Innovation Day über Inhouse-Schulungen (1-5 Tage) bis zur langfristigen AI-Private Academy (3-12 Monate). Unser Kompetenzrahmen deckt drei Bereiche ab: technologische Grundlagen, Anwendung im Unternehmenskontext sowie strategische und ethische Einbettung. 100+ Unternehmen vertrauen uns bereits.' },
+  {
+    q: 'Was ist die STARTPLATZ AI Academy?',
+    a: 'Die AI Academy ist das KI-Weiterbildungszentrum von STARTPLATZ — einem der bekanntesten Startup-Hubs in Deutschland mit Standorten in Köln und Düsseldorf. Wir machen KI-Kompetenz zugänglich: für Menschen, die neu starten wollen, für Berufstätige, die sich weiterentwickeln, und für Unternehmen, die ihre Teams zukunftsfähig machen. Kein Elfenbeinturm — sondern Praxis von Tag eins.',
+  },
+  {
+    q: 'Wer steckt hinter der AI Academy?',
+    a: 'Wir sind Teil von STARTPLATZ, gegründet 2012, mit über 10.000 Mitgliedern im Netzwerk. Unsere Dozentinnen und Dozenten sind KI-Praktikerinnen und -Praktiker, Tech-Pioniere und erfahrene Coaches — keine reinen Theoretiker. Mehr als 1.000 Absolventinnen und Absolventen sowie über 100 Unternehmen haben unsere Angebote bereits genutzt und weiterempfohlen.',
+  },
+  {
+    q: 'Für wen sind eure Angebote geeignet?',
+    a: 'Für alle, die KI nicht nur verstehen, sondern wirklich anwenden wollen. Ob du gerade einen beruflichen Neustart planst, KI neben deinem Job lernen möchtest oder als Unternehmen dein Team fit machen willst — wir haben das passende Format. Keine Vorkenntnisse erforderlich, keine Programmierkenntnisse nötig.',
+  },
+  {
+    q: 'Was macht euch anders als andere Anbieter?',
+    a: 'Drei Dinge: Erstens, wir sind in einem echten Startup-Ökosystem verwurzelt — kein reiner Online-Kursanbieter. Zweitens, unsere Inhalte werden laufend aktualisiert, weil KI sich laufend verändert. Drittens, du lernst nicht für ein Zertifikat, sondern für echte Anwendung — mit einem Netzwerk, das auch nach dem Kurs trägt. Bewertung: 4,98 von 5 Sternen.',
+  },
+  {
+    q: 'Wie finde ich heraus, was zu mir passt?',
+    a: 'Am einfachsten über unser kostenloses Beratungsgespräch — in 30 Minuten klären wir gemeinsam, welches Format zu deiner Situation, deinen Zielen und deinem Zeitbudget passt. Alternativ: Mach unseren kostenlosen Wissens-Test, um deinen aktuellen KI-Stand einzuschätzen und den richtigen Einstiegspunkt zu finden.',
+  },
 ];
 
 const List = styled.div`
