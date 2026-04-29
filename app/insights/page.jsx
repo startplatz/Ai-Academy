@@ -113,7 +113,7 @@ export default function BlogPage() {
     <SubpageLayout>
       <PageHero
         badge="Insights"
-        title="Wissen für die <span>KI-Zukunft</span>"
+        title="Wissen für die <span style='white-space:nowrap'>KI-Zukunft</span>"
         subtitle="Artikel, Tutorials und Interviews zu KI-Weiterbildung, Automatisierung und Karrierewegen in NRW."
         breadcrumbs={[{ label: 'Insights' }]}
       />
