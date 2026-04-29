@@ -135,7 +135,7 @@ export default function ImpressumPage() {
             <SectionTitle>Umsatzsteuer-Identifikationsnummer</SectionTitle>
             <Text>
               USt-IdNr. gemäß § 27 a Umsatzsteuergesetz:<br />
-              <Pending>DE… wird ergänzt</Pending>
+              DE279993463
             </Text>
 
 <SectionTitle>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</SectionTitle>
