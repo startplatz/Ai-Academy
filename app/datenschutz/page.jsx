@@ -156,8 +156,7 @@ export default function DatenschutzPage() {
               Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
             </Text>
             <Text>
-              STARTPLATZ AI Academy<br />
-              Jakow Smirin<br />
+              STARTPLATZ AI Academy GmbH<br />
               Im Mediapark 5<br />
               50670 Köln<br /><br />
               E-Mail: <Link href="mailto:academy@startplatz.de">academy@startplatz.de</Link>
