@@ -155,12 +155,12 @@ const PanelOverlay = styled.div`
   z-index: 2;
   background: ${({ $active }) =>
     $active
-      ? 'linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.65) 100%)'
+      ? 'linear-gradient(180deg, transparent 20%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.92) 100%)'
       : 'linear-gradient(180deg, rgba(10,10,10,0.25) 0%, rgba(10,10,10,0.85) 100%)'};
   transition: background 0.65s ease;
 `;
 
-/* Vertical rotated label when collapsed */
+/* Vertical rotated label — immer sichtbar wenn Panel nicht aktiv */
 const VerticalLabel = styled.span`
   position: absolute;
   top: 50%;
@@ -168,15 +168,16 @@ const VerticalLabel = styled.span`
   transform: translate(-50%, -50%) rotate(-90deg);
   z-index: 3;
   font-family: ${tokens.fonts.display};
-  font-size: 11px;
+  font-size: 14px;
   font-weight: ${tokens.fontWeights.bold};
   color: #fff;
   white-space: nowrap;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  opacity: ${({ $visible }) => ($visible ? 0.85 : 0)};
+  opacity: ${({ $visible }) => ($visible ? 0.9 : 0)};
   transition: opacity 0.5s ease;
   pointer-events: none;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.8);
 `;
 
 /* Content area when expanded */
@@ -200,6 +201,7 @@ const ContentTitle = styled.h3`
   margin-bottom: 4px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.95), 0 1px 4px rgba(0,0,0,1);
 `;
 
 const ContentSub = styled.span`
@@ -210,15 +212,18 @@ const ContentSub = styled.span`
   text-transform: uppercase;
   color: ${({ $color }) => $color};
   margin-bottom: ${tokens.spacing.sm};
+  text-shadow: 0 1px 8px rgba(0,0,0,0.9);
+  filter: drop-shadow(0 0 6px rgba(0,0,0,0.8));
 `;
 
 const ContentQuote = styled.p`
   font-family: ${tokens.fonts.body};
   font-size: ${tokens.fontSizes.sm};
   font-style: italic;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.95);
   line-height: ${tokens.lineHeights.relaxed};
   margin-bottom: ${tokens.spacing.md};
+  text-shadow: 0 1px 8px rgba(0,0,0,0.95), 0 2px 16px rgba(0,0,0,0.8);
 `;
 
 /* Play button */
@@ -373,7 +378,7 @@ export default function Testimonials() {
             >
               <PanelImage $src={ytThumb(v.youtubeId)} $active={isActive} />
               <PanelOverlay $active={isActive} />
-              <VerticalLabel $visible={showVertical}>{v.title}</VerticalLabel>
+              <VerticalLabel $visible={!isActive}>{v.title}</VerticalLabel>
               <Content $active={isActive}>
                 <ContentTitle>{v.title}</ContentTitle>
                 <ContentSub $color={v.color}>{v.subtitle}</ContentSub>
