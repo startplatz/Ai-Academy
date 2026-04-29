@@ -225,6 +225,57 @@ export default function DatenschutzPage() {
               Wir nutzen den Dienst Cloudinary zur Bereitstellung und Optimierung von Bildern und Medien auf unserer Website. Beim Abruf von Medieninhalten wird eine Verbindung zu den Servern von Cloudinary Ltd. hergestellt, wobei Ihre IP-Adresse übertragen wird. Weitere Informationen: <Link href="https://cloudinary.com/privacy" target="_blank" rel="noopener noreferrer">https://cloudinary.com/privacy</Link>.
             </Text>
 
+            <SubTitle>Google Tag Manager</SubTitle>
+            <Text>
+              Diese Website nutzt den Google Tag Manager, einen Dienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland („Google"). Der Google Tag Manager ist ein Tag-Management-System, mit dem wir Website-Tags zentral über eine Oberfläche einbinden und verwalten können. Der Google Tag Manager selbst (der die Tags implementiert) ist eine cookielose Domain und erfasst keine personenbezogenen Daten. Der Dienst sorgt aber für die Auslösung anderer Tags, die ihrerseits Daten erfassen können (z.B. Google Analytics, Microsoft Clarity).
+            </Text>
+            <Text>
+              Die Nutzung des Google Tag Managers erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an einer schnellen und unkomplizierten Einbindung und Verwaltung verschiedener Tools auf seiner Website. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO; die Einwilligung ist jederzeit widerrufbar. Weitere Informationen: <Link href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</Link>.
+            </Text>
+
+            <SubTitle>Google Analytics 4</SubTitle>
+            <Text>
+              Diese Website nutzt Funktionen des Webanalysedienstes Google Analytics 4. Anbieter ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland („Google"). Google Analytics ermöglicht es uns, das Verhalten unserer Websitebesucher zu analysieren. Hierbei erhalten wir verschiedene Nutzungsdaten, wie z.B. Seitenaufrufe, Verweildauer, verwendete Betriebssysteme und Herkunft des Nutzers. Diese Daten werden in einer User-ID zusammengefasst und dem jeweiligen Endgerät des Websitebesuchers zugeordnet.
+            </Text>
+            <Text>
+              Des Weiteren können wir mit Google Analytics 4 u.a. Ihre Maus- und Scrollbewegungen und Klicks aufzeichnen. Ferner verwendet Google Analytics 4 verschiedene Modellierungsansätze, um die erfassten Datensätze zu ergänzen, und setzt Machine-Learning-Technologien bei der Datenanalyse ein.
+            </Text>
+            <Text>
+              Google Analytics nutzt Technologien, die die Wiedererkennung des Nutzers zum Zwecke der Analyse des Nutzerverhaltens ermöglichen (z.B. Cookies oder Device-Fingerprinting). Die von Google erfassten Informationen über die Benutzung dieser Website werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert.
+            </Text>
+            <Text>
+              Die Nutzung dieses Dienstes erfolgt auf Grundlage Ihrer Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG. Die Einwilligung ist jederzeit widerrufbar. Die Datenübertragung in die USA wird auf die Standardvertragsklauseln der EU-Kommission gestützt. Details finden Sie hier: <Link href="https://privacy.google.com/businesses/controllerterms/mccs/" target="_blank" rel="noopener noreferrer">https://privacy.google.com/businesses/controllerterms/mccs/</Link>.
+            </Text>
+            <Text>
+              <strong>IP-Anonymisierung:</strong> In Google Analytics 4 ist die IP-Anonymisierung standardmäßig aktiviert. Dadurch wird Ihre IP-Adresse von Google innerhalb von Mitgliedstaaten der Europäischen Union oder in anderen Vertragsstaaten des Abkommens über den Europäischen Wirtschaftsraum vor der Übermittlung in die USA gekürzt.
+            </Text>
+            <Text>
+              <strong>Browser-Plugin:</strong> Sie können die Erfassung und Verarbeitung Ihrer Daten durch Google verhindern, indem Sie das unter dem folgenden Link verfügbare Browser-Plugin herunterladen und installieren: <Link href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank" rel="noopener noreferrer">https://tools.google.com/dlpage/gaoptout?hl=de</Link>.
+            </Text>
+            <Text>
+              Weitere Informationen zum Umgang mit Nutzerdaten bei Google Analytics finden Sie in der Datenschutzerklärung von Google: <Link href="https://support.google.com/analytics/answer/6004245?hl=de" target="_blank" rel="noopener noreferrer">https://support.google.com/analytics/answer/6004245?hl=de</Link>.
+            </Text>
+            <Text>
+              <strong>Auftragsverarbeitung:</strong> Wir haben mit Google einen Vertrag zur Auftragsverarbeitung abgeschlossen und setzen die strengen Vorgaben der deutschen Datenschutzbehörden bei der Nutzung von Google Analytics vollständig um.
+            </Text>
+
+            <SubTitle>Microsoft Clarity</SubTitle>
+            <Text>
+              Wir nutzen auf dieser Website Microsoft Clarity, einen Webanalysedienst der Microsoft Ireland Operations Limited, One Microsoft Place, South County Business Park, Leopardstown, Dublin 18, Irland („Microsoft"). Microsoft Clarity ermöglicht es uns, die Nutzung unserer Website durch Besucher besser zu verstehen, indem Maus- und Scrollbewegungen, Klicks sowie aggregierte Nutzungsdaten erfasst und in sogenannten Heatmaps und Session Recordings ausgewertet werden.
+            </Text>
+            <Text>
+              Hierbei werden Informationen wie z.B. die aufgerufenen Seiten, Verweildauer, Klick-/Scroll-Verhalten, Browsertyp, Betriebssystem, Spracheinstellungen, Referrer-URL sowie eine gekürzte/maskierte IP-Adresse erfasst. Microsoft Clarity maskiert standardmäßig sensible Eingabefelder (z.B. Passwörter, Zahlungsdaten); zusätzlich haben wir die strikte Maskierung („Mask") aktiviert, sodass eingegebene Texte nicht im Klartext aufgezeichnet werden.
+            </Text>
+            <Text>
+              Microsoft Clarity setzt Cookies und ähnliche Technologien zur Wiedererkennung von Endgeräten ein. Die erfassten Daten werden an Server von Microsoft übertragen und dort gespeichert; eine Übermittlung in die USA kann nicht ausgeschlossen werden.
+            </Text>
+            <Text>
+              Die Nutzung von Microsoft Clarity erfolgt auf Grundlage Ihrer Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG. Die Einwilligung ist jederzeit mit Wirkung für die Zukunft widerrufbar. Die Datenübertragung in die USA wird, soweit erforderlich, auf die Standardvertragsklauseln der EU-Kommission gestützt.
+            </Text>
+            <Text>
+              Weitere Informationen zur Datenverarbeitung durch Microsoft Clarity finden Sie in der Datenschutzerklärung von Microsoft: <Link href="https://privacy.microsoft.com/de-de/privacystatement" target="_blank" rel="noopener noreferrer">https://privacy.microsoft.com/de-de/privacystatement</Link> sowie in den Informationen zu Clarity: <Link href="https://learn.microsoft.com/en-us/clarity/setup-and-installation/cookie-list" target="_blank" rel="noopener noreferrer">https://learn.microsoft.com/en-us/clarity/setup-and-installation/cookie-list</Link>.
+            </Text>
+
             <SectionTitle>6. Änderung dieser Datenschutzerklärung</SectionTitle>
             <Text>
               Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen in der Datenschutzerklärung umzusetzen. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung.
