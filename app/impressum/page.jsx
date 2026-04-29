@@ -117,7 +117,7 @@ export default function ImpressumPage() {
 
             <SectionTitle>Leitung STARTPLATZ AI Academy</SectionTitle>
             <Text>
-              Jakow Smirin (CEO AI Academy)
+              Jakow Smirin
             </Text>
 
             <SectionTitle>Kontakt</SectionTitle>
