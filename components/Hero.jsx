@@ -27,7 +27,7 @@ const KEYWORDS = [
   },
   {
     word: 'ZUKUNFT',
-    sub: 'Für Unternehmen: KI-Training für dein Team — Inhouse, online oder hybrid. Vom 1-Tages-Workshop bis zur 12-monatigen Private Academy.',
+    sub: 'Für Unternehmen: Euer Team lernt KI direkt an echten Aufgaben — praxisnah, messbar wirksam. Inhouse, online oder hybrid, sofort im Arbeitsalltag einsetzbar.',
   },
 ];
 

@@ -61,36 +61,64 @@ const LocationCard = styled.div`
   position: relative;
   ${clipBR(CHAMFER.lg)}
   overflow: hidden;
-  height: 180px;
+  height: 200px;
   box-shadow:
-    0 18px 44px rgba(15, 15, 15, 0.22),
-    0 0 0 1px rgba(255, 255, 255, 0.84),
-    inset 0 1px 0 rgba(255, 255, 255, 0.36);
+    0 28px 60px rgba(0, 0, 0, 0.38),
+    0 8px 20px rgba(0, 0, 0, 0.22),
+    0 0 0 1px rgba(255, 255, 255, 0.9),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transition: transform ${tokens.transitions.slow}, box-shadow ${tokens.transitions.slow};
 
+  /* farbiger Akzentbalken oben — bindet Karte ans Design-System */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, ${tokens.colors.primary}, ${tokens.colors.mint});
+    z-index: 3;
+  }
+
+  /* Gradient-Overlay für Text-Lesbarkeit */
   &::after {
     content: '';
     position: absolute;
     inset: 0;
     pointer-events: none;
-    box-shadow:
-      inset 0 0 0 1px rgba(255, 255, 255, 0.46),
-      inset 0 -32px 54px rgba(0, 0, 0, 0.18);
+    background: linear-gradient(
+      180deg,
+      transparent 35%,
+      rgba(0, 0, 0, 0.25) 65%,
+      rgba(0, 0, 0, 0.72) 100%
+    );
     z-index: 1;
   }
 
   ${media.md} {
-    height: 220px;
+    height: 240px;
   }
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.85);
-    transition: transform ${tokens.transitions.slow};
+    filter: brightness(0.9) saturate(1.05);
+    transition: transform ${tokens.transitions.slow}, filter ${tokens.transitions.slow};
   }
 
-  &:hover img { transform: scale(1.04); }
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 36px 72px rgba(0, 0, 0, 0.44),
+      0 12px 28px rgba(0, 0, 0, 0.28),
+      0 0 0 1px rgba(255, 255, 255, 0.9),
+      0 0 0 2px ${tokens.colors.primary}33;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+    filter: brightness(0.95) saturate(1.1);
+  }
 `;
 
 const LocationLabel = styled.div`
@@ -98,14 +126,27 @@ const LocationLabel = styled.div`
   bottom: ${tokens.spacing.lg};
   left: ${tokens.spacing.lg};
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+`;
 
-  span {
-    font-family: ${tokens.fonts.display};
-    font-size: ${tokens.fontSizes['2xl']};
-    font-weight: ${tokens.fontWeights.bold};
-    color: #fff;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
-  }
+const LocationTag = styled.span`
+  font-family: ${tokens.fonts.mono};
+  font-size: 10px;
+  font-weight: ${tokens.fontWeights.medium};
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: ${tokens.colors.primary};
+  text-shadow: 0 1px 6px rgba(0,0,0,0.8);
+`;
+
+const LocationCity = styled.span`
+  font-family: ${tokens.fonts.display};
+  font-size: ${tokens.fontSizes['2xl']};
+  font-weight: ${tokens.fontWeights.bold};
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.7), 0 1px 3px rgba(0,0,0,0.9);
 `;
 
 export default function TeamSection() {
@@ -133,7 +174,10 @@ export default function TeamSection() {
           <LocationCard key={l.city}>
             <CyberCorners $color={tokens.colors.mint} $size={10} />
             <img src={l.image} alt={`Standort ${l.city}`} loading="lazy" width="800" height="400" />
-            <LocationLabel><span>{l.city}</span></LocationLabel>
+            <LocationLabel>
+              <LocationTag>Standort</LocationTag>
+              <LocationCity>{l.city}</LocationCity>
+            </LocationLabel>
           </LocationCard>
         ))}
       </LocationRow>
