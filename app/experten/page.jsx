@@ -30,7 +30,7 @@ export default function ExpertenPage() {
     },
     {
       initials: 'LG',
-      name: 'Lorenz',
+      name: 'Lorenz Gräf',
       role: 'Lead Dozent',
       signal: 'FortyDays',
       accent: tokens.colors.mint,
@@ -39,8 +39,8 @@ export default function ExpertenPage() {
       bio: 'Leitet den FortyDays KI-Manager:in und übersetzt komplexe KI-Themen in klare Lernpfade.',
     },
     {
-      initials: 'LK',
-      name: 'Lukas',
+      initials: 'LS',
+      name: 'Lukas Stratmann',
       role: 'Lead Dozent',
       signal: 'Automation',
       accent: tokens.colors.navy,
