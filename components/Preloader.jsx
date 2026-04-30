@@ -25,7 +25,7 @@ const IMAGES = [
   'https://res.cloudinary.com/startplatz/image/upload/f_auto,q_auto,w_800/v1776473243/ai-hub/website/AI-Academy-Website-Images/hero-panel-unternehmen-upscaled.png',
 ];
 
-const WORDS = ['ENTDECKE', 'MEHR', 'STÄRKEN', 'MIT KI.'];
+const WORDS = ['ENTDECKE', 'DEINE', 'KARRIERE', 'MIT KI.'];
 const READY_TIMEOUT_MS = 1200;
 const MAX_VISIBLE_MS = 5200;
 
@@ -156,10 +156,6 @@ export default function Preloader({ onComplete }) {
       const overlay = overlayRef.current;
       if (!overlay) return;
 
-      /* Remove the HTML preloader immediately (our React overlay covers it) */
-      const htmlPreloader = document.getElementById('preloader');
-      if (htmlPreloader) htmlPreloader.remove();
-
       const vw = window.innerWidth;
       const vh = window.innerHeight;
       const panelW = vw / 3;
@@ -259,7 +255,7 @@ export default function Preloader({ onComplete }) {
           const targetFS = parseFloat(window.getComputedStyle(target).fontSize);
 
           let color = tokens.colors.text;
-          if (i === 2) color = tokens.colors.primary;
+          if (i === 2) color = tokens.colors.mint;
           if (i === 3) color = tokens.colors.textDim;
 
           tl.to(el, {
@@ -277,7 +273,7 @@ export default function Preloader({ onComplete }) {
             left: 24, xPercent: 0,
             top: vh * 0.25 + i * fs * 1.1,
             fontSize: fs,
-            color: i === 2 ? tokens.colors.primary : tokens.colors.text,
+            color: i === 2 ? tokens.colors.mint : tokens.colors.text,
             duration: 1.2, ease: 'power3.inOut',
           }, 'hold');
         });

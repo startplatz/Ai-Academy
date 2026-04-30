@@ -6,14 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
     "@next/third-parties": "^16.2.4",
     "gsap": "^3.12.7",
     "next": "^16.2.4",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
     "styled-components": "^6.1.14"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.2.4"
   }
 }

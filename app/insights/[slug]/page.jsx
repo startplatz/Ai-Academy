@@ -1,7 +1,5 @@
-'use client';
-
 import React from 'react';
-import { useParams } from 'next/navigation';
+import Link from 'next/link';
 import styled from 'styled-components';
 import { tokens, media } from '../../../styles/tokens';
 import SubpageLayout from '../../../components/SubpageLayout';
@@ -330,6 +328,30 @@ const BLOG_CONTENT = {
   },
 };
 
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const article = BLOG_CONTENT[slug];
+
+  if (!article) {
+    return {
+      title: 'Artikel nicht gefunden',
+      alternates: { canonical: `/insights/${slug}` },
+    };
+  }
+
+  return {
+    title: article.title,
+    description: article.excerpt,
+    alternates: { canonical: `/insights/${slug}` },
+    openGraph: {
+      title: article.title,
+      description: article.excerpt,
+      url: `https://startplatz-ai-academy.de/insights/${slug}`,
+      type: 'article',
+    },
+  };
+}
+
 /* Styled components */
 const ArticleSection = styled.section`
   padding: ${tokens.spacing['3xl']} 0;
@@ -427,10 +449,8 @@ const RelatedGrid = styled.div`
   }
 `;
 
-export default function BlogArticlePage() {
-  const params = useParams();
-  const slug = params?.slug;
-
+export default async function BlogArticlePage({ params }) {
+  const { slug } = await params;
   const article = slug ? BLOG_CONTENT[slug] : null;
 
   if (!article) {
@@ -445,7 +465,7 @@ export default function BlogArticlePage() {
         <ArticleSection>
           <ArticleContainer style={{ textAlign: 'center' }}>
             <p style={{ fontSize: tokens.fontSizes.lg, color: tokens.colors.textMuted }}>
-              Zurück zur <a href="/insights" style={{ color: tokens.colors.primary }}>Insights-Übersicht</a>
+              Zurück zur <Link href="/insights" style={{ color: tokens.colors.primary }}>Insights-Übersicht</Link>
             </p>
           </ArticleContainer>
         </ArticleSection>

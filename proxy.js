@@ -33,7 +33,7 @@ const PATH_MAP = new Map([
 
 const CANONICAL_HOST = 'startplatz-ai-academy.de';
 
-export function middleware(request) {
+export function proxy(request) {
   const host = request.headers.get('host')?.replace(/:.*$/, '') || '';
 
   // Nur alte Domains abfangen — alles auf der neuen Domain durchlassen

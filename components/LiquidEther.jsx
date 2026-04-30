@@ -275,7 +275,6 @@ export default function LiquidEther({
   useEffect(() => {
     const t = getGpuTier();
     setTier(t);
-    console.log(`[LiquidEther] GPU tier: ${t}`, GPU_PRESETS[t]);
   }, []);
 
   /* Skip WebGL for potato tier */
@@ -769,10 +768,6 @@ export default function LiquidEther({
 
       requestAnimationFrame(loop);
       webglRef.current = { Common, Mouse, output, autoDriverInst };
-
-      console.log(
-        `[LiquidEther] initialized | tier=${tier} | res=${effectiveResolution} | fps=${targetFPS} | bfecc=${effectiveBFECC} | poisson=${effectivePoisson} | pxRatio=${Common.pixelRatio}`
-      );
 
     }).catch(err => {
       console.error('[LiquidEther] init failed:', err);

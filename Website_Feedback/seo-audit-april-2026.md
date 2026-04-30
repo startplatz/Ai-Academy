@@ -143,6 +143,8 @@ Die emotionalen H1s sind gut für Conversion — aber Google braucht Keywords. L
 
 **Wichtig zum Homepage-H1:** Der CSS-Animationseffekt (ENTDECKE MEHR STÄRKEN MIT KI) rendert ohne Leerzeichen im HTML-Text. Googlebot liest "ENTDECKEMEHRSTÄRKENMIT KI" als ein Wort. Das muss technisch gefixt werden — entweder durch echte Leerzeichen im Quelltext oder durch ein separates, crawlbares H1-Element.
 
+**Status 2026-04-30:** Dieser konkrete Homepage-H1-Technikpunkt ist im Next-16-Migrationsfix erledigt. Der Hero-H1 rendert jetzt als Textinhalt `ENTDECKE DEINE KARRIERE MIT KI.` mit echten Leerzeichen; der alte zusammengeklebte `ENTDECKEMEHRSTÄRKENMIT KI`-Zustand ist nur noch historische Audit-Referenz.
+
 ---
 
 ## 4. Keyword-Opportunity-Tabelle

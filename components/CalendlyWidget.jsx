@@ -1,11 +1,11 @@
 'use client';
 
 import { useEffect } from 'react';
-import Script from 'next/script';
 import { CALENDLY_BASE_URL } from '../lib/site';
 
 const WIDGET_SCRIPT = 'https://assets.calendly.com/assets/external/widget.js';
 const WIDGET_CSS = 'https://assets.calendly.com/assets/external/widget.css';
+let calendlyScriptPromise = null;
 
 function isCalendlyBookingUrl(href) {
   try {
@@ -16,17 +16,35 @@ function isCalendlyBookingUrl(href) {
   }
 }
 
+function ensureCalendlyAssets() {
+  if (typeof window === 'undefined') return Promise.resolve();
+
+  if (!document.querySelector('link[data-calendly-widget-css]')) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = WIDGET_CSS;
+    link.dataset.calendlyWidgetCss = 'true';
+    document.head.appendChild(link);
+  }
+
+  if (window.Calendly?.initPopupWidget) return Promise.resolve();
+  if (calendlyScriptPromise) return calendlyScriptPromise;
+
+  calendlyScriptPromise = new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = WIDGET_SCRIPT;
+    script.async = true;
+    script.onload = resolve;
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
+
+  return calendlyScriptPromise;
+}
+
 export default function CalendlyWidget() {
   useEffect(() => {
-    if (!document.querySelector('link[data-calendly-widget-css]')) {
-      const link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = WIDGET_CSS;
-      link.dataset.calendlyWidgetCss = 'true';
-      document.head.appendChild(link);
-    }
-
-    const handleClick = (event) => {
+    const handleClick = async (event) => {
       if (
         event.defaultPrevented ||
         event.button !== 0 ||
@@ -44,16 +62,19 @@ export default function CalendlyWidget() {
       const href = anchor.href;
       if (!isCalendlyBookingUrl(href)) return;
 
-      const calendly = window.Calendly;
-      if (!calendly?.initPopupWidget) return;
-
       event.preventDefault();
-      calendly.initPopupWidget({ url: href || CALENDLY_BASE_URL });
+
+      try {
+        await ensureCalendlyAssets();
+        window.Calendly?.initPopupWidget({ url: href || CALENDLY_BASE_URL });
+      } catch {
+        window.location.href = href;
+      }
     };
 
     document.addEventListener('click', handleClick);
     return () => document.removeEventListener('click', handleClick);
   }, []);
 
-  return <Script src={WIDGET_SCRIPT} strategy="afterInteractive" />;
+  return null;
 }

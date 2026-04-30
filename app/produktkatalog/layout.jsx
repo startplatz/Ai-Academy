@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Preisliste 2026 & Produktkatalog | STARTPLATZ AI Academy',
+  title: 'Preisliste 2026 & Produktkatalog',
   description:
     'Preisliste 2026 und Produktkatalog der STARTPLATZ AI Academy: OneDay, FortyDays, AfterWork und Corporate Inhouse.',
   alternates: { canonical: '/produktkatalog' },

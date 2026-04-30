@@ -169,14 +169,17 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body suppressHydrationWarning>
-        <div className="preloader" id="preloader">
-          <div className="preloader-ring" />
-        </div>
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
         <CalendlyWidget />
+        <elevenlabs-convai
+          agent-id="agent_7801kphmjab6fmk921djmyxcz10x"
+          dismissible="true"
+          avatar-orb-color-1="#7C3AED"
+          avatar-orb-color-2="#14B8A6"
+        />
         <Script
           src="https://unpkg.com/@elevenlabs/convai-widget-embed"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
       </body>
     </html>

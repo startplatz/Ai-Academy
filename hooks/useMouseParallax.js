@@ -7,7 +7,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
  * and provides smooth lerped values for parallax effects.
  *
  * @param {number} smoothing  – lerp factor (0 = frozen, 1 = instant). Default 0.08
- * @returns {{ x: number, y: number, rawX: number, rawY: number }}
+ * @returns {{ x: number, y: number }}
  */
 export default function useMouseParallax(smoothing = 0.08) {
   const [pos, setPos] = useState({ x: 0, y: 0 });
@@ -40,10 +40,5 @@ export default function useMouseParallax(smoothing = 0.08) {
     };
   }, [handleMouseMove, smoothing]);
 
-  return {
-    x: pos.x,
-    y: pos.y,
-    rawX: target.current.x,
-    rawY: target.current.y,
-  };
+  return { x: pos.x, y: pos.y };
 }

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { tokens, media } from '../styles/tokens';
 import { CHAMFER } from '../styles/cyberpunk';
 
@@ -75,6 +75,18 @@ const panelClip = {
   `,
 };
 
+const labelShimmer = keyframes`
+  0%, 20% {
+    opacity: 0.92;
+  }
+  44%, 60% {
+    opacity: 0;
+  }
+  78%, 100% {
+    opacity: 0.92;
+  }
+`;
+
 const Panel = styled.div`
   position: relative;
   flex: ${({ $active, $hasActive }) => $active ? '2.8' : $hasActive ? '0.55' : '1'};
@@ -135,6 +147,14 @@ const VerticalLabel = styled.span`
   transition: opacity 0.5s ease;
   pointer-events: none;
   text-shadow: 0 1px 8px rgba(0,0,0,0.8);
+  animation: ${({ $visible, $delay }) => $visible
+    ? css`${labelShimmer} 7.8s ease-in-out ${$delay || '0s'} infinite both`
+    : 'none'};
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    opacity: ${({ $visible }) => ($visible ? 0.9 : 0)};
+  }
 `;
 
 const IdleLabel = styled.div`
@@ -250,7 +270,7 @@ export default function PersonaReveal() {
             <PanelImage $src={p.image} $active={isActive} />
             <Overlay $active={isActive} />
             {/* Vertical label: immer sichtbar solange Panel nicht selbst aktiv */}
-            <VerticalLabel $visible={!isActive}>{p.title}</VerticalLabel>
+            <VerticalLabel $visible={!isActive} $delay={`${i * 0.55}s`}>{p.title}</VerticalLabel>
             {/* Idle accent line: farbiger Balken unten — immer sichtbar wenn kein Panel aktiv */}
             <IdleLabel $visible={!hasActive}>
               <IdleAccent $color={p.color} />

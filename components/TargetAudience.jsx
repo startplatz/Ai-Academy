@@ -294,7 +294,7 @@ export default function TargetAudience() {
     <PlanetSection
       id="weiterbildungen"
       badge="Weiterbildungen"
-      title="Unsere <span>3 Zielgruppen</span>"
+      title="Dein Weg in die <span>KI-Zukunft</span>"
       subtitle="Das Format, das zu deinem Leben passt."
     >
       <Grid>

@@ -30,8 +30,6 @@ export function getGpuTier() {
         .getParameter(ext.UNMASKED_RENDERER_WEBGL)
         .toLowerCase();
 
-      console.log('[gpuTier] GPU renderer:', renderer);
-
       /* Software renderers → potato */
       if (
         renderer.includes('swiftshader') ||

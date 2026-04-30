@@ -11,7 +11,7 @@ import { CALENDLY_URL } from '../lib/site';
 /* ─────────────────────────────────────────────
    HERO – Single-word "liquid dissolve" rotation
    Only the highlighted keyword morphs.
-   Structure: ENTDECKE / MEHR / [keyword] / MIT KI.
+   Structure: ENTDECKE / DEINE / [keyword] / MIT KI.
    ───────────────────────────────────────────── */
 
 /* ── Rotating keyword data ────────────────── */
@@ -19,14 +19,17 @@ import { CALENDLY_URL } from '../lib/site';
 const KEYWORDS = [
   {
     word: 'KARRIERE',
+    color: tokens.colors.mint,
     sub: 'Gefördert. AZAV-zertifiziert. Dein KI-Neustart beginnt hier.',
   },
   {
     word: 'SKILLS',
+    color: tokens.colors.navy,
     sub: 'Abends lernen, täglich anwenden. Staatlich anerkannt.',
   },
   {
     word: 'ZUKUNFT',
+    color: tokens.colors.orange,
     sub: 'Praxisnah. Messbar wirksam. KI-Kompetenz für euer Team.',
   },
 ];
@@ -111,11 +114,22 @@ const ClaimWrapper = styled.div`
   position: relative;
   min-width: 0;
   will-change: transform;
+
+  ${media.lg} {
+    align-self: stretch;
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  ${media.xl} {
+    min-height: 580px;
+  }
 `;
 
 const Headline = styled.h1`
   font-family: ${tokens.fonts.display};
-  font-size: clamp(2.25rem, 5vw, 4.5rem);
+  font-size: clamp(2.75rem, 6vw, 6rem);
   font-weight: ${tokens.fontWeights.black};
   line-height: ${tokens.lineHeights.tight};
   color: ${tokens.colors.text};
@@ -148,24 +162,40 @@ const MorphParallax = styled.span`
 `;
 
 /* The morphing keyword — only opacity + filter transition (no layout-affecting props) */
+const keywordSheen = keyframes`
+  0%, 100% { background-position: 0% 50%; }
+  45%      { background-position: 58% 50%; }
+  60%      { background-position: 72% 50%; }
+`;
+
 const MorphWord = styled.span`
   display: block;
   will-change: opacity, filter;
-  background: linear-gradient(135deg, ${tokens.colors.primary}, ${tokens.colors.primaryMuted});
+  background: linear-gradient(
+    110deg,
+    ${tokens.colors.primaryDark} 0%,
+    ${tokens.colors.primary} 28%,
+    ${({ $color }) => $color || tokens.colors.primaryLight} 44%,
+    ${tokens.colors.primaryMuted} 52%,
+    ${tokens.colors.primary} 72%,
+    ${tokens.colors.primaryDark} 100%
+  );
+  background-size: 230% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: ${keywordSheen} 7s ease-in-out infinite;
   transition:
     opacity ${DISSOLVE_MS}ms cubic-bezier(0.4, 0, 0.2, 1),
     filter ${DISSOLVE_MS}ms cubic-bezier(0.4, 0, 0.2, 1);
 `;
 
 const SubText = styled.p`
-  font-size: clamp(${tokens.fontSizes.base}, 2vw, ${tokens.fontSizes.xl});
+  font-size: clamp(1.125rem, 2vw, 1.45rem);
   color: ${tokens.colors.textMuted};
   line-height: ${tokens.lineHeights.relaxed};
-  max-width: 520px;
-  margin-bottom: ${tokens.spacing['2xl']};
+  max-width: 640px;
+  margin-bottom: ${tokens.spacing.xl};
   white-space: pre-line;
   will-change: opacity, filter;
   transition:
@@ -177,6 +207,11 @@ const CTAGroup = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: ${tokens.spacing.md};
+
+  ${media.lg} {
+    margin-top: auto;
+    padding-bottom: ${tokens.spacing.sm};
+  }
 `;
 
 const PrimaryBtnWrap = styled.div`
@@ -410,13 +445,15 @@ export default function Hero() {
 
   /* Morphing word style — only opacity + filter, no layout changes */
   const getMorphStyle = () => {
+    const glowFilter = (blurPx) => `drop-shadow(0 0 16px ${currentKeyword.color}44) blur(${blurPx}px)`;
+
     if (phase === 'dissolving') {
-      return { opacity: 0, filter: 'blur(18px)' };
+      return { opacity: 0, filter: glowFilter(18) };
     }
     if (phase === 'emerging') {
-      return { opacity: 1, filter: 'blur(0px)' };
+      return { opacity: 1, filter: glowFilter(0) };
     }
-    return { opacity: 1, filter: 'blur(0px)' };
+    return { opacity: 1, filter: glowFilter(0) };
   };
 
   /* Subtitle style */
@@ -431,6 +468,7 @@ export default function Hero() {
   };
 
   const staticWords = ['ENTDECKE', 'DEINE', null, 'MIT KI.'];
+  const currentKeyword = KEYWORDS[kwIndex];
 
   return (
     <Section id="hero" aria-label="Hero">
@@ -440,35 +478,39 @@ export default function Hero() {
         <ClaimWrapper style={{ transform: `translate(${x * 6}px, ${y * 6}px)` }}>
           <Headline
             id="hero-headline"
-            aria-label={`Entdecke mehr ${displayWord.toLowerCase()} mit KI.`}
+            aria-label={`Entdecke deine ${displayWord.toLowerCase()} mit KI.`}
             aria-live="polite"
           >
             {staticWords.map((word, i) => {
               if (i === 2) {
                 /* The morphing keyword — parallax on outer, dissolve on inner */
                 return (
-                  <MorphParallax
-                    key="morph"
-                    data-hero-word={2}
-                    aria-hidden="true"
-                    style={{ transform: `translate(${x * depths[2]}px, ${y * depths[2]}px)` }}
-                  >
-                    <MorphWord style={getMorphStyle()}>
-                      {displayWord}
-                    </MorphWord>
-                  </MorphParallax>
+                  <React.Fragment key="morph">
+                    <MorphParallax
+                      data-hero-word={2}
+                      aria-hidden="true"
+                      style={{ transform: `translate(${x * depths[2]}px, ${y * depths[2]}px)` }}
+                    >
+                      <MorphWord $color={currentKeyword.color} style={getMorphStyle()}>
+                        {displayWord}
+                      </MorphWord>
+                    </MorphParallax>
+                    {' '}
+                  </React.Fragment>
                 );
               }
               return (
-                <HeadlineWord
-                  key={word}
-                  data-hero-word={i}
-                  aria-hidden="true"
-                  className={i === 3 ? 'highlight' : ''}
-                  style={{ transform: `translate(${x * depths[i]}px, ${y * depths[i]}px)` }}
-                >
-                  {word}
-                </HeadlineWord>
+                <React.Fragment key={word}>
+                  <HeadlineWord
+                    data-hero-word={i}
+                    aria-hidden="true"
+                    className={i === 3 ? 'dim' : ''}
+                    style={{ transform: `translate(${x * depths[i]}px, ${y * depths[i]}px)` }}
+                  >
+                    {word}
+                  </HeadlineWord>
+                  {i < staticWords.length - 1 ? ' ' : null}
+                </React.Fragment>
               );
             })}
           </Headline>

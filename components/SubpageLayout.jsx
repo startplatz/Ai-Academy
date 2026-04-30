@@ -11,18 +11,18 @@ import Footer from './Footer';
 import { getGpuTier, GPU_PRESETS } from '../utils/gpuTier';
 
 export default function SubpageLayout({ children }) {
-  const [mainBg, setMainBg] = React.useState('rgba(255, 255, 255, 0.72)');
+  const mainRef = React.useRef(null);
 
   React.useEffect(() => {
     window.history.scrollRestoration = 'manual';
     window.scrollTo(0, 0);
-    const el = document.getElementById('preloader');
-    if (el) el.remove();
 
     /* Adapt opacity to GPU tier — NO backdrop-filter anymore. */
     const tier = getGpuTier();
     const p = GPU_PRESETS[tier];
-    setMainBg(`rgba(255, 255, 255, ${p.mainOpacity})`);
+    if (mainRef.current) {
+      mainRef.current.style.background = `rgba(255, 255, 255, ${p.mainOpacity})`;
+    }
   }, []);
 
   return (
@@ -44,12 +44,13 @@ export default function SubpageLayout({ children }) {
       <Navigation />
 
       <main
+        ref={mainRef}
         id="main-content"
         role="main"
         style={{
           position: 'relative',
           zIndex: 1,
-          background: mainBg,
+          background: 'rgba(255, 255, 255, 0.72)',
         }}
       >
         {children}

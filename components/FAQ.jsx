@@ -75,18 +75,48 @@ const Trigger = styled.button`
 `;
 
 const Icon = styled.span`
-  display: flex;
+  position: relative;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 28px; height: 28px;
+  width: 34px;
+  height: 34px;
   ${clipBR(CHAMFER.xs)}
-  background: ${({ $open }) => $open ? tokens.colors.primary : tokens.colors.primaryLighter};
+  background: ${({ $open }) => $open ? tokens.colors.primary : 'rgba(124, 58, 237, 0.08)'};
+  border: 1px solid ${({ $open }) => $open ? tokens.colors.primary : 'rgba(124, 58, 237, 0.24)'};
   color: ${({ $open }) => $open ? '#fff' : tokens.colors.primary};
-  font-size: ${tokens.fontSizes.lg};
-  font-weight: ${tokens.fontWeights.medium};
   flex-shrink: 0;
-  transition: all ${tokens.transitions.base};
-  transform: ${({ $open }) => ($open ? 'rotate(45deg)' : 'rotate(0)')};
+  transition: background ${tokens.transitions.base}, border-color ${tokens.transitions.base},
+              color ${tokens.transitions.base}, transform ${tokens.transitions.base};
+
+  &::before {
+    content: '';
+    width: 9px;
+    height: 9px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: ${({ $open }) => $open
+      ? 'translateY(2px) rotate(225deg)'
+      : 'translateY(-2px) rotate(45deg)'};
+    transition: transform ${tokens.transitions.base};
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    bottom: 4px;
+    width: 2px;
+    background: ${tokens.colors.mint};
+    opacity: ${({ $open }) => $open ? 1 : 0.6};
+    transition: opacity ${tokens.transitions.base};
+  }
+
+  ${Trigger}:hover & {
+    border-color: ${tokens.colors.primary};
+    transform: translateX(2px);
+  }
 `;
 
 const Panel = styled.div`
@@ -124,7 +154,7 @@ export default function FAQ() {
               <CyberCorners $color={open ? tokens.colors.primary : tokens.colors.mint} $size={8} />
               <Trigger onClick={() => toggle(i)} aria-expanded={open} aria-controls={`faq-p-${i}`} id={`faq-t-${i}`}>
                 {item.q}
-                <Icon $open={open} aria-hidden="true">+</Icon>
+                <Icon $open={open} aria-hidden="true" />
               </Trigger>
               <Panel $open={open} id={`faq-p-${i}`} role="region" aria-labelledby={`faq-t-${i}`}>
                 <PanelInner>{item.a}</PanelInner>

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import styled from 'styled-components';
 import { tokens, media } from '../../styles/tokens';
 import { clipBR, CHAMFER, CyberCorners } from '../../styles/cyberpunk';
@@ -20,8 +21,6 @@ const Section = styled.section`
   background: ${({ $variant }) =>
     $variant === 'dark' ? tokens.colors.dark : 'transparent'};
 `;
-
-/* GridPattern removed – replaced by global ColorBends background */
 
 const SlashAccent = styled.div`
   position: absolute;
@@ -132,13 +131,21 @@ export default function PageHero({
   breadcrumbs,
   children,
 }) {
+  const titleHtml = title?.replace(/<br\s*\/?>/gi, ' <br />');
+
   return (
     <Section $variant={variant}>
       <SlashAccent $variant={variant} $accentColor={accentColor} aria-hidden="true" />
 
       {image && (
         <ImageWrap $variant={variant} aria-hidden="true">
-          <img src={image} alt="" loading="eager" />
+          <Image
+            src={image}
+            alt=""
+            fill
+            priority
+            sizes="(min-width: 1024px) 50vw, 0vw"
+          />
         </ImageWrap>
       )}
 
@@ -152,8 +159,8 @@ export default function PageHero({
           </Badge>
         )}
 
-        {title && (
-          <Title $variant={variant} dangerouslySetInnerHTML={{ __html: title }} />
+        {titleHtml && (
+          <Title $variant={variant} dangerouslySetInnerHTML={{ __html: titleHtml }} />
         )}
 
         {subtitle && <Subtitle $variant={variant}>{subtitle}</Subtitle>}

@@ -12,8 +12,7 @@ import Footer from './Footer';
 import { getGpuTier, GPU_PRESETS } from '../utils/gpuTier';
 
 export default function SharedLayout({ children, showPreloader = true }) {
-  const [loaded, setLoaded] = React.useState(false);
-  const [mainBg, setMainBg] = React.useState('rgba(255, 255, 255, 0.72)');
+  const mainRef = React.useRef(null);
 
   React.useEffect(() => {
     window.history.scrollRestoration = 'manual';
@@ -23,13 +22,9 @@ export default function SharedLayout({ children, showPreloader = true }) {
        The blur lives on LiquidEther's own CSS filter instead. */
     const tier = getGpuTier();
     const p = GPU_PRESETS[tier];
-    setMainBg(`rgba(255, 255, 255, ${p.mainOpacity})`);
-  }, []);
-
-  const handlePreloaderDone = React.useCallback(() => {
-    setLoaded(true);
-    const el = document.getElementById('preloader');
-    if (el) el.remove();
+    if (mainRef.current) {
+      mainRef.current.style.background = `rgba(255, 255, 255, ${p.mainOpacity})`;
+    }
   }, []);
 
   return (
@@ -38,7 +33,7 @@ export default function SharedLayout({ children, showPreloader = true }) {
       <a href="#main-content" className="skip-to-content">
         Zum Hauptinhalt springen
       </a>
-      {showPreloader && <Preloader onComplete={handlePreloaderDone} />}
+      {showPreloader && <Preloader />}
       <LiquidEther
         colors={['#7C3AED', '#FF9FFC', '#B497CF']}
         mouseForce={18}
@@ -52,12 +47,13 @@ export default function SharedLayout({ children, showPreloader = true }) {
       <Navigation />
 
       <main
+        ref={mainRef}
         id="main-content"
         role="main"
         style={{
           position: 'relative',
           zIndex: 1,
-          background: mainBg,
+          background: 'rgba(255, 255, 255, 0.72)',
         }}
       >
         {children}

@@ -1,7 +1,7 @@
 'use client';
 
 // React is auto-imported in Next.js but we keep it for clarity
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { tokens, media } from '../styles/tokens';
 import { clipBR, clipTLBR, CHAMFER, CyberCorners } from '../styles/cyberpunk';
@@ -109,13 +109,25 @@ const DragHint = styled.span`
 const ScrollWrapper = styled.div`
   position: relative;
   z-index: 1;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   padding: 0 ${tokens.spacing.lg};
+  scroll-padding-inline: ${tokens.spacing.lg};
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const ScrollRow = styled.div`
   display: flex;
   gap: ${tokens.spacing.lg};
+  width: max-content;
+  min-width: 100%;
   cursor: grab;
   user-select: none;
   padding-bottom: ${tokens.spacing.md};
@@ -125,10 +137,12 @@ const ScrollRow = styled.div`
 
 const EventCard = styled.article`
   flex: 0 0 auto;
-  width: 340px;
+  width: min(82vw, 340px);
   position: relative;
   display: flex;
   flex-direction: column;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
   background: rgba(20, 20, 20, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -145,7 +159,7 @@ const EventCard = styled.article`
   }
 
   ${({ $featured }) => $featured && css`
-    width: 440px;
+    width: min(88vw, 440px);
     border-color: rgba(124, 58, 237, 0.3);
   `}
 `;
@@ -307,9 +321,6 @@ const ArrowSVG = () => (
 /* ── Component ─────────────────────────────── */
 
 export default function EventsTimeline() {
-  const trackRef = useRef(null);
-  const wrapperRef = useRef(null);
-
   /* ── Live events ─────────────────────────── */
   const [events, setEvents] = useState(null);        // null = loading, [] = empty/error
   const [source, setSource] = useState('loading');   // 'loading' | 'live' | 'fallback'
@@ -343,41 +354,6 @@ export default function EventsTimeline() {
     return () => { cancelled = true; };
   }, []);
 
-  /* ── Draggable scroller ──────────────────── */
-  useEffect(() => {
-    if (!events) return; // wait until cards are rendered
-
-    let draggableInstance;
-    const init = async () => {
-      try {
-        const { gsap } = await import('gsap');
-        const { Draggable } = await import('gsap/Draggable');
-        gsap.registerPlugin(Draggable);
-
-        if (!trackRef.current || !wrapperRef.current) return;
-
-        const trackWidth = trackRef.current.scrollWidth;
-        const wrapperWidth = wrapperRef.current.offsetWidth;
-        const maxDrag = -(trackWidth - wrapperWidth);
-
-        draggableInstance = Draggable.create(trackRef.current, {
-          type: 'x',
-          bounds: { minX: maxDrag, maxX: 0 },
-          edgeResistance: 0.85,
-          cursor: 'grab',
-          activeCursor: 'grabbing',
-        })[0];
-      } catch (e) {
-        /* Fallback: native scroll still works */
-      }
-    };
-    init();
-
-    return () => {
-      if (draggableInstance) draggableInstance.kill();
-    };
-  }, [events]);
-
   const isLoading = events === null;
   const cards = events || [];
 
@@ -393,8 +369,8 @@ export default function EventsTimeline() {
         )}
       </Container>
 
-      <ScrollWrapper ref={wrapperRef} role="region" aria-label="Event-Karussell" tabIndex={0}>
-        <ScrollRow ref={trackRef}>
+      <ScrollWrapper role="region" aria-label="Event-Karussell" tabIndex={0}>
+        <ScrollRow>
           {isLoading
             ? Array.from({ length: 4 }).map((_, i) => <SkeletonCard key={`sk-${i}`} aria-hidden="true" />)
             : cards.map((ev) => (
