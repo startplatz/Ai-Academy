@@ -174,8 +174,8 @@ export default function RootLayout({ children }) {
         <elevenlabs-convai
           agent-id="agent_7801kphmjab6fmk921djmyxcz10x"
           dismissible="true"
-          avatar-orb-color-1="#7C3AED"
-          avatar-orb-color-2="#14B8A6"
+          avatar-orb-color-1="#bea7ea"
+          avatar-orb-color-2="#fffaff"
         />
         <Script
           src="https://unpkg.com/@elevenlabs/convai-widget-embed"
