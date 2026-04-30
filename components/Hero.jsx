@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { tokens, media } from '../styles/tokens';
 import { clipBR, CHAMFER, CyberCorners } from '../styles/cyberpunk';
 import useMouseParallax from '../hooks/useMouseParallax';
@@ -163,9 +163,9 @@ const MorphParallax = styled.span`
 
 /* The morphing keyword — only opacity + filter transition (no layout-affecting props) */
 const keywordSheen = keyframes`
-  0%, 100% { background-position: 0% 50%; }
-  45%      { background-position: 58% 50%; }
-  60%      { background-position: 72% 50%; }
+  0%, 10% { background-position: 0% 50%; }
+  34%     { background-position: 52% 50%; }
+  58%, 100% { background-position: 100% 50%; }
 `;
 
 const MorphWord = styled.span`
@@ -173,18 +173,23 @@ const MorphWord = styled.span`
   will-change: opacity, filter;
   background: linear-gradient(
     110deg,
-    ${tokens.colors.primaryDark} 0%,
-    ${tokens.colors.primary} 28%,
-    ${({ $color }) => $color || tokens.colors.primaryLight} 44%,
-    ${tokens.colors.primaryMuted} 52%,
-    ${tokens.colors.primary} 72%,
-    ${tokens.colors.primaryDark} 100%
+    ${tokens.colors.primary} 0%,
+    ${tokens.colors.primary} 46.8%,
+    ${tokens.colors.primaryLight} 47.6%,
+    ${({ $color }) => $color || tokens.colors.primaryLight} 48.1%,
+    ${tokens.colors.primaryLight} 48.6%,
+    ${tokens.colors.primary} 49.4%,
+    ${tokens.colors.primary} 100%
   );
-  background-size: 230% 100%;
+  background-position: 0% 50%;
+  background-size: 260% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: ${keywordSheen} 7s ease-in-out infinite;
+  ${({ $introReady }) => $introReady && css`
+    animation: ${keywordSheen} 7.2s ease-in-out infinite;
+    animation-delay: 0.45s;
+  `}
   transition:
     opacity ${DISSOLVE_MS}ms cubic-bezier(0.4, 0, 0.2, 1),
     filter ${DISSOLVE_MS}ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -414,6 +419,7 @@ export default function Hero() {
   const [phase, setPhase] = useState('visible'); // 'visible' | 'dissolving' | 'emerging'
   const [displayWord, setDisplayWord] = useState(KEYWORDS[0].word);
   const [displaySub, setDisplaySub] = useState(KEYWORDS[0].sub);
+  const [introReady, setIntroReady] = useState(false);
   const timerRef = useRef(null);
 
   const startTransition = useCallback(() => {
@@ -437,15 +443,26 @@ export default function Hero() {
   }, [kwIndex]);
 
   useEffect(() => {
-    if (phase === 'visible') {
+    if (introReady && phase === 'visible') {
       timerRef.current = setTimeout(startTransition, DISPLAY_MS);
     }
     return () => clearTimeout(timerRef.current);
-  }, [phase, startTransition]);
+  }, [introReady, phase, startTransition]);
+
+  useEffect(() => {
+    const markIntroReady = () => setIntroReady(true);
+    window.addEventListener('ai-academy:preloader-complete', markIntroReady);
+    const fallback = setTimeout(markIntroReady, 5600);
+
+    return () => {
+      window.removeEventListener('ai-academy:preloader-complete', markIntroReady);
+      clearTimeout(fallback);
+    };
+  }, []);
 
   /* Morphing word style — only opacity + filter, no layout changes */
   const getMorphStyle = () => {
-    const glowFilter = (blurPx) => `drop-shadow(0 0 16px ${currentKeyword.color}44) blur(${blurPx}px)`;
+    const glowFilter = (blurPx) => `drop-shadow(0 0 12px ${tokens.colors.primary}33) blur(${blurPx}px)`;
 
     if (phase === 'dissolving') {
       return { opacity: 0, filter: glowFilter(18) };
@@ -491,7 +508,7 @@ export default function Hero() {
                       aria-hidden="true"
                       style={{ transform: `translate(${x * depths[2]}px, ${y * depths[2]}px)` }}
                     >
-                      <MorphWord $color={currentKeyword.color} style={getMorphStyle()}>
+                      <MorphWord $color={currentKeyword.color} $introReady={introReady} style={getMorphStyle()}>
                         {displayWord}
                       </MorphWord>
                     </MorphParallax>

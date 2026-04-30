@@ -91,6 +91,7 @@ export default function Preloader({ onComplete }) {
       overlay.style.pointerEvents = 'none';
     }
 
+    window.dispatchEvent(new Event('ai-academy:preloader-complete'));
     onComplete?.();
   }, [onComplete]);
 
@@ -255,7 +256,7 @@ export default function Preloader({ onComplete }) {
           const targetFS = parseFloat(window.getComputedStyle(target).fontSize);
 
           let color = tokens.colors.text;
-          if (i === 2) color = tokens.colors.mint;
+          if (i === 2) color = tokens.colors.primary;
           if (i === 3) color = tokens.colors.textDim;
 
           tl.to(el, {
@@ -273,7 +274,7 @@ export default function Preloader({ onComplete }) {
             left: 24, xPercent: 0,
             top: vh * 0.25 + i * fs * 1.1,
             fontSize: fs,
-            color: i === 2 ? tokens.colors.mint : tokens.colors.text,
+            color: i === 2 ? tokens.colors.primary : tokens.colors.text,
             duration: 1.2, ease: 'power3.inOut',
           }, 'hold');
         });
