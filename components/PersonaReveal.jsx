@@ -147,8 +147,8 @@ const VerticalLabel = styled.span`
   transition: opacity 0.5s ease;
   pointer-events: none;
   text-shadow: 0 1px 8px rgba(0,0,0,0.8);
-  animation: ${({ $visible, $delay }) => $visible
-    ? css`${labelShimmer} 7.8s ease-in-out ${$delay || '0s'} infinite both`
+  animation: ${({ $visible }) => $visible
+    ? css`${labelShimmer} 7.8s ease-in-out infinite both`
     : 'none'};
 
   @media (prefers-reduced-motion: reduce) {
@@ -270,7 +270,7 @@ export default function PersonaReveal() {
             <PanelImage $src={p.image} $active={isActive} />
             <Overlay $active={isActive} />
             {/* Vertical label: immer sichtbar solange Panel nicht selbst aktiv */}
-            <VerticalLabel $visible={!isActive} $delay={`${i * 0.55}s`}>{p.title}</VerticalLabel>
+            <VerticalLabel $visible={!isActive}>{p.title}</VerticalLabel>
             {/* Idle accent line: farbiger Balken unten — immer sichtbar wenn kein Panel aktiv */}
             <IdleLabel $visible={!hasActive}>
               <IdleAccent $color={p.color} />

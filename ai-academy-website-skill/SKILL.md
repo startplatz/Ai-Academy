@@ -136,7 +136,7 @@ Hero:
 - Claim structure: `ENTDECKE / DEINE / [KARRIERE, SKILLS, ZUKUNFT] / MIT KI.`
 - `MIT KI.` stays grey via `tokens.colors.textDim`.
 - Rotating words stay primarily in STARTPLATZ Academy Purple; the three category colors appear only as a shimmer/accent.
-- Hero persona labels should be pure white, visible after the preloader, then fade to fully invisible and reappear. Do not add category-colored glow to these labels.
+- Hero persona labels should be pure white and pulse in sync: visible after the preloader, fade to fully invisible together, then reappear together. Do not add category-colored glow or staggered delays to these labels.
 - Desktop CTA buttons align visually with the bottom of the persona image area.
 - Preloader words must match the initial Hero words.
 
