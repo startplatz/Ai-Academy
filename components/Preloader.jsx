@@ -59,6 +59,10 @@ const ImagePanel = styled.div`
 const WordEl = styled.span`
   position: absolute;
   display: block;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
   font-family: ${tokens.fonts.display};
   font-weight: ${tokens.fontWeights.black};
   text-transform: uppercase;
@@ -68,6 +72,7 @@ const WordEl = styled.span`
   white-space: nowrap;
   pointer-events: none;
   z-index: 2;
+  will-change: opacity, transform;
 `;
 
 /* ── Component ─────────────────────────────── */

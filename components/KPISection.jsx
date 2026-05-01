@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState, useCallback } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { tokens, media } from '../styles/tokens';
 import { clipBR, clipTLBR, CHAMFER, CyberCorners } from '../styles/cyberpunk';
+import { ReviewTrustBar } from './ReviewRatings';
 
 /* ─────────────────────────────────────────────
    KPI SECTION – Angular, bold, cyberpunk
@@ -13,10 +14,34 @@ import { clipBR, clipTLBR, CHAMFER, CyberCorners } from '../styles/cyberpunk';
    ───────────────────────────────────────────── */
 
 const KPIS = [
-  { value: 1000, suffix: '+', label: 'Menschen beim KI-Einstieg begleitet', accent: 'Erprobte Lernpfade' },
-  { value: null, displayValue: '4,98/5', label: 'Lernerfahrung, die wirklich hilft', accent: '290+ Bewertungen' },
-  { value: 100, suffix: '+', label: 'Teams in die Anwendung gebracht', accent: 'Praxis statt Theorie' },
-  { value: 15, suffix: '+', label: 'Jahre Netzwerk für deinen nächsten Schritt', accent: 'STARTPLATZ NRW' },
+  {
+    value: 1000,
+    suffix: '+',
+    label: 'Menschen beim KI-Einstieg begleitet',
+    accent: 'Erprobte Lernpfade',
+    color: tokens.colors.mint,
+  },
+  {
+    value: null,
+    displayValue: '4,98/5',
+    label: 'Lernerfahrung, die wirklich hilft',
+    accent: '290+ Bewertungen',
+    color: tokens.colors.primary,
+  },
+  {
+    value: 100,
+    suffix: '+',
+    label: 'Teams in die Anwendung gebracht',
+    accent: 'Praxis statt Theorie',
+    color: tokens.colors.navy,
+  },
+  {
+    value: 15,
+    suffix: '+',
+    label: 'Jahre Netzwerk für deinen nächsten Schritt',
+    accent: 'STARTPLATZ NRW',
+    color: tokens.colors.orange,
+  },
 ];
 
 /* ── Animations ───────────────────────────── */
@@ -99,19 +124,26 @@ const SectionTitle = styled.h2`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 1fr;
-  gap: ${tokens.spacing.xl};
+  grid-template-columns: minmax(0, 1fr);
+  gap: ${tokens.spacing.lg};
   
-  ${media.sm} { grid-template-columns: repeat(2, 1fr); }
-  ${media.lg} { grid-template-columns: repeat(4, 1fr); }
+  ${media.sm} { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  ${media.lg} { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 `;
 
 const KPICard = styled.div`
   position: relative;
-  padding: ${tokens.spacing['2xl']} ${tokens.spacing.xl};
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-width: 0;
+  min-height: clamp(206px, 15vw, 232px);
+  padding: ${tokens.spacing.xl};
   background: ${tokens.colors.surface};
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   overflow: visible;
+  box-shadow: 0 16px 44px rgba(15, 15, 15, 0.035);
   transition: transform ${tokens.transitions.base}, border-color ${tokens.transitions.base},
               filter ${tokens.transitions.base};
 
@@ -133,7 +165,7 @@ const KPICard = styled.div`
 
   &:hover {
     transform: translateY(-4px);
-    border-color: rgba(124, 58, 237, 0.15);
+    border-color: ${({ $accent }) => `${$accent}45`};
     filter: drop-shadow(0 8px 24px rgba(124,58,237,0.10));
     
     &::after {
@@ -146,8 +178,8 @@ const KPICard = styled.div`
 const AccentBar = styled.div`
   position: absolute;
   top: 0; left: 0;
-  width: 0; height: 3px;
-  background: linear-gradient(90deg, ${tokens.colors.primary}, ${tokens.colors.primaryMuted});
+  width: 28px; height: 3px;
+  background: ${({ $accent }) => $accent};
   transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 
   ${KPICard}:hover & {
@@ -162,37 +194,61 @@ const AccentTag = styled.span`
   font-weight: ${tokens.fontWeights.medium};
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: ${tokens.colors.primary};
-  opacity: 0.7;
-  margin-bottom: ${tokens.spacing.md};
+  color: ${({ $accent }) => $accent};
+  opacity: 0.82;
+  margin-bottom: ${tokens.spacing.xl};
+`;
+
+const MetricBody = styled.div`
+  position: relative;
+  z-index: 1;
+  width: 100%;
 `;
 
 const ValueRow = styled.div`
   display: flex;
   align-items: baseline;
-  gap: 2px;
-  margin-bottom: ${tokens.spacing.sm};
+  gap: 0;
+  min-width: 0;
+  width: 100%;
+  margin-bottom: ${tokens.spacing.md};
+  white-space: nowrap;
 `;
 
 const Value = styled.span`
+  position: relative;
+  display: inline-grid;
   font-family: ${tokens.fonts.display};
-  font-size: clamp(${tokens.fontSizes['5xl']}, 7vw, 5.5rem);
+  font-size: clamp(${tokens.fontSizes['4xl']}, 4vw, 4.35rem);
   font-weight: ${tokens.fontWeights.black};
   line-height: 1;
   letter-spacing: 0;
   color: ${tokens.colors.text};
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+
+  &::before,
+  > span {
+    grid-area: 1 / 1;
+  }
+
+  &::before {
+    content: attr(data-reserve);
+    visibility: hidden;
+  }
   
   ${media.lg} {
-    font-size: clamp(${tokens.fontSizes['4xl']}, 4.5vw, 5.5rem);
+    font-size: clamp(${tokens.fontSizes['4xl']}, 3.6vw, 4.2rem);
   }
 `;
 
-const Suffix = styled.span`
-  font-family: ${tokens.fonts.display};
-  font-size: clamp(${tokens.fontSizes['2xl']}, 3vw, ${tokens.fontSizes['4xl']});
+const ValueSuffix = styled.span`
+  color: ${({ $accent }) => $accent};
+  font-size: 0.42em;
   font-weight: ${tokens.fontWeights.bold};
-  color: ${tokens.colors.primary};
   line-height: 1;
+  margin-left: 0.04em;
+  transform: translateY(-0.04em);
 `;
 
 const Label = styled.span`
@@ -210,14 +266,14 @@ const ParallelogramDecor = styled.div`
   right: -8px;
   width: 80px;
   height: 80px;
-  background: ${tokens.colors.primaryLighter};
-  opacity: 0.4;
+  background: ${({ $accent }) => `${$accent}12`};
+  opacity: 1;
   transform: skewX(-12deg);
   pointer-events: none;
   transition: opacity ${tokens.transitions.base};
 
   ${KPICard}:hover & {
-    opacity: 0.7;
+    opacity: 1;
   }
 `;
 
@@ -257,20 +313,29 @@ function useCountUp(end, duration = 2200) {
 
 /* ── KPI Item ──────────────────────────────── */
 
-function KPIItem({ value, displayValue, suffix, label, accent }) {
+function KPIItem({ value, displayValue, suffix, label, accent, color }) {
   const { count, ref } = useCountUp(value || 0, 2400);
+  const reserveNumber = displayValue || (value || 0).toLocaleString('de-DE');
+  const shownNumber = displayValue || count.toLocaleString('de-DE');
+  const reserveValue = `${reserveNumber}${suffix || ''}`;
 
   return (
-    <KPICard ref={ref}>
-      <AccentBar />
-      <ParallelogramDecor />
-      <CyberCorners $color={tokens.colors.mint} $size={8} />
-      <AccentTag>{accent}</AccentTag>
-      <ValueRow>
-        <Value>{displayValue || count.toLocaleString('de-DE')}</Value>
-        {suffix && <Suffix>{suffix}</Suffix>}
-      </ValueRow>
-      <Label>{label}</Label>
+    <KPICard ref={ref} $accent={color}>
+      <AccentBar $accent={color} />
+      <ParallelogramDecor $accent={color} />
+      <CyberCorners $color={color} $size={8} />
+      <AccentTag $accent={color}>{accent}</AccentTag>
+      <MetricBody>
+        <ValueRow>
+          <Value data-reserve={reserveValue}>
+            <span>
+              {shownNumber}
+              {suffix && <ValueSuffix $accent={color}>{suffix}</ValueSuffix>}
+            </span>
+          </Value>
+        </ValueRow>
+        <Label>{label}</Label>
+      </MetricBody>
     </KPICard>
   );
 }
@@ -291,6 +356,7 @@ export default function KPISection() {
             <KPIItem key={kpi.label} {...kpi} />
           ))}
         </Grid>
+        <ReviewTrustBar />
       </Inner>
     </Section>
   );

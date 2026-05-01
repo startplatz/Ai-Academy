@@ -20,16 +20,19 @@ const KEYWORDS = [
   {
     word: 'KARRIERE',
     color: tokens.colors.mint,
+    sheenOpacity: 1,
     sub: 'Gefördert. AZAV-zertifiziert. Dein KI-Neustart beginnt hier.',
   },
   {
     word: 'SKILLS',
     color: tokens.colors.navy,
+    sheenOpacity: 0.48,
     sub: 'Abends lernen, täglich anwenden. Staatlich anerkannt.',
   },
   {
     word: 'ZUKUNFT',
     color: tokens.colors.orange,
+    sheenOpacity: 0.58,
     sub: 'Praxisnah. Messbar wirksam. KI-Kompetenz für euer Team.',
   },
 ];
@@ -169,7 +172,7 @@ const keywordSheen = keyframes`
     mask-position: 160% 0;
   }
   36% {
-    opacity: 0.48;
+    opacity: var(--sheen-opacity, 0.48);
     -webkit-mask-position: 58% 0;
     mask-position: 58% 0;
   }
@@ -185,6 +188,7 @@ const MorphWord = styled.span`
   display: block;
   will-change: opacity, filter;
   color: ${tokens.colors.primary};
+  --sheen-opacity: ${({ $sheenOpacity }) => $sheenOpacity ?? 0.48};
 
   &::after {
     content: attr(data-text);
@@ -543,6 +547,7 @@ export default function Hero() {
                     >
                       <MorphWord
                         $color={currentKeyword.color}
+                        $sheenOpacity={currentKeyword.sheenOpacity}
                         $introReady={introReady}
                         data-text={displayWord}
                         style={getMorphStyle()}

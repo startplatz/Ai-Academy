@@ -4,203 +4,160 @@ import React from 'react';
 import styled from 'styled-components';
 import { REVIEW_RATINGS } from '../lib/reviewRatings';
 import { tokens, media } from '../styles/tokens';
-import { CHAMFER, CyberCorners, clipBR, clipTLBR } from '../styles/cyberpunk';
 
-const accentColor = (accent) => {
-  if (accent === 'navy') return tokens.colors.navy;
-  if (accent === 'primary') return tokens.colors.primary;
-  if (accent === 'mint') return tokens.colors.mint;
-  return tokens.colors.primary;
+const REVIEW_LOGOS = {
+  google: {
+    light: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg',
+    dark: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg',
+    width: 74,
+    height: 25,
+  },
+  provenexpert: {
+    light: 'https://www.provenexpert.com/images/logo/proven_expert_black.svg',
+    dark: 'https://www.provenexpert.com/images/logo/proven_expert.svg',
+    width: 132,
+    height: 18,
+  },
 };
 
-const Section = styled.section`
+const getLogo = (id, tone = 'light') => REVIEW_LOGOS[id]?.[tone] || REVIEW_LOGOS[id]?.light;
+
+const formatCount = (detail, suffix) => detail.replace(suffix, '');
+
+const Rail = styled.section`
   position: relative;
-  z-index: 1;
-  padding: ${tokens.spacing['3xl']} ${tokens.spacing.lg};
-  background: linear-gradient(180deg, rgba(255,255,255,0.68), rgba(248,246,251,0.84));
+  z-index: 2;
+  width: 100%;
+  padding: ${tokens.spacing.xl} 0 0;
+  background: transparent;
 
   ${media.lg} {
-    padding: ${tokens.spacing['3xl']} ${tokens.spacing['2xl']};
+    padding-top: ${tokens.spacing['2xl']};
   }
 `;
 
-const Inner = styled.div`
-  max-width: 1400px;
+const RailInner = styled.div`
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: ${tokens.spacing.xl};
-  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: ${tokens.spacing.md};
+  padding: ${tokens.spacing.lg} 0 0;
+  border-top: 1px solid rgba(124,58,237,0.16);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  padding-bottom: ${tokens.spacing.lg};
 
-  ${media.lg} {
-    grid-template-columns: minmax(260px, 0.9fr) minmax(0, 2fr);
+  ${media.md} {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 `;
 
-const Intro = styled.div`
-  position: relative;
-  padding: ${tokens.spacing.xl};
-  background: rgba(255,255,255,0.72);
-  border: 1px solid rgba(124,58,237,0.12);
-  ${clipTLBR(CHAMFER.md)}
+const RailCopy = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
 `;
 
-const Eyebrow = styled.span`
-  display: block;
+const RailLabel = styled.span`
   font-family: ${tokens.fonts.mono};
-  font-size: 11px;
+  font-size: 10px;
   font-weight: ${tokens.fontWeights.medium};
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: ${tokens.colors.primary};
-  margin-bottom: ${tokens.spacing.sm};
 `;
 
-const Title = styled.h2`
-  font-family: ${tokens.fonts.display};
-  font-size: clamp(${tokens.fontSizes['2xl']}, 3vw, ${tokens.fontSizes['4xl']});
-  font-weight: ${tokens.fontWeights.black};
-  line-height: ${tokens.lineHeights.tight};
-  text-transform: uppercase;
-  letter-spacing: 0;
-  color: ${tokens.colors.text};
-  margin-bottom: ${tokens.spacing.md};
-`;
-
-const Copy = styled.p`
-  color: ${tokens.colors.textMuted};
-  font-size: ${tokens.fontSizes.sm};
-  line-height: ${tokens.lineHeights.relaxed};
-`;
-
-const Checked = styled.span`
-  display: inline-block;
-  margin-top: ${tokens.spacing.md};
-  font-family: ${tokens.fonts.mono};
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+const RailSource = styled.span`
   color: ${tokens.colors.textDim};
-`;
-
-const RatingsGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: ${tokens.spacing.md};
-
-  ${media.md} {
-    grid-template-columns: repeat(3, 1fr);
-  }
-`;
-
-const RatingCard = styled.a`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: 178px;
-  padding: ${tokens.spacing.xl};
-  background: ${tokens.colors.surface};
-  border: 1px solid rgba(0,0,0,0.07);
-  color: ${tokens.colors.text};
-  text-decoration: none;
-  overflow: hidden;
-  ${clipBR(CHAMFER.md)}
-  transition: transform ${tokens.transitions.base}, border-color ${tokens.transitions.base},
-              filter ${tokens.transitions.base};
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: ${({ $accent }) => $accent};
-  }
-
-  &:hover {
-    transform: translateY(-3px);
-    border-color: ${({ $accent }) => $accent};
-    filter: drop-shadow(0 12px 28px rgba(124,58,237,0.10));
-  }
-`;
-
-const CardLabel = styled.span`
-  font-family: ${tokens.fonts.mono};
-  font-size: 11px;
-  font-weight: ${tokens.fontWeights.medium};
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: ${({ $accent }) => $accent};
-  margin-bottom: auto;
-`;
-
-const ValueLine = styled.div`
-  display: flex;
-  align-items: baseline;
-  gap: 4px;
-  margin: ${tokens.spacing.lg} 0 ${tokens.spacing.sm};
-`;
-
-const Value = styled.span`
-  font-family: ${tokens.fonts.display};
-  font-size: clamp(${tokens.fontSizes['4xl']}, 5vw, ${tokens.fontSizes['6xl']});
-  font-weight: ${tokens.fontWeights.black};
-  line-height: 0.9;
-  letter-spacing: 0;
-`;
-
-const Suffix = styled.span`
-  font-family: ${tokens.fonts.display};
-  font-size: ${tokens.fontSizes.xl};
-  font-weight: ${tokens.fontWeights.bold};
-  color: ${tokens.colors.textDim};
-`;
-
-const Detail = styled.span`
-  color: ${tokens.colors.textMuted};
-  font-size: ${tokens.fontSizes.sm};
+  font-size: ${tokens.fontSizes.xs};
   line-height: ${tokens.lineHeights.normal};
 `;
 
-const TotalCard = styled.div`
-  position: relative;
+const Metrics = styled.div`
   display: flex;
-  flex-direction: column;
-  min-height: 178px;
-  padding: ${tokens.spacing.xl};
-  background: ${tokens.colors.dark};
-  color: #fff;
-  overflow: hidden;
-  ${clipBR(CHAMFER.md)}
+  flex-wrap: wrap;
+  align-items: center;
+  gap: ${tokens.spacing.sm} ${tokens.spacing.lg};
+`;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: ${tokens.colors.mint};
+const MetricLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: ${tokens.spacing.sm};
+  min-height: 34px;
+  color: ${tokens.colors.textSoft};
+  text-decoration: none;
+  transition: color ${tokens.transitions.fast}, opacity ${tokens.transitions.fast};
+
+  &:hover {
+    color: ${tokens.colors.primary};
+  }
+`;
+
+const LogoMark = styled.span`
+  display: inline-block;
+  width: ${({ $width }) => $width}px;
+  height: ${({ $height }) => $height}px;
+  background-image: url("${({ $src }) => $src}");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  flex-shrink: 0;
+`;
+
+const Score = styled.span`
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+  font-family: ${tokens.fonts.display};
+  font-size: ${tokens.fontSizes.lg};
+  font-weight: ${tokens.fontWeights.black};
+  letter-spacing: 0;
+
+  small {
+    color: ${tokens.colors.textDim};
+    font-size: ${tokens.fontSizes.xs};
+    font-weight: ${tokens.fontWeights.bold};
+  }
+`;
+
+const CountLink = styled.a`
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+  min-height: 34px;
+  color: ${tokens.colors.textMuted};
+  text-decoration: none;
+  transition: color ${tokens.transitions.fast};
+
+  &:hover {
+    color: ${tokens.colors.primary};
   }
 
-  ${Detail}, ${Suffix} {
-    color: rgba(255,255,255,0.58);
+  strong {
+    color: ${tokens.colors.text};
+    font-family: ${tokens.fonts.display};
+    font-size: ${tokens.fontSizes.lg};
+    font-weight: ${tokens.fontWeights.black};
+  }
+
+  span {
+    font-size: ${tokens.fontSizes.xs};
   }
 `;
 
 const FooterWrap = styled.div`
-  position: relative;
   margin: ${tokens.spacing.lg} 0 ${tokens.spacing.xl};
-  padding: ${tokens.spacing.md};
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  ${clipBR(CHAMFER.xs)}
+  padding: ${tokens.spacing.md} 0;
+  border-top: 1px solid rgba(255,255,255,0.10);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 `;
 
 const FooterTitle = styled.a`
   display: inline-flex;
-  color: #fff;
+  color: rgba(255,255,255,0.86);
   font-family: ${tokens.fonts.mono};
   font-size: 10px;
   font-weight: ${tokens.fontWeights.medium};
@@ -210,7 +167,7 @@ const FooterTitle = styled.a`
   margin-bottom: ${tokens.spacing.sm};
 
   &:hover {
-    color: ${tokens.colors.primaryLight};
+    color: #fff;
   }
 `;
 
@@ -222,7 +179,10 @@ const FooterLine = styled.div`
 `;
 
 const FooterMetric = styled.a`
-  color: rgba(255,255,255,0.68);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: rgba(255,255,255,0.64);
   font-size: ${tokens.fontSizes.xs};
   line-height: ${tokens.lineHeights.normal};
   text-decoration: none;
@@ -267,48 +227,45 @@ export function ReviewTrustBar() {
   const ratings = useReviewRatings();
 
   return (
-    <Section aria-label="STARTPLATZ Bewertungen">
-      <Inner>
-        <Intro>
-          <CyberCorners $color={tokens.colors.primary} $size={10} />
-          <Eyebrow>STARTPLATZ Bewertungen</Eyebrow>
-          <Title>Vertrauen aus dem STARTPLATZ Netzwerk</Title>
-          <Copy>
-            Bewertungen aus dem STARTPLATZ Profil auf ProvenExpert inklusive Google-Quelle.
-          </Copy>
-          <Checked>{ratings.checkedAt}</Checked>
-        </Intro>
-        <RatingsGrid>
+    <Rail aria-label="STARTPLATZ Bewertungen">
+      <RailInner>
+        <RailCopy>
+          <RailLabel>STARTPLATZ Bewertungen</RailLabel>
+          <RailSource>{ratings.checkedAt}</RailSource>
+        </RailCopy>
+        <Metrics>
           {ratings.platforms.map((rating) => {
-            const color = accentColor(rating.accent);
+            const logo = REVIEW_LOGOS[rating.id];
             return (
-              <RatingCard
+              <MetricLink
                 key={rating.id}
                 href={rating.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                $accent={color}
                 aria-label={`${rating.name}: ${rating.value}${rating.suffix} ${rating.label}`}
               >
-                <CardLabel $accent={color}>{rating.name}</CardLabel>
-                <ValueLine>
-                  <Value>{rating.value}</Value>
-                  {rating.suffix && <Suffix>{rating.suffix}</Suffix>}
-                </ValueLine>
-                <Detail>{rating.label}<br />{rating.detail}</Detail>
-              </RatingCard>
+                {logo && (
+                  <LogoMark
+                    aria-hidden="true"
+                    $src={getLogo(rating.id, 'light')}
+                    $width={logo.width}
+                    $height={logo.height}
+                  />
+                )}
+                <Score>
+                  {rating.value}
+                  {rating.suffix && <small>{rating.suffix}</small>}
+                </Score>
+              </MetricLink>
             );
           })}
-          <TotalCard>
-            <CardLabel $accent={tokens.colors.mint}>Gesamt</CardLabel>
-            <ValueLine>
-              <Value>{ratings.total.value}</Value>
-            </ValueLine>
-            <Detail>{ratings.total.label}<br />{ratings.total.detail}</Detail>
-          </TotalCard>
-        </RatingsGrid>
-      </Inner>
-    </Section>
+          <CountLink href={ratings.sourceUrl} target="_blank" rel="noopener noreferrer">
+            <strong>{ratings.total.value}</strong>
+            <span>{ratings.total.label}</span>
+          </CountLink>
+        </Metrics>
+      </RailInner>
+    </Rail>
   );
 }
 
@@ -319,7 +276,6 @@ export function FooterReviewRatings() {
 
   return (
     <FooterWrap aria-label="STARTPLATZ Bewertungen">
-      <CyberCorners $color={tokens.colors.mint} $size={7} />
       <FooterTitle href={ratings.sourceUrl} target="_blank" rel="noopener noreferrer">
         STARTPLATZ Bewertungen
       </FooterTitle>
@@ -329,12 +285,26 @@ export function FooterReviewRatings() {
         </FooterMetric>
         {google && (
           <FooterMetric href={google.href} target="_blank" rel="noopener noreferrer">
-            Google <strong>{google.value}{google.suffix}</strong> ({google.detail.replace(' Bewertungen auf Google', '')})
+            <LogoMark
+              aria-hidden="true"
+              $src={getLogo('google', 'dark')}
+              $width={58}
+              $height={20}
+            />
+            <strong>{google.value}{google.suffix}</strong>
+            ({formatCount(google.detail, ' Bewertungen auf Google')})
           </FooterMetric>
         )}
         {provenExpert && (
           <FooterMetric href={provenExpert.href} target="_blank" rel="noopener noreferrer">
-            ProvenExpert <strong>{provenExpert.value}{provenExpert.suffix}</strong> ({provenExpert.detail.replace(' Bewertungen auf ProvenExpert', '')})
+            <LogoMark
+              aria-hidden="true"
+              $src={getLogo('provenexpert', 'dark')}
+              $width={108}
+              $height={16}
+            />
+            <strong>{provenExpert.value}{provenExpert.suffix}</strong>
+            ({formatCount(provenExpert.detail, ' Bewertungen auf ProvenExpert')})
           </FooterMetric>
         )}
       </FooterLine>
