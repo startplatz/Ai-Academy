@@ -136,6 +136,13 @@ const VerticalLabel = styled.span`
   top: 50%; left: 50%;
   transform: translate(-50%, -50%) rotate(-90deg);
   z-index: 3;
+  opacity: ${({ $visible }) => ($visible ? 1 : 0)};
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+`;
+
+const LabelText = styled.span`
+  display: block;
   font-family: ${tokens.fonts.display};
   font-size: 14px;
   font-weight: ${tokens.fontWeights.bold};
@@ -143,17 +150,12 @@ const VerticalLabel = styled.span`
   white-space: nowrap;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  opacity: ${({ $visible }) => ($visible ? 0.9 : 0)};
-  transition: opacity 0.5s ease;
-  pointer-events: none;
   text-shadow: 0 1px 8px rgba(0,0,0,0.8);
-  animation: ${({ $visible }) => $visible
-    ? css`${labelShimmer} 7.8s ease-in-out infinite both`
-    : 'none'};
+  animation: ${labelShimmer} 7.8s ease-in-out infinite both;
 
   @media (prefers-reduced-motion: reduce) {
     animation: none;
-    opacity: ${({ $visible }) => ($visible ? 0.9 : 0)};
+    opacity: 0.9;
   }
 `;
 
@@ -258,7 +260,6 @@ export default function PersonaReveal() {
     <Wrapper role="group" aria-label="Zielgruppen">
       {PERSONAS.map((p, i) => {
         const isActive = activeId === p.id;
-        const showVertical = hasActive && !isActive;
         const pos = i === 0 ? 'first' : i === PERSONAS.length - 1 ? 'last' : 'mid';
 
         return (
@@ -270,7 +271,9 @@ export default function PersonaReveal() {
             <PanelImage $src={p.image} $active={isActive} />
             <Overlay $active={isActive} />
             {/* Vertical label: immer sichtbar solange Panel nicht selbst aktiv */}
-            <VerticalLabel $visible={!isActive}>{p.title}</VerticalLabel>
+            <VerticalLabel $visible={!isActive}>
+              <LabelText>{p.title}</LabelText>
+            </VerticalLabel>
             {/* Idle accent line: farbiger Balken unten — immer sichtbar wenn kein Panel aktiv */}
             <IdleLabel $visible={!hasActive}>
               <IdleAccent $color={p.color} />
