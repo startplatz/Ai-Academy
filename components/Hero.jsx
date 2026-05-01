@@ -161,34 +161,67 @@ const MorphParallax = styled.span`
   will-change: transform;
 `;
 
-/* The morphing keyword — only opacity + filter transition (no layout-affecting props) */
+/* The morphing keyword — category-color wash through a lightweight text mask */
 const keywordSheen = keyframes`
-  0%, 10% { background-position: 0% 50%; }
-  34%     { background-position: 52% 50%; }
-  58%, 100% { background-position: 100% 50%; }
+  0%, 18% {
+    opacity: 0;
+    -webkit-mask-position: 160% 0;
+    mask-position: 160% 0;
+  }
+  36% {
+    opacity: 0.48;
+    -webkit-mask-position: 58% 0;
+    mask-position: 58% 0;
+  }
+  62%, 100% {
+    opacity: 0;
+    -webkit-mask-position: -78% 0;
+    mask-position: -78% 0;
+  }
 `;
 
 const MorphWord = styled.span`
+  position: relative;
   display: block;
   will-change: opacity, filter;
-  background: linear-gradient(
-    110deg,
-    ${tokens.colors.primary} 0%,
-    ${tokens.colors.primary} 46.8%,
-    ${tokens.colors.primaryLight} 47.6%,
-    ${({ $color }) => $color || tokens.colors.primaryLight} 48.1%,
-    ${tokens.colors.primaryLight} 48.6%,
-    ${tokens.colors.primary} 49.4%,
-    ${tokens.colors.primary} 100%
-  );
-  background-position: 0% 50%;
-  background-size: 260% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: ${tokens.colors.primary};
+
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    color: ${({ $color }) => $color || tokens.colors.primaryLight};
+    opacity: 0;
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(
+      105deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.1) 28%,
+      #000 46%,
+      #000 54%,
+      rgba(0, 0, 0, 0.1) 72%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      105deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.1) 28%,
+      #000 46%,
+      #000 54%,
+      rgba(0, 0, 0, 0.1) 72%,
+      transparent 100%
+    );
+    -webkit-mask-size: 220% 100%;
+    mask-size: 220% 100%;
+    -webkit-mask-position: 160% 0;
+    mask-position: 160% 0;
+  }
+
   ${({ $introReady }) => $introReady && css`
-    animation: ${keywordSheen} 7.2s ease-in-out infinite;
-    animation-delay: 0.45s;
+    &::after {
+      animation: ${keywordSheen} 7.2s ease-in-out infinite;
+      animation-delay: 1s;
+    }
   `}
   transition:
     opacity ${DISSOLVE_MS}ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -508,7 +541,12 @@ export default function Hero() {
                       aria-hidden="true"
                       style={{ transform: `translate(${x * depths[2]}px, ${y * depths[2]}px)` }}
                     >
-                      <MorphWord $color={currentKeyword.color} $introReady={introReady} style={getMorphStyle()}>
+                      <MorphWord
+                        $color={currentKeyword.color}
+                        $introReady={introReady}
+                        data-text={displayWord}
+                        style={getMorphStyle()}
+                      >
                         {displayWord}
                       </MorphWord>
                     </MorphParallax>
