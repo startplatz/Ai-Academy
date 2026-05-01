@@ -38,6 +38,7 @@ React 19 does not mean this is a client-only SPA. The site must keep SEO-critica
 - Do not manually remove or reparent React-owned DOM nodes.
 - Do not reintroduce `middleware.js`; Next 16 uses `proxy.js`.
 - Do not globally/eagerly load third-party scripts that are only needed after interaction.
+- STARTPLATZ ratings on the homepage/footer are fetched through `/api/review-ratings`, which reads the STARTPLATZ ProvenExpert profile and caches it. Do not hardcode new rating numbers directly in components; update the fallback in `lib/reviewRatings.js` only if the live source shape changes.
 
 ## SEO Rules
 

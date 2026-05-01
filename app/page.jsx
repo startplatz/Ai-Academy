@@ -2,6 +2,7 @@
 
 import SharedLayout from '../components/SharedLayout';
 import Hero from '../components/Hero';
+import { ReviewTrustBar } from '../components/ReviewRatings';
 import TargetAudience from '../components/TargetAudience';
 import TeamSection from '../components/TeamSection';
 import KPISection from '../components/KPISection';
@@ -16,6 +17,7 @@ export default function HomePage() {
   return (
     <SharedLayout showPreloader={true}>
       <Hero />
+      <ReviewTrustBar />
       <TargetAudience />
       <TeamSection />
       <KPISection />

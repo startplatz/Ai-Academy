@@ -476,18 +476,20 @@ export default function Navigation() {
               <NavItem key={l.href}>
                 {l.children ? (
                   <>
-                    <Link href={l.href} passHref legacyBehavior>
-                      <NavLink aria-haspopup="true">
+                    <NavLink as={Link} href={l.href} aria-haspopup="true">
                       {l.label}
-                        <DropdownTrigger aria-hidden="true">▼</DropdownTrigger>
-                      </NavLink>
-                    </Link>
+                      <DropdownTrigger aria-hidden="true">▼</DropdownTrigger>
+                    </NavLink>
                     <Dropdown>
                       <DropdownInner>
                         {l.children.map((child) => (
-                          <Link key={`${l.href}-${child.href}-${child.label}`} href={child.href} passHref legacyBehavior>
-                            <DropdownLink>{child.label}</DropdownLink>
-                          </Link>
+                          <DropdownLink
+                            key={`${l.href}-${child.href}-${child.label}`}
+                            as={Link}
+                            href={child.href}
+                          >
+                            {child.label}
+                          </DropdownLink>
                         ))}
                       </DropdownInner>
                     </Dropdown>
@@ -501,9 +503,7 @@ export default function Navigation() {
                     {l.label}
                   </NavLink>
                 ) : (
-                  <Link href={l.href} passHref legacyBehavior>
-                    <NavLink>{l.label}</NavLink>
-                  </Link>
+                  <NavLink as={Link} href={l.href}>{l.label}</NavLink>
                 )}
               </NavItem>
             ))}
@@ -582,18 +582,19 @@ export default function Navigation() {
               }
 
               return (
-                <Link key={l.mobileKey} href={l.href} passHref legacyBehavior>
-                  <MobileLink
-                    $open={mobileOpen}
-                    $delay={delay}
-                    $idx={i + 1}
-                    onClick={closeMobile}
-                    tabIndex={mobileOpen ? 0 : -1}
-                  >
-                    <MobileLinkLabel>{l.label}</MobileLinkLabel>
-                    <MobileLinkArrow>→</MobileLinkArrow>
-                  </MobileLink>
-                </Link>
+                <MobileLink
+                  key={l.mobileKey}
+                  as={Link}
+                  href={l.href}
+                  $open={mobileOpen}
+                  $delay={delay}
+                  $idx={i + 1}
+                  onClick={closeMobile}
+                  tabIndex={mobileOpen ? 0 : -1}
+                >
+                  <MobileLinkLabel>{l.label}</MobileLinkLabel>
+                  <MobileLinkArrow>→</MobileLinkArrow>
+                </MobileLink>
               );
             });
           })()}

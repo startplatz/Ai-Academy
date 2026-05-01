@@ -313,9 +313,9 @@ export default function TargetAudience() {
               <FeatureList>
                 {a.features.map((f) => <Feature key={f} $color={a.color}>{f}</Feature>)}
               </FeatureList>
-              <Link href={a.href} passHref legacyBehavior>
-                <CardCTA $color={a.color}>{a.cta}<ArrowSVG /></CardCTA>
-              </Link>
+              <CardCTA as={Link} href={a.href} $color={a.color}>
+                {a.cta}<ArrowSVG />
+              </CardCTA>
             </CardBody>
           </Card>
         ))}
