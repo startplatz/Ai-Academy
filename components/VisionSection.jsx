@@ -117,7 +117,7 @@ const QuoteMark = styled.div`
 
 export default function VisionSection() {
   return (
-    <PlanetSection id="vision">
+    <PlanetSection id="vision" compactTop>
       <Grid>
         <GlassCard $gradient={`linear-gradient(90deg, ${tokens.colors.primary}, ${tokens.colors.primaryMuted})`}>
           <CyberCorners $color={tokens.colors.mint} $size={12} />

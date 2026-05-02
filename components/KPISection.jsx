@@ -56,7 +56,7 @@ const shimmer = keyframes`
 const Section = styled.section`
   position: relative;
   z-index: 1;
-  padding: ${tokens.spacing.section} 0;
+  padding: ${tokens.spacing.section} 0 clamp(2rem, 4vh, 3rem);
   overflow: hidden;
 `;
 

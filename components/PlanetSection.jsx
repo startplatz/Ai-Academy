@@ -14,7 +14,10 @@ import { clipBR, CHAMFER } from '../styles/cyberpunk';
 const Wrapper = styled.section`
   position: relative;
   z-index: 1;
-  padding: ${tokens.spacing.section} 0;
+  padding: ${({ $compactTop }) =>
+    $compactTop
+      ? `clamp(2rem, 4vh, 3.5rem) 0 ${tokens.spacing.section}`
+      : `${tokens.spacing.section} 0`};
   overflow: hidden;
 
   /* Glass is on <main> — sections only add subtle shade variants */
@@ -142,7 +145,7 @@ const SectionSubtitle = styled.p`
 export default function PlanetSection({
   id, badge, title, subtitle,
   accent, showStitch = true, bgImage, bgImageOpacity,
-  glass = false, solid = false,
+  glass = false, solid = false, compactTop = false,
   children,
 }) {
   const sectionRef = useRef(null);
@@ -188,6 +191,7 @@ export default function PlanetSection({
       id={id}
       $glass={glass}
       $solid={solid}
+      $compactTop={compactTop}
       onMouseMove={handleMouseMove}
       aria-labelledby={id && title ? `${id}-title` : undefined}
     >
