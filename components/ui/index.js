@@ -17,10 +17,20 @@ export { default as ReflectiveInstructorCard } from './ReflectiveInstructorCard'
 export { default as TestimonialCard } from './TestimonialCard';
 export { default as StatsRow } from './StatsRow';
 export {
+  ChromaShowcase,
+  DecisionLab,
+  FreebieConsole,
+  MilestoneRail,
+  ProjectCinemaShowcase,
+  ScrollStackShowcase,
+  SpotlightBento,
+} from './ConversionBlocks';
+export {
   BeforeAfter,
   DetailTable,
   MiniFAQ,
   ResponsiveGrid,
+  SearchQuestionAnswers,
   TwoColumn,
   VisualSlot,
 } from './ContentBlocks';

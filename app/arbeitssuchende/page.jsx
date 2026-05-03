@@ -7,11 +7,14 @@ import {
   Button,
   CTABanner,
   DetailTable,
-  FeatureCard,
+  FreebieConsole,
   MiniFAQ,
+  MilestoneRail,
   PageHero,
-  ResponsiveGrid,
+  ProjectCinemaShowcase,
+  SearchQuestionAnswers,
   SectionBlock,
+  SpotlightBento,
   StatsRow,
   TwoColumn,
   VisualSlot,
@@ -21,6 +24,7 @@ import { tokens } from '../../styles/tokens';
 import { clipBR, CHAMFER, CyberCorners } from '../../styles/cyberpunk';
 import { CALENDLY_URL } from '../../lib/site';
 import { PRODUCT_CATALOG_URL } from '../../lib/productCatalog';
+import { searchIntentQuestions } from '../../lib/searchIntentQuestions';
 
 const Panel = styled.div`
   position: relative;
@@ -169,6 +173,105 @@ export default function ArbeitssuchendePage() {
     { displayValue: '60.000', label: 'Offene KI-Stellen in Deutschland' },
   ];
 
+  const projectExamples = [
+    {
+      kicker: 'Teilnehmerprojekt / App',
+      title: 'Tankr²',
+      hook: 'Aus einer handgeschriebenen App-Story wurde eine echte PWA: Tankvorgänge fotografieren, OCR auslesen, Reporting sehen.',
+      image: '/project-examples/tankr-cover.png',
+      imageAlt: 'Cover des Teilnehmerprojekts Tankr',
+      deckLabel: 'Tankr² - Eine KI-Reise',
+      deckMeta: 'App, OCR, Self-hosted Stack',
+      acts: [
+        {
+          label: 'Ausgangspunkt',
+          text: 'Kein Code, sondern eine klare Produktgeschichte: Was soll passieren, wenn ein Nutzer Cockpit und Zapfsäule fotografiert?',
+        },
+        {
+          label: 'KI als Baupartner',
+          text: 'Claude übersetzte die Story in eine Markdown-Spec, Antigravity lieferte die erste App, danach kam der Reboot mit besserer UX.',
+        },
+        {
+          label: 'Ergebnis',
+          text: 'React, Vite, Supabase, n8n, Resend und Mistral Vision: OCR-Konfidenz von etwa 50% auf etwa 90% verbessert.',
+        },
+      ],
+      proof: ['Von Sprache zu Produkt', 'OCR-Tuning', 'Live-Demo-fähig'],
+      ctaLabel: 'Eigene Projektidee finden',
+    },
+    {
+      kicker: 'Teilnehmerprojekt / Compliance',
+      title: 'Die Zukunft der SOP-Erstellung',
+      hook: 'Ein GMP-naher Workflow, der Pflichtdokumentation in ein skalierbares Compliance-System übersetzt.',
+      image: '/project-examples/sop-cover.png',
+      imageAlt: 'Cover des Teilnehmerprojekts zur automatisierten SOP-Erstellung',
+      deckLabel: 'SOP-Erstellung',
+      deckMeta: 'n8n, KI-Agenten, GMP',
+      acts: [
+        {
+          label: 'Problem',
+          text: 'SOPs kosten Wochen, werden inkonsistent geschrieben und erzeugen Audit-Risiken durch manuelle Pflege.',
+        },
+        {
+          label: 'Workflow',
+          text: 'Formulareingabe, KI-Analyse, strukturierte Generierung und Layout-Ausgabe in HTML, CSS und PDF.',
+        },
+        {
+          label: 'Ergebnis',
+          text: 'EU-GMP-konforme Dokumente mit einheitlicher Sprache, dynamischen Templates und Audit-Trail in Google Sheets.',
+        },
+      ],
+      proof: ['Business Case', 'Governance', 'Enterprise-tauglich'],
+      ctaLabel: 'Projektpfad besprechen',
+    },
+    {
+      kicker: 'Teilnehmerprojekt / Jobsuche',
+      title: 'Der Job Finder Buddy',
+      hook: 'Ein persönlicher KI-Assistent, der Job-Alerts, RSS-Quellen und Matching-Logik in eine klare Bewerbungsauswahl verwandelt.',
+      image: '/project-examples/jobfinder-cover.png',
+      imageAlt: 'Cover des Teilnehmerprojekts Job Finder Buddy',
+      deckLabel: 'Job Finder Buddy',
+      deckMeta: 'RSS, Gmail, OpenAI Matching',
+      acts: [
+        {
+          label: 'Pain',
+          text: 'Zu viele Job-Alert-Mails, verstreute Portale und manuelles Prüfen jeder einzelnen Stelle.',
+        },
+        {
+          label: 'System',
+          text: 'RSS-Collector, Gmail-Trigger, Plattform-Parser, First-Level-Filter und tiefes Matching gegen das eigene Profil.',
+        },
+        {
+          label: 'Output',
+          text: 'Aus rund 100 Jobs werden 10 bis 15 starke Matches mit fundierter Entscheidungsgrundlage für Bewerbungen.',
+        },
+      ],
+      proof: ['Persönlicher ROI', 'n8n Pipeline', 'Matching-Score'],
+      ctaLabel: 'Neustart konkret planen',
+    },
+  ];
+
+  const freebies = [
+    {
+      title: 'KI-Manager Projektideen Canvas',
+      description: 'Ein Canvas, mit dem du aus einer vagen Idee ein präsentierbares Kursprojekt machst.',
+      href: '/freebies/ki-manager-projektideen-canvas.md',
+      type: 'Canvas',
+    },
+    {
+      title: 'Bildungsgutschein Gesprächsprompt',
+      description: 'Prompt für eine klare Argumentation im Gespräch mit Agentur für Arbeit oder Jobcenter.',
+      href: '/freebies/bildungsgutschein-gespraechsprompt.md',
+      type: 'Prompt',
+    },
+    {
+      title: 'Bewerbungsstory Prompt Pack',
+      description: 'Prompts für Positionierung, Stellenanzeigen-Matching und Interviewtraining.',
+      href: '/freebies/bewerbungsstory-prompt-pack.md',
+      type: 'Prompt Pack',
+    },
+  ];
+
   const testimonials = [
     { quote: 'Ich habe nicht einmal Zeit gefunden, mit Freunden zu zocken — weil es mich so gepackt hat. Das Programm hat nicht nur mein Wissen verändert, sondern auch mein Selbstbewusstsein.', source: 'Oskar, Absolvent' },
     { quote: 'Am meisten hat mich beeindruckt, wie viel Zeit man durch Automatisierungen zurückgewinnen kann. Ich weiß jetzt, wie ich wieder Herrin meiner Zeit werde.', source: 'Aline, Absolventin' },
@@ -244,19 +347,39 @@ export default function ArbeitssuchendePage() {
         subtitle="Jede Phase baut auf der vorherigen auf und endet in praktischer Anwendung."
         accent={tokens.colors.glowMint}
       >
-        <ResponsiveGrid $cols={4}>
-          {curriculum.map((item) => (
-            <FeatureCard
-              key={item.title}
-              step={item.step}
-              title={item.title}
-              description={item.description}
-              accentColor={tokens.colors.mint}
-              accentBg={tokens.colors.mintBg}
-              cornerColor={tokens.colors.mint}
-            />
-          ))}
-        </ResponsiveGrid>
+        <MilestoneRail
+          items={curriculum.map((item) => ({
+            ...item,
+            kicker: `Woche ${item.step}`,
+          }))}
+          intro={{
+            kicker: 'FortyDays Lernpfad',
+            title: 'Vom ersten Prompt bis zum eigenen KI-Agenten.',
+            text: 'Der rote Faden bleibt sichtbar: Orientierung, Anwendung, Strategie und Zertifizierung bauen aufeinander auf.',
+            meta: ['40 Unterrichtstage', 'Live begleitet', 'Portfolio-Projekt'],
+          }}
+          accentColor={tokens.colors.mint}
+          accentBg={tokens.colors.mintBg}
+        />
+      </SectionBlock>
+
+      <SectionBlock
+        badge="Projektbeispiele"
+        title="Echte Abschlussprojekte statt <span>Kursversprechen.</span>"
+        subtitle="Drei reale KI-Manager Projekte aus dem Kurs: App, Compliance-Automation und Jobsuche. Genau so wird aus Lernen ein Portfolio."
+        variant="dark"
+        accent={tokens.colors.glowMint}
+        allowOverflow
+      >
+        <ProjectCinemaShowcase
+          projects={projectExamples}
+          accentColor={tokens.colors.mint}
+          eyebrow="KI-Manager Projekt-Cinema"
+          title="Das ist der Moment, in dem aus Unsicherheit ein eigenes System wird."
+          text="Kein Demo-Content. Echte Teilnehmerinnen und Teilnehmer haben aus vagen Problemen funktionierende KI-Produkte, Automationen und Entscheidungslogik gebaut."
+          ctaHref={CALENDLY_URL}
+          ctaLabel="Eigene Projektidee besprechen"
+        />
       </SectionBlock>
 
       <SectionBlock
@@ -265,19 +388,23 @@ export default function ArbeitssuchendePage() {
         variant="white"
         accent={tokens.colors.glowMint}
       >
-        <ResponsiveGrid $cols={3}>
-          {process.map((item) => (
-            <FeatureCard
-              key={item.title}
-              step={item.step}
-              title={item.title}
-              description={item.description}
-              accentColor={tokens.colors.mint}
-              accentBg={tokens.colors.mintBg}
-              cornerColor={tokens.colors.mint}
-            />
-          ))}
-        </ResponsiveGrid>
+        <SpotlightBento
+          ariaLabel="Bildungsgutschein Prozess"
+          accentColor={tokens.colors.mint}
+          accentBg={tokens.colors.mintBg}
+          items={process.map((item, index) => ({
+            label: `Schritt ${item.step}`,
+            metric: item.step,
+            title: item.title,
+            description: item.description,
+            size: index === 0 ? 'wide' : index === 1 ? 'sm' : 'full',
+            chips: index === 0
+              ? ['Passung prüfen', 'Argumente sammeln']
+              : index === 1
+                ? ['Agentur für Arbeit', 'Jobcenter']
+                : ['Starttermin', 'Kursplan'],
+          }))}
+        />
       </SectionBlock>
 
       <SectionBlock title="Nach Zahlen" centered accent={tokens.colors.glowMint}>
@@ -303,6 +430,30 @@ export default function ArbeitssuchendePage() {
             ))}
           </QuoteTrack>
         </QuoteViewport>
+      </SectionBlock>
+
+      <SectionBlock
+        badge="Freebies"
+        title="Hol dir ein <span>KI-Manager Startpaket.</span>"
+        subtitle="Nützliche Prompts und Canvas-Vorlagen, die schon vor dem Kurs Orientierung bringen und später als Projektstarter funktionieren."
+        accent={tokens.colors.glowMint}
+      >
+        <FreebieConsole
+          kicker="Kostenlos downloaden"
+          title="Prompts, Canvas, Beratung."
+          text="Diese Dateien sind bewusst praktisch: erst verstehen, dann ausprobieren, dann im Beratungsgespräch den passenden Weg klären."
+          resources={freebies}
+          accentColor={tokens.colors.mint}
+          accentBg={tokens.colors.mintBg}
+        />
+      </SectionBlock>
+
+      <SectionBlock
+        badge="Gefragte Suchfragen"
+        subtitle="Direkte Antworten auf Fragen, die Menschen vor einer geförderten KI-Weiterbildung stellen."
+        accent={tokens.colors.glowMint}
+      >
+        <SearchQuestionAnswers items={searchIntentQuestions.arbeitssuchende} accentColor={tokens.colors.mint} />
       </SectionBlock>
 
       <SectionBlock

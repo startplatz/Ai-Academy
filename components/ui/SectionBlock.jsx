@@ -23,7 +23,7 @@ const Wrapper = styled.section`
   position: relative;
   z-index: 1;
   padding: ${tokens.spacing.section} 0;
-  overflow: hidden;
+  overflow: ${({ $allowOverflow }) => ($allowOverflow ? 'visible' : 'hidden')};
   background: ${({ $variant }) => bgColors[$variant] || bgColors.light};
 `;
 
@@ -103,6 +103,7 @@ export default function SectionBlock({
   accent,
   children,
   centered = false,
+  allowOverflow = false,
 }) {
   const sectionRef = useRef(null);
   const [mousePos, setMousePos] = useState({ x: -300, y: -300 });
@@ -114,6 +115,10 @@ export default function SectionBlock({
   }, []);
 
   useEffect(() => {
+    if (allowOverflow) {
+      return undefined;
+    }
+
     let ctx;
     const init = async () => {
       try {
@@ -130,10 +135,16 @@ export default function SectionBlock({
     };
     init();
     return () => ctx?.revert();
-  }, []);
+  }, [allowOverflow]);
 
   return (
-    <Wrapper ref={sectionRef} id={id} $variant={variant} onMouseMove={handleMouseMove}>
+    <Wrapper
+      ref={sectionRef}
+      id={id}
+      $variant={variant}
+      $allowOverflow={allowOverflow}
+      onMouseMove={handleMouseMove}
+    >
       <GlowLine $accent={accent} />
       <GridHighlight>
         <div style={{
