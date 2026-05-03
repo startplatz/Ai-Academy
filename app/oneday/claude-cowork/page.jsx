@@ -10,6 +10,7 @@ export const metadata = {
 
 const config = {
   href: '/oneday/claude-cowork',
+  searchIntentKey: 'claudeCowork',
   breadcrumb: 'Claude Cowork',
   badge: 'OneDay Workshop · Claude',
   accent: 'primary',

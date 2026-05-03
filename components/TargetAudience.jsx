@@ -5,7 +5,7 @@ import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { tokens, media } from '../styles/tokens';
-import { clipBR, clipTLBR, CHAMFER, CyberCorners } from '../styles/cyberpunk';
+import { clipBR, clipTLBR, CHAMFER, OuterCornerFrame } from '../styles/cyberpunk';
 import PlanetSection from './PlanetSection';
 
 /* ─────────────────────────────────────────────
@@ -85,7 +85,19 @@ const Grid = styled.div`
   ${media.lg} { grid-template-columns: repeat(3, 1fr); }
 `;
 
-const Card = styled.article`
+const CardFrame = styled.article`
+  position: relative;
+  min-width: 0;
+  height: 100%;
+  transition: transform ${tokens.transitions.base}, filter ${tokens.transitions.base};
+
+  &:hover {
+    transform: translateY(-6px);
+    filter: drop-shadow(0 8px 24px rgba(124,58,237,0.10));
+  }
+`;
+
+const Card = styled.div`
   position: relative;
   background: ${tokens.colors.surface};
   border: 1px solid ${tokens.colors.glassBorder};
@@ -94,12 +106,6 @@ const Card = styled.article`
   height: 100%;
   display: flex;
   flex-direction: column;
-  transition: transform ${tokens.transitions.base}, filter ${tokens.transitions.base};
-
-  &:hover {
-    transform: translateY(-6px);
-    filter: drop-shadow(0 8px 24px rgba(124,58,237,0.10));
-  }
 `;
 
 const CardImage = styled.div`
@@ -114,7 +120,7 @@ const CardImage = styled.div`
     transition: transform ${tokens.transitions.slow};
   }
 
-  ${Card}:hover & img { transform: scale(1.05); }
+  ${CardFrame}:hover & img { transform: scale(1.05); }
 
   &::after {
     content: '';
@@ -254,7 +260,7 @@ const StitchTop = styled.div`
   );
   opacity: 0;
   transition: opacity ${tokens.transitions.base};
-  ${Card}:hover & { opacity: 0.6; }
+  ${CardFrame}:hover & { opacity: 0.6; }
 `;
 
 const ArrowSVG = () => (
@@ -299,25 +305,27 @@ export default function TargetAudience() {
     >
       <Grid>
         {AUDIENCES.map((a, i) => (
-          <Card key={a.title} ref={(el) => { cardsRef.current[i] = el; }} id={a.href === '/unternehmen' ? 'unternehmen' : undefined}>
-            <StitchTop $color={a.color} />
-            <CyberCorners $color={a.color} $size={10} />
-            <CardImage>
-              <img src={a.image} alt={`${a.title} — ${a.badge}`} loading="lazy" width="600" height="400" />
-            <CardBadge $color={a.color} $bg={a.colorBg}>{a.badge}</CardBadge>
-            </CardImage>
-            <CardBody>
-              <CardTitle>{a.title}</CardTitle>
-              <CardTitleMeta $color={a.color}>{a.titleMeta}</CardTitleMeta>
-              <CardDesc>{a.description}</CardDesc>
-              <FeatureList>
-                {a.features.map((f) => <Feature key={f} $color={a.color}>{f}</Feature>)}
-              </FeatureList>
-              <CardCTA as={Link} href={a.href} $color={a.color}>
-                {a.cta}<ArrowSVG />
-              </CardCTA>
-            </CardBody>
-          </Card>
+          <CardFrame key={a.title} ref={(el) => { cardsRef.current[i] = el; }} id={a.href === '/unternehmen' ? 'unternehmen' : undefined}>
+            <OuterCornerFrame $color={tokens.colors.mint} $size={14} $offset={9} $revealOnHover />
+            <Card>
+              <StitchTop $color={a.color} />
+              <CardImage>
+                <img src={a.image} alt={`${a.title} — ${a.badge}`} loading="lazy" width="600" height="400" />
+                <CardBadge $color={a.color} $bg={a.colorBg}>{a.badge}</CardBadge>
+              </CardImage>
+              <CardBody>
+                <CardTitle>{a.title}</CardTitle>
+                <CardTitleMeta $color={a.color}>{a.titleMeta}</CardTitleMeta>
+                <CardDesc>{a.description}</CardDesc>
+                <FeatureList>
+                  {a.features.map((f) => <Feature key={f} $color={a.color}>{f}</Feature>)}
+                </FeatureList>
+                <CardCTA as={Link} href={a.href} $color={a.color}>
+                  {a.cta}<ArrowSVG />
+                </CardCTA>
+              </CardBody>
+            </Card>
+          </CardFrame>
         ))}
       </Grid>
     </PlanetSection>

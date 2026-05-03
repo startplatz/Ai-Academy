@@ -9,6 +9,10 @@ export default function robots() {
       // Explizit AI-Crawler erlauben — damit ChatGPT, Claude, Perplexity
       // und andere KI-Suchmaschinen die Seite crawlen und empfehlen können
       {
+        userAgent: 'OAI-SearchBot',
+        allow: '/',
+      },
+      {
         userAgent: 'GPTBot',
         allow: '/',
       },

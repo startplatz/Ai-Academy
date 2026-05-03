@@ -67,6 +67,8 @@ export const CyberCorners = styled.div`
   inset: 0;
   pointer-events: none;
   z-index: 5;
+  opacity: ${({ $revealOnHover }) => ($revealOnHover ? 0 : 1)};
+  transition: opacity ${tokens.transitions.base};
 
   &::before {
     content: '';
@@ -86,6 +88,57 @@ export const CyberCorners = styled.div`
     border-bottom: 2px solid ${({ $color }) => $color || tokens.colors.mint};
     border-right: 2px solid ${({ $color }) => $color || tokens.colors.mint};
   }
+
+  ${({ $revealOnHover }) => $revealOnHover && css`
+    :where(:hover, :focus-within) > & {
+      opacity: 1;
+    }
+
+    @media (hover: none) {
+      opacity: 1;
+    }
+  `}
+`;
+
+export const OuterCornerFrame = styled.div`
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  pointer-events: none;
+  opacity: ${({ $revealOnHover }) => ($revealOnHover ? 0 : 1)};
+  transition: opacity ${tokens.transitions.base};
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: ${({ $size }) => $size || 16}px;
+    height: ${({ $size }) => $size || 16}px;
+  }
+
+  &::before {
+    top: -${({ $offset }) => $offset || 9}px;
+    left: -${({ $offset }) => $offset || 9}px;
+    border-top: 2px solid ${({ $color }) => $color || tokens.colors.mint};
+    border-left: 2px solid ${({ $color }) => $color || tokens.colors.mint};
+  }
+
+  &::after {
+    right: -${({ $offset }) => $offset || 9}px;
+    bottom: -${({ $offset }) => $offset || 9}px;
+    border-right: 2px solid ${({ $color }) => $color || tokens.colors.mint};
+    border-bottom: 2px solid ${({ $color }) => $color || tokens.colors.mint};
+  }
+
+  ${({ $revealOnHover }) => $revealOnHover && css`
+    :where(:hover, :focus-within) > & {
+      opacity: 1;
+    }
+
+    @media (hover: none) {
+      opacity: 1;
+    }
+  `}
 `;
 
 /* Four corner variant */

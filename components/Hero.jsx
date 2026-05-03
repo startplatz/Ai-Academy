@@ -142,6 +142,18 @@ const Headline = styled.h1`
   text-align: left;
 `;
 
+const SeoHeadlineText = styled.span`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+`;
+
 const HeadlineWord = styled.span`
   display: block;
   will-change: transform;
@@ -535,6 +547,7 @@ export default function Hero() {
             aria-label={`Entdecke deine ${displayWord.toLowerCase()} mit KI.`}
             aria-live="polite"
           >
+            <SeoHeadlineText aria-hidden="true">ENTDECKE DEINE KARRIERE MIT KI.</SeoHeadlineText>
             {staticWords.map((word, i) => {
               if (i === 2) {
                 /* The morphing keyword — parallax on outer, dissolve on inner */

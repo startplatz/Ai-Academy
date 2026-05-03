@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styled, { css } from 'styled-components';
 import { tokens, media } from '../../styles/tokens';
-import { clipBR, clipTLBR, CHAMFER, CyberCorners } from '../../styles/cyberpunk';
+import { clipBR, clipTLBR, CHAMFER, CyberCorners, OuterCornerFrame } from '../../styles/cyberpunk';
 
 const spanMap = {
   sm: 2,
@@ -289,7 +289,7 @@ export function SpotlightBento({
             accentColor={accentColor}
             accentBg={accentBg}
           >
-            <CyberCorners $color={color} $size={9} />
+            <CyberCorners $color={tokens.colors.mint} $size={9} $revealOnHover />
             <div>
               {(item.label || item.kicker) && <BentoLabel $color={color}>{item.label || item.kicker}</BentoLabel>}
               {item.metric && <BentoMetric $color={color}>{item.metric}</BentoMetric>}
@@ -482,7 +482,7 @@ export function MilestoneRail({
   return (
     <RailLayout>
       <RailIntro $color={accentColor} $bg={accentBg}>
-        <CyberCorners $color={accentColor} $size={11} />
+        <CyberCorners $color={tokens.colors.mint} $size={11} />
         {intro?.kicker && <RailKicker $color={accentColor}>{intro.kicker}</RailKicker>}
         {intro?.title && <RailTitle>{intro.title}</RailTitle>}
         {intro?.text && <RailText>{intro.text}</RailText>}
@@ -502,7 +502,7 @@ export function MilestoneRail({
               {item.step || String(index + 1).padStart(2, '0')}
             </RailNode>
             <RailCard $color={accentColor}>
-              <CyberCorners $color={accentColor} $size={7} />
+              <CyberCorners $color={tokens.colors.mint} $size={7} $revealOnHover />
               {item.kicker && <RailItemKicker $color={accentColor}>{item.kicker}</RailItemKicker>}
               <RailItemTitle>{item.title}</RailItemTitle>
               <RailItemText>{item.description || item.text}</RailItemText>
@@ -1010,7 +1010,7 @@ export function ScrollStackShowcase({
 
           return (
             <StackSlide key={item.title || index} role="listitem" $index={index} $color={accentColor}>
-              <CyberCorners $color={accentColor} $size={14} />
+              <CyberCorners $color={tokens.colors.mint} $size={14} />
               <StackIndex $color={accentColor}>{String(index + 1).padStart(2, '0')}</StackIndex>
 
               <StackCopy>
@@ -1930,7 +1930,7 @@ export function ProjectCinemaShowcase({
 
   return (
     <CinemaShell $color={accentColor}>
-      <CyberCorners $color={accentColor} $size={16} />
+      <CyberCorners $color={tokens.colors.mint} $size={16} />
       <CinemaIntro>
         <div>
           <CinemaEyebrow $color={accentColor}>{eyebrow}</CinemaEyebrow>
@@ -2431,7 +2431,7 @@ export function DecisionLab({
 
   return (
     <LabShell $color={accentColor}>
-      <CyberCorners $color={accentColor} $size={14} />
+      <CyberCorners $color={tokens.colors.mint} $size={14} />
       <LabChooser aria-label={label}>
         {items.map((item, index) => (
           <LabChoice
@@ -2493,7 +2493,7 @@ export function DecisionLab({
         </LabMain>
 
         <DecisionPanel $color={accentColor}>
-          <CyberCorners $color={accentColor} $size={9} />
+          <CyberCorners $color={tokens.colors.mint} $size={9} $revealOnHover />
           <DecisionKicker $color={accentColor}>Entscheidung</DecisionKicker>
           <DecisionTitle>{active.decisionTitle}</DecisionTitle>
           <DecisionText>{active.decisionText}</DecisionText>
@@ -2517,6 +2517,10 @@ export function DecisionLab({
     </LabShell>
   );
 }
+
+const FreebieFrame = styled.div`
+  position: relative;
+`;
 
 const FreebieShell = styled.div`
   position: relative;
@@ -2723,31 +2727,33 @@ export function FreebieConsole({
   accentBg = tokens.colors.primaryLighter,
 }) {
   return (
-    <FreebieShell $color={accentColor} $bg={accentBg}>
-      <CyberCorners $color={accentColor} $size={14} />
-      <FreebieIntro>
-        <FreebieKicker $color={accentColor}>{kicker}</FreebieKicker>
-        <FreebieTitle>{title}</FreebieTitle>
-        <FreebieText>{text}</FreebieText>
-      </FreebieIntro>
+    <FreebieFrame>
+      <OuterCornerFrame $color={tokens.colors.mint} $size={18} $offset={10} />
+      <FreebieShell $color={accentColor} $bg={accentBg}>
+        <FreebieIntro>
+          <FreebieKicker $color={accentColor}>{kicker}</FreebieKicker>
+          <FreebieTitle>{title}</FreebieTitle>
+          <FreebieText>{text}</FreebieText>
+        </FreebieIntro>
 
-      <Terminal $color={accentColor}>
-        <TerminalHeader>
-          <TerminalLabel>/downloads</TerminalLabel>
-          <TerminalLabel>{resources.length} Dateien</TerminalLabel>
-        </TerminalHeader>
-        <ResourceList>
-          {resources.map((resource) => (
-            <ResourceRow key={resource.href} href={resource.href} download $color={accentColor}>
-              <span>
-                <ResourceName>{resource.title}</ResourceName>
-                <ResourceDesc>{resource.description}</ResourceDesc>
-              </span>
-              <ResourceMeta $color={accentColor}>{resource.type || 'Download'}</ResourceMeta>
-            </ResourceRow>
-          ))}
-        </ResourceList>
-      </Terminal>
-    </FreebieShell>
+        <Terminal $color={accentColor}>
+          <TerminalHeader>
+            <TerminalLabel>/downloads</TerminalLabel>
+            <TerminalLabel>{resources.length} Dateien</TerminalLabel>
+          </TerminalHeader>
+          <ResourceList>
+            {resources.map((resource) => (
+              <ResourceRow key={resource.href} href={resource.href} download $color={accentColor}>
+                <span>
+                  <ResourceName>{resource.title}</ResourceName>
+                  <ResourceDesc>{resource.description}</ResourceDesc>
+                </span>
+                <ResourceMeta $color={accentColor}>{resource.type || 'Download'}</ResourceMeta>
+              </ResourceRow>
+            ))}
+          </ResourceList>
+        </Terminal>
+      </FreebieShell>
+    </FreebieFrame>
   );
 }

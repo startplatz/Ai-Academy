@@ -8,7 +8,9 @@ import {
   DetailTable,
   MiniFAQ,
   PageHero,
+  SearchQuestionAnswers,
   SectionBlock,
+  SpotlightBento,
   VisualSlot,
 } from './ui';
 import SubpageLayout from './SubpageLayout';
@@ -16,6 +18,7 @@ import { tokens, media } from '../styles/tokens';
 import { clipBR, CHAMFER, CyberCorners } from '../styles/cyberpunk';
 import { CALENDLY_URL } from '../lib/site';
 import { PRODUCT_CATALOG_URL } from '../lib/productCatalog';
+import { searchIntentQuestions } from '../lib/searchIntentQuestions';
 
 const accentMap = {
   primary: {
@@ -126,83 +129,6 @@ const TakeawayTitle = styled.h3`
 const TakeawayText = styled.p`
   color: ${tokens.colors.textMuted};
   line-height: ${tokens.lineHeights.relaxed};
-`;
-
-const ReasonRail = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: ${tokens.spacing.lg};
-  padding: ${tokens.spacing.sm} ${tokens.spacing.sm} ${tokens.spacing.lg};
-  margin: 0 -${tokens.spacing.sm};
-
-  ${media.md} {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  ${media.xl} {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-`;
-
-const ReasonCard = styled.article`
-  position: relative;
-  min-width: 0;
-  min-height: 310px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: ${tokens.spacing.xl};
-  background:
-    linear-gradient(180deg, ${({ $bg }) => $bg}, rgba(255, 255, 255, 0.84)),
-    ${tokens.colors.surface};
-  border: 1px solid ${({ $color }) => `${$color}33`};
-  ${clipBR(CHAMFER.lg)}
-  box-shadow: ${tokens.shadows.sm};
-`;
-
-const ReasonIndex = styled.span`
-  font-family: ${tokens.fonts.mono};
-  font-size: ${tokens.fontSizes.sm};
-  font-weight: ${tokens.fontWeights.semi};
-  color: ${({ $color }) => $color};
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-`;
-
-const ReasonTitle = styled.h3`
-  margin: ${tokens.spacing.xl} 0 ${tokens.spacing.sm};
-  font-family: ${tokens.fonts.display};
-  font-size: clamp(${tokens.fontSizes.xl}, 1.6vw, ${tokens.fontSizes['2xl']});
-  font-weight: ${tokens.fontWeights.black};
-  line-height: ${tokens.lineHeights.snug};
-  color: ${tokens.colors.text};
-  overflow-wrap: anywhere;
-  hyphens: auto;
-`;
-
-const ReasonText = styled.p`
-  color: ${tokens.colors.textMuted};
-  line-height: ${tokens.lineHeights.relaxed};
-  overflow-wrap: anywhere;
-`;
-
-const ReasonFeatures = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  gap: ${tokens.spacing.sm};
-  margin-top: ${tokens.spacing.lg};
-`;
-
-const ReasonFeature = styled.li`
-  padding: 5px 9px;
-  font-family: ${tokens.fonts.mono};
-  font-size: 10px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: ${tokens.colors.textSoft};
-  background: rgba(255, 255, 255, 0.62);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  ${clipBR(CHAMFER.xs)}
 `;
 
 const UseCaseShowcase = styled.div`
@@ -430,6 +356,9 @@ export default function OneDayDetailPage({ config }) {
   const ctaHref = config.ctaHref || CALENDLY_URL;
   const buttonVariant = config.accent === 'orange' ? 'orange' : config.accent === 'mint' ? 'mint' : 'primary';
   const tilts = [-1.4, 1.1, 0.7, -1];
+  const searchQuestions = config.searchIntentKey
+    ? searchIntentQuestions[config.searchIntentKey]
+    : config.searchIntentQuestions;
 
   return (
     <SubpageLayout>
@@ -484,25 +413,19 @@ export default function OneDayDetailPage({ config }) {
         subtitle={config.why.subtitle}
         accent={accent.glow}
       >
-        <ReasonRail role="list" aria-label={config.why.badge}>
-          {config.why.cards.map((card, index) => (
-            <ReasonCard key={card.title} role="listitem" $color={accent.color} $bg={accent.bg}>
-              <CyberCorners $color={accent.color} $size={8} />
-              <div>
-                <ReasonIndex $color={accent.color}>{String(index + 1).padStart(2, '0')}</ReasonIndex>
-                <ReasonTitle>{card.title}</ReasonTitle>
-                <ReasonText>{card.description}</ReasonText>
-              </div>
-              {card.features && (
-                <ReasonFeatures>
-                  {card.features.map((feature) => (
-                    <ReasonFeature key={feature}>{feature}</ReasonFeature>
-                  ))}
-                </ReasonFeatures>
-              )}
-            </ReasonCard>
-          ))}
-        </ReasonRail>
+        <SpotlightBento
+          ariaLabel={config.why.badge}
+          accentColor={accent.color}
+          accentBg={accent.bg}
+          items={config.why.cards.map((card, index) => ({
+            label: `Grund ${String(index + 1).padStart(2, '0')}`,
+            metric: String(index + 1).padStart(2, '0'),
+            title: card.title,
+            description: card.description,
+            chips: card.features,
+            size: index === 0 ? 'wide' : index === 1 ? 'sm' : 'md',
+          }))}
+        />
       </SectionBlock>
 
       <SectionBlock
@@ -599,6 +522,16 @@ export default function OneDayDetailPage({ config }) {
           </DetailsPanel>
         </PricingGrid>
       </SectionBlock>
+
+      {searchQuestions?.length > 0 && (
+        <SectionBlock
+          badge="Gefragte Suchfragen"
+          subtitle="Direkte Antworten auf Fragen, die Menschen vor diesem OneDay-Workshop stellen."
+          accent={accent.glow}
+        >
+          <SearchQuestionAnswers items={searchQuestions} accentColor={accent.color} />
+        </SectionBlock>
+      )}
 
       <SectionBlock badge="FAQ" title={config.faqTitle} accent={accent.glow}>
         <MiniFAQ items={config.faq} accentColor={accent.color} />

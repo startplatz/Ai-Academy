@@ -80,7 +80,7 @@ export function BeforeAfter({ before = [], after = [], accentColor }) {
   return (
     <CompareGrid>
       <CompareCard>
-        <CyberCorners $color={tokens.colors.textDim} $size={8} />
+        <CyberCorners $color={tokens.colors.mint} $size={8} $revealOnHover />
         <CompareTitle>Vorher</CompareTitle>
         <CompareList>
           {before.map((item) => (
@@ -89,7 +89,7 @@ export function BeforeAfter({ before = [], after = [], accentColor }) {
         </CompareList>
       </CompareCard>
       <CompareCard>
-        <CyberCorners $color={accentColor || tokens.colors.mint} $size={8} />
+        <CyberCorners $color={tokens.colors.mint} $size={8} $revealOnHover />
         <CompareTitle $color={accentColor || tokens.colors.mint}>Nachher</CompareTitle>
         <CompareList>
           {after.map((item) => (
@@ -204,7 +204,7 @@ const PromptText = styled.p`
 export function VisualSlot({ eyebrow = 'Visual Prompt', title, image, prompt, accentColor }) {
   return (
     <VisualCard>
-      <CyberCorners $color={accentColor || tokens.colors.mint} $size={12} />
+      <CyberCorners $color={tokens.colors.mint} $size={12} />
       {image ? (
         <VisualImage src={image} alt={title} loading="lazy" width="1000" height="800" />
       ) : (
@@ -336,7 +336,7 @@ export function MiniFAQ({ items = [], accentColor }) {
     <FaqList>
       {items.map((item) => (
         <FaqItem key={item.q}>
-          <CyberCorners $color={accentColor || tokens.colors.mint} $size={7} />
+          <CyberCorners $color={tokens.colors.mint} $size={7} $revealOnHover />
           <FaqQuestion>{item.q}</FaqQuestion>
           <FaqAnswer>{item.a}</FaqAnswer>
         </FaqItem>
@@ -354,7 +354,7 @@ export function SearchQuestionAnswers({ items = [], accentColor }) {
 
         return (
           <SearchQaItem key={item.q} $color={accentColor} $index={index}>
-            <CyberCorners $color={accentColor || tokens.colors.primary} $size={7} />
+            <CyberCorners $color={tokens.colors.mint} $size={7} $revealOnHover />
             <SearchQaQuestion>{item.q}</SearchQaQuestion>
             <SearchQaAnswer>
               {paragraphs.filter(Boolean).map((paragraph) => (

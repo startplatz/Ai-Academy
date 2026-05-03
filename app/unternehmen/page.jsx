@@ -7,10 +7,13 @@ import {
   Button,
   CTABanner,
   FeatureCard,
+  MilestoneRail,
   MiniFAQ,
   PageHero,
   ResponsiveGrid,
+  SearchQuestionAnswers,
   SectionBlock,
+  SpotlightBento,
   StatsRow,
   TwoColumn,
   VisualSlot,
@@ -20,37 +23,7 @@ import { tokens, media } from '../../styles/tokens';
 import { clipBR, CHAMFER, CyberCorners } from '../../styles/cyberpunk';
 import { CALENDLY_URL } from '../../lib/site';
 import { PRODUCT_CATALOG_URL } from '../../lib/productCatalog';
-
-const OfferCard = styled.article`
-  position: relative;
-  padding: ${tokens.spacing['2xl']};
-  background: ${tokens.colors.surface};
-  border: 1px solid ${tokens.colors.glassBorder};
-  ${clipBR(CHAMFER.md)}
-`;
-
-const OfferMeta = styled.span`
-  display: inline-block;
-  margin-bottom: ${tokens.spacing.md};
-  font-family: ${tokens.fonts.mono};
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: ${tokens.colors.orange};
-`;
-
-const OfferTitle = styled.h3`
-  font-family: ${tokens.fonts.display};
-  font-size: ${tokens.fontSizes['2xl']};
-  font-weight: ${tokens.fontWeights.bold};
-  color: ${tokens.colors.text};
-  margin-bottom: ${tokens.spacing.sm};
-`;
-
-const OfferText = styled.p`
-  color: ${tokens.colors.textMuted};
-  line-height: ${tokens.lineHeights.relaxed};
-`;
+import { searchIntentQuestions } from '../../lib/searchIntentQuestions';
 
 const DetailStack = styled.div`
   display: grid;
@@ -274,16 +247,26 @@ export default function UnternehmenPage() {
         variant="muted"
         accent={tokens.colors.glowOrange}
       >
-        <ResponsiveGrid $cols={4}>
-          {offers.map((offer) => (
-            <OfferCard key={offer.title}>
-              <CyberCorners $color={tokens.colors.orange} $size={8} />
-              <OfferMeta>{offer.duration}</OfferMeta>
-              <OfferTitle>{offer.title}</OfferTitle>
-              <OfferText>{offer.text}</OfferText>
-            </OfferCard>
-          ))}
-        </ResponsiveGrid>
+        <SpotlightBento
+          ariaLabel="KI-Angebote für Unternehmen"
+          accentColor={tokens.colors.orange}
+          accentBg={tokens.colors.orangeBg}
+          items={offers.map((offer, index) => ({
+            label: offer.duration,
+            title: offer.title,
+            description: offer.text,
+            href: index < 3 ? `/unternehmen#${offer.id}` : '/oneday',
+            cta: index < 3 ? 'Format vertiefen' : 'OneDays vergleichen',
+            size: index === 0 ? 'wide' : index === 1 ? 'sm' : 'md',
+            chips: index === 0
+              ? ['Pilot', 'Roadmap']
+              : index === 1
+                ? ['Teamtraining', 'Use Cases']
+                : index === 2
+                  ? ['Rollout', 'Messbar']
+                  : ['Kompakt', 'Toolfokus'],
+          }))}
+        />
       </SectionBlock>
 
       <SectionBlock
@@ -347,23 +330,32 @@ export default function UnternehmenPage() {
         variant="white"
         accent={tokens.colors.glowOrange}
       >
-        <ResponsiveGrid $cols={4}>
-          {process.map((item) => (
-            <FeatureCard
-              key={item.title}
-              step={item.step}
-              title={item.title}
-              description={item.description}
-              accentColor={tokens.colors.orange}
-              accentBg={tokens.colors.orangeBg}
-              cornerColor={tokens.colors.orange}
-            />
-          ))}
-        </ResponsiveGrid>
+        <MilestoneRail
+          items={process.map((item) => ({
+            ...item,
+            kicker: `Phase ${item.step}`,
+          }))}
+          intro={{
+            kicker: 'Umsetzungspfad',
+            title: 'Vom Zielbild zum Transfer im Team.',
+            text: 'Der Prozess führt Entscheider:innen von der Lageklärung in ein passendes Curriculum und endet nicht am Workshoptag.',
+            meta: ['Bedarf', 'Design', 'Training', 'Transfer'],
+          }}
+          accentColor={tokens.colors.orange}
+          accentBg={tokens.colors.orangeBg}
+        />
       </SectionBlock>
 
       <SectionBlock title="Nach Zahlen" centered accent={tokens.colors.glowOrange}>
         <StatsRow stats={stats} />
+      </SectionBlock>
+
+      <SectionBlock
+        badge="Gefragte Suchfragen"
+        subtitle="Direkte Antworten auf Fragen, die Entscheider vor einer KI-Schulung im Unternehmen stellen."
+        accent={tokens.colors.glowOrange}
+      >
+        <SearchQuestionAnswers items={searchIntentQuestions.unternehmen} accentColor={tokens.colors.orange} />
       </SectionBlock>
 
       <SectionBlock badge="FAQ" title="Fragen für <span>Entscheider.</span>" accent={tokens.colors.glowOrange}>

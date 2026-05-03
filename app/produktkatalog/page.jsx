@@ -4,8 +4,10 @@ import React from 'react';
 import styled from 'styled-components';
 import {
   Button,
+  ChromaShowcase,
   CTABanner,
   PageHero,
+  SearchQuestionAnswers,
   SectionBlock,
 } from '../../components/ui';
 import SubpageLayout from '../../components/SubpageLayout';
@@ -18,6 +20,7 @@ import {
   PRICE_LIST_2026,
   PRODUCT_IMAGES,
 } from '../../lib/productCatalog';
+import { searchIntentQuestions } from '../../lib/searchIntentQuestions';
 
 const accentMap = {
   primary: {
@@ -628,6 +631,29 @@ export default function ProduktkatalogPage() {
       </SectionBlock>
 
       <SectionBlock
+        badge="Schnellauswahl"
+        title="Welcher Kontext ist <span>deiner?</span>"
+        subtitle="Erst der richtige Rahmen, dann der Preisvergleich: diese Auswahl führt dich direkt in das passende Format."
+        accent={tokens.colors.glow}
+      >
+        <ChromaShowcase
+          ariaLabel="Produktkatalog Schnellauswahl"
+          accentColor={tokens.colors.primary}
+          items={FLAGSHIP_PRODUCTS.map((product) => {
+            const accent = accentMap[product.accent || 'primary'] || accentMap.primary;
+            return {
+              title: product.category,
+              kicker: product.duration,
+              description: product.audience,
+              image: product.image,
+              href: product.href,
+              accentColor: accent.color,
+            };
+          })}
+        />
+      </SectionBlock>
+
+      <SectionBlock
         badge="Preisliste 2026"
         title="Preise, die man <span>schnell versteht.</span>"
         subtitle="Die offizielle Preisliste als Referenz: netto, klar nach Format getrennt und ohne versteckte Download-Hürde."
@@ -722,6 +748,14 @@ export default function ProduktkatalogPage() {
             <ProductTile key={product.title} product={product} compact />
           ))}
         </OneDayGrid>
+      </SectionBlock>
+
+      <SectionBlock
+        badge="Gefragte Suchfragen"
+        subtitle="Direkte Antworten auf Fragen, die Menschen vor dem Vergleich von KI-Kursen und Preisen stellen."
+        accent={tokens.colors.glow}
+      >
+        <SearchQuestionAnswers items={searchIntentQuestions.produktkatalog} accentColor={tokens.colors.primary} />
       </SectionBlock>
 
       <CTABanner

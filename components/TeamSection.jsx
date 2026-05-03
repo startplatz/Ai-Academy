@@ -4,7 +4,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { tokens, media } from '../styles/tokens';
-import { clipBR, clipTLBR, CHAMFER, CyberCorners } from '../styles/cyberpunk';
+import { clipBR, clipTLBR, CHAMFER, OuterCornerFrame } from '../styles/cyberpunk';
 import PlanetSection from './PlanetSection';
 
 /* ─────────────────────────────────────────────
@@ -18,6 +18,11 @@ const LOCATIONS = [
   { city: 'Köln', image: 'https://res.cloudinary.com/startplatz/image/upload/f_auto,c_fill,q_auto,w_800,h_400/v1614775893/Offices/K%C3%B6ln/Au%C3%9Fenansicht/STARTPLATZ_Ko%CC%88ln_Au%C3%9Fenansicht9.jpg' },
   { city: 'Düsseldorf', image: 'https://res.cloudinary.com/startplatz/image/upload/f_auto,c_fill,q_auto,w_800,h_400/v1737547718/conference-rooms/Confi%20DUS%20new/Au%C3%9Fenansicht.jpg' },
 ];
+
+const GroupPhotoFrame = styled.div`
+  position: relative;
+  width: 100%;
+`;
 
 const GroupPhotoWrap = styled.div`
   position: relative;
@@ -158,21 +163,22 @@ export default function TeamSection() {
       title="Experten, die <span>begeistern</span>"
       subtitle="Dozenten und Mentoren aus der Praxis. Führende KI-Experten, Tech-Pioniere und erfahrene Coaches."
     >
-      <GroupPhotoWrap>
-        <CyberCorners $color={tokens.colors.mint} $size={12} />
-        <GroupImage
-          src={GROUP_PHOTO}
-          alt="Das AI Academy Team — Gruppenfoto"
-          loading="eager"
-          width="1400"
-          height="600"
-        />
-      </GroupPhotoWrap>
+      <GroupPhotoFrame>
+        <OuterCornerFrame $color={tokens.colors.mint} $size={18} $offset={10} />
+        <GroupPhotoWrap>
+          <GroupImage
+            src={GROUP_PHOTO}
+            alt="Das AI Academy Team — Gruppenfoto"
+            loading="eager"
+            width="1400"
+            height="600"
+          />
+        </GroupPhotoWrap>
+      </GroupPhotoFrame>
 
       <LocationRow>
         {LOCATIONS.map((l) => (
           <LocationCard key={l.city}>
-            <CyberCorners $color={tokens.colors.mint} $size={10} />
             <img src={l.image} alt={`Standort ${l.city}`} loading="lazy" width="800" height="400" />
             <LocationLabel>
               <LocationTag>Standort</LocationTag>

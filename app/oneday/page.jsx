@@ -7,13 +7,16 @@ import {
   CTABanner,
   MiniFAQ,
   PageHero,
+  SearchQuestionAnswers,
   SectionBlock,
+  SpotlightBento,
 } from '../../components/ui';
 import SubpageLayout from '../../components/SubpageLayout';
 import { tokens, media } from '../../styles/tokens';
 import { clipBR, CHAMFER, CyberCorners } from '../../styles/cyberpunk';
 import { CALENDLY_URL } from '../../lib/site';
 import { ONE_DAY_PRODUCTS, PRODUCT_CATALOG_URL } from '../../lib/productCatalog';
+import { searchIntentQuestions } from '../../lib/searchIntentQuestions';
 
 const previewDrift = keyframes`
   from { transform: scale(1.08) translateX(-2.2%); }
@@ -370,52 +373,6 @@ const StepText = styled.p`
   line-height: ${tokens.lineHeights.relaxed};
 `;
 
-const BenefitGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: ${tokens.spacing.md};
-
-  ${media.md} {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  ${media.lg} {
-    grid-template-columns: repeat(4, 1fr);
-  }
-`;
-
-const BenefitItem = styled.article`
-  position: relative;
-  min-height: 156px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: ${tokens.spacing.lg};
-  padding: ${tokens.spacing.xl};
-  background: ${tokens.colors.surface};
-  border: 1px solid ${tokens.colors.glassBorder};
-  ${clipBR(CHAMFER.md)}
-
-  ${media.md} {
-    min-height: 210px;
-    justify-content: space-between;
-    gap: ${tokens.spacing.xl};
-  }
-`;
-
-const BenefitValue = styled.div`
-  font-family: ${tokens.fonts.display};
-  font-size: clamp(${tokens.fontSizes['3xl']}, 4vw, ${tokens.fontSizes['5xl']});
-  font-weight: ${tokens.fontWeights.black};
-  line-height: 1;
-  color: ${tokens.colors.text};
-`;
-
-const BenefitLabel = styled.p`
-  color: ${tokens.colors.textMuted};
-  line-height: ${tokens.lineHeights.relaxed};
-`;
-
 export default function OneDayPage() {
   const products = ONE_DAY_PRODUCTS;
 
@@ -597,15 +554,39 @@ export default function OneDayPage() {
         subtitle="Die Zahlen sind kein Selbstzweck. Sie beschreiben, was der Workshop im Alltag leichter machen soll."
         accent={tokens.colors.glow}
       >
-        <BenefitGrid>
-          {benefits.map((item) => (
-            <BenefitItem key={item.value}>
-              <CyberCorners $color={tokens.colors.primary} $size={7} />
-              <BenefitValue>{item.value}</BenefitValue>
-              <BenefitLabel>{item.label}</BenefitLabel>
-            </BenefitItem>
-          ))}
-        </BenefitGrid>
+        <SpotlightBento
+          ariaLabel="OneDay Nutzen"
+          accentColor={tokens.colors.primary}
+          accentBg={tokens.colors.primaryLighter}
+          items={benefits.map((item, index) => ({
+            label: `Output ${String(index + 1).padStart(2, '0')}`,
+            metric: item.value,
+            title: index === 0
+              ? 'Zeitgewinn statt Tool-Sammlung'
+              : index === 1
+                ? 'Unterlagen, die du wirklich nutzt'
+                : index === 2
+                  ? 'Einstieg ohne Technik-Hürde'
+                  : 'Ein Ergebnis, kein Notizstapel',
+            description: item.label,
+            size: index === 0 ? 'wide' : index === 1 ? 'sm' : 'md',
+            chips: index === 0
+              ? ['Workflow', 'Routine']
+              : index === 1
+                ? ['Prompts', 'Checklisten']
+                : index === 2
+                  ? ['Geführt', 'Praxisnah']
+                  : ['Transfer', 'Nächster Schritt'],
+          }))}
+        />
+      </SectionBlock>
+
+      <SectionBlock
+        badge="Gefragte Suchfragen"
+        subtitle="Direkte Antworten auf Fragen, die Menschen vor einem kompakten KI-Workshop stellen."
+        accent={tokens.colors.glow}
+      >
+        <SearchQuestionAnswers items={searchIntentQuestions.oneday} accentColor={tokens.colors.primary} />
       </SectionBlock>
 
       <SectionBlock badge="FAQ" title="Fragen zu <span>OneDay.</span>" accent={tokens.colors.glow}>

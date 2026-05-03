@@ -10,6 +10,7 @@ export const metadata = {
 
 const config = {
   href: '/oneday/immobilien',
+  searchIntentKey: 'immobilien',
   breadcrumb: 'Immobilien',
   badge: 'OneDay Workshop · Immobilien',
   accent: 'orange',

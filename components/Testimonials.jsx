@@ -3,7 +3,7 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { tokens, media } from '../styles/tokens';
-import { clipBR, clipTLBR, CHAMFER } from '../styles/cyberpunk';
+import { clipBR, clipTLBR, CHAMFER, CyberCorners } from '../styles/cyberpunk';
 import PlanetSection from './PlanetSection';
 
 /* ─────────────────────────────────────────────
@@ -355,6 +355,7 @@ export default function Testimonials() {
       subtitle="Von unseren Absolventen – echte Einblicke in den Kursalltag, Karrierewege und praktische KI-Anwendungen."
     >
       <Strip role="group" aria-label="Testimonial Videos">
+        <CyberCorners $color={tokens.colors.mint} $size={14} />
         {VIDEOS.map((v, i) => {
           const isActive = hoveredIdx === i;
           const showVertical = hasActive && !isActive;
