@@ -29,7 +29,15 @@ const NAV_LINKS = [
     ],
   },
   { label: 'Experten', href: '/experten' },
-  { label: 'Über Uns', href: '/ueber-uns' },
+  {
+    label: 'Über Uns',
+    href: '/ueber-uns',
+    children: [
+      { label: 'Über Uns', href: '/ueber-uns' },
+      { label: 'Karriere', href: '/karriere' },
+      { label: 'Presse & Medien', href: '/presse' },
+    ],
+  },
   { label: 'Insights', href: '/insights' },
 ];
 
@@ -462,6 +470,19 @@ export default function Navigation() {
   }, [mobileOpen]);
 
   const closeMobile = () => setMobileOpen(false);
+  const mobileLinks = NAV_LINKS.flatMap((l) => {
+    if (l.children) {
+      return l.children.map((child) => ({
+        ...child,
+        mobileKey: `${l.href}-${child.href}-${child.label}`,
+      }));
+    }
+
+    return [{
+      ...l,
+      mobileKey: `${l.href}-${l.label}`,
+    }];
+  });
 
   return (
     <>
@@ -541,68 +562,48 @@ export default function Navigation() {
         aria-label="Navigation"
       >
         <MobileNav aria-label="Mobile Navigation">
-          {(() => {
-            /* Flatten nav links for mobile (expand dropdowns) */
-            const flat = [];
-            NAV_LINKS.forEach((l) => {
-              if (l.children) {
-                l.children.forEach((child) => {
-                  flat.push({
-                    ...child,
-                    mobileKey: `${l.href}-${child.href}-${child.label}`,
-                  });
-                });
-              } else {
-                flat.push({
-                  ...l,
-                  mobileKey: `${l.href}-${l.label}`,
-                });
-              }
-            });
+          {mobileLinks.map((l, i) => {
+            const delay = 100 + i * 70;
 
-            return flat.map((l, i) => {
-              const delay = 100 + i * 70;
-
-              if (l.href.startsWith('/#')) {
-                return (
-                  <MobileLink
-                    key={l.mobileKey}
-                    as="button"
-                    $open={mobileOpen}
-                    $delay={delay}
-                    $idx={i + 1}
-                    onClick={() => { handleHashNavigation(l.href); closeMobile(); }}
-                    tabIndex={mobileOpen ? 0 : -1}
-                    style={{ border: 'none', borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'none', cursor: 'pointer', font: 'inherit', width: '100%' }}
-                  >
-                    <MobileLinkLabel>{l.label}</MobileLinkLabel>
-                    <MobileLinkArrow>→</MobileLinkArrow>
-                  </MobileLink>
-                );
-              }
-
+            if (l.href.startsWith('/#')) {
               return (
                 <MobileLink
                   key={l.mobileKey}
-                  as={Link}
-                  href={l.href}
+                  as="button"
                   $open={mobileOpen}
                   $delay={delay}
                   $idx={i + 1}
-                  onClick={closeMobile}
+                  onClick={() => { handleHashNavigation(l.href); closeMobile(); }}
                   tabIndex={mobileOpen ? 0 : -1}
+                  style={{ border: 'none', borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'none', cursor: 'pointer', font: 'inherit', width: '100%' }}
                 >
                   <MobileLinkLabel>{l.label}</MobileLinkLabel>
                   <MobileLinkArrow>→</MobileLinkArrow>
                 </MobileLink>
               );
-            });
-          })()}
+            }
+
+            return (
+              <MobileLink
+                key={l.mobileKey}
+                as={Link}
+                href={l.href}
+                $open={mobileOpen}
+                $delay={delay}
+                $idx={i + 1}
+                onClick={closeMobile}
+                tabIndex={mobileOpen ? 0 : -1}
+              >
+                <MobileLinkLabel>{l.label}</MobileLinkLabel>
+                <MobileLinkArrow>→</MobileLinkArrow>
+              </MobileLink>
+            );
+          })}
 
           <MobileCTA
             href={CALENDLY_URL}
             $open={mobileOpen}
-            $delay={100 + 7 * 70}
+            $delay={100 + mobileLinks.length * 70}
             onClick={closeMobile}
             tabIndex={mobileOpen ? 0 : -1}
             target="_blank"
@@ -612,7 +613,7 @@ export default function Navigation() {
           </MobileCTA>
         </MobileNav>
 
-        <MobileFooter $open={mobileOpen} $delay={700}>
+        <MobileFooter $open={mobileOpen} $delay={100 + (mobileLinks.length + 1) * 70}>
           STARTPLATZ AI Academy — Köln &amp; Düsseldorf
         </MobileFooter>
       </MobileOverlay>
