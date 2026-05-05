@@ -62,6 +62,17 @@ function loadThree() {
   return threePromise;
 }
 
+function shouldUseIdleOnlyMotion() {
+  if (typeof window === 'undefined') return false;
+
+  const ua = navigator.userAgent || '';
+  const isMobileUA = /Android|iPhone|iPad|iPod/i.test(ua);
+  const hasCoarsePointer = window.matchMedia?.('(pointer: coarse)').matches;
+  const hasNoHover = window.matchMedia?.('(hover: none)').matches;
+
+  return Boolean(isMobileUA || hasCoarsePointer || hasNoHover);
+}
+
 /* ── GLSL Shaders ────────────────────────────── */
 
 const face_vert = `
@@ -264,6 +275,7 @@ export default function LiquidEther({
   takeoverDuration = 0.25,
   autoResumeDelay = 1000,
   autoRampDuration = 0.6,
+  idleOnlyOnTouch = true,
 }) {
   const mountRef = useRef(null);
   const webglRef = useRef(null);
@@ -294,6 +306,7 @@ export default function LiquidEther({
     const maxPixelRatio = p.pixelRatio;
     const targetFPS = p.fps;
     const frameInterval = 1000 / targetFPS;
+    const idleOnlyMotion = idleOnlyOnTouch && shouldUseIdleOnlyMotion();
 
     loadThree().then((THREE) => {
       if (disposed || !mountRef.current) return;
@@ -388,6 +401,10 @@ export default function LiquidEther({
 
         init(container) {
           this.container = container;
+          if (idleOnlyMotion) {
+            return;
+          }
+
           const win = window;
           this.listenerTarget = win;
           this._onMM = (e) => this.onMouseMove(e);
@@ -711,15 +728,16 @@ export default function LiquidEther({
       container.prepend(Common.renderer.domElement);
 
       const output = new Output();
-      let lastUserInteraction = performance.now();
-      Mouse.onInteract = () => { lastUserInteraction = performance.now(); if (autoDriverInst) autoDriverInst.forceStop(); };
-
-      const autoDriverInst = new AutoDriver(Mouse, { lastUserInteraction }, {
+      const lastUserInteraction = idleOnlyMotion
+        ? performance.now() - autoResumeDelay
+        : performance.now();
+      const managerRef = { lastUserInteraction };
+      const autoDriverInst = new AutoDriver(Mouse, managerRef, {
         enabled: autoDemo, speed: autoSpeed, resumeDelay: autoResumeDelay, rampDuration: autoRampDuration
       });
-      const managerRef = { lastUserInteraction };
-      autoDriverInst.manager = managerRef;
-      Mouse.onInteract = () => { managerRef.lastUserInteraction = performance.now(); autoDriverInst.forceStop(); };
+      Mouse.onInteract = idleOnlyMotion
+        ? null
+        : () => { managerRef.lastUserInteraction = performance.now(); autoDriverInst.forceStop(); };
 
       /* ── Frame-throttled render loop ── */
       let running = true;
@@ -788,7 +806,7 @@ export default function LiquidEther({
       }
       webglRef.current = null;
     };
-  }, [tier, isPotato, colors, mouseForce, cursorSize, isViscous, viscous, iterationsViscous, iterationsPoisson, dt, BFECC, resolution, isBounce, autoDemo, autoSpeed, autoIntensity, takeoverDuration, autoResumeDelay, autoRampDuration]);
+  }, [tier, isPotato, colors, mouseForce, cursorSize, isViscous, viscous, iterationsViscous, iterationsPoisson, dt, BFECC, resolution, isBounce, autoDemo, autoSpeed, autoIntensity, takeoverDuration, autoResumeDelay, autoRampDuration, idleOnlyOnTouch]);
 
   /* Potato tier: lightweight CSS fallback */
   if (isPotato) return <FallbackBg aria-hidden="true" />;
