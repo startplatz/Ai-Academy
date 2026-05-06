@@ -13,6 +13,7 @@ export default function sitemap() {
     { path: '/ueber-uns', priority: 0.6, changeFrequency: 'monthly' },
     { path: '/karriere', priority: 0.6, changeFrequency: 'weekly' },
     { path: '/insights', priority: 0.8, changeFrequency: 'weekly' },
+    { path: '/bewerben-mit-ki', priority: 0.8, changeFrequency: 'weekly' },
     { path: '/wissens-test', priority: 0.7, changeFrequency: 'monthly' },
     { path: '/presse', priority: 0.5, changeFrequency: 'monthly' },
     // OneDay detail pages
