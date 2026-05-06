@@ -284,6 +284,7 @@ const SectionTitle = styled.h2`
   font-weight: ${tokens.fontWeights.black};
   line-height: ${tokens.lineHeights.tight};
   letter-spacing: 0;
+  color: ${({ $dark }) => ($dark ? tokens.colors.darkText : tokens.colors.text)};
 
   span {
     color: ${tokens.colors.primary};
@@ -490,7 +491,7 @@ export default function BewerbenMitKIPageClient() {
           <SectionInner>
             <SectionHead>
               <Eyebrow>So nutzt du es</Eyebrow>
-              <SectionTitle>
+              <SectionTitle $dark>
                 Ein Chat. Eine echte Stelle. <span>Vier klare Schritte.</span>
               </SectionTitle>
               <SectionText $dark>
