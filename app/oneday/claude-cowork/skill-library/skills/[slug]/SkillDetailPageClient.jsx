@@ -225,7 +225,7 @@ export default function SkillDetailPageClient({ skill, packages }) {
         image={skill.image}
       >
         <DownloadLink href={skill.download} download $color={color}>
-          Upload-ZIP laden
+          Skill laden
         </DownloadLink>
         <Button href="/oneday/claude-cowork/skill-library#skills" variant="secondary" size="lg">
           Zurück zum Katalog
@@ -282,11 +282,11 @@ export default function SkillDetailPageClient({ skill, packages }) {
             </Panel>
 
             <Panel $color={color}>
-              <PanelLabel $color={color}>Claude.ai Upload</PanelLabel>
-              <PanelTitle>Direkt hochladen</PanelTitle>
+              <PanelLabel $color={color}>Skill-Format</PanelLabel>
+              <PanelTitle>Einzeln oder im Plugin nutzen</PanelTitle>
               <Text>
-                Das ZIP enthält genau einen Skill-Ordner mit `SKILL.md` direkt darin. Nicht entpacken:
-                In Claude.ai bei Upload skill auswählen oder per Drag and Drop ablegen.
+                Der einzelne Skill enthält einen Ordner mit `SKILL.md`, YAML-Frontmatter und
+                praxisnahen Arbeitsanweisungen. In den Plugins liegt derselbe Skill unter `skills/[skill-name]/SKILL.md`.
               </Text>
             </Panel>
           </ContentStack>
@@ -296,7 +296,7 @@ export default function SkillDetailPageClient({ skill, packages }) {
       {packages.length > 0 && (
         <SectionBlock
           badge="Enthalten in"
-          title="Passende <span>Skill-Pakete.</span>"
+          title="Passende <span>Plugins.</span>"
           accent={`${color}22`}
         >
           <PackageGrid>

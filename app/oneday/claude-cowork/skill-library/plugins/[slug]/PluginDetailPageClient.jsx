@@ -199,7 +199,7 @@ export default function PluginDetailPageClient({ pack, skills }) {
   return (
     <SubpageLayout>
       <PageHero
-        badge="Skill-Paket"
+        badge="Plugin"
         badgeColor={color}
         badgeBg={bg}
         title={`${pack.title} <span>Download.</span>`}
@@ -212,7 +212,7 @@ export default function PluginDetailPageClient({ pack, skills }) {
         image={pack.image}
       >
         <DownloadLink href={pack.download} download $color={color}>
-          Upload-ZIP laden
+          Plugin laden
         </DownloadLink>
         <Button href="/oneday/claude-cowork/skill-library#plugins" variant="secondary" size="lg">
           Zurück zum Katalog
@@ -236,15 +236,15 @@ export default function PluginDetailPageClient({ pack, skills }) {
           </ImagePanel>
           <InfoPanel $color={color}>
             <CyberCorners $color={color} $size={10} />
-            <Label $color={color}>Claude.ai Skill-Paket</Label>
+            <Label $color={color}>Claude Code / Cowork Plugin</Label>
             <InfoTitle>{pack.title}</InfoTitle>
             <Text>
-              Das Paket-ZIP ist ein direkt installierbarer Claude.ai Skill. Es enthält `SKILL.md`
-              im Paketordner und die einzelnen Workflows als Referenzen, damit ein Upload reicht.
+              Das Plugin bündelt mehrere Skills in einem Arbeitsbereich. Die ZIP-Struktur folgt den
+              Anthropic Plugin-Regeln: `.claude-plugin/plugin.json` plus `skills/[skill-name]/SKILL.md`.
             </Text>
             <ActionRow>
               <DownloadLink href={pack.download} download $color={color}>
-                Upload-ZIP laden
+                Plugin laden
               </DownloadLink>
             </ActionRow>
           </InfoPanel>
@@ -268,7 +268,7 @@ export default function PluginDetailPageClient({ pack, skills }) {
                   Detailseite
                 </TextLink>
                 <DownloadLink href={skill.download} download $color={color} $compact>
-                  Upload-ZIP
+                  Skill laden
                 </DownloadLink>
               </SkillActions>
             </SkillCard>

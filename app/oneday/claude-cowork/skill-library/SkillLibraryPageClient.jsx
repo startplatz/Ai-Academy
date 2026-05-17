@@ -72,6 +72,26 @@ const Stats = styled.div`
   }
 `;
 
+const InstallGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: ${tokens.spacing.lg};
+
+  ${media.md} {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+`;
+
+const InstallPanel = styled.article`
+  position: relative;
+  padding: ${tokens.spacing.xl};
+  background:
+    linear-gradient(135deg, ${({ $color }) => `${$color}12`}, rgba(255, 255, 255, 0.92) 46%),
+    ${tokens.colors.surface};
+  border: 1px solid ${({ $color }) => `${$color}32`};
+  ${clipBR(CHAMFER.md)}
+`;
+
 const Stat = styled.div`
   position: relative;
   padding: ${tokens.spacing.xl};
@@ -384,7 +404,7 @@ export default function SkillLibraryPageClient() {
         badgeColor={tokens.colors.primary}
         badgeBg={tokens.colors.primaryLighter}
         title="Claude Cowork <span>Skill Library.</span>"
-        subtitle="Skills und Skill-Pakete für wiederkehrende Arbeitsprozesse: als Katalog zum Durchstöbern und als Claude.ai Upload-ZIPs zum Herunterladen."
+        subtitle="Einzelne Skills für konkrete Aufgaben und Plugins als gebündelte Skill-Systeme für ganze Arbeitsbereiche."
         breadcrumbs={[
           { label: 'OneDay', href: '/oneday' },
           { label: 'Claude Cowork', href: '/oneday/claude-cowork' },
@@ -394,7 +414,7 @@ export default function SkillLibraryPageClient() {
         image="/claude-cowork/images/library-hero.webp"
       >
         <Button href="#plugins" variant="primary" size="lg" arrow>
-          Skill-Pakete
+          Plugin-Katalog
         </Button>
         <Button href="#skills" variant="secondary" size="lg">
           Skills suchen
@@ -417,21 +437,49 @@ export default function SkillLibraryPageClient() {
           <Stat>
             <CyberCorners $color={tokens.colors.mint} $size={7} />
             <StatValue $color={tokens.colors.mint}>{CLAUDE_COWORK_PACKAGES.length}</StatValue>
-            <StatLabel>Skill-Pakete</StatLabel>
+            <StatLabel>Plugins</StatLabel>
           </Stat>
           <Stat>
             <CyberCorners $color={tokens.colors.orange} $size={7} />
             <StatValue $color={tokens.colors.orange}>SKILL.md</StatValue>
-            <StatLabel>Claude.ai Upload</StatLabel>
+            <StatLabel>Skill-Format</StatLabel>
           </Stat>
         </Stats>
       </SectionBlock>
 
       <SectionBlock
+        badge="Installation"
+        title="Der richtige Download für <span>den richtigen Ort.</span>"
+        subtitle="Ein Skill ist eine einzelne Fähigkeit. Ein Plugin bündelt mehrere Skills und wird in Cowork als Plugin installiert."
+        accent={tokens.colors.glow}
+      >
+        <InstallGrid>
+          <InstallPanel $color={tokens.colors.primary}>
+            <CyberCorners $color={tokens.colors.primary} $size={7} />
+            <Kicker $color={tokens.colors.primary}>Einzelner Skill</Kicker>
+            <PackageTitle>Claude.ai: Upload skill</PackageTitle>
+            <PackageText>
+              Skill-ZIP direkt im Skill-Upload auswählen. Die ZIP enthält genau einen Ordner mit `SKILL.md`
+              und ist für einzelne Aufgaben gedacht.
+            </PackageText>
+          </InstallPanel>
+          <InstallPanel $color={tokens.colors.mint}>
+            <CyberCorners $color={tokens.colors.mint} $size={7} />
+            <Kicker $color={tokens.colors.mint}>Plugin</Kicker>
+            <PackageTitle>Cowork: Custom plugin file</PackageTitle>
+            <PackageText>
+              Plugin-ZIP im Cowork Plugin-Bereich installieren. Die ZIP enthält `.claude-plugin/plugin.json`
+              und mehrere Skills unter `skills/`.
+            </PackageText>
+          </InstallPanel>
+        </InstallGrid>
+      </SectionBlock>
+
+      <SectionBlock
         id="plugins"
-        badge="Skill-Pakete"
-        title="Arbeitsbereiche als <span>Upload-ZIPs.</span>"
-        subtitle="Jedes Paket ist ein installierbarer Claude.ai Skill mit SKILL.md im Paketordner und den enthaltenen Skills als Referenzen."
+        badge="Plugin-Katalog"
+        title="Mehrere Skills als <span>Plugin.</span>"
+        subtitle="Jedes Plugin bündelt passende Skills zu einem Arbeitsbereich und folgt dem Claude Code / Cowork Plugin-Format mit plugin.json und skills-Verzeichnis."
         accent={tokens.colors.glow}
       >
         <PackageGrid>
@@ -464,7 +512,7 @@ export default function SkillLibraryPageClient() {
                       Details
                     </Button>
                     <DownloadLink href={pack.download} download $color={color}>
-                      Upload-ZIP laden
+                      Plugin laden
                     </DownloadLink>
                   </Actions>
                 </PackageBody>
@@ -541,7 +589,7 @@ export default function SkillLibraryPageClient() {
                     Detailseite
                   </TextLink>
                   <DownloadLink href={skill.download} download $color={color} $compact>
-                    Upload-ZIP
+                    Skill laden
                   </DownloadLink>
                 </SkillLinks>
               </SkillCard>
