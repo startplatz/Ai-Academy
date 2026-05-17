@@ -20,6 +20,7 @@ const config = {
   heroImage: 'https://res.cloudinary.com/startplatz/image/upload/f_auto,q_auto,w_1400/v1777162756/ai-hub/website/AI-Academy-Website-Images/oneday-claude-cowork-hero.png',
   ctaHref: CALENDLY_URL,
   primaryCta: 'Platz sichern',
+  libraryHref: '/oneday/claude-cowork/skill-library',
   meta: [
     { value: '1 Tag', label: '09-17 Uhr' },
     { value: '590 €', label: 'Early Bird' },

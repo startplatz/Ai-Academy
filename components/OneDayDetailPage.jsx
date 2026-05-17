@@ -381,6 +381,11 @@ export default function OneDayDetailPage({ config }) {
         <Button href="#programm" variant="secondary" size="lg">
           Programm ansehen
         </Button>
+        {config.libraryHref && (
+          <Button href={config.libraryHref} variant="secondary" size="lg">
+            Skill Library
+          </Button>
+        )}
       </PageHero>
 
       <SectionBlock variant="white" accent={accent.glow}>
