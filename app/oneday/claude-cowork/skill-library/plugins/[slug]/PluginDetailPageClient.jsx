@@ -199,7 +199,7 @@ export default function PluginDetailPageClient({ pack, skills }) {
   return (
     <SubpageLayout>
       <PageHero
-        badge="Plugin-Paket"
+        badge="Skill-Paket"
         badgeColor={color}
         badgeBg={bg}
         title={`${pack.title} <span>Download.</span>`}
@@ -212,7 +212,7 @@ export default function PluginDetailPageClient({ pack, skills }) {
         image={pack.image}
       >
         <DownloadLink href={pack.download} download $color={color}>
-          Paket-ZIP laden
+          Upload-ZIP laden
         </DownloadLink>
         <Button href="/oneday/claude-cowork/skill-library#plugins" variant="secondary" size="lg">
           Zurück zum Katalog
@@ -236,15 +236,15 @@ export default function PluginDetailPageClient({ pack, skills }) {
           </ImagePanel>
           <InfoPanel $color={color}>
             <CyberCorners $color={color} $size={10} />
-            <Label $color={color}>Claude Plugin-Paket</Label>
+            <Label $color={color}>Claude.ai Skill-Paket</Label>
             <InfoTitle>{pack.title}</InfoTitle>
             <Text>
-              Das Paket-ZIP enthält eine `.claude/skills/`-Struktur mit allen enthaltenen Skills.
-              Die einzelnen Skills bleiben zusätzlich separat ladbar, damit Teilnehmende ihre eigene Library schlank halten können.
+              Das Paket-ZIP ist ein direkt installierbarer Claude.ai Skill. Es enthält `SKILL.md`
+              im Paketordner und die einzelnen Workflows als Referenzen, damit ein Upload reicht.
             </Text>
             <ActionRow>
               <DownloadLink href={pack.download} download $color={color}>
-                Komplettes Paket laden
+                Upload-ZIP laden
               </DownloadLink>
             </ActionRow>
           </InfoPanel>
@@ -268,7 +268,7 @@ export default function PluginDetailPageClient({ pack, skills }) {
                   Detailseite
                 </TextLink>
                 <DownloadLink href={skill.download} download $color={color} $compact>
-                  Skill-ZIP
+                  Upload-ZIP
                 </DownloadLink>
               </SkillActions>
             </SkillCard>

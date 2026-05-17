@@ -5,7 +5,7 @@ export const dynamic = 'force-dynamic';
 
 export const metadata = {
   title: 'Claude Cowork Skill Library',
-  description: 'Passwortgeschützte Skill- und Plugin-Bibliothek für OneDay Claude Cowork Teilnehmer.',
+  description: 'Passwortgeschützte Skill- und Skill-Paket-Bibliothek für OneDay Claude Cowork Teilnehmer.',
   robots: 'noindex, nofollow',
 };
 

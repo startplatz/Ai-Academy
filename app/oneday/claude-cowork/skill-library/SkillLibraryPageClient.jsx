@@ -384,7 +384,7 @@ export default function SkillLibraryPageClient() {
         badgeColor={tokens.colors.primary}
         badgeBg={tokens.colors.primaryLighter}
         title="Claude Cowork <span>Skill Library.</span>"
-        subtitle="Skills und Plugin-Pakete für wiederkehrende Arbeitsprozesse: als Katalog zum Durchstöbern und als Claude-kompatible ZIPs zum Herunterladen."
+        subtitle="Skills und Skill-Pakete für wiederkehrende Arbeitsprozesse: als Katalog zum Durchstöbern und als Claude.ai Upload-ZIPs zum Herunterladen."
         breadcrumbs={[
           { label: 'OneDay', href: '/oneday' },
           { label: 'Claude Cowork', href: '/oneday/claude-cowork' },
@@ -394,7 +394,7 @@ export default function SkillLibraryPageClient() {
         image="/claude-cowork/images/library-hero.webp"
       >
         <Button href="#plugins" variant="primary" size="lg" arrow>
-          Plugin-Katalog
+          Skill-Pakete
         </Button>
         <Button href="#skills" variant="secondary" size="lg">
           Skills suchen
@@ -417,21 +417,21 @@ export default function SkillLibraryPageClient() {
           <Stat>
             <CyberCorners $color={tokens.colors.mint} $size={7} />
             <StatValue $color={tokens.colors.mint}>{CLAUDE_COWORK_PACKAGES.length}</StatValue>
-            <StatLabel>Plugin-Pakete</StatLabel>
+            <StatLabel>Skill-Pakete</StatLabel>
           </Stat>
           <Stat>
             <CyberCorners $color={tokens.colors.orange} $size={7} />
             <StatValue $color={tokens.colors.orange}>SKILL.md</StatValue>
-            <StatLabel>Claude-Format</StatLabel>
+            <StatLabel>Claude.ai Upload</StatLabel>
           </Stat>
         </Stats>
       </SectionBlock>
 
       <SectionBlock
         id="plugins"
-        badge="Plugin-Katalog"
-        title="Arbeitsbereiche als <span>Skill-Pakete.</span>"
-        subtitle="Jedes Paket bündelt mehrere Skills zu einem wiederverwendbaren Arbeitsmodus für eine Rolle, Abteilung oder typische Prozesswelt."
+        badge="Skill-Pakete"
+        title="Arbeitsbereiche als <span>Upload-ZIPs.</span>"
+        subtitle="Jedes Paket ist ein installierbarer Claude.ai Skill mit SKILL.md im Paketordner und den enthaltenen Skills als Referenzen."
         accent={tokens.colors.glow}
       >
         <PackageGrid>
@@ -464,7 +464,7 @@ export default function SkillLibraryPageClient() {
                       Details
                     </Button>
                     <DownloadLink href={pack.download} download $color={color}>
-                      ZIP laden
+                      Upload-ZIP laden
                     </DownloadLink>
                   </Actions>
                 </PackageBody>
@@ -541,7 +541,7 @@ export default function SkillLibraryPageClient() {
                     Detailseite
                   </TextLink>
                   <DownloadLink href={skill.download} download $color={color} $compact>
-                    ZIP
+                    Upload-ZIP
                   </DownloadLink>
                 </SkillLinks>
               </SkillCard>

@@ -189,7 +189,7 @@ export default function LoginPageClient({ hasError = false }) {
             <Badge>Teilnehmerzugang</Badge>
             <Heading>Claude Workflows freischalten.</Heading>
             <Copy>
-              Melde dich mit dem Workshop-Passwort an und lade Skills oder komplette Plugin-Pakete im Claude-Format herunter.
+              Melde dich mit dem Workshop-Passwort an und lade Skills oder komplette Skill-Pakete als Claude.ai Upload-ZIP herunter.
             </Copy>
             <Form action={loginClaudeCoworkLibrary}>
               <Label>

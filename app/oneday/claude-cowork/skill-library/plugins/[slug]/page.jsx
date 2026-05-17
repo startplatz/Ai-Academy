@@ -10,7 +10,7 @@ import PluginDetailPageClient from './PluginDetailPageClient';
 export const dynamic = 'force-dynamic';
 
 export const metadata = {
-  title: 'Claude Cowork Plugin-Paket',
+  title: 'Claude Cowork Skill-Paket',
   robots: 'noindex, nofollow',
 };
 
