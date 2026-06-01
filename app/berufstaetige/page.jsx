@@ -49,7 +49,7 @@ export default function BerufstaetigePage() {
   const details = [
     { label: 'Format', value: '8 Wochen Teilzeit' },
     { label: 'Rhythmus', value: 'Di & Do, 15-18 Uhr' },
-    { label: 'Teilnehmer', value: 'Max. 20 pro Kohorte' },
+    { label: 'Teilnehmer', value: 'Max. 20 pro Kurs' },
     { label: 'Förderung', value: 'QCG-förderfähig' },
   ];
 
@@ -78,7 +78,7 @@ export default function BerufstaetigePage() {
 
   const stats = [
     { value: 1000, label: 'Absolventen', suffix: '+' },
-    { value: 20, label: 'Max. Teilnehmer pro Kohorte' },
+    { value: 20, label: 'Max. Teilnehmer pro Kurs' },
     { displayValue: '2x', label: 'Pro Woche, Di & Do' },
   ];
 
