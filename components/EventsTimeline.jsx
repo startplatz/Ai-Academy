@@ -7,8 +7,8 @@ import { tokens, media } from '../styles/tokens';
 import { clipBR, clipTLBR, CHAMFER, CyberCorners } from '../styles/cyberpunk';
 
 /* ─────────────────────────────────────────────
-   EVENTS TIMELINE – Video background section
-   Live data: /api/events (Tribe Events API, 30-min ISR)
+   EVENTS TIMELINE – dark, branded, with pep
+   Live data: /api/events (HTML-scrape, 30-min ISR)
    Fallback: static list below if API fails
    ───────────────────────────────────────────── */
 
@@ -34,6 +34,33 @@ const FALLBACK_EVENTS = [
   { id: 'fallback-5', date: 'MÄR 10', title: 'AI Trends 2026', tags: ['Online'], description: 'Keynote: Die wichtigsten KI-Entwicklungen im neuen Jahr.', location: 'Livestream', cta: 'Register', href: ALL_EVENTS_URL },
 ];
 
+/* Per-card accent rotation – keeps the dark wall lively but on-brand */
+const ACCENTS = [tokens.colors.mint, tokens.colors.navy, tokens.colors.primaryLight, tokens.colors.orange];
+const accentFor = (idx, featured) => (featured ? tokens.colors.primaryLight : ACCENTS[idx % ACCENTS.length]);
+
+/* ── Keyframes ─────────────────────────────── */
+const scan = keyframes`
+  0%   { transform: translateX(-30%); opacity: 0; }
+  12%  { opacity: 1; }
+  88%  { opacity: 1; }
+  100% { transform: translateX(130%); opacity: 0; }
+`;
+
+const pulseDot = keyframes`
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.35; transform: scale(0.8); }
+`;
+
+const featuredGlow = keyframes`
+  0%, 100% { box-shadow: 0 0 0 1px rgba(124,58,237,0.45), 0 16px 50px rgba(124,58,237,0.22); }
+  50%      { box-shadow: 0 0 0 1px rgba(20,184,166,0.45), 0 16px 60px rgba(124,58,237,0.38); }
+`;
+
+const shimmer = keyframes`
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+`;
+
 /* ── Styles ────────────────────────────────── */
 
 const Section = styled.section`
@@ -42,9 +69,35 @@ const Section = styled.section`
   padding: ${tokens.spacing.section} 0;
   overflow: hidden;
   background:
-    radial-gradient(ellipse at 20% 60%, rgba(124, 58, 237, 0.18) 0%, transparent 55%),
-    radial-gradient(ellipse at 80% 20%, rgba(167, 139, 250, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 18% 58%, rgba(124, 58, 237, 0.20) 0%, transparent 55%),
+    radial-gradient(ellipse at 82% 18%, rgba(20, 184, 166, 0.12) 0%, transparent 52%),
     linear-gradient(155deg, #1A0E3F 0%, #2D1472 40%, #1E0B50 70%, #120830 100%);
+`;
+
+/* Fine technical grid texture – static, very low opacity */
+const GridOverlay = styled.div`
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(ellipse at 50% 40%, #000 0%, transparent 78%);
+  mask-image: radial-gradient(ellipse at 50% 40%, #000 0%, transparent 78%);
+`;
+
+/* Animated accent scanline sweeping across the section top */
+const ScanLine = styled.div`
+  position: absolute;
+  top: 0; left: 0;
+  height: 2px;
+  width: 34%;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, ${tokens.colors.primaryLight}, ${tokens.colors.mint}, transparent);
+  animation: ${scan} 7s ease-in-out infinite;
+  @media (prefers-reduced-motion: reduce) { animation: none; opacity: 0.3; }
 `;
 
 const Container = styled.div`
@@ -57,7 +110,9 @@ const Container = styled.div`
 `;
 
 const SectionBadge = styled.span`
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   padding: 5px 14px;
   font-family: ${tokens.fonts.mono};
   font-size: ${tokens.fontSizes.xs};
@@ -66,9 +121,18 @@ const SectionBadge = styled.span`
   text-transform: uppercase;
   color: ${tokens.colors.primaryLight};
   background: rgba(124, 58, 237, 0.12);
-  border: 1px solid rgba(124, 58, 237, 0.2);
+  border: 1px solid rgba(124, 58, 237, 0.25);
   ${clipBR(CHAMFER.xs)}
   margin-bottom: ${tokens.spacing.lg};
+`;
+
+const LiveDot = styled.span`
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: ${({ $live }) => ($live ? tokens.colors.mint : tokens.colors.darkMuted)};
+  box-shadow: ${({ $live }) => ($live ? `0 0 8px ${tokens.colors.mint}` : 'none')};
+  ${({ $live }) => $live && css`animation: ${pulseDot} 1.8s ease-in-out infinite;`}
+  @media (prefers-reduced-motion: reduce) { animation: none; }
 `;
 
 const SectionTitle = styled.h2`
@@ -82,7 +146,7 @@ const SectionTitle = styled.h2`
   text-transform: uppercase;
 
   span {
-    background: linear-gradient(135deg, ${tokens.colors.primaryLight}, ${tokens.colors.primaryMuted});
+    background: linear-gradient(120deg, ${tokens.colors.primaryLight} 0%, ${tokens.colors.mint} 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -106,21 +170,40 @@ const DragHint = styled.span`
   margin-bottom: ${tokens.spacing.md};
 `;
 
+/* Viewport with edge fades to hint horizontal scroll */
+const ScrollViewport = styled.div`
+  position: relative;
+  z-index: 1;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: ${tokens.spacing.md};
+    width: 56px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  &::before { left: 0;  background: linear-gradient(90deg, #160A3A 0%, transparent 100%); }
+  &::after  { right: 0; background: linear-gradient(270deg, #120830 0%, transparent 100%); }
+  ${media.lg} {
+    &::before, &::after { width: 90px; }
+  }
+`;
+
 const ScrollWrapper = styled.div`
   position: relative;
   z-index: 1;
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 0 ${tokens.spacing.lg};
+  padding: ${tokens.spacing.sm} ${tokens.spacing.lg} 0;
   scroll-padding-inline: ${tokens.spacing.lg};
   scroll-snap-type: x mandatory;
   overscroll-behavior-inline: contain;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  &::-webkit-scrollbar { display: none; }
+  ${media.lg} { padding-left: ${tokens.spacing['2xl']}; padding-right: ${tokens.spacing['2xl']}; }
 `;
 
 const ScrollRow = styled.div`
@@ -130,7 +213,7 @@ const ScrollRow = styled.div`
   min-width: 100%;
   cursor: grab;
   user-select: none;
-  padding-bottom: ${tokens.spacing.md};
+  padding-bottom: ${tokens.spacing.lg};
 
   &:active { cursor: grabbing; }
 `;
@@ -143,31 +226,79 @@ const EventCard = styled.article`
   flex-direction: column;
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  background: rgba(20, 20, 20, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: linear-gradient(180deg, rgba(28, 18, 56, 0.92) 0%, rgba(14, 8, 32, 0.96) 100%);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  ${clipBR(CHAMFER.lg)}
+  ${clipTLBR(CHAMFER.lg)}
   overflow: hidden;
   transition: transform ${tokens.transitions.base}, border-color ${tokens.transitions.base},
-              filter ${tokens.transitions.base};
+              box-shadow ${tokens.transitions.base};
 
   &:hover {
-    transform: translateY(-4px);
-    border-color: rgba(124, 58, 237, 0.3);
-    filter: drop-shadow(0 12px 40px rgba(124, 58, 237, 0.15));
+    transform: translateY(-6px);
+    border-color: ${({ $accent }) => `${$accent}66`};
+    box-shadow: 0 18px 50px ${({ $accent }) => `${$accent}33`};
   }
+  &:hover img { transform: scale(1.06); }
 
   ${({ $featured }) => $featured && css`
     width: min(88vw, 440px);
-    border-color: rgba(124, 58, 237, 0.3);
+    border-color: transparent;
+    animation: ${featuredGlow} 4.5s ease-in-out infinite;
+    @media (prefers-reduced-motion: reduce) { animation: none; box-shadow: 0 0 0 1px rgba(124,58,237,0.45); }
   `}
 `;
 
-const CardImageWrap = styled.div`
-  aspect-ratio: 5 / 4;
+const MediaWrap = styled.div`
+  position: relative;
+  aspect-ratio: 16 / 10;
   overflow: hidden;
-  img { width: 100%; height: 100%; object-fit: cover; }
+  background: linear-gradient(135deg, ${({ $accent }) => `${$accent}2e`} 0%, rgba(10,6,26,0.9) 70%);
+
+  img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform ${tokens.transitions.slow};
+  }
+`;
+
+const MediaOverlay = styled.div`
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(10, 6, 26, 0.85) 100%);
+  pointer-events: none;
+`;
+
+/* Big date – the hero element of each card */
+const DateChip = styled.div`
+  position: absolute;
+  left: ${tokens.spacing.md};
+  bottom: ${tokens.spacing.md};
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  padding: 8px 12px;
+  background: rgba(10, 6, 26, 0.6);
+  border: 1px solid ${({ $accent }) => `${$accent}66`};
+  border-left: 3px solid ${({ $accent }) => $accent};
+  backdrop-filter: blur(4px);
+  ${clipBR(CHAMFER.xs)}
+
+  .day {
+    font-family: ${tokens.fonts.display};
+    font-size: ${tokens.fontSizes['3xl']};
+    font-weight: ${tokens.fontWeights.black};
+    color: #fff;
+  }
+  .mon {
+    font-family: ${tokens.fonts.mono};
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: ${({ $accent }) => $accent};
+    margin-top: 2px;
+  }
 `;
 
 const CardBody = styled.div`
@@ -175,18 +306,6 @@ const CardBody = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-`;
-
-const DateBadge = styled.span`
-  display: inline-block;
-  padding: 4px 10px;
-  font-family: ${tokens.fonts.mono};
-  font-size: ${tokens.fontSizes.xs};
-  font-weight: ${tokens.fontWeights.bold};
-  color: ${tokens.colors.primaryLight};
-  background: rgba(124, 58, 237, 0.15);
-  ${clipBR(CHAMFER.xs)}
-  margin-bottom: ${tokens.spacing.sm};
 `;
 
 const TagRow = styled.div`
@@ -197,12 +316,14 @@ const TagRow = styled.div`
 
 const Tag = styled.span`
   padding: 2px 8px;
+  font-family: ${tokens.fonts.mono};
   font-size: 10px;
   font-weight: ${tokens.fontWeights.semi};
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: ${tokens.colors.darkMuted};
-  border: 1px solid rgba(255,255,255,0.08);
+  color: ${({ $accent }) => $accent};
+  background: ${({ $accent }) => `${$accent}1a`};
+  border: 1px solid ${({ $accent }) => `${$accent}3d`};
   ${clipBR(4)}
 `;
 
@@ -223,51 +344,61 @@ const EventDesc = styled.p`
 `;
 
 const LocationText = styled.span`
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-size: ${tokens.fontSizes.xs};
   color: rgba(255,255,255,0.58);
   margin-bottom: ${tokens.spacing.md};
+
+  svg { width: 12px; height: 12px; flex-shrink: 0; color: ${({ $accent }) => $accent}; }
 `;
 
 const EventCTA = styled.a`
   display: inline-flex;
   align-items: center;
+  justify-content: space-between;
   gap: 6px;
-  padding: 8px 20px;
+  padding: 10px 18px;
+  font-family: ${tokens.fonts.body};
   font-size: ${tokens.fontSizes.sm};
   font-weight: ${tokens.fontWeights.semi};
   color: #fff;
-  background: ${tokens.colors.primary};
+  background: ${({ $featured }) => ($featured ? tokens.colors.primary : 'rgba(255,255,255,0.06)')};
+  border: 1px solid ${({ $accent, $featured }) => ($featured ? 'transparent' : `${$accent}55`)};
   ${clipBR(CHAMFER.xs)}
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  transition: all ${tokens.transitions.fast};
+  transition: background ${tokens.transitions.fast}, border-color ${tokens.transitions.fast}, color ${tokens.transitions.fast};
   margin-top: auto;
-  &:hover { background: ${tokens.colors.primaryHover}; color: #fff; }
 
-  svg { width: 14px; height: 14px; }
-`;
+  &:hover {
+    background: ${({ $featured }) => ($featured ? tokens.colors.primaryHover : 'rgba(255,255,255,0.12)')};
+    border-color: ${({ $accent }) => $accent};
+    color: #fff;
+  }
+  &:hover svg { transform: translateX(4px); }
 
-const shimmer = keyframes`
-  0%   { background-position: -400px 0; }
-  100% { background-position: 400px 0; }
+  svg { width: 14px; height: 14px; transition: transform ${tokens.transitions.fast}; color: ${({ $accent, $featured }) => ($featured ? '#fff' : $accent)}; }
 `;
 
 const SkeletonCard = styled.div`
   flex: 0 0 auto;
   width: 340px;
-  height: 440px;
+  height: 420px;
+  scroll-snap-align: start;
   background: linear-gradient(
     90deg,
     rgba(255,255,255,0.04) 0%,
-    rgba(255,255,255,0.08) 50%,
+    rgba(255,255,255,0.09) 50%,
     rgba(255,255,255,0.04) 100%
   );
   background-size: 800px 100%;
   animation: ${shimmer} 1.6s linear infinite;
   border: 1px solid rgba(255,255,255,0.06);
-  ${clipBR(CHAMFER.lg)}
+  ${clipTLBR(CHAMFER.lg)}
+  @media (prefers-reduced-motion: reduce) { animation: none; }
 `;
 
 const StatusNote = styled.p`
@@ -315,13 +446,23 @@ const AllLink = styled.a`
 `;
 
 const ArrowSVG = () => (
-  <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h8.5m0 0L8 4.5m3.5 3.5L8 11.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+  <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h8.5m0 0L8 4.5m3.5 3.5L8 11.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
 );
+
+const PinSVG = () => (
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z" stroke="currentColor" strokeWidth="2"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" strokeWidth="2"/></svg>
+);
+
+/* Split a "JUN 23" badge into month + day */
+function splitDate(date) {
+  const parts = (date || '').trim().split(/\s+/);
+  if (parts.length >= 2) return { mon: parts[0], day: parts[1] };
+  return { mon: '', day: parts[0] || '' };
+}
 
 /* ── Component ─────────────────────────────── */
 
 export default function EventsTimeline() {
-  /* ── Live events ─────────────────────────── */
   const [events, setEvents] = useState(null);        // null = loading, [] = empty/error
   const [source, setSource] = useState('loading');   // 'loading' | 'live' | 'fallback'
 
@@ -339,7 +480,6 @@ export default function EventsTimeline() {
           setEvents(data.events);
           setSource('live');
         } else {
-          // Endpoint reachable but returned no events – show fallback gracefully
           setEvents(FALLBACK_EVENTS);
           setSource('fallback');
         }
@@ -359,40 +499,60 @@ export default function EventsTimeline() {
 
   return (
     <Section id="events" aria-label="Veranstaltungen">
+      <GridOverlay aria-hidden="true" />
+      <ScanLine aria-hidden="true" />
+
       <Container>
-        <SectionBadge>Saison 2026</SectionBadge>
+        <SectionBadge>
+          <LiveDot $live={source === 'live'} aria-hidden="true" />
+          {source === 'live' ? 'Live · STARTPLATZ AI Hub' : 'Saison 2026'}
+        </SectionBadge>
         <SectionTitle>Nächste <span>Events</span></SectionTitle>
         <SectionSubtitle>Von Bootcamps über Workshops bis zu kostenlosen Meetups – finde dein nächstes Event.</SectionSubtitle>
-        <DragHint aria-hidden="true">&gt; Ziehen zum Entdecken</DragHint>
+        <DragHint aria-hidden="true">&gt; Wischen zum Entdecken</DragHint>
         {source === 'fallback' && (
           <StatusNote aria-live="polite">&gt; Live-Feed aktuell nicht erreichbar – zeige Vorschau</StatusNote>
         )}
       </Container>
 
-      <ScrollWrapper role="region" aria-label="Event-Karussell" tabIndex={0}>
-        <ScrollRow>
-          {isLoading
-            ? Array.from({ length: 4 }).map((_, i) => <SkeletonCard key={`sk-${i}`} aria-hidden="true" />)
-            : cards.map((ev) => (
-                <EventCard key={ev.id || ev.title} $featured={ev.featured} aria-label={`${ev.title} – ${ev.date}`}>
-                  <CyberCorners $color={ev.featured ? tokens.colors.primaryLight : tokens.colors.mint} $size={10} />
-                  {ev.image && <CardImageWrap><img src={ev.image} alt={ev.title} loading="lazy" width="1000" height="800" /></CardImageWrap>}
-                  <CardBody>
-                    <DateBadge><time>{ev.date}</time></DateBadge>
-                    {ev.tags && ev.tags.length > 0 && (
-                      <TagRow>{ev.tags.map((t) => <Tag key={t}>{t}</Tag>)}</TagRow>
-                    )}
-                    <EventTitle>{ev.title}</EventTitle>
-                    {ev.description && <EventDesc>{ev.description}</EventDesc>}
-                    {ev.location && <LocationText>{ev.location}</LocationText>}
-                    <EventCTA href={ev.href || ALL_EVENTS_URL} target="_blank" rel="noopener noreferrer">
-                      {ev.cta || 'Anmelden'} <ArrowSVG />
-                    </EventCTA>
-                  </CardBody>
-                </EventCard>
-              ))}
-        </ScrollRow>
-      </ScrollWrapper>
+      <ScrollViewport>
+        <ScrollWrapper role="region" aria-label="Event-Karussell" tabIndex={0}>
+          <ScrollRow>
+            {isLoading
+              ? Array.from({ length: 4 }).map((_, i) => <SkeletonCard key={`sk-${i}`} aria-hidden="true" />)
+              : cards.map((ev, i) => {
+                  const accent = accentFor(i, ev.featured);
+                  const { mon, day } = splitDate(ev.date);
+                  return (
+                    <EventCard key={ev.id || ev.title} $featured={ev.featured} $accent={accent} aria-label={`${ev.title} – ${ev.date}`}>
+                      <CyberCorners $color={accent} $size={12} />
+                      <MediaWrap $accent={accent}>
+                        {ev.image && <img src={ev.image} alt={ev.title} loading="lazy" width="1000" height="625" />}
+                        <MediaOverlay />
+                        {(day || mon) && (
+                          <DateChip $accent={accent}>
+                            <span className="day">{day}</span>
+                            {mon && <span className="mon">{mon}</span>}
+                          </DateChip>
+                        )}
+                      </MediaWrap>
+                      <CardBody>
+                        {ev.tags && ev.tags.length > 0 && (
+                          <TagRow>{ev.tags.map((t) => <Tag key={t} $accent={accent}>{t}</Tag>)}</TagRow>
+                        )}
+                        <EventTitle>{ev.title}</EventTitle>
+                        {ev.description && <EventDesc>{ev.description}</EventDesc>}
+                        {ev.location && <LocationText $accent={accent}><PinSVG />{ev.location}</LocationText>}
+                        <EventCTA href={ev.href || ALL_EVENTS_URL} $accent={accent} $featured={ev.featured} target="_blank" rel="noopener noreferrer">
+                          {ev.cta || 'Anmelden'} <ArrowSVG />
+                        </EventCTA>
+                      </CardBody>
+                    </EventCard>
+                  );
+                })}
+          </ScrollRow>
+        </ScrollWrapper>
+      </ScrollViewport>
 
       <Container>
         <AllEventsCTAWrap>
