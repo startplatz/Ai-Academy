@@ -38,7 +38,14 @@ const NAV_LINKS = [
       { label: 'Presse & Medien', href: '/presse' },
     ],
   },
-  { label: 'Insights', href: '/insights' },
+  {
+    label: 'Insights',
+    href: '/insights',
+    children: [
+      { label: 'Übersicht', href: '/insights' },
+      { label: 'KI-News · Daily', href: '/insights/ki-news' },
+    ],
+  },
 ];
 
 const Header = styled.header`

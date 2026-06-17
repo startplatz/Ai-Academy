@@ -1,0 +1,307 @@
+{
+  "meta": {
+    "title": "KI-News",
+    "description": "Täglicher KI-Newsstream der STARTPLATZ AI Academy.",
+    "updatedAt": "2026-06-17"
+  },
+  "editions": [
+    {
+      "date": "2026-06-17",
+      "dateLabel": "17. Juni 2026",
+      "period": "11. – 17. Juni 2026",
+      "summary": "G7 macht KI zur Chefsache, Google open-sourct DiffusionGemma, OpenAI institutionalisiert die KI-Einführung.",
+      "tldr": [
+        {
+          "title": "G7 in Évian endet mit KI im Zentrum — freiwillige Selbstverpflichtungen statt harter Regeln",
+          "text": "Am Abschlusstag diskutieren die G7-Chefs gemeinsam mit Altman, Hassabis & Amodei die Zukunft der KI. Erwartetes Ergebnis: ein Paket freiwilliger Commitments rund um Jugendschutz und Frontier-Risiken. OpenAI fordert ein internationales „Youth AI Safety Institute“. Kritiker warnen: Pledges ohne Zähne."
+        },
+        {
+          "title": "Google open-sourct DiffusionGemma — Textgenerierung bricht mit dem Token-für-Token-Prinzip",
+          "text": "DeepMind veröffentlicht ein Diffusions-Sprachmodell (26B, 4B aktiv, Apache 2.0), das 256 Token parallel „entrauscht“ statt sequenziell zu schreiben. Resultat: bis 4× schneller, ~1.000 Token/s auf einer H100, lauffähig auf High-End-Consumer-Karten."
+        },
+        {
+          "title": "OpenAI macht KI-Einführung zum Geschäftsmodell — neue $4-Mrd.-Deployment-Company",
+          "text": "Die neue Deployment-Company setzt eigene Engineers in Unternehmen. Parallel stellt OpenAI eine „Deployment Simulation“ vor, die echte Alt-Konversationen durch Kandidatenmodelle replayt, um Risiken VOR dem Release zu schätzen."
+        }
+      ],
+      "stories": [
+        {
+          "title": "G7-Abschluss in Évian: KI-Selbstverpflichtungen als neuer Standard",
+          "category": "Geopolitik · KI-Governance",
+          "labs": [
+            "G7 / Politik"
+          ],
+          "tone": "info",
+          "summary": "Der 52. G7-Gipfel endet mit einer Schlusssession zur Zukunft der KI. Erstmals saßen die CEOs der drei großen US-Frontier-Labs — Sam Altman (OpenAI), Demis Hassabis (Google DeepMind) und Dario Amodei (Anthropic) — gemeinsam mit Staatschefs an einem Tisch. Laut OpenAIs Chris Lehane sollen die Tech-Firmen mit einem Paket freiwilliger Selbstverpflichtungen abreisen: Jugendschutz oben auf der Agenda, dazu Frontier-Risiken in Cyber und Biologie. OpenAI fordert ein internationales „Youth AI Safety Institute“. Kritiker erinnern, dass solche Pledges bislang selten mit Sanktionen kamen.",
+          "why": "KI-Governance ist endgültig Chefsache auf Staatsebene — das Framing, mit dem die STARTPLATZ AI Academy den NRW-Mittelstand abholt: Wer KI strategisch einsetzt, muss Regeln und Verantwortlichkeiten mitdenken.",
+          "links": [
+            {
+              "label": "CNBC",
+              "url": "https://www.cnbc.com/2026/06/17/g7-trump-ai-tech-leaders-openai-anthropic-google.html"
+            },
+            {
+              "label": "OpenAI",
+              "url": "https://openai.com/index/advancing-youth-safety-and-opportunity-through-global-leadership/"
+            },
+            {
+              "label": "G7-Statements",
+              "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/06/17/g7-leaders-joint-statements-evian-france-16-17-june-2026/"
+            }
+          ]
+        },
+        {
+          "title": "DiffusionGemma: schnelles, offenes Diffusions-Textmodell",
+          "category": "Modelle · Open Source",
+          "labs": [
+            "Google"
+          ],
+          "tone": "good",
+          "summary": "Google DeepMind hat DiffusionGemma open-sourced — das erste in Produktionsreife gebrachte Diffusions-Sprachmodell. Statt Token für Token zu schreiben, startet es von einer „Leinwand“ aus 256 Zufallstoken und verfeinert sie parallel. Basis ist die Gemma-4-Architektur (26B mit 4B aktiven Parametern, Mixture-of-Experts), die Lizenz ist Apache 2.0. Das Modell erzeugt Text bis zu 4× schneller (über 1.000 Token/s auf einer H100), kann sich während der Generierung selbst korrigieren und läuft dank geringerem RAM-Bedarf auf High-End-Consumer-GPUs.",
+          "why": "Schnelle, günstige, lokal lauffähige Modelle senken die Einstiegshürde für den Mittelstand drastisch — genau das Datenschutz- und Kostenargument, das in NRW-Workshops zieht. Konkreter Stoff für eine Demo „LLM auf eigener Hardware“.",
+          "links": [
+            {
+              "label": "DeepMind",
+              "url": "https://deepmind.google/models/gemma/diffusiongemma/"
+            },
+            {
+              "label": "VentureBeat",
+              "url": "https://venturebeat.com/technology/googles-diffusiongemma-generates-256-tokens-in-parallel-and-self-corrects-as-it-goes"
+            },
+            {
+              "label": "SiliconANGLE",
+              "url": "https://siliconangle.com/2026/06/10/google-open-sources-speedy-diffusiongemma-text-diffusion-model/"
+            }
+          ]
+        },
+        {
+          "title": "OpenAI institutionalisiert KI-Einführung — $4-Mrd.-Deployment-Company",
+          "category": "Enterprise · Adoption",
+          "labs": [
+            "OpenAI"
+          ],
+          "tone": "info",
+          "summary": "OpenAI hat die „OpenAI Deployment Company“ gestartet — ein mehrheitlich eigenkontrolliertes Geschäft mit über 4 Mrd. US-Dollar Startkapital und 19 Investmentfirmen, Beratungen und Systemintegratoren (Lead: TPG; Co-Leads: Advent, Bain Capital, Brookfield). „Forward Deployed Engineers“ arbeiten direkt in Unternehmen, identifizieren Hebel und bauen Workflows um KI herum um. Die KI-Beratung Tomoro (~150 Engineers) wird übernommen. Parallel stellte OpenAI „Deployment Simulation“ vor: eine Methode, die ~1,3 Mio. de-identifizierte Alt-Konversationen durch ein Kandidatenmodell replayt, um Fehlverhalten VOR dem Release zu schätzen.",
+          "why": "Die Botschaft an den Mittelstand: Der Engpass ist nicht das Modell, sondern die Einführung in die eigenen Prozesse. Genau diese Lücke füllen STARTPLATZ-Workshops und der KI-Manager-Kurs — herstellerunabhängig und vor Ort in NRW.",
+          "links": [
+            {
+              "label": "OpenAI",
+              "url": "https://openai.com/index/openai-launches-the-deployment-company/"
+            },
+            {
+              "label": "TNW",
+              "url": "https://thenextweb.com/news/openai-deployment-company-4bn-tpg-tomoro"
+            },
+            {
+              "label": "Deployment Sim",
+              "url": "https://www.marktechpost.com/2026/06/16/openai-deployment-simulation/"
+            }
+          ]
+        },
+        {
+          "title": "AI Act: Artikel 4 bleibt beim 02.08. — Countdown läuft",
+          "category": "EU · Regulierung",
+          "labs": [
+            "EU / Regulierung"
+          ],
+          "tone": "warn",
+          "summary": "Die politische Einigung zum „Digital Omnibus“ (07.05.2026) hat die Fristen der KI-Verordnung neu sortiert: Hochrisiko-Pflichten rutschen Richtung 2027/2028, die Transparenz-/Kennzeichnungspflichten greifen ab 02.12.2026. Entscheidend und in der Debatte oft falsch wiedergegeben: Artikel 4 — die Pflicht zu ausreichender KI-Kompetenz der Beschäftigten — wurde NICHT verschoben und ist ab 02.08.2026 durchsetzbar. Eine KMU-Ausnahme gibt es nicht.",
+          "why": "Die Kernbegründung des KI-Manager-Kurses — jetzt mit sauberer Faktenlage gegen die kursierende „alles verschoben“-Fehlannahme. Schulungspflicht plus dokumentiertes KI-Inventar als konkretes Workshop-Paket für NRW-Firmen, mit Countdown bis August.",
+          "links": [
+            {
+              "label": "ScaleWise",
+              "url": "https://www.scalewise-ai.de/blog/2026-05-digital-omnibus-einigung-eu-ai-act-fristen"
+            },
+            {
+              "label": "Art. 4 Umsetzung",
+              "url": "https://plotdesk.com/magazin/ki-schulungspflicht-art-4-eu-ai-act-umsetzung-2026"
+            }
+          ]
+        },
+        {
+          "title": "Aleph Alpha & Cohere — Europas KI-Hoffnung mit kanadischem Pass",
+          "category": "Deutschland · Souveränität",
+          "labs": [
+            "Aleph Alpha"
+          ],
+          "tone": "warn",
+          "summary": "Deutschlands bekanntestes KI-Startup Aleph Alpha und der kanadische Wettbewerber Cohere haben sich zusammengeschlossen — offiziell „auf Augenhöhe“, faktisch eine weitgehend einseitige Übernahme. Berlin und Ottawa feiern den Deal als Souveränitätsprojekt; gleichzeitig markiert er das Eingeständnis, dass Deutschland wohl keinen eigenständigen KI-Champion mehr aufbauen wird. Aleph Alpha positioniert sich mit PhariaAI (gemeinsam mit Schwarz Digits) als „Betriebssystem“ für den souveränen Betrieb verschiedener Open-Source-Modelle.",
+          "why": "Digitale Souveränität ist für NRW-Mittelständler und öffentliche Auftraggeber ein wachsendes Beschaffungskriterium. Guter Aufhänger für das Workshop-Thema „Souveräne KI: Open-Weight-Modelle, EU-Hosting und Datenschutz in der Praxis“.",
+          "links": [
+            {
+              "label": "NZZ",
+              "url": "https://www.nzz.ch/wirtschaft/aleph-alpha-war-einmal-europas-groesste-ki-hoffnung-jetzt-uebernehmen-kanadier-was-davon-uebrig-bleibt-ld.10004303"
+            },
+            {
+              "label": "Handelsblatt",
+              "url": "https://www.handelsblatt.com/technik/ki/ki-briefing/ki-briefing-deutschlands-ki-hoffnung-hat-jetzt-einen-kanadischen-pass/100218373.html"
+            }
+          ]
+        }
+      ],
+      "research": [
+        {
+          "tag": "DeepMind · Architektur",
+          "title": "DiffusionGemma: Text per Diffusion statt Token-für-Token",
+          "text": "Open-Source-Modell (Apache 2.0), das 256 Token parallel entrauscht und sich selbst korrigiert. Zeigt, dass Diffusion auch bei Text produktionsreif sein kann."
+        },
+        {
+          "tag": "Open Source · Agents",
+          "title": "Nous Hermes Agent — selbstkompilierende Skills",
+          "text": "Statt den Zustand pro Session zu verwerfen, kompiliert der Agent erfolgreiche Trajektorien in dauerhafte, externe Skill-Pakete. Schritt Richtung lernender Agenten."
+        },
+        {
+          "tag": "Open Source · Tooling",
+          "title": "Apache Burr — verlässliche Agenten mit State & Observability",
+          "text": "Apache-lizenziertes Framework für stateful Agent-Workflows mit eingebauter Beobachtbarkeit. Relevant für alle, die Agenten produktiv und nachvollziehbar betreiben."
+        },
+        {
+          "tag": "OpenAI · Safety-Methode",
+          "title": "Deployment Simulation: Risiko-Schätzung vor dem Release",
+          "text": "Replay von ~1,3 Mio. Alt-Konversationen durch das Kandidatenmodell; deckte u. a. „Calculator Hacking“ in GPT-5.1 auf. Medianer Schätzfehler ~1,5×."
+        }
+      ],
+      "sources": [
+        {
+          "id": "S1",
+          "title": "AI in spotlight at G7 as Trump, leaders joined by tech chiefs",
+          "outlet": "CNBC",
+          "url": "https://www.cnbc.com/2026/06/17/g7-trump-ai-tech-leaders-openai-anthropic-google.html",
+          "rating": "A"
+        },
+        {
+          "id": "S2",
+          "title": "G7 Leaders' Joint Statements — Evian, 16–17 June 2026",
+          "outlet": "Rat der EU",
+          "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/06/17/g7-leaders-joint-statements-evian-france-16-17-june-2026/",
+          "rating": "A"
+        },
+        {
+          "id": "S3",
+          "title": "Advancing youth safety through global leadership",
+          "outlet": "OpenAI",
+          "url": "https://openai.com/index/advancing-youth-safety-and-opportunity-through-global-leadership/",
+          "rating": "A"
+        },
+        {
+          "id": "S4",
+          "title": "G7 Summit Evian Live: AI CEOs Discuss Risks",
+          "outlet": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/live-blog/2026-06-17/g7-summit-evian-france-live-updates-ai-ceos-iran",
+          "rating": "B"
+        },
+        {
+          "id": "S5",
+          "title": "OpenAI calls for youth AI safety institute",
+          "outlet": "EdTech Innovation Hub",
+          "url": "https://www.edtechinnovationhub.com/news/openai-calls-for-youth-ai-safety-institute-ahead-of-g7-summit",
+          "rating": "B"
+        },
+        {
+          "id": "S6",
+          "title": "DiffusionGemma generates 256 tokens in parallel",
+          "outlet": "VentureBeat",
+          "url": "https://venturebeat.com/technology/googles-diffusiongemma-generates-256-tokens-in-parallel-and-self-corrects-as-it-goes",
+          "rating": "A"
+        },
+        {
+          "id": "S7",
+          "title": "DiffusionGemma — Modellseite",
+          "outlet": "Google DeepMind",
+          "url": "https://deepmind.google/models/gemma/diffusiongemma/",
+          "rating": "A"
+        },
+        {
+          "id": "S8",
+          "title": "Google open-sources speedy DiffusionGemma",
+          "outlet": "SiliconANGLE",
+          "url": "https://siliconangle.com/2026/06/10/google-open-sources-speedy-diffusiongemma-text-diffusion-model/",
+          "rating": "B"
+        },
+        {
+          "id": "S9",
+          "title": "OpenAI Deployment Simulation",
+          "outlet": "MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/06/16/openai-deployment-simulation/",
+          "rating": "B"
+        },
+        {
+          "id": "S10",
+          "title": "LLM News Today (June 2026)",
+          "outlet": "llm-stats.com",
+          "url": "https://llm-stats.com/ai-news",
+          "rating": "B"
+        },
+        {
+          "id": "S11",
+          "title": "OpenAI launches the Deployment Company",
+          "outlet": "OpenAI",
+          "url": "https://openai.com/index/openai-launches-the-deployment-company/",
+          "rating": "A"
+        },
+        {
+          "id": "S12",
+          "title": "OpenAI launches $4bn Deployment Company",
+          "outlet": "The Next Web",
+          "url": "https://thenextweb.com/news/openai-deployment-company-4bn-tpg-tomoro",
+          "rating": "B"
+        },
+        {
+          "id": "S13",
+          "title": "GPT-5.6: „Meaningful Leap“, Launch nears",
+          "outlet": "TechTimes",
+          "url": "https://www.techtimes.com/articles/318492/20260616/gpt-56-openai-chief-scientist-calls-it-meaningful-leap-june-launch-nears.htm",
+          "rating": "C"
+        },
+        {
+          "id": "S14",
+          "title": "Google Gemini 3.5 Pro Nears June Launch",
+          "outlet": "TechTimes",
+          "url": "https://www.techtimes.com/articles/317919/20260606/google-gemini-35-pro-nears-june-launch-2-million-token-context-deep-think-reasoning.htm",
+          "rating": "C"
+        },
+        {
+          "id": "S15",
+          "title": "Next Gemini Pro Model released on…?",
+          "outlet": "Polymarket",
+          "url": "https://polymarket.com/event/next-google-gemini-pro-model-released-onptptpt",
+          "rating": "C"
+        },
+        {
+          "id": "S16",
+          "title": "Aleph Alpha & Cohere: DE und Kanada",
+          "outlet": "NZZ",
+          "url": "https://www.nzz.ch/wirtschaft/aleph-alpha-war-einmal-europas-groesste-ki-hoffnung-jetzt-uebernehmen-kanadier-was-davon-uebrig-bleibt-ld.10004303",
+          "rating": "B"
+        },
+        {
+          "id": "S17",
+          "title": "DE-KI-Hoffnung hat jetzt kanadischen Pass",
+          "outlet": "Handelsblatt",
+          "url": "https://www.handelsblatt.com/technik/ki/ki-briefing/ki-briefing-deutschlands-ki-hoffnung-hat-jetzt-einen-kanadischen-pass/100218373.html",
+          "rating": "B"
+        },
+        {
+          "id": "S18",
+          "title": "Open-Source AI June 2026: Models, Agents, Papers",
+          "outlet": "devFlokers",
+          "url": "https://www.devflokers.com/blog/open-source-ai-roundup-june-2026",
+          "rating": "B"
+        },
+        {
+          "id": "S19",
+          "title": "June 2026 AI Launch Wave: Decision Map",
+          "outlet": "WaveSpeed",
+          "url": "https://wavespeed.ai/blog/posts/june-2026-ai-launch-wave/",
+          "rating": "B"
+        },
+        {
+          "id": "S20",
+          "title": "Digital Omnibus: Art. 4 bleibt beim 02.08.",
+          "outlet": "ScaleWise",
+          "url": "https://www.scalewise-ai.de/blog/2026-05-digital-omnibus-einigung-eu-ai-act-fristen",
+          "rating": "B"
+        }
+      ]
+    }
+  ]
+}

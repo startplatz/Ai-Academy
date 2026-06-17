@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import styled from 'styled-components';
 import { tokens, media } from '../../styles/tokens';
 import SubpageLayout from '../../components/SubpageLayout';
@@ -86,6 +87,72 @@ const Container = styled.div`
   }
 `;
 
+const NewsBanner = styled(Link)`
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: ${tokens.spacing.lg};
+  text-decoration: none;
+  background: ${tokens.colors.surface};
+  border: 1px solid ${tokens.colors.glassBorder};
+  border-left: 4px solid ${tokens.colors.primary};
+  padding: ${tokens.spacing.lg} ${tokens.spacing.xl};
+  margin-bottom: ${tokens.spacing['2xl']};
+  transition: transform ${tokens.transitions.base}, border-color ${tokens.transitions.base};
+
+  &:hover {
+    transform: translateX(4px);
+    border-color: ${tokens.colors.primary};
+  }
+`;
+
+const NewsBannerMain = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+`;
+
+const NewsBannerKicker = styled.span`
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: ${tokens.fonts.mono};
+  font-size: ${tokens.fontSizes.xs};
+  font-weight: ${tokens.fontWeights.semi};
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: ${tokens.colors.primary};
+
+  &::before {
+    content: '';
+    width: 8px; height: 8px;
+    background: ${tokens.colors.mint};
+    border-radius: 50%;
+  }
+`;
+
+const NewsBannerTitle = styled.span`
+  font-family: ${tokens.fonts.display};
+  font-size: ${tokens.fontSizes.xl};
+  font-weight: ${tokens.fontWeights.bold};
+  color: ${tokens.colors.text};
+`;
+
+const NewsBannerSub = styled.span`
+  font-size: ${tokens.fontSizes.sm};
+  color: ${tokens.colors.textMuted};
+`;
+
+const NewsBannerCta = styled.span`
+  font-family: ${tokens.fonts.mono};
+  font-size: ${tokens.fontSizes.sm};
+  font-weight: ${tokens.fontWeights.semi};
+  color: ${tokens.colors.primary};
+  white-space: nowrap;
+`;
+
 const FeaturedWrapper = styled.div`
   margin-bottom: ${tokens.spacing['4xl']};
 `;
@@ -120,6 +187,15 @@ export default function BlogPage() {
 
       <Section>
         <Container>
+          <NewsBanner href="/insights/ki-news">
+            <NewsBannerMain>
+              <NewsBannerKicker>KI-News · Daily</NewsBannerKicker>
+              <NewsBannerTitle>Täglicher KI-Newsstream</NewsBannerTitle>
+              <NewsBannerSub>Die wichtigsten KI-Nachrichten des Tages — eingeordnet für die Praxis, mit Lab-Ranking und Quellen.</NewsBannerSub>
+            </NewsBannerMain>
+            <NewsBannerCta>Zum Newsstream →</NewsBannerCta>
+          </NewsBanner>
+
           {featuredPost && (
             <FeaturedWrapper>
               <BlogCard
