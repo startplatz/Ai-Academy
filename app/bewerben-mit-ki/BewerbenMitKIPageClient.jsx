@@ -15,25 +15,25 @@ const downloadPack = `${packBase}/bewerben-mit-ki-download-pack.zip`;
 const resources = [
   {
     title: 'Bewerben mit KI Prompt-Workbook',
-    description: 'Das zentrale Workbook fuer Lebenslauf, Stellenanzeige, ATS-Check und Interviewvorbereitung.',
+    description: 'Das zentrale Workbook für Lebenslauf, Stellenanzeige, ATS-Check und Interviewvorbereitung.',
     href: `${packBase}/Bewerben-mit-KI_Prompt-Workbook.pdf`,
     type: 'PDF',
   },
   {
-    title: 'Prompt-Chain fuer Lebenslauf und Stellenanzeige',
-    description: 'Vier Prompts, die Profil, Jobanforderungen, ATS-Lesbarkeit und Interviewfit nacheinander schaerfen.',
+    title: 'Prompt-Chain für Lebenslauf und Stellenanzeige',
+    description: 'Vier Prompts, die Profil, Jobanforderungen, ATS-Lesbarkeit und Interviewfit nacheinander schärfen.',
     href: `${packBase}/01_prompt-chain.md`,
     type: 'Prompt Chain',
   },
   {
     title: 'ImageGen2 Profilfoto-Prompts',
-    description: 'Prompts fuer glaubwuerdige LinkedIn- und Bewerbungsfotos passend zu Rolle und Branche.',
+    description: 'Prompts für glaubwürdige LinkedIn- und Bewerbungsfotos passend zu Rolle und Branche.',
     href: `${packBase}/08_imagegen2_profilefoto_prompts.md`,
     type: 'Prompts',
   },
   {
     title: 'Interview-Simulator Prompt',
-    description: 'Ein Sparringspartner fuer echte Interviewfragen, kritisches Feedback und bessere Antwortversionen.',
+    description: 'Ein Sparringspartner für echte Interviewfragen, kritisches Feedback und bessere Antwortversionen.',
     href: `${packBase}/09_interview_simulator_prompt.md`,
     type: 'Prompt',
   },
@@ -55,7 +55,7 @@ const outcomes = [
   {
     tag: '01',
     title: 'Stellenanzeige in Signale zerlegen',
-    text: 'Du findest die Keywords, Kriterien und Risiken, die wirklich ueber Einladung oder Absage entscheiden.',
+    text: 'Du findest die Keywords, Kriterien und Risiken, die wirklich über Einladung oder Absage entscheiden.',
   },
   {
     tag: '02',
@@ -65,12 +65,12 @@ const outcomes = [
   {
     tag: '03',
     title: 'Interview vorher simulieren',
-    text: 'Du trainierst schwierige Fragen, bessere Antwortstrukturen und souveräne Erklaerungen fuer Luecken.',
+    text: 'Du trainierst schwierige Fragen, bessere Antwortstrukturen und souveräne Erklärungen für Lücken.',
   },
 ];
 
 const steps = [
-  'Workbook oeffnen und eine echte Stellenanzeige bereitlegen.',
+  'Workbook öffnen und eine echte Stellenanzeige bereitlegen.',
   'Prompt-Chain in einem Chat durcharbeiten.',
   'ATS-Checkliste vor dem Export kontrollieren.',
   'Interview-Simulator mit deinem aktualisierten Profil starten.',
@@ -412,7 +412,7 @@ export default function BewerbenMitKIPageClient() {
                 Bewerben <span>mit KI.</span>
               </HeroTitle>
               <HeroText>
-                Ein praktischer Einstieg fuer alle, die Lebenslauf, Stellenanzeige, Profilfoto und Interviewtraining mit KI strukturierter angehen wollen.
+                Ein praktischer Einstieg für alle, die Lebenslauf, Stellenanzeige, Profilfoto und Interviewtraining mit KI strukturierter angehen wollen.
               </HeroText>
               <ActionRow>
                 <PrimaryDownload href={downloadPack} download>
@@ -441,7 +441,7 @@ export default function BewerbenMitKIPageClient() {
                 />
                 <PreviewOverlay>
                   <OverlayKicker>/freebie</OverlayKicker>
-                  <OverlayTitle>Prompt-Pack fuer Lebenslauf, ATS und Interview.</OverlayTitle>
+                  <OverlayTitle>Prompt-Pack für Lebenslauf, ATS und Interview.</OverlayTitle>
                 </PreviewOverlay>
               </Preview>
             </PreviewFrame>
@@ -456,7 +456,7 @@ export default function BewerbenMitKIPageClient() {
                 Nicht mehr blind bewerben. <span>Gezielt matchen.</span>
               </SectionTitle>
               <SectionText>
-                KI ist hier kein Trick, sondern ein Arbeitsprozess: Anforderungen erkennen, Profil schaerfen und Antworten trainieren, bevor es ernst wird.
+                KI ist hier kein Trick, sondern ein Arbeitsprozess: Anforderungen erkennen, Profil schärfen und Antworten trainieren, bevor es ernst wird.
               </SectionText>
             </SectionHead>
             <OutcomeGrid>
@@ -511,8 +511,8 @@ export default function BewerbenMitKIPageClient() {
             <Bridge>
               <CyberCorners $color={tokens.colors.mint} $size={12} />
               <div>
-                <Eyebrow>Naechster Schritt</Eyebrow>
-                <BridgeTitle>Wenn du so arbeiten willst, ist der KI-Manager der naechste logische Schritt.</BridgeTitle>
+                <Eyebrow>Nächster Schritt</Eyebrow>
+                <BridgeTitle>Wenn du so arbeiten willst, ist der KI-Manager der nächste logische Schritt.</BridgeTitle>
                 <BridgeText>
                   Im Seminar bekommst du einen schnellen Bewerbungshebel. Im KI-Manager lernst du, wie man solche KI-Workflows systematisch baut, bewertet und im Berufsalltag einsetzt.
                 </BridgeText>

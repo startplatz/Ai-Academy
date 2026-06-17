@@ -321,9 +321,6 @@ export default function KarrierePageClient() {
         <Button href="#offene-stellen" size="lg" offset arrow>
           Offene Stellen ansehen
         </Button>
-        <Button href={PERSONIO_URL} variant="secondary" size="lg" target="_blank" rel="noopener noreferrer" arrow>
-          In Personio öffnen
-        </Button>
       </PageHero>
 
       <SectionBlock
@@ -407,7 +404,7 @@ export default function KarrierePageClient() {
               <strong>Bewerbung läuft sicher über Personio</strong>
             </JobBoardLabel>
             <Button href={PERSONIO_URL} variant="secondary" target="_blank" rel="noopener noreferrer" arrow>
-              Extern öffnen
+              Alle Stellen auf einen Blick
             </Button>
           </JobBoardTop>
           <IframeWrap>

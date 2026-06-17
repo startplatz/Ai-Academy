@@ -119,7 +119,7 @@ export default function ArbeitssuchendePage() {
   const details = [
     { label: 'Format', value: '8 Wochen Vollzeit (40 Unterrichtstage)' },
     { label: 'Rhythmus', value: 'Mo-Fr, 9-16 Uhr, digital' },
-    { label: 'Teilnehmer', value: 'Max. 20 pro Batch' },
+    { label: 'Teilnehmer', value: 'Max. 20 pro Kurs' },
     { label: 'Zertifikat', value: 'Cert-IT (DIN EN ISO/IEC 17024)' },
     { label: 'Förderung', value: '100% Bildungsgutschein (AZAV)' },
     { label: 'Bewertung', value: '4,98/5 (290+ Bewertungen)' },

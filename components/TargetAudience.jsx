@@ -32,7 +32,7 @@ const AUDIENCES = [
     features: [
       '8 Wochen Vollzeit, Mo-Fr 9-16 Uhr',
       'Cert-IT Zertifizierung (EU-weit)',
-      'Max. 15 Teilnehmer pro Kohorte',
+      'Max. 20 Teilnehmer pro Kurs',
     ],
     cta: 'Förderung prüfen',
     href: '/arbeitssuchende',
