@@ -1,0 +1,8 @@
+
+> ai-hub-relaunch@2.0.0 start
+> next start -p 3000
+
+▲ Next.js 16.2.4
+- Local:         http://localhost:3000
+- Network:       http://172.26.192.1:3000
+✓ Ready in 371ms
