@@ -15,7 +15,7 @@ export const dynamic = 'force-static';
 
 export async function GET() {
   try {
-    const events = await fetchStartplatzEvents({ limit: 6 });
+    const events = await fetchStartplatzEvents({ limit: 40 });
     return NextResponse.json(
       { events, updated_at: new Date().toISOString(), source: 'html-scrape' },
       {
