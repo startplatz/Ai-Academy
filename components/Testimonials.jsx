@@ -29,13 +29,6 @@ const VIDEOS = [
     color: tokens.colors.navy,
   },
   {
-    title: 'Annika',
-    subtitle: 'UX Designerin · Digitale Produktentwicklung',
-    quote: 'Das fand ich super verrückt.',
-    youtubeId: 'VXbAHkJ0DzQ',
-    color: tokens.colors.primary,
-  },
-  {
     title: 'Carsten',
     subtitle: 'Informatiker & Gründer · 20 Jahre Softwareentwicklung',
     quote: 'KI entzaubern, jenseits des Hypes.',
