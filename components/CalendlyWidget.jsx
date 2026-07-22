@@ -7,6 +7,8 @@ const WIDGET_SCRIPT = 'https://assets.calendly.com/assets/external/widget.js';
 const WIDGET_CSS = 'https://assets.calendly.com/assets/external/widget.css';
 let calendlyScriptPromise = null;
 
+const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+
 function isCalendlyBookingUrl(href) {
   try {
     const url = new URL(href, window.location.href);
@@ -14,6 +16,23 @@ function isCalendlyBookingUrl(href) {
   } catch {
     return false;
   }
+}
+
+// Attaches whatever real UTM parameters brought the visitor to this page
+// onto the outgoing Calendly link. No hardcoded fallback values are added
+// when the page URL carries no UTM parameters.
+function withPageUtms(href) {
+  const url = new URL(href, window.location.href);
+  const pageParams = new URLSearchParams(window.location.search);
+
+  UTM_KEYS.forEach((key) => {
+    const value = pageParams.get(key);
+    if (value) {
+      url.searchParams.set(key, value);
+    }
+  });
+
+  return url.toString();
 }
 
 function ensureCalendlyAssets() {
@@ -64,11 +83,13 @@ export default function CalendlyWidget() {
 
       event.preventDefault();
 
+      const hrefWithUtms = withPageUtms(href || CALENDLY_BASE_URL);
+
       try {
         await ensureCalendlyAssets();
-        window.Calendly?.initPopupWidget({ url: href || CALENDLY_BASE_URL });
+        window.Calendly?.initPopupWidget({ url: hrefWithUtms });
       } catch {
-        window.location.href = href;
+        window.location.href = hrefWithUtms;
       }
     };
 
