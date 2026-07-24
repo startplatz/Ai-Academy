@@ -14,6 +14,22 @@ import { CALENDLY_URL } from '../../lib/site';
 /* Blog posts data */
 const BLOG_POSTS = [
   {
+    id: 8,
+    slug: 'fable-5-reasoning-opus-4-8',
+    title: 'Fable-5-Reasoning in Opus 4.8 – mit einem einzigen Prompt',
+    badge: 'Prompt Guide',
+    excerpt: 'Ein Betriebshandbuch-Prompt bringt Fable-5-Reasoning zu einem Fünftel des Preises in Opus 4.8.',
+    meta: 'Prompt Guide',
+  },
+  {
+    id: 9,
+    slug: 'minecraft-hintergrund-prompt',
+    title: 'Foto in eine Minecraft-Welt verwandeln',
+    badge: 'Prompt',
+    excerpt: 'Bild-Prompt, der die Person fotorealistisch lässt und nur den Hintergrund als Minecraft-Welt neu aufbaut.',
+    meta: 'Bild-Prompt',
+  },
+  {
     id: 1,
     slug: 'generative-ai-kreativbranche',
     title: 'Wie Generative AI die Kreativbranche revolutioniert',

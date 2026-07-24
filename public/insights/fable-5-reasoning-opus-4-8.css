@@ -1,0 +1,163 @@
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
+
+  .sp-article {
+    --sp-purple: #9535FF;
+    --sp-purple-dark: #7a1fd6;
+    --sp-text: #525459;
+    --sp-heading: #2d2d33;
+    --sp-soft: #f9f2ff;
+    --sp-yellow: #fff6d5;
+    --sp-border: #ece6f5;
+
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    line-height: 1.65;
+    color: var(--sp-text);
+    font-size: 17px;
+    box-sizing: border-box;
+  }
+  .sp-article *,
+  .sp-article *::before,
+  .sp-article *::after { box-sizing: border-box; }
+
+  .sp-article h1,
+  .sp-article h2,
+  .sp-article h3 {
+    color: var(--sp-heading);
+    line-height: 1.25;
+    font-weight: 700;
+  }
+  .sp-article h1 { font-size: 2.1rem; margin: 0 0 16px; }
+  .sp-article h2 {
+    font-size: 1.5rem;
+    margin: 48px 0 16px;
+    padding-top: 24px;
+    border-top: 1px solid var(--sp-border);
+  }
+  .sp-article h3 { font-size: 1.2rem; margin: 32px 0 10px; }
+  .sp-article p { margin: 0 0 16px; }
+  .sp-article strong { color: var(--sp-heading); font-weight: 700; }
+  .sp-article a { color: var(--sp-purple); }
+
+  /* Eyebrow */
+  .sp-eyebrow {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sp-purple);
+    margin-bottom: 14px;
+  }
+
+  /* Meta line */
+  .sp-meta {
+    font-size: 0.95rem;
+    color: #8a8a90;
+    margin-bottom: 32px;
+  }
+  .sp-meta strong { color: var(--sp-heading); }
+
+  /* Generic callout box */
+  .sp-box {
+    background: linear-gradient(135deg, var(--sp-soft) 0%, var(--sp-yellow) 100%);
+    padding: 24px 24px;
+    border-radius: 12px;
+    border-left: 4px solid var(--sp-purple);
+    margin: 28px 0;
+  }
+  .sp-box p:last-child { margin-bottom: 0; }
+
+  /* Numbered steps */
+  .sp-steps { list-style: none; counter-reset: sp; padding: 0; margin: 24px 0; }
+  .sp-steps li {
+    counter-increment: sp;
+    position: relative;
+    padding: 4px 0 4px 52px;
+    margin-bottom: 14px;
+    min-height: 34px;
+  }
+  .sp-steps li::before {
+    content: counter(sp);
+    position: absolute;
+    left: 0; top: 0;
+    width: 34px; height: 34px;
+    background: var(--sp-purple);
+    color: #fff;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(149,53,255,.3);
+  }
+
+  /* Prompt card */
+  .sp-prompt {
+    border: 1px solid var(--sp-border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 24px 0 8px;
+    background: #fff;
+  }
+  .sp-prompt__bar {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px;
+    background: var(--sp-soft);
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--sp-border);
+  }
+  .sp-prompt__bar span { font-weight: 700; color: var(--sp-heading); font-size: 0.95rem; }
+  .sp-copy {
+    background: var(--sp-purple);
+    color: #fff;
+    border: none;
+    padding: 9px 18px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(149,53,255,.3);
+    transition: background .15s ease;
+  }
+  .sp-copy:hover { background: var(--sp-purple-dark); }
+  .sp-copy.copied { background: #2e9e5b; box-shadow: 0 4px 12px rgba(46,158,91,.3); }
+  .sp-prompt__body { padding: 8px 26px 26px; }
+
+  .sp-prompt__body h3 {
+    font-size: 1.15rem;
+    margin: 28px 0 6px;
+    padding-left: 12px;
+    border-left: 3px solid var(--sp-purple);
+  }
+  .sp-prompt__body h3:first-child { margin-top: 20px; }
+
+  .sp-prompt__body ol,
+  .sp-prompt__body ul { margin: 0 0 16px; padding-left: 22px; }
+  .sp-prompt__body li { margin-bottom: 8px; }
+
+  .sp-tag {
+    display: inline-block;
+    font-weight: 700;
+    color: var(--sp-purple);
+    margin-right: 4px;
+  }
+
+  .sp-note {
+    background: var(--sp-soft);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 10px 0 16px;
+    font-size: 0.97rem;
+  }
+  .sp-note--prevent { background: #f4f4f6; }
+
+  code {
+    background: #f4f4f6;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.9em;
+    color: #6a2fb0;
+  }
