@@ -329,7 +329,7 @@ export default function LeitbildPage() {
           </Card>
 
           <Meta>
-            Leitbild der STARTPLATZ AI Academy GmbH · Version 1 · Stand: 15.06.2026 · Fragen an{' '}
+            Leitbild der STARTPLATZ AI Academy · Stand: 15.06.2026 · Fragen an{' '}
             <Link href="mailto:academy@startplatz.de">academy@startplatz.de</Link>
           </Meta>
         </Container>
