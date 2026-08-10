@@ -11,6 +11,7 @@ export default function sitemap() {
     { path: '/oneday', priority: 0.9, changeFrequency: 'weekly' },
     { path: '/experten', priority: 0.7, changeFrequency: 'monthly' },
     { path: '/ueber-uns', priority: 0.6, changeFrequency: 'monthly' },
+    { path: '/leitbild', priority: 0.5, changeFrequency: 'yearly' },
     { path: '/karriere', priority: 0.6, changeFrequency: 'weekly' },
     { path: '/insights', priority: 0.8, changeFrequency: 'weekly' },
     { path: '/bewerben-mit-ki', priority: 0.8, changeFrequency: 'weekly' },

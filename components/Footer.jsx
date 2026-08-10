@@ -25,6 +25,7 @@ const LINK_GROUPS = [
   ]},
   { title: 'Ressourcen', links: [
     { label: 'Über Uns', href: '/ueber-uns' },
+    { label: 'Leitbild', href: '/leitbild' },
     { label: 'Karriere', href: '/karriere' },
     { label: 'Insights', href: '/insights' },
     { label: 'Presse & Medien', href: '/presse' },
