@@ -13,7 +13,7 @@ import { clipBR, CHAMFER, CyberCorners } from '../../styles/cyberpunk';
    ───────────────────────────────────────────── */
 
 const Section = styled.section`
-  padding: ${tokens.spacing['4xl']} 0;
+  padding: ${tokens.spacing['2xl']} 0 ${tokens.spacing['4xl']};
   background: linear-gradient(180deg, ${tokens.colors.pageBg} 0%, ${tokens.colors.surfaceAlt} 100%);
   min-height: 60vh;
   margin-top: -1px;
@@ -27,7 +27,7 @@ const Container = styled.div`
 `;
 
 const Hero = styled.div`
-  padding: 120px 0 ${tokens.spacing['3xl']};
+  padding: 120px 0 ${tokens.spacing.xl};
   text-align: center;
   background: linear-gradient(180deg, #FFFFFF 0%, ${tokens.colors.surfaceAlt} 58%, ${tokens.colors.pageBg} 100%);
 `;
