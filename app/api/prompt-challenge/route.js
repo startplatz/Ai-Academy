@@ -179,7 +179,7 @@ async function callOpenRouter({ messages, structured = false }) {
         Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
         'Content-Type': 'application/json',
         'HTTP-Referer': 'https://startplatz-ai-academy.de/prompt-challenge',
-        'X-Title': 'STARTPLATZ AI Academy – NEXUS//BREACH',
+        'X-Title': 'STARTPLATZ AI Academy - NEXUS BREACH',
       },
       body: JSON.stringify(requestBody),
       signal: controller.signal,
