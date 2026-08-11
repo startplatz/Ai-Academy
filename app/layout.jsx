@@ -2,6 +2,39 @@ import Script from 'next/script';
 import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
 import StyledComponentsRegistry from '../lib/registry';
 import CalendlyWidget from '../components/CalendlyWidget';
+import CookieConsent from '../components/CookieConsent';
+
+/* Consent Mode v2: Defaults (alles denied) MÜSSEN vor gtm.js/gtag.js in den
+   dataLayer. Läuft als synchrones Inline-Script im <head>; eine gespeicherte
+   Nutzerwahl (localStorage) wird sofort wieder angewendet, damit
+   wiederkehrende Besucher ohne Banner-Flackern korrekt gemessen werden. */
+const consentDefaultScript = `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    analytics_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    personalization_storage: 'denied',
+    functionality_storage: 'granted',
+    security_storage: 'granted',
+    wait_for_update: 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  try {
+    var c = JSON.parse(localStorage.getItem('aia_consent_v1'));
+    if (c) {
+      gtag('consent', 'update', {
+        analytics_storage: c.analytics ? 'granted' : 'denied',
+        ad_storage: c.marketing ? 'granted' : 'denied',
+        ad_user_data: c.marketing ? 'granted' : 'denied',
+        ad_personalization: c.marketing ? 'granted' : 'denied',
+        personalization_storage: (c.analytics || c.marketing) ? 'granted' : 'denied'
+      });
+    }
+  } catch (e) {}
+`;
 
 export const metadata = {
   title: {
@@ -116,6 +149,8 @@ export default function RootLayout({ children }) {
       <GoogleTagManager gtmId="GTM-MJCL3ZS9" />
       <GoogleAnalytics gaId="G-20XFNS5WZY" />
       <head>
+        {/* Consent Mode v2 Defaults – muss VOR GTM/GA ausgeführt werden */}
+        <script dangerouslySetInnerHTML={{ __html: consentDefaultScript }} />
         {/* Preconnect */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -176,7 +211,10 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body suppressHydrationWarning>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <StyledComponentsRegistry>
+          {children}
+          <CookieConsent />
+        </StyledComponentsRegistry>
         <CalendlyWidget />
         <elevenlabs-convai
           agent-id="agent_7801kphmjab6fmk921djmyxcz10x"

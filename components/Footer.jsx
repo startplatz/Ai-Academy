@@ -36,6 +36,7 @@ const LINK_GROUPS = [
     { label: 'Impressum', href: '/impressum' },
     { label: 'Datenschutz', href: '/datenschutz' },
     { label: 'AGB', href: '/agb' },
+    { label: 'Cookie-Einstellungen', consent: true },
   ]},
 ];
 
@@ -200,7 +201,23 @@ export default function Footer() {
           {LINK_GROUPS.map((g) => (
             <LinkCol key={g.title}>
               <h2>{g.title}</h2>
-              <ul>{g.links.map((l) => <li key={l.label}><a href={l.href}>{l.label}</a></li>)}</ul>
+              <ul>{g.links.map((l) => (
+                <li key={l.label}>
+                  {l.consent ? (
+                    <a
+                      href="#cookie-einstellungen"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        window.dispatchEvent(new CustomEvent('aia:consent-open'));
+                      }}
+                    >
+                      {l.label}
+                    </a>
+                  ) : (
+                    <a href={l.href}>{l.label}</a>
+                  )}
+                </li>
+              ))}</ul>
             </LinkCol>
           ))}
         </TopGrid>

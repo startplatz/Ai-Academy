@@ -270,7 +270,7 @@ export default function DatenschutzPage() {
               Microsoft Clarity setzt Cookies und ähnliche Technologien zur Wiedererkennung von Endgeräten ein. Die erfassten Daten werden an Server von Microsoft übertragen und dort gespeichert; eine Übermittlung in die USA kann nicht ausgeschlossen werden.
             </Text>
             <Text>
-              Die Nutzung von Microsoft Clarity erfolgt auf Grundlage Ihrer Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG. Die Einwilligung ist jederzeit mit Wirkung für die Zukunft widerrufbar. Die Datenübertragung in die USA wird, soweit erforderlich, auf die Standardvertragsklauseln der EU-Kommission gestützt.
+              Die Nutzung von Microsoft Clarity erfolgt auf Grundlage Ihrer Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG. Die Einwilligung erteilen Sie über unser Cookie-Banner beim ersten Besuch der Website; sie ist jederzeit mit Wirkung für die Zukunft widerrufbar — über den Link „Cookie-Einstellungen“ im Seitenfuß. Die Datenübertragung in die USA wird, soweit erforderlich, auf die Standardvertragsklauseln der EU-Kommission gestützt.
             </Text>
             <Text>
               Weitere Informationen zur Datenverarbeitung durch Microsoft Clarity finden Sie in der Datenschutzerklärung von Microsoft: <Link href="https://privacy.microsoft.com/de-de/privacystatement" target="_blank" rel="noopener noreferrer">https://privacy.microsoft.com/de-de/privacystatement</Link> sowie in den Informationen zu Clarity: <Link href="https://learn.microsoft.com/en-us/clarity/setup-and-installation/cookie-list" target="_blank" rel="noopener noreferrer">https://learn.microsoft.com/en-us/clarity/setup-and-installation/cookie-list</Link>.
