@@ -110,7 +110,7 @@ export default function PromptChallengePage() {
               <span className={styles.eyebrow}>{'// Deine Mission'}</span>
               <h2 id="challenge-title">Finde die Schwachstelle.</h2>
               <p>
-                Formuliere deine Eingabe selbst. Mit hinterlegtem OpenRouter-Key antwortet
+                Formuliere deine Eingabe selbst. Mit hinterlegtem OpenAI-Key antwortet
                 eine echte KI; ohne Key bleibt ein klar gekennzeichneter Demo-Modus verfügbar.
               </p>
             </div>

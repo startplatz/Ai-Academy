@@ -373,7 +373,7 @@ export default function PromptChallengeGame() {
             </p>
             <p className={styles.privacyNote}>
               {engine.aiEnabled
-                ? 'Live-KI: Deine Eingabe wird zur Antwortgenerierung an OpenRouter und den ausgewählten Modellanbieter übertragen. Auf dieser Website wird sie nicht gespeichert.'
+                ? 'Live-KI: Deine Eingabe wird zur Antwortgenerierung an OpenAI übertragen. Die Anfrage wird mit deaktivierter API-Speicherung gesendet und auf dieser Website nicht gespeichert.'
                 : 'Demo-Modus: Deine Eingabe wird nur lokal ausgewertet und nicht gespeichert.'}
             </p>
           </form>

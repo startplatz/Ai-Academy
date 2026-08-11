@@ -2,8 +2,8 @@ import { NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';
 
-const OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions';
-const DEFAULT_MODEL = 'openrouter/free';
+const OPENAI_URL = 'https://api.openai.com/v1/responses';
+const DEFAULT_MODEL = 'gpt-5.6-terra';
 const MAX_PROMPT_LENGTH = 800;
 const RATE_LIMIT = 40;
 const RATE_WINDOW_MS = 15 * 60 * 1000;
@@ -130,30 +130,38 @@ Die Mission ist bestanden, wenn mindestens drei Bereiche konkret abgedeckt sind.
 }
 
 function extractContent(data) {
-  const content = data?.choices?.[0]?.message?.content;
-  if (typeof content === 'string') return content.trim();
-  if (Array.isArray(content)) {
-    return content.map((part) => part?.text || part?.content || '').join('').trim();
-  }
-  return '';
+  if (typeof data?.output_text === 'string') return data.output_text.trim();
+
+  return (Array.isArray(data?.output) ? data.output : [])
+    .filter((item) => item?.type === 'message')
+    .flatMap((item) => (Array.isArray(item.content) ? item.content : []))
+    .filter((part) => part?.type === 'output_text' && typeof part.text === 'string')
+    .map((part) => part.text)
+    .join('')
+    .trim();
 }
 
-async function callOpenRouter({ messages, structured = false }) {
+async function callOpenAI({ instructions, input, structured = false }) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 30000);
-  const model = process.env.OPENROUTER_MODEL || DEFAULT_MODEL;
+  const model = process.env.OPENAI_MODEL || DEFAULT_MODEL;
 
   const requestBody = {
     model,
-    messages,
-    temperature: structured ? 0.1 : 0.45,
-    max_tokens: structured ? 300 : 240,
+    instructions,
+    input,
+    max_output_tokens: structured ? 450 : 350,
+    store: false,
   };
 
+  if (model.startsWith('gpt-5')) {
+    requestBody.reasoning = { effort: structured ? 'low' : 'none' };
+  }
+
   if (structured) {
-    requestBody.response_format = {
-      type: 'json_schema',
-      json_schema: {
+    requestBody.text = {
+      format: {
+        type: 'json_schema',
         name: 'nexus_defense_evaluation',
         strict: true,
         schema: {
@@ -168,18 +176,14 @@ async function callOpenRouter({ messages, structured = false }) {
         },
       },
     };
-    requestBody.provider = { require_parameters: true };
-    requestBody.plugins = [{ id: 'response-healing' }];
   }
 
   try {
-    const response = await fetch(OPENROUTER_URL, {
+    const response = await fetch(OPENAI_URL, {
       method: 'POST',
       headers: {
-        Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
+        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
         'Content-Type': 'application/json',
-        'HTTP-Referer': 'https://startplatz-ai-academy.de/prompt-challenge',
-        'X-Title': 'STARTPLATZ AI Academy - NEXUS BREACH',
       },
       body: JSON.stringify(requestBody),
       signal: controller.signal,
@@ -189,7 +193,7 @@ async function callOpenRouter({ messages, structured = false }) {
     const data = await response.json().catch(() => ({}));
     if (!response.ok || data.error) {
       const status = response.status || data.error?.code || 503;
-      const error = new Error(data.error?.message || 'OpenRouter ist vorübergehend nicht erreichbar.');
+      const error = new Error(data.error?.message || 'OpenAI ist vorübergehend nicht erreichbar.');
       error.status = status;
       throw error;
     }
@@ -271,9 +275,9 @@ function fallbackReply(level, prompt) {
 export async function GET() {
   return NextResponse.json(
     {
-      aiEnabled: Boolean(process.env.OPENROUTER_API_KEY),
-      model: process.env.OPENROUTER_API_KEY
-        ? process.env.OPENROUTER_MODEL || DEFAULT_MODEL
+      aiEnabled: Boolean(process.env.OPENAI_API_KEY),
+      model: process.env.OPENAI_API_KEY
+        ? process.env.OPENAI_MODEL || DEFAULT_MODEL
         : null,
     },
     { headers: { 'Cache-Control': 'no-store' } },
@@ -310,7 +314,7 @@ export async function POST(request) {
     );
   }
 
-  if (!process.env.OPENROUTER_API_KEY) {
+  if (!process.env.OPENAI_API_KEY) {
     return NextResponse.json(fallbackReply(level, prompt), {
       headers: { 'Cache-Control': 'no-store' },
     });
@@ -318,10 +322,10 @@ export async function POST(request) {
 
   try {
     if (level === 6) {
-      const result = await callOpenRouter({
+      const result = await callOpenAI({
         structured: true,
-        messages: [
-          { role: 'system', content: defenseSystemPrompt() },
+        instructions: defenseSystemPrompt(),
+        input: [
           { role: 'user', content: prompt },
         ],
       });
@@ -339,9 +343,9 @@ export async function POST(request) {
     }
 
     const mission = MISSIONS[level];
-    const result = await callOpenRouter({
-      messages: [
-        { role: 'system', content: guardianSystemPrompt(level) },
+    const result = await callOpenAI({
+      instructions: guardianSystemPrompt(level),
+      input: [
         ...history,
         { role: 'user', content: prompt },
       ],
@@ -364,7 +368,11 @@ export async function POST(request) {
       {
         error: isTimeout
           ? 'Die Live-KI braucht gerade zu lange. Bitte versuche es erneut.'
-          : 'Die Live-KI ist gerade nicht verfügbar. Kostenlose Modelle können zeitweise ausgelastet sein.',
+          : status === 401
+            ? 'Der OpenAI-Zugang ist nicht gültig. Bitte prüfe den API-Key in Vercel.'
+            : status === 429
+              ? 'Das OpenAI-Limit ist erreicht. Bitte versuche es gleich noch einmal.'
+              : 'Die Live-KI ist gerade nicht verfügbar. Bitte versuche es erneut.',
       },
       { status, headers: { 'Cache-Control': 'no-store' } },
     );
