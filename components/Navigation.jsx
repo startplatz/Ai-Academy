@@ -54,10 +54,10 @@ const Header = styled.header`
   z-index: ${tokens.zIndex.nav};
   transition: background ${tokens.transitions.base}, box-shadow ${tokens.transitions.base};
 
-  ${({ $scrolled }) => $scrolled && css`
-    background: rgba(255, 255, 255, 0.88);
-    backdrop-filter: blur(20px) saturate(1.6);
-    -webkit-backdrop-filter: blur(20px) saturate(1.6);
+  ${({ $scrolled, $forceSolid }) => ($scrolled || $forceSolid) && css`
+    background: ${$forceSolid ? '#FFFFFF' : 'rgba(255, 255, 255, 0.88)'};
+    backdrop-filter: ${$forceSolid ? 'none' : 'blur(20px) saturate(1.6)'};
+    -webkit-backdrop-filter: ${$forceSolid ? 'none' : 'blur(20px) saturate(1.6)'};
     box-shadow: 0 1px 0 rgba(0,0,0,0.06);
   `}
 `;
@@ -452,7 +452,7 @@ function handleHashNavigation(href) {
   }
 }
 
-export default function Navigation() {
+export default function Navigation({ forceSolid = false }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -493,7 +493,7 @@ export default function Navigation() {
 
   return (
     <>
-      <Header $scrolled={scrolled} role="banner">
+      <Header $scrolled={scrolled} $forceSolid={forceSolid} role="banner">
         <Inner>
           <LogoLink href="/" aria-label="STARTPLATZ AI Academy">
             <img src={LOGO_URL} alt="STARTPLATZ AI Academy Logo" width="200" height="34" loading="eager" />

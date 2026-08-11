@@ -11,6 +11,7 @@ import Testimonials from '../components/Testimonials';
 import Stories from '../components/Stories';
 import FAQ from '../components/FAQ';
 import Newsletter from '../components/Newsletter';
+import PromptChallengeTeaser from '../components/PromptChallengeTeaser';
 
 export default function HomePage() {
   return (
@@ -20,6 +21,7 @@ export default function HomePage() {
       <TeamSection />
       <KPISection />
       <VisionSection />
+      <PromptChallengeTeaser />
       <EventsTimeline />
       <Testimonials />
       <Stories />

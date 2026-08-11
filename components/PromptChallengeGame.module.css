@@ -1,0 +1,561 @@
+.gameShell {
+  display: grid;
+  grid-template-columns: 290px minmax(0, 1fr);
+  min-height: 720px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: #0a0a0a;
+  box-shadow: 20px 20px 0 rgba(124,58,237,0.08);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 24px), calc(100% - 24px) 100%, 0 100%);
+}
+
+.levelNav {
+  padding: 1.25rem 0;
+  border-right: 1px solid rgba(255,255,255,0.09);
+  background: #111;
+}
+
+.levelNavHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.25rem 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.42);
+}
+
+.levelNavHeader strong {
+  color: #a78bfa;
+}
+
+.levelNav ol {
+  margin: 0;
+  padding: 1rem 0;
+}
+
+.levelButton {
+  position: relative;
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 0.75rem;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid transparent;
+  text-align: left;
+  color: rgba(255,255,255,0.65);
+  background: transparent;
+  transition: color 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.levelButton:hover:not(:disabled) {
+  color: #fff;
+  background: rgba(255,255,255,0.04);
+}
+
+.levelButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.34;
+}
+
+.activeLevel {
+  border-left-color: #7c3aed;
+  color: #fff;
+  background: rgba(124,58,237,0.13);
+}
+
+.levelNumber {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(255,255,255,0.13);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
+  color: #a78bfa;
+  background: rgba(124,58,237,0.08);
+  clip-path: polygon(5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%, 0 5px);
+}
+
+.levelLabel {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.levelLabel strong {
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.levelLabel small {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.57rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.34);
+}
+
+.console {
+  min-width: 0;
+  color: rgba(255,255,255,0.8);
+  background:
+    linear-gradient(rgba(124,58,237,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124,58,237,0.035) 1px, transparent 1px),
+    #0a0a0a;
+  background-size: 32px 32px;
+}
+
+.consoleBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 52px;
+  padding: 0 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.09);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.09em;
+  color: rgba(255,255,255,0.38);
+}
+
+.consoleStatus {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #14b8a6;
+}
+
+.consoleStatus i {
+  width: 7px;
+  height: 7px;
+  background: currentColor;
+  box-shadow: 0 0 10px currentColor;
+}
+
+.missionBrief {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.018);
+}
+
+.category {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: #14b8a6;
+}
+
+.missionBrief h3 {
+  margin: 0 0 0.65rem;
+  font-size: clamp(1.3rem, 2.5vw, 2rem);
+  color: #fff;
+}
+
+.missionBrief p {
+  max-width: 660px;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.55);
+}
+
+.missionArtwork {
+  position: relative;
+  aspect-ratio: 16 / 7;
+  margin: 1.5rem 2rem 0;
+  overflow: hidden;
+  border: 1px solid rgba(167,139,250,0.24);
+  background: #08080c;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
+}
+
+.missionArtwork::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(5,5,8,0.78) 100%);
+  pointer-events: none;
+}
+
+.missionArtwork img {
+  object-fit: cover;
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.missionArtwork:hover img {
+  transform: scale(1.025);
+}
+
+.missionArtwork > span {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.85rem;
+  z-index: 1;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.55);
+}
+
+.hintButton,
+.restartButton {
+  flex: 0 0 auto;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid rgba(167,139,250,0.34);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #a78bfa;
+  background: rgba(124,58,237,0.06);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 7px), calc(100% - 7px) 100%, 0 100%);
+}
+
+.hintButton:hover,
+.restartButton:hover {
+  color: #fff;
+  border-color: #a78bfa;
+  background: rgba(124,58,237,0.18);
+}
+
+.hintBox {
+  margin: 1.5rem 2rem 0;
+  padding: 1rem 1.2rem;
+  border-left: 3px solid #ff9947;
+  background: rgba(255,153,71,0.07);
+}
+
+.hintBox strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: #ff9947;
+}
+
+.hintBox p {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.6);
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 360px;
+  padding: 2rem;
+  overflow-y: auto;
+  overflow-anchor: none;
+  scrollbar-gutter: stable;
+}
+
+.message {
+  max-width: min(82%, 720px);
+}
+
+.message > span {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.09em;
+  color: rgba(255,255,255,0.35);
+}
+
+.message p {
+  margin: 0;
+  padding: 0.9rem 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.74);
+  background: rgba(255,255,255,0.055);
+  border-left: 2px solid #7c3aed;
+}
+
+.userMessage {
+  align-self: flex-end;
+}
+
+.userMessage > span {
+  text-align: right;
+}
+
+.userMessage p {
+  border-right: 2px solid #14b8a6;
+  border-left: 0;
+  background: rgba(20,184,166,0.07);
+}
+
+.typing span {
+  animation: blink 900ms steps(2, end) infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0.25; }
+}
+
+.promptForm {
+  padding: 0 2rem 2rem;
+}
+
+.promptForm > label {
+  display: block;
+  margin-bottom: 0.65rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.42);
+}
+
+.promptField {
+  border: 1px solid rgba(167,139,250,0.28);
+  background: rgba(0,0,0,0.62);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+}
+
+.promptField:focus-within {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 1px rgba(124,58,237,0.18);
+}
+
+.promptField textarea {
+  display: block;
+  width: 100%;
+  min-height: 96px;
+  padding: 1rem;
+  resize: vertical;
+  border: 0;
+  outline: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: #fff;
+  background: transparent;
+}
+
+.promptField textarea::placeholder {
+  color: rgba(255,255,255,0.28);
+}
+
+.promptField textarea:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.promptMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 46px;
+  padding: 0 0.7rem 0 1rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  color: rgba(255,255,255,0.3);
+}
+
+.promptMeta button,
+.nextButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  min-height: 34px;
+  padding: 0.6rem 0.9rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #7c3aed;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 7px), calc(100% - 7px) 100%, 0 100%);
+}
+
+.promptMeta button:hover:not(:disabled),
+.nextButton:hover {
+  color: #fff;
+  background: #6d28d9;
+}
+
+.promptMeta button:disabled {
+  cursor: not-allowed;
+  opacity: 0.36;
+}
+
+.privacyNote {
+  margin: 0.65rem 0 0;
+  font-size: 0.65rem;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.28);
+}
+
+.submitStatus {
+  margin: 0.65rem 0 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  line-height: 1.5;
+  color: #14b8a6;
+}
+
+.successPanel {
+  width: 100%;
+  margin: 0;
+  padding: 1.5rem;
+  border: 1px solid rgba(20,184,166,0.38);
+  background: rgba(20,184,166,0.08);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%);
+}
+
+.successCode {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #14b8a6;
+}
+
+.successPanel h4 {
+  margin: 0 0 0.65rem;
+  font-size: 1.35rem;
+  color: #fff;
+}
+
+.successPanel p {
+  max-width: 760px;
+  margin: 0 0 1.25rem;
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.62);
+}
+
+.finalActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.restartButton {
+  min-height: 34px;
+}
+
+@media (max-width: 900px) {
+  .gameShell {
+    grid-template-columns: 1fr;
+  }
+
+  .levelNav {
+    border-right: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.09);
+    overflow-x: auto;
+  }
+
+  .levelNav ol {
+    display: flex;
+    width: max-content;
+    padding: 0.75rem;
+  }
+
+  .levelNav li {
+    width: 180px;
+  }
+
+  .levelButton {
+    height: 100%;
+    padding: 0.8rem;
+    border-bottom: 3px solid transparent;
+    border-left: 0;
+  }
+
+  .activeLevel {
+    border-bottom-color: #7c3aed;
+  }
+}
+
+@media (max-width: 640px) {
+  .gameShell {
+    min-height: auto;
+    box-shadow: 9px 9px 0 rgba(124,58,237,0.08);
+  }
+
+  .levelNav li {
+    width: 150px;
+  }
+
+  .levelButton {
+    grid-template-columns: 24px 1fr;
+    gap: 0.55rem;
+  }
+
+  .levelNumber {
+    width: 22px;
+    height: 22px;
+  }
+
+  .missionBrief {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 1.4rem 1.1rem;
+  }
+
+  .hintButton {
+    width: 100%;
+  }
+
+  .hintBox {
+    margin: 1rem 1.1rem 0;
+  }
+
+  .missionArtwork {
+    aspect-ratio: 16 / 10;
+    margin: 1rem 1.1rem 0;
+  }
+
+  .chat {
+    height: 320px;
+    padding: 1.4rem 1.1rem;
+  }
+
+  .message {
+    max-width: 94%;
+  }
+
+  .promptForm {
+    padding: 0 1.1rem 1.4rem;
+  }
+
+  .promptMeta {
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.65rem;
+  }
+
+  .promptMeta button {
+    width: 100%;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typing span {
+    animation: none;
+  }
+}

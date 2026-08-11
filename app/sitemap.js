@@ -16,6 +16,7 @@ export default function sitemap() {
     { path: '/insights', priority: 0.8, changeFrequency: 'weekly' },
     { path: '/bewerben-mit-ki', priority: 0.8, changeFrequency: 'weekly' },
     { path: '/wissens-test', priority: 0.7, changeFrequency: 'monthly' },
+    { path: '/prompt-challenge', priority: 0.8, changeFrequency: 'monthly' },
     { path: '/presse', priority: 0.5, changeFrequency: 'monthly' },
     // OneDay detail pages
     { path: '/oneday/claude-cowork', priority: 0.8, changeFrequency: 'weekly' },

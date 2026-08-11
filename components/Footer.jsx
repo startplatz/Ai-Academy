@@ -28,6 +28,7 @@ const LINK_GROUPS = [
     { label: 'Leitbild', href: '/leitbild' },
     { label: 'Karriere', href: '/karriere' },
     { label: 'Insights', href: '/insights' },
+    { label: 'NEXUS//BREACH', href: '/prompt-challenge' },
     { label: 'Presse & Medien', href: '/presse' },
     { label: 'Events', href: '/#events' },
     { label: 'FAQ', href: '/#faq' },

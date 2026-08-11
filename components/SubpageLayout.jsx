@@ -10,7 +10,7 @@ import ScrollProgress from './ScrollProgress';
 import Footer from './Footer';
 import { getGpuTier, GPU_PRESETS } from '../utils/gpuTier';
 
-export default function SubpageLayout({ children }) {
+export default function SubpageLayout({ children, solidNavigation = false }) {
   const mainRef = React.useRef(null);
 
   React.useEffect(() => {
@@ -41,7 +41,7 @@ export default function SubpageLayout({ children }) {
         autoIntensity={3.5}
       />
       <ScrollProgress />
-      <Navigation />
+      <Navigation forceSolid={solidNavigation} />
 
       <main
         ref={mainRef}
