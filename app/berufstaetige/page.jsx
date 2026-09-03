@@ -1,12 +1,10 @@
 'use client';
 
 import React from 'react';
-import styled from 'styled-components';
 import {
   BeforeAfter,
   Button,
   CTABanner,
-  DetailTable,
   FreebieConsole,
   MiniFAQ,
   PageHero,
@@ -15,23 +13,12 @@ import {
   SectionBlock,
   SpotlightBento,
   StatsRow,
-  TwoColumn,
-  VisualSlot,
 } from '../../components/ui';
 import SubpageLayout from '../../components/SubpageLayout';
 import { tokens } from '../../styles/tokens';
-import { clipBR, CHAMFER, CyberCorners } from '../../styles/cyberpunk';
 import { CALENDLY_URL } from '../../lib/site';
 import { PRODUCT_CATALOG_URL } from '../../lib/productCatalog';
 import { searchIntentQuestions } from '../../lib/searchIntentQuestions';
-
-const Panel = styled.div`
-  position: relative;
-  padding: ${tokens.spacing['2xl']};
-  background: ${tokens.colors.surface};
-  border: 1px solid ${tokens.colors.glassBorder};
-  ${clipBR(CHAMFER.md)}
-`;
 
 export default function BerufstaetigePage() {
   const before = [
@@ -44,13 +31,6 @@ export default function BerufstaetigePage() {
     'Du automatisierst Prozesse, die andere händisch machen.',
     'Du sagst: "Kann ich zeigen. Hier ist der Workflow."',
     'Du stehst vor deinem Chef besser da.',
-  ];
-
-  const details = [
-    { label: 'Format', value: '8 Wochen Teilzeit' },
-    { label: 'Rhythmus', value: 'Di & Do, 15-18 Uhr' },
-    { label: 'Teilnehmer', value: 'Max. 20 pro Kurs' },
-    { label: 'Förderung', value: 'QCG-förderfähig' },
   ];
 
   const curriculum = [
@@ -216,27 +196,6 @@ export default function BerufstaetigePage() {
         accent={tokens.colors.glowNavy}
       >
         <BeforeAfter before={before} after={after} accentColor={tokens.colors.navy} />
-      </SectionBlock>
-
-      <SectionBlock
-        badge="Produkt"
-        title="AfterWork <span>AI Automation</span>"
-        subtitle="Zwei Abende pro Woche. Genug Struktur, ohne deinen Job zu sprengen."
-        variant="muted"
-        accent={tokens.colors.glowNavy}
-      >
-        <TwoColumn>
-          <Panel>
-            <CyberCorners $color={tokens.colors.navy} $size={10} />
-            <DetailTable items={details} />
-          </Panel>
-          <VisualSlot
-            title="Automation Workflow Map"
-            image="https://res.cloudinary.com/startplatz/image/upload/f_auto,q_auto,w_900/v1776469600/ai-hub/website/AI-Academy-Website-Images/target-audience-berufstaetige.png"
-            accentColor={tokens.colors.navy}
-            prompt="Use case: infographic-diagram. Asset type: subpage visual. Clean automation workflow map for n8n, GPT APIs, human review, and business output; no tiny readable text; STARTPLATZ purple/sky palette; premium editorial style; no logos or watermark."
-          />
-        </TwoColumn>
       </SectionBlock>
 
       <SectionBlock
