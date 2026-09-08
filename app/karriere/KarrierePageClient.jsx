@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import styled from 'styled-components';
 import SubpageLayout from '../../components/SubpageLayout';
 import { Button, CTABanner, PageHero, SectionBlock } from '../../components/ui';
@@ -235,23 +236,96 @@ const JobBoardLabel = styled.div`
   }
 `;
 
-const IframeWrap = styled.div`
-  position: relative;
-  height: min(1180px, 150vh);
-  min-height: 760px;
-  background: ${tokens.colors.surfaceAlt};
+const JobList = styled.div`
+  display: grid;
+  gap: 1px;
+  background: rgba(0, 0, 0, 0.06);
+`;
+
+const JobEntry = styled(Link)`
+  display: grid;
+  gap: ${tokens.spacing.sm};
+  padding: ${tokens.spacing.lg};
+  background: ${tokens.colors.surface};
+  text-decoration: none;
+  transition: background ${tokens.transitions.fast};
+
+  &:hover,
+  &:focus-visible {
+    background: ${tokens.colors.primaryLighter};
+  }
 
   ${media.md} {
-    height: 1120px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: ${tokens.spacing.lg};
+    padding: ${tokens.spacing.xl} ${tokens.spacing.lg};
   }
 `;
 
-const JobsFrame = styled.iframe`
-  width: 100%;
-  height: 100%;
-  border: 0;
-  display: block;
-  background: #fff;
+const JobEntryMain = styled.div`
+  display: grid;
+  gap: ${tokens.spacing.xs};
+  min-width: 0;
+`;
+
+const JobEntryKicker = styled.span`
+  font-family: ${tokens.fonts.mono};
+  font-size: ${tokens.fontSizes.xs};
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: ${tokens.colors.primary};
+`;
+
+const JobEntryTitle = styled.h3`
+  font-family: ${tokens.fonts.display};
+  font-size: ${tokens.fontSizes.xl};
+  font-weight: ${tokens.fontWeights.bold};
+  color: ${tokens.colors.text};
+  line-height: ${tokens.lineHeights.snug};
+`;
+
+const JobEntryExcerpt = styled.p`
+  font-size: ${tokens.fontSizes.sm};
+  color: ${tokens.colors.textMuted};
+  line-height: ${tokens.lineHeights.relaxed};
+  max-width: 68ch;
+`;
+
+const JobEntryMeta = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: ${tokens.spacing.sm};
+  margin-top: 4px;
+  list-style: none;
+
+  li {
+    font-family: ${tokens.fonts.mono};
+    font-size: ${tokens.fontSizes.xs};
+    color: ${tokens.colors.textMuted};
+    padding: 2px 8px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: ${tokens.colors.surfaceAlt};
+  }
+`;
+
+const JobEntryAction = styled.span`
+  display: inline-flex;
+  align-items: center;
+  gap: ${tokens.spacing.xs};
+  font-family: ${tokens.fonts.mono};
+  font-size: ${tokens.fontSizes.xs};
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: ${tokens.colors.primary};
+  white-space: nowrap;
+`;
+
+const EmptyState = styled.p`
+  padding: ${tokens.spacing.xl} ${tokens.spacing.lg};
+  background: ${tokens.colors.surface};
+  color: ${tokens.colors.textMuted};
+  line-height: ${tokens.lineHeights.relaxed};
 `;
 
 const FallbackNote = styled.p`
@@ -301,7 +375,7 @@ const roleAreas = [
   },
 ];
 
-export default function KarrierePageClient() {
+export default function KarrierePageClient({ openings = [] }) {
   const breadcrumbs = [
     { label: 'Karriere', href: '/karriere', active: true },
   ];
@@ -391,8 +465,8 @@ export default function KarrierePageClient() {
       <SectionBlock
         id="offene-stellen"
         badge="Offene Stellen"
-        title="Aktuelle Jobs <span>live aus Personio.</span>"
-        subtitle="Das Board wird direkt aus unserem Recruiting-System geladen. Falls dein Browser das eingebettete Board blockiert, kannst du Personio in einem neuen Tab öffnen."
+        title="Aktuelle Jobs <span>bei der Academy.</span>"
+        subtitle="Die Liste kommt direkt aus unserem Recruiting-System. Jede Stelle hat eine eigene Detailseite mit allen Aufgaben, Anforderungen und Benefits – bewerben kannst du dich danach in wenigen Minuten über Personio."
         variant="light"
         accent={tokens.colors.glow}
       >
@@ -400,22 +474,45 @@ export default function KarrierePageClient() {
           <CyberCorners $color={tokens.colors.primary} $size={12} />
           <JobBoardTop>
             <JobBoardLabel>
-              <span>STARTPLATZ AI Academy Jobs</span>
+              <span>
+                {openings.length > 0
+                  ? `${openings.length} offene ${openings.length === 1 ? 'Stelle' : 'Stellen'}`
+                  : 'STARTPLATZ AI Academy Jobs'}
+              </span>
               <strong>Bewerbung läuft sicher über Personio</strong>
             </JobBoardLabel>
             <Button href={PERSONIO_URL} variant="secondary" target="_blank" rel="noopener noreferrer" arrow>
               Alle Stellen auf einen Blick
             </Button>
           </JobBoardTop>
-          <IframeWrap>
-            <JobsFrame
-              src={PERSONIO_URL}
-              title="Offene Stellen der STARTPLATZ AI Academy auf Personio"
-              loading="lazy"
-            />
-          </IframeWrap>
+
+          {openings.length > 0 ? (
+            <JobList>
+              {openings.map((job) => (
+                <JobEntry key={job.slug} href={`/karriere/${job.slug}`}>
+                  <JobEntryMain>
+                    {job.department && <JobEntryKicker>{job.department}</JobEntryKicker>}
+                    <JobEntryTitle>{job.title}</JobEntryTitle>
+                    <JobEntryExcerpt>{job.excerpt}</JobEntryExcerpt>
+                    <JobEntryMeta>
+                      <li>{job.location}</li>
+                      {job.employmentType && <li>{job.employmentType}</li>}
+                      {job.schedule && <li>{job.schedule}</li>}
+                    </JobEntryMeta>
+                  </JobEntryMain>
+                  <JobEntryAction aria-hidden="true">Stelle ansehen →</JobEntryAction>
+                </JobEntry>
+              ))}
+            </JobList>
+          ) : (
+            <EmptyState>
+              Aktuell sind keine Stellen ausgeschrieben. Schau gern in ein paar Wochen wieder rein oder
+              bewirb dich initiativ über unser Jobboard.
+            </EmptyState>
+          )}
+
           <FallbackNote>
-            Wird das Jobboard nicht angezeigt, öffne die aktuelle Karriereseite direkt unter{' '}
+            Alle Stellen findest du auch direkt in unserem Recruiting-System unter{' '}
             <a href={PERSONIO_URL} target="_blank" rel="noopener noreferrer">
               ai-academy.jobs.personio.com
             </a>.

@@ -1,4 +1,13 @@
 import KarrierePageClient from './KarrierePageClient';
+import {
+  formatJobDate,
+  getJobs,
+  jobExcerpt,
+  jobLocationLabel,
+} from '../../lib/personioJobs.mjs';
+
+/* Stellen kommen live aus Personio — einmal pro Stunde neu geprüft. */
+export const revalidate = 3600;
 
 export const metadata = {
   title: 'Karriere & Jobs',
@@ -21,6 +30,19 @@ export const metadata = {
   },
 };
 
-export default function KarrierePage() {
-  return <KarrierePageClient />;
+export default async function KarrierePage() {
+  const jobs = await getJobs();
+
+  const openings = jobs.map((job) => ({
+    slug: job.slug,
+    title: job.title,
+    department: job.department,
+    employmentType: job.employmentType,
+    schedule: job.schedule,
+    location: jobLocationLabel(job),
+    excerpt: jobExcerpt(job, 180),
+    datePosted: formatJobDate(job),
+  }));
+
+  return <KarrierePageClient openings={openings} />;
 }

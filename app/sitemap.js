@@ -1,4 +1,9 @@
-export default function sitemap() {
+import { getJobs } from '../lib/personioJobs.mjs';
+
+/* Stellen ändern sich häufiger als der Rest der Seite */
+export const revalidate = 3600;
+
+export default async function sitemap() {
   const baseUrl = 'https://startplatz-ai-academy.de';
   const now = new Date().toISOString();
 
@@ -36,10 +41,24 @@ export default function sitemap() {
     { path: '/agb', priority: 0.3, changeFrequency: 'yearly' },
   ];
 
-  return routes.map(({ path, priority, changeFrequency }) => ({
-    url: `${baseUrl}${path}`,
-    lastModified: now,
-    changeFrequency,
-    priority,
+  const jobs = await getJobs();
+
+  // Jede offene Stelle als eigene URL — Voraussetzung dafür, dass Google
+  // die JobPosting-Daten findet. Geschlossene Stellen fallen automatisch raus.
+  const jobRoutes = jobs.map((job) => ({
+    url: `${baseUrl}/karriere/${job.slug}`,
+    lastModified: job.publishedAt || now,
+    changeFrequency: 'daily',
+    priority: 0.7,
   }));
+
+  return [
+    ...routes.map(({ path, priority, changeFrequency }) => ({
+      url: `${baseUrl}${path}`,
+      lastModified: now,
+      changeFrequency,
+      priority,
+    })),
+    ...jobRoutes,
+  ];
 }
