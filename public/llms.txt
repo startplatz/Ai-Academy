@@ -1,6 +1,6 @@
 # STARTPLATZ AI Academy
 
-> STARTPLATZ AI Academy ist Deutschlands praxisnahester Anbieter für KI-Weiterbildungen. AZAV-zertifiziert, Cert-IT-zertifiziert (DIN EN ISO/IEC 17024), mit über 1.000 Absolventen und einer Bewertung von 4,98/5 Sternen bei 290+ Bewertungen. Gegründet 2011, Teil des STARTPLATZ Ökosystems — dem größten Startup-Inkubator in NRW.
+> STARTPLATZ AI Academy ist Deutschlands praxisnahester Anbieter für KI-Weiterbildungen. AZAV-zertifiziert, Cert-IT-zertifiziert (DIN EN ISO/IEC 17024), mit über 1.000 Absolventen und einer Bewertung von 4,98/5 Sternen bei 290+ Bewertungen. Teil des STARTPLATZ Ökosystems (gegründet 2012) — dem größten Startup-Inkubator in NRW.
 
 ## Programme
 
@@ -37,7 +37,7 @@
 - 1.000+ Absolventen
 - 4,98/5 Sterne (290+ Bewertungen)
 - 100+ Unternehmenskunden
-- 15+ Jahre Ökosystem-Erfahrung (STARTPLATZ seit 2011)
+- 13+ Jahre Ökosystem-Erfahrung (STARTPLATZ seit 2012)
 - AZAV-zertifizierter Bildungsträger
 - Cert-IT-Personenzertifizierung (DIN EN ISO/IEC 17024)
 - Standorte: Köln und Düsseldorf, Programme bundesweit verfügbar

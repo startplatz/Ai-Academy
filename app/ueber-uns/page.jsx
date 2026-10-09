@@ -146,7 +146,7 @@ export default function UeberUnsPage() {
 
   const milestones = [
     {
-      year: '2017',
+      year: '2012',
       title: 'STARTPLATZ wird gegründet',
       text: 'Alles beginnt im Mediapark 5 in Köln. STARTPLATZ etabliert sich als einer der führenden Startup-Inkubatoren in NRW mit dem Ziel, Innovation und Unternehmertum zu fördern.',
       color: tokens.colors.mint,
@@ -230,7 +230,7 @@ export default function UeberUnsPage() {
         badgeColor={tokens.colors.primary}
         badgeBg={tokens.colors.primaryLighter}
         title="Vom AI Hub zur <br/><span>AI Academy</span>"
-        subtitle="Seit 2017 gestalten wir die KI-Bildungslandschaft in NRW. Unsere Reise von einem kleinen Meetup zum offiziellen KI-Kompetenzzentrum Nordrhein-Westfalens."
+        subtitle="Seit 2012 bringt STARTPLATZ Innovation nach NRW — heute mit dem Schwerpunkt KI-Bildung. Unsere Reise von einem kleinen Meetup zum offiziellen KI-Kompetenzzentrum Nordrhein-Westfalens."
         breadcrumbs={breadcrumbs}
         accentColor={tokens.colors.primaryLighter}
       />

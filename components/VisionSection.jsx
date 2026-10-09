@@ -123,9 +123,9 @@ export default function VisionSection() {
           <CyberCorners $color={tokens.colors.mint} $size={12} />
           <QuoteMark>&ldquo;</QuoteMark>
           <CardBadge>Warum wir</CardBadge>
-          <CardTitle>Seit 2011 im Innovations-Ökosystem</CardTitle>
+          <CardTitle>Seit 2012 im Innovations-Ökosystem</CardTitle>
           <CardText>
-            STARTPLATZ begleitet seit über 15 Jahren Gründer und Unternehmen in NRW.
+            STARTPLATZ begleitet seit mehr als 13 Jahren Gründer und Unternehmen in NRW.
             Über 1.000 Absolventen, 500+ KI-Events und Dozenten, die selbst täglich
             mit KI arbeiten. Das Format-System — OneDay, FortyDays, AfterWork —
             sortiert nach Lebenssituation, nicht nach Inhalt.
