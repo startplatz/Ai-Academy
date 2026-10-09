@@ -257,7 +257,7 @@ export default function BerufstaetigePage() {
         <FreebieConsole
           kicker="Kostenlos downloaden"
           title="Workflow Canvas, Meeting Blueprint, ROI Prompt."
-          text="Diese Freebies bringen Traffic, weil sie kein bloßer Newsletter-Köder sind. Sie helfen direkt beim Entscheiden: Was lohnt sich zu automatisieren?"
+          text="Drei Vorlagen, mit denen du prüfst, welche Aufgaben sich in deinem Arbeitsalltag zu automatisieren lohnen."
           resources={freebies}
           accentColor={tokens.colors.navy}
           accentBg={tokens.colors.navyBg}

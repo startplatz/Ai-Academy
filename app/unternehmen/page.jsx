@@ -100,7 +100,7 @@ export default function UnternehmenPage() {
   const before = [
     'Der Vorstand fragt nach KI-Strategie. Du hast keine.',
     'Dein Team experimentiert planlos mit ChatGPT.',
-    'Du weißt nicht, wo anfangen.',
+    'Du weißt nicht, wo du anfangen sollst.',
   ];
 
   const after = [

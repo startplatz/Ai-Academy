@@ -123,7 +123,7 @@ const jsonLd = [
     sameAs: [
       'https://www.linkedin.com/company/startplatz',
       'https://www.instagram.com/startplatz',
-      'https://www.youtube.com/@startplatz',
+      'https://www.youtube.com/@Startplatz_AI_Academy',
     ],
     offers: {
       '@type': 'Offer',

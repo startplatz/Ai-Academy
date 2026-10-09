@@ -4,6 +4,7 @@ export const metadata = {
   title: 'Claude Cowork Skill Library Login',
   description: 'Passwortgeschützter Zugang zur Claude Cowork Skill Library für OneDay Workshop-Teilnehmer.',
   robots: 'noindex, nofollow',
+  alternates: { canonical: '/oneday/claude-cowork/skill-library/login' },
 };
 
 export default async function ClaudeCoworkLibraryLoginPage({ searchParams }) {

@@ -12,6 +12,8 @@ export const dynamic = 'force-dynamic';
 export const metadata = {
   title: 'Claude Cowork Skill',
   robots: 'noindex, nofollow',
+  // Kein von /oneday geerbter Canonical: geschützte, nicht indexierte Detailseite
+  alternates: { canonical: null },
 };
 
 export async function generateStaticParams() {
