@@ -121,8 +121,8 @@ const jsonLd = [
     telephone: '+4922196881273',
     email: 'academy@startplatz.de',
     sameAs: [
-      'https://www.linkedin.com/company/startplatz',
-      'https://www.instagram.com/startplatz',
+      'https://www.linkedin.com/company/sp-ai-academy',
+      'https://www.instagram.com/startplatz_ai_academy',
       'https://www.youtube.com/@Startplatz_AI_Academy',
     ],
     offers: {
