@@ -81,7 +81,7 @@
           ],
           "tone": "info",
           "summary": "OpenAI hat die „OpenAI Deployment Company“ gestartet — ein mehrheitlich eigenkontrolliertes Geschäft mit über 4 Mrd. US-Dollar Startkapital und 19 Investmentfirmen, Beratungen und Systemintegratoren (Lead: TPG; Co-Leads: Advent, Bain Capital, Brookfield). „Forward Deployed Engineers“ arbeiten direkt in Unternehmen, identifizieren Hebel und bauen Workflows um KI herum um. Die KI-Beratung Tomoro (~150 Engineers) wird übernommen. Parallel stellte OpenAI „Deployment Simulation“ vor: eine Methode, die ~1,3 Mio. de-identifizierte Alt-Konversationen durch ein Kandidatenmodell replayt, um Fehlverhalten VOR dem Release zu schätzen.",
-          "why": "Die Botschaft an den Mittelstand: Der Engpass ist nicht das Modell, sondern die Einführung in die eigenen Prozesse. Genau diese Lücke füllen STARTPLATZ-Workshops und der KI-Manager-Kurs — herstellerunabhängig und vor Ort in NRW.",
+          "why": "Die Botschaft an den Mittelstand: Der Engpass ist nicht das Modell, sondern die Einführung in die eigenen Prozesse. Genau diese Lücke füllen STARTPLATZ-Workshops und der KI-Manager-Kurs — herstellerunabhängig.",
           "links": [
             {
               "label": "OpenAI",

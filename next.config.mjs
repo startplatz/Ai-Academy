@@ -45,6 +45,12 @@ const nextConfig = {
         destination: 'https://startplatz-ai-academy.de/arbeitssuchende',
         permanent: true,
       },
+      // Alte Personio-Stelle, Nachfolger ist das Online-Marketing-Praktikum
+      {
+        source: '/karriere/marketing-praktikum',
+        destination: '/karriere/online-marketing-praktikum',
+        permanent: true,
+      },
     ];
   },
 };

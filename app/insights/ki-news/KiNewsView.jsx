@@ -700,8 +700,8 @@ export default function KiNewsView({ editions = [], ranking = [], series = [], k
       </Section>
 
       <CTABanner
-        title="KI-Kompetenz wird <span>Pflicht</span> — bist du vorbereitet?"
-        subtitle="Ab dem 02.08.2026 greift Artikel 4 des EU AI Act. Wir bringen dein Team auf Stand — herstellerunabhängig und vor Ort in NRW."
+        title="KI-Kompetenz im Team <span>gezielt aufbauen</span>"
+        subtitle="Artikel 4 des EU AI Act gilt seit dem 2. Februar 2025: Wer KI im Unternehmen einsetzt, soll Maßnahmen ergreifen, um die KI-Kompetenz der Mitarbeitenden zu fördern. Ein bestimmtes Zertifikat schreibt die Verordnung nicht vor. Wir unterstützen dein Team mit praxisnahen Schulungen — herstellerunabhängig."
       >
         <Button variant="primary" size="lg" href="/unternehmen">
           Für Unternehmen

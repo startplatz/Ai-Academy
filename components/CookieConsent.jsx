@@ -169,6 +169,9 @@ export default function CookieConsent() {
   useEffect(() => {
     const stored = readStored();
     if (!stored) {
+      // localStorage gibt es erst im Browser: Der Banner muss nach dem Mount
+      // eingeblendet werden, sonst weicht das Server-HTML vom Client ab.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setVisible(true);
     }
 

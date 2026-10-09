@@ -450,7 +450,7 @@ export default function OneDayPage() {
               key={activeProduct.image}
               src={activeProduct.image}
               alt=""
-              loading="eager"
+              loading="lazy"
               $reverse={activeIndex % 2 === 1}
             />
             <PreviewShade />

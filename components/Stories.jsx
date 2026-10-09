@@ -2,6 +2,7 @@
 
 // React is auto-imported in Next.js but we keep it for clarity
 import React from 'react';
+import Link from 'next/link';
 import styled from 'styled-components';
 import { tokens, media } from '../styles/tokens';
 import { clipBR, clipTLBR, CHAMFER, CyberCorners } from '../styles/cyberpunk';
@@ -15,14 +16,15 @@ import PlanetSection from './PlanetSection';
 const MAIN_STORY = {
   badge: 'Trend Report',
   title: 'Wie Generative AI die Kreativbranche revolutioniert',
-  meta: 'Heute \u00b7 8 min Lesezeit',
+  href: '/insights/generative-ai-kreativbranche',
+  meta: '15 Apr 2026 \u00b7 8 min Lesezeit',
   image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80&auto=format',
 };
 
 const SIDE_STORIES = [
-  { badge: 'Karriere', title: '5 Skills, die jeder KI-Manager braucht' },
-  { badge: 'Tutorial', title: 'Prompt Engineering: Einsteiger Guide' },
-  { badge: 'Interview', title: 'Interview: Die Zukunft der Arbeit' },
+  { badge: 'Karriere', title: '5 Skills, die jeder KI-Manager braucht', href: '/insights/5-skills-ki-manager' },
+  { badge: 'Tutorial', title: 'Prompt Engineering: Einsteiger Guide', href: '/insights/prompt-engineering-anfaenger' },
+  { badge: 'Interview', title: 'Interview: Die Zukunft der Arbeit', href: '/insights/interview-zukunft-arbeit-ki' },
 ];
 
 const Grid = styled.div`
@@ -32,8 +34,10 @@ const Grid = styled.div`
   ${media.lg} { grid-template-columns: 1.4fr 1fr; }
 `;
 
-const MainCard = styled.article`
+const MainCard = styled(Link)`
+  display: block;
   position: relative;
+  text-decoration: none;
   ${clipTLBR(CHAMFER.lg)}
   overflow: hidden;
   min-height: 360px;
@@ -104,8 +108,10 @@ const SideList = styled.div`
   gap: ${tokens.spacing.md};
 `;
 
-const SideCard = styled.article`
+const SideCard = styled(Link)`
+  display: block;
   position: relative;
+  text-decoration: none;
   padding: ${tokens.spacing.lg};
   background: ${tokens.colors.surface};
   border: 1px solid ${tokens.colors.glassBorder};
@@ -156,7 +162,7 @@ export default function Stories() {
       subtitle="Artikel, Tutorials und Interviews rund um KI, Karriere und Innovation."
     >
       <Grid>
-        <MainCard>
+        <MainCard href={MAIN_STORY.href}>
           <CyberCorners $color={tokens.colors.mint} $size={14} />
           <MainImage src={MAIN_STORY.image} alt={MAIN_STORY.title} loading="lazy" width="800" height="500" />
           <MainOverlay />
@@ -169,7 +175,7 @@ export default function Stories() {
 
         <SideList>
           {SIDE_STORIES.map((s) => (
-            <SideCard key={s.title}>
+            <SideCard key={s.title} href={s.href}>
               <CyberCorners $color={tokens.colors.mint} $size={8} />
               <SideBadge>{s.badge}</SideBadge>
               <SideTitle>{s.title}</SideTitle>

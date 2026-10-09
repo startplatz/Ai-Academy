@@ -535,7 +535,7 @@ function ProductTile({ product, compact = false }) {
   return (
     <ProductCard $color={accent.color}>
       <ImageFrame $color={accent.color}>
-        <img src={product.image} alt={product.title} loading="eager" width="900" height="506" />
+        <img src={product.image} alt={product.title} loading="lazy" width="900" height="506" />
         <CardBadge>{product.category || product.badge || product.duration}</CardBadge>
       </ImageFrame>
       <CardBody>
