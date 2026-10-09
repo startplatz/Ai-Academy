@@ -160,7 +160,7 @@ export default function UeberUnsPage() {
       bg: tokens.colors.mintBg,
     },
     {
-      year: '2022',
+      year: '2024',
       title: 'Erste geförderte Bootcamps',
       text: 'Der Bildungsgutschein wird zum Game-Changer. Wir erhalten die AZAV-Zertifizierung und starten die ersten vollständig geförderten KI-Bootcamps für Arbeitssuchende. Die Nachfrage explodiert.',
       color: tokens.colors.navy,
