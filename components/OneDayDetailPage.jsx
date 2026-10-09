@@ -6,7 +6,6 @@ import {
   Button,
   CTABanner,
   DetailTable,
-  MiniFAQ,
   PageHero,
   SearchQuestionAnswers,
   SectionBlock,
@@ -528,18 +527,13 @@ export default function OneDayDetailPage({ config }) {
         </PricingGrid>
       </SectionBlock>
 
-      {searchQuestions?.length > 0 && (
-        <SectionBlock
-          badge="Gefragte Suchfragen"
-          subtitle="Direkte Antworten auf Fragen, die Menschen vor diesem OneDay-Workshop stellen."
-          accent={accent.glow}
-        >
-          <SearchQuestionAnswers items={searchQuestions} accentColor={accent.color} />
-        </SectionBlock>
-      )}
-
-      <SectionBlock badge="FAQ" title={config.faqTitle} accent={accent.glow}>
-        <MiniFAQ items={config.faq} accentColor={accent.color} />
+      <SectionBlock
+        badge="FAQ"
+        title={config.faqTitle}
+        subtitle="Direkte Antworten auf Fragen, die Menschen vor diesem OneDay-Workshop stellen."
+        accent={accent.glow}
+      >
+        <SearchQuestionAnswers items={[...(searchQuestions || []), ...config.faq]} accentColor={accent.color} />
       </SectionBlock>
 
       <CTABanner title={config.finalCta.title} subtitle={config.finalCta.subtitle}>

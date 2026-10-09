@@ -1,4 +1,6 @@
-export const metadata = {
+import { withSocial } from '../../lib/seo';
+
+export const metadata = withSocial({
   title: 'Preisliste 2026 & Produktkatalog',
   description:
     'Preisliste 2026 und Produktkatalog der STARTPLATZ AI Academy: OneDay, FortyDays, AfterWork und Corporate Inhouse.',
@@ -9,7 +11,7 @@ export const metadata = {
       'Programme, OneDay Workshops und Teamformate der STARTPLATZ AI Academy mit Preisen und Formatüberblick.',
     url: 'https://startplatz-ai-academy.de/produktkatalog',
   },
-};
+});
 
 export default function ProduktkatalogLayout({ children }) {
   return children;

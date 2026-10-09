@@ -1,12 +1,13 @@
 import OneDayDetailPage from '../../../components/OneDayDetailPage';
 import { CALENDLY_URL } from '../../../lib/site';
+import { withSocial } from '../../../lib/seo';
 
-export const metadata = {
+export const metadata = withSocial({
   title: 'OneDay Immobilien | KI-Bootcamp für Makler',
   description:
     'Ein eintägiges KI-Bootcamp für Immobilienmakler: Exposés, Social Content, Eigentümer-Akquise und Kundenkommunikation mit direkt nutzbaren KI-Workflows.',
   alternates: { canonical: '/oneday/immobilien' },
-};
+});
 
 const config = {
   href: '/oneday/immobilien',

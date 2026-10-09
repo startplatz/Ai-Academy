@@ -1,12 +1,13 @@
 import OneDayDetailPage from '../../../components/OneDayDetailPage';
 import { CALENDLY_URL } from '../../../lib/site';
+import { withSocial } from '../../../lib/seo';
 
-export const metadata = {
+export const metadata = withSocial({
   title: 'OneDay Claude Cowork | KI-Workshop für den Arbeitsalltag',
   description:
     'Ein intensiver Praxistag für Claude im Arbeitsalltag: Workflows, Prompt-Systeme, Recherche, Schreiben, Analyse und direkte Anwendung an eigenen Aufgaben.',
   alternates: { canonical: '/oneday/claude-cowork' },
-};
+});
 
 const config = {
   href: '/oneday/claude-cowork',
@@ -191,11 +192,9 @@ const config = {
     { label: 'Mitbringen', value: 'Laptop, Claude-Zugang und 2-3 echte Aufgaben aus deinem Alltag.' },
   ],
   faqTitle: 'Fragen zu <span>Claude Cowork.</span>',
+  // Ergänzt die Suchfragen aus lib/searchIntentQuestions.js — dort schon
+  // beantwortete Fragen (z. B. Claude Pro) hier nicht wiederholen.
   faq: [
-    {
-      q: 'Brauche ich Claude Pro?',
-      a: 'Ein eigener Claude-Zugang ist sinnvoll. Für intensives Arbeiten empfehlen wir einen bezahlten Account, weil Limits im Workshop sonst stören können.',
-    },
     {
       q: 'Ist das ein Prompt-Engineering-Kurs?',
       a: 'Nicht nur. Wir bauen vollständige Arbeitsabläufe: Kontext, Rollen, Dateien, Qualitätschecks und wiederverwendbare Vorlagen.',

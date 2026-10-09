@@ -36,7 +36,7 @@ const KPIS = [
     color: tokens.colors.navy,
   },
   {
-    value: 15,
+    value: 13,
     suffix: '+',
     label: 'Jahre Netzwerk für deinen nächsten Schritt',
     accent: 'STARTPLATZ NRW',

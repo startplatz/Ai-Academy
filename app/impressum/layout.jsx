@@ -1,4 +1,6 @@
-export const metadata = {
+import { withSocial } from '../../lib/seo';
+
+export const metadata = withSocial({
   title: 'Impressum',
   description:
     'Impressum der STARTPLATZ AI Academy GmbH mit Anbieterkennzeichnung, Vertretungsberechtigten, Kontakt und Registerangaben.',
@@ -9,7 +11,7 @@ export const metadata = {
       'Anbieterkennzeichnung, Kontakt und Registerangaben der STARTPLATZ AI Academy GmbH.',
     url: 'https://startplatz-ai-academy.de/impressum',
   },
-};
+});
 
 export default function ImpressumLayout({ children }) {
   return children;

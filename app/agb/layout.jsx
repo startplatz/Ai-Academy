@@ -1,4 +1,6 @@
-export const metadata = {
+import { withSocial } from '../../lib/seo';
+
+export const metadata = withSocial({
   title: 'Allgemeine Geschäftsbedingungen',
   description:
     'Allgemeine Geschäftsbedingungen der STARTPLATZ AI Academy für Weiterbildungen, Bootcamps, Workshops, Inhouse-Trainings und sonstige Lehrveranstaltungen.',
@@ -9,7 +11,7 @@ export const metadata = {
       'AGB der STARTPLATZ AI Academy für Weiterbildungen, Bootcamps und Workshops.',
     url: 'https://startplatz-ai-academy.de/agb',
   },
-};
+});
 
 export default function AGBLayout({ children }) {
   return children;

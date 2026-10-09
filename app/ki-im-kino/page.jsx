@@ -1,6 +1,7 @@
 import KIImKinoPageClient from './KIImKinoPageClient';
+import { withSocial } from '../../lib/seo';
 
-export const metadata = {
+export const metadata = withSocial({
   title: 'KI im Kino: 9 kostenlose Skills für den Kinoalltag',
   description:
     'Kostenloses Skill-Paket für Kinos: Hausprofil, Wochenprogramm, Newsletter, Gästeanfragen, Social Media, Verleihkorrespondenz und mehr.',
@@ -25,7 +26,7 @@ export const metadata = {
     description: 'Wiederverwendbare KI-Arbeitsabläufe für den Kinoalltag.',
     images: ['/freebies/ki-im-kino/kino-skill-paket-preview.webp'],
   },
-};
+});
 
 export default function KIImKinoPage() {
   return <KIImKinoPageClient />;

@@ -5,7 +5,6 @@ import styled, { css, keyframes } from 'styled-components';
 import {
   Button,
   CTABanner,
-  MiniFAQ,
   PageHero,
   SearchQuestionAnswers,
   SectionBlock,
@@ -410,11 +409,11 @@ export default function OneDayPage() {
   ];
 
   const faq = [
-    { q: 'Was lerne ich an einem Tag?', a: 'Du arbeitest an einem klaren Thema und gehst mit einem konkreten Ergebnis raus: Workflow, Tool-Setup, Zertifizierung oder Entscheidungsgrundlage.' },
+    // Ergänzt die Suchfragen aus lib/searchIntentQuestions.js — Tagesinhalt
+    // und Folgeprogramme sind dort schon beantwortet.
     { q: 'Für wen sind die OneDay Workshops geeignet?', a: 'Für Einzelpersonen, Professionals und Teams, die schnell Orientierung oder einen produktiven Einstieg in ein konkretes KI-Thema brauchen.' },
     { q: 'Brauche ich Vorkenntnisse?', a: 'Nein. Die Workshops sind praxisnah aufgebaut und starten mit dem nötigen Kontext. Fortgeschrittene Formate werden entsprechend gekennzeichnet.' },
     { q: 'Kann mein Arbeitgeber die Kosten übernehmen?', a: 'Ja. Viele Teilnehmer buchen OneDay über Weiterbildungbudgets. Für Teamtermine erstellen wir ein separates Angebot.' },
-    { q: 'Gibt es Folgeprogramme nach dem OneDay?', a: 'Ja. Je nach Ziel passen danach AfterWork, FortyDays oder eine Inhouse-Schulung für dein Team.' },
   ];
 
   return (
@@ -582,15 +581,12 @@ export default function OneDayPage() {
       </SectionBlock>
 
       <SectionBlock
-        badge="Gefragte Suchfragen"
+        badge="FAQ"
+        title="Fragen zu <span>OneDay.</span>"
         subtitle="Direkte Antworten auf Fragen, die Menschen vor einem kompakten KI-Workshop stellen."
         accent={tokens.colors.glow}
       >
-        <SearchQuestionAnswers items={searchIntentQuestions.oneday} accentColor={tokens.colors.primary} />
-      </SectionBlock>
-
-      <SectionBlock badge="FAQ" title="Fragen zu <span>OneDay.</span>" accent={tokens.colors.glow}>
-        <MiniFAQ items={faq} accentColor={tokens.colors.primary} />
+        <SearchQuestionAnswers items={[...searchIntentQuestions.oneday, ...faq]} accentColor={tokens.colors.primary} />
       </SectionBlock>
 
       <CTABanner

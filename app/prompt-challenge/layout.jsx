@@ -1,4 +1,6 @@
-export const metadata = {
+import { withSocial } from '../../lib/seo';
+
+export const metadata = withSocial({
   title: 'NEXUS//BREACH – knackst du KAIRO?',
   description:
     'Lerne Prompt Injection und Jailbreaks spielerisch kennen: sechs Missionen, direkte Rückmeldung und konkrete Schutzmaßnahmen für den sicheren KI-Einsatz.',
@@ -23,7 +25,7 @@ export const metadata = {
       'Sechs Missionen zu Jailbreaks, Prompt Injection und sicheren KI-Systemen.',
     images: ['/prompt-challenge/og-nexus-breach.webp'],
   },
-};
+});
 
 export default function PromptChallengeLayout({ children }) {
   return children;

@@ -5,11 +5,12 @@ import {
   jobExcerpt,
   jobLocationLabel,
 } from '../../lib/personioJobs.mjs';
+import { withSocial } from '../../lib/seo';
 
 /* Stellen kommen live aus Personio — einmal pro Stunde neu geprüft. */
 export const revalidate = 3600;
 
-export const metadata = {
+export const metadata = withSocial({
   title: 'Karriere & Jobs',
   description:
     'Karriere bei der STARTPLATZ AI Academy: Offene Rollen in KI-Bildung, Marketing, Operations, Sales und Academy-Aufbau.',
@@ -28,7 +29,7 @@ export const metadata = {
       },
     ],
   },
-};
+});
 
 export default async function KarrierePage() {
   const jobs = await getJobs();

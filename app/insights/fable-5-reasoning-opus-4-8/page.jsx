@@ -1,8 +1,9 @@
 import SubpageLayout from '../../../components/SubpageLayout';
 import HtmlArticleEmbed from '../../../components/ui/HtmlArticleEmbed';
 import content from './content.json';
+import { withSocial } from '../../../lib/seo';
 
-export const metadata = {
+export const metadata = withSocial({
   title: 'Fable-5-Reasoning in Opus 4.8 – Betriebshandbuch',
   description: 'Jemand hat gerade herausgefunden, wie man Fable-5-Reasoning in Opus 4.8 mit einem einzigen Prompt bekommt.',
   alternates: { canonical: '/insights/fable-5-reasoning-opus-4-8' },
@@ -12,7 +13,7 @@ export const metadata = {
     url: 'https://startplatz-ai-academy.de/insights/fable-5-reasoning-opus-4-8',
     type: 'article',
   },
-};
+});
 
 export default function Page() {
   return (

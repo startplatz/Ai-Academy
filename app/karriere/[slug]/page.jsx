@@ -8,6 +8,7 @@ import {
   jobLocationLabel,
   jobPostingJsonLd,
 } from '../../../lib/personioJobs.mjs';
+import { withSocial } from '../../../lib/seo';
 
 /* Stellen kommen live aus Personio — einmal pro Stunde neu geprüft.
    Geschlossene Stellen fallen damit automatisch auf 404 zurück, wie es
@@ -33,7 +34,7 @@ export async function generateMetadata({ params }) {
 
   const description = jobExcerpt(job, 155);
 
-  return {
+  return withSocial({
     title: job.title,
     description,
     alternates: { canonical: `/karriere/${job.slug}` },
@@ -51,7 +52,7 @@ export async function generateMetadata({ params }) {
         },
       ],
     },
-  };
+  });
 }
 
 export default async function JobDetailPage({ params }) {

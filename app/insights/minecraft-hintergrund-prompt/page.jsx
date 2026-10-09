@@ -1,8 +1,9 @@
 import SubpageLayout from '../../../components/SubpageLayout';
 import HtmlArticleEmbed from '../../../components/ui/HtmlArticleEmbed';
 import content from './content.json';
+import { withSocial } from '../../../lib/seo';
 
-export const metadata = {
+export const metadata = withSocial({
   title: 'Foto in eine Minecraft-Welt verwandeln – Prompt',
   description: 'Bild-Prompt, der die Person fotorealistisch lässt und ausschließlich den Hintergrund als originalgetreue Minecraft-Voxel-Nachbildung neu aufbaut.',
   alternates: { canonical: '/insights/minecraft-hintergrund-prompt' },
@@ -12,7 +13,7 @@ export const metadata = {
     url: 'https://startplatz-ai-academy.de/insights/minecraft-hintergrund-prompt',
     type: 'article',
   },
-};
+});
 
 export default function Page() {
   return (

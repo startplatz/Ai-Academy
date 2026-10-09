@@ -6,8 +6,9 @@ import {
   getKpis,
 } from '../../../lib/kiNews';
 import KiNewsView from './KiNewsView';
+import { withSocial } from '../../../lib/seo';
 
-export const metadata = {
+export const metadata = withSocial({
   title: 'KI-News — täglicher Newsstream',
   description:
     'Der tägliche KI-Newsstream der STARTPLATZ AI Academy: die wichtigsten Modelle, Releases, Regulierung und Research-Trends — eingeordnet für den NRW-Mittelstand. Mit Lab-Ranking und News-Volumen.',
@@ -19,7 +20,7 @@ export const metadata = {
     url: 'https://startplatz-ai-academy.de/insights/ki-news',
     type: 'website',
   },
-};
+});
 
 export default function KiNewsPage() {
   const editions = getEditions();

@@ -1,6 +1,7 @@
 import BewerbenMitKIPageClient from './BewerbenMitKIPageClient';
+import { withSocial } from '../../lib/seo';
 
-export const metadata = {
+export const metadata = withSocial({
   title: 'Bewerben mit KI: Prompt-Pack für Lebenslauf, ATS & Interview',
   description:
     'Kostenloses Download-Pack zum Seminar Bewerben mit KI: Prompt-Workbook, Prompt-Chain, Profilfoto-Prompts, Interview-Simulator, ATS-Checkliste und Negativbeispiel.',
@@ -19,7 +20,7 @@ export const metadata = {
       },
     ],
   },
-};
+});
 
 export default function BewerbenMitKIPage() {
   return <BewerbenMitKIPageClient />;

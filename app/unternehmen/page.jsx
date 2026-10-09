@@ -8,7 +8,6 @@ import {
   CTABanner,
   FeatureCard,
   MilestoneRail,
-  MiniFAQ,
   PageHero,
   ResponsiveGrid,
   SearchQuestionAnswers,
@@ -200,14 +199,13 @@ export default function UnternehmenPage() {
   const stats = [
     { value: 100, label: 'Unternehmen geschult', suffix: '+' },
     { value: 500, label: 'KI-Events durchgeführt', suffix: '+' },
-    { value: 15, label: 'Jahre STARTPLATZ', suffix: '+' },
+    { value: 13, label: 'Jahre STARTPLATZ', suffix: '+' },
   ];
 
   const faq = [
-    { q: 'Was kostet ein KI-Training für unser Team?', a: 'Das hängt von Format, Dauer und Individualisierung ab. Innovation Days und Inhouse-Formate kalkulieren wir nach Zielbild und Teamgröße.' },
-    { q: 'Wie individuell sind die Inhalte?', a: 'Sehr individuell. Wir starten mit Bedarfsanalyse und bauen Beispiele, Übungen und Transferaufgaben rund um eure realen Prozesse.' },
+    // Ergänzt die Suchfragen aus lib/searchIntentQuestions.js — Kosten,
+    // Individualisierung und Innovation Day sind dort schon beantwortet.
     { q: 'Wie messen wir den ROI der Schulung?', a: 'Wir definieren vorab Use Cases, Zeitersparnis, Qualitätsziele und Transfermetriken. So bleibt das Training nicht bei Inspiration stehen.' },
-    { q: 'Können wir mit einem Pilottag starten?', a: 'Ja. Der Innovation Day ist genau dafür gedacht: ein klares Lagebild, erste Use Cases und eine belastbare nächste Roadmap.' },
     { q: 'Welche Förderprogramme gibt es für Unternehmen?', a: 'Je nach Team und Beschäftigungssituation kann das Qualifizierungschancengesetz relevant sein. Wir prüfen das im Erstgespräch.' },
   ];
 
@@ -351,15 +349,12 @@ export default function UnternehmenPage() {
       </SectionBlock>
 
       <SectionBlock
-        badge="Gefragte Suchfragen"
+        badge="FAQ"
+        title="Fragen für <span>Entscheider.</span>"
         subtitle="Direkte Antworten auf Fragen, die Entscheider vor einer KI-Schulung im Unternehmen stellen."
         accent={tokens.colors.glowOrange}
       >
-        <SearchQuestionAnswers items={searchIntentQuestions.unternehmen} accentColor={tokens.colors.orange} />
-      </SectionBlock>
-
-      <SectionBlock badge="FAQ" title="Fragen für <span>Entscheider.</span>" accent={tokens.colors.glowOrange}>
-        <MiniFAQ items={faq} accentColor={tokens.colors.orange} />
+        <SearchQuestionAnswers items={[...searchIntentQuestions.unternehmen, ...faq]} accentColor={tokens.colors.orange} />
       </SectionBlock>
 
       <CTABanner

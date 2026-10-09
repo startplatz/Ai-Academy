@@ -1,4 +1,6 @@
-export const metadata = {
+import { withSocial } from '../../lib/seo';
+
+export const metadata = withSocial({
   title: 'Datenschutzerklärung',
   description:
     'Datenschutzerklärung der STARTPLATZ AI Academy: Informationen zur Verarbeitung personenbezogener Daten, Cookies, Tracking und Kontaktmöglichkeiten.',
@@ -9,7 +11,7 @@ export const metadata = {
       'Informationen zur Verarbeitung personenbezogener Daten auf der Website der STARTPLATZ AI Academy.',
     url: 'https://startplatz-ai-academy.de/datenschutz',
   },
-};
+});
 
 export default function DatenschutzLayout({ children }) {
   return children;

@@ -8,6 +8,7 @@ import BlogCard from '../../../components/ui/BlogCard';
 import CTABanner from '../../../components/ui/CTABanner';
 import Button from '../../../components/ui/Button';
 import { CALENDLY_URL } from '../../../lib/site';
+import { withSocial } from '../../../lib/seo';
 
 /* Blog content data mapping */
 const BLOG_CONTENT = {
@@ -264,7 +265,7 @@ const BLOG_CONTENT = {
       <p>Wir unterstützen dich mit Kursinformationen, Ablauf, Zertifizierungsdetails und den Argumenten, die du für dein Beratungsgespräch brauchst. So gehst du vorbereitet in den Prozess.</p>
 
       <h2>Der nächste Schritt</h2>
-      <p>Wenn du prüfen möchtest, ob FortyDays KI-Manager:in zu dir passt, starte mit einer Beratung. Wir schauen gemeinsam auf Ziel, Förderung und Timing.</p>
+      <p>Wenn du prüfen möchtest, ob die <a href="/arbeitssuchende">KI-Manager-Weiterbildung FortyDays</a> zu dir passt, starte mit einer Beratung. Wir schauen gemeinsam auf Ziel, Förderung und Timing.</p>
     `,
     relatedArticles: [
       {
@@ -339,7 +340,7 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  return {
+  return withSocial({
     title: article.title,
     description: article.excerpt,
     alternates: { canonical: `/insights/${slug}` },
@@ -349,7 +350,7 @@ export async function generateMetadata({ params }) {
       url: `https://startplatz-ai-academy.de/insights/${slug}`,
       type: 'article',
     },
-  };
+  });
 }
 
 /* Styled components */

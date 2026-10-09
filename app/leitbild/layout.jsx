@@ -1,4 +1,6 @@
-export const metadata = {
+import { withSocial } from '../../lib/seo';
+
+export const metadata = withSocial({
   title: 'Leitbild',
   description:
     'Das Leitbild der STARTPLATZ AI Academy GmbH: unser Selbstverständnis als AZAV-zugelassener Bildungsträger, unsere Ausrichtung am Arbeitsmarkt und unser kontinuierlicher Verbesserungsprozess.',
@@ -9,7 +11,7 @@ export const metadata = {
       'Unser Selbstverständnis als AZAV-zugelassener Bildungsträger: Teilnehmende im Mittelpunkt, Chancengleichheit, Arbeitsmarktorientierung und kontinuierliche Verbesserung.',
     url: 'https://startplatz-ai-academy.de/leitbild',
   },
-};
+});
 
 export default function LeitbildLayout({ children }) {
   return children;
