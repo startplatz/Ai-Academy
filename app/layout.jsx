@@ -100,7 +100,6 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'EducationalOrganization',
     name: 'STARTPLATZ AI Academy',
-    alternateName: 'STARTPLATZ AI Hub',
     url: 'https://startplatz-ai-academy.de/',
     logo: 'https://res.cloudinary.com/startplatz/image/upload/ai-hub/website/AI-Academy%20Logos/png/logo-full-color-on-light-800w.png',
     description:
