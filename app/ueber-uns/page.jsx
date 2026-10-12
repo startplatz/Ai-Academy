@@ -153,16 +153,16 @@ export default function UeberUnsPage() {
       bg: tokens.colors.mintBg,
     },
     {
-      year: '2020',
+      year: '2023',
       title: 'Der AI Hub entsteht',
-      text: 'Als die KI-Revolution Fahrt aufnimmt, gründen wir den STARTPLATZ AI Hub – eine spezialisierte Abteilung mit dem Fokus auf KI-Bildung und Community. Erste Workshops und Meetups starten.',
+      text: 'Als die KI-Revolution Fahrt aufnimmt, startet STARTPLATZ die Marke STARTPLATZ AI Hub mit dem Fokus auf KI-Bildung und Community. Erste Workshops und Meetups starten.',
       color: tokens.colors.mint,
       bg: tokens.colors.mintBg,
     },
     {
       year: '2024',
       title: 'Erste geförderte Bootcamps',
-      text: 'Der Bildungsgutschein wird zum Game-Changer. Wir erhalten die AZAV-Zertifizierung und starten die ersten vollständig geförderten KI-Bootcamps für Arbeitssuchende. Die Nachfrage explodiert.',
+      text: 'Der AI Hub wird ein eigenes Unternehmen. Der Bildungsgutschein wird zum Game-Changer: Wir erhalten die AZAV-Zertifizierung und starten die ersten vollständig geförderten KI-Bootcamps für Arbeitssuchende. Die Nachfrage explodiert.',
       color: tokens.colors.navy,
       bg: tokens.colors.navyBg,
     },
@@ -174,9 +174,9 @@ export default function UeberUnsPage() {
       bg: tokens.colors.navyBg,
     },
     {
-      year: '2025',
+      year: '2026',
       title: 'Rebranding: AI Academy',
-      text: 'Aus dem AI Hub wird die STARTPLATZ AI Academy. Der neue Name spiegelt wider, was wir geworden sind: eine vollwertige Akademie für KI-Kompetenzen mit einem umfassenden Curriculum, erstklassigen Dozenten und einem wachsenden Ökosystem in NRW.',
+      text: 'Aus dem AI Hub wird die STARTPLATZ AI Academy. Der neue Name spiegelt wider, was wir geworden sind: eine vollwertige Akademie für KI-Kompetenzen mit einem umfassenden Curriculum, erstklassigen Dozenten und einem wachsenden Ökosystem in NRW. Der AI Hub bleibt als Marke für die KI-Community von STARTPLATZ bestehen.',
       color: tokens.colors.primary,
       bg: tokens.colors.primaryLighter,
     },
@@ -256,13 +256,13 @@ export default function UeberUnsPage() {
             />
           </GroupPhoto>
           <StoryText>
-            <strong>Es begann mit einer einfachen Idee:</strong> KI-Wissen sollte nicht nur Tech-Giganten und Universitäten vorbehalten sein. Als 2020 die KI-Revolution an Fahrt gewann, gründeten wir den <span>STARTPLATZ AI Hub</span> – einen Ort, an dem jeder die Fähigkeiten erlernen kann, die die Zukunft der Arbeit definieren.
+            <strong>Es begann mit einer einfachen Idee:</strong> KI-Wissen sollte nicht nur Tech-Giganten und Universitäten vorbehalten sein. Als 2023 die KI-Revolution an Fahrt gewann, starteten wir den <span>STARTPLATZ AI Hub</span> – einen Ort, an dem jeder die Fähigkeiten erlernen kann, die die Zukunft der Arbeit definieren.
           </StoryText>
           <StoryText>
             Was als kleines Meetup in Köln startete, wuchs schnell zu einer der wichtigsten Anlaufstellen für KI-Bildung in Nordrhein-Westfalen. Wir erkannten früh, dass <strong>der größte Engpass nicht die Technologie ist, sondern die Menschen, die sie verstehen und einsetzen können</strong>.
           </StoryText>
           <StoryText>
-            2025 wurde aus dem AI Hub die <span>STARTPLATZ AI Academy</span>. Der neue Name ist mehr als ein Rebranding – er spiegelt wider, was wir geworden sind: eine vollwertige Akademie mit einem strukturierten Curriculum, erstklassigen Dozenten und einem Netzwerk, das Karrieren verändert.
+            2026 wird aus dem AI Hub die <span>STARTPLATZ AI Academy</span>. Der neue Name ist mehr als ein Rebranding – er spiegelt wider, was wir geworden sind: eine vollwertige Akademie mit einem strukturierten Curriculum, erstklassigen Dozenten und einem Netzwerk, das Karrieren verändert. Der AI Hub bleibt als Marke für die KI-Community von STARTPLATZ bestehen.
           </StoryText>
         </StoryCard>
       </SectionBlock>
