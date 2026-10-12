@@ -505,7 +505,7 @@ export default function EventsTimeline() {
       <Container>
         <SectionBadge>
           <LiveDot $live={source === 'live'} aria-hidden="true" />
-          {source === 'live' ? 'Live · STARTPLATZ AI Hub' : 'Saison 2026'}
+          {source === 'live' ? 'Live · STARTPLATZ AI Academy' : 'Saison 2026'}
         </SectionBadge>
         <SectionTitle>Nächste <span>Events</span></SectionTitle>
         <SectionSubtitle>Von Bootcamps über Workshops bis zu kostenlosen Meetups – finde dein nächstes Event.</SectionSubtitle>
