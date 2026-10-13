@@ -113,14 +113,14 @@ export default function ArbeitssuchendePage() {
   const after = [
     'Du bewegst etwas Sinnvolles — mit KI-Kompetenz und Nachweis.',
     'Ein Job, der sich deinem Leben anpasst — nicht umgekehrt.',
-    'Cert-IT Zertifikat, eigenes Projekt, klarer Karriereweg.',
+    'Abschlusszertifikat, eigenes Projekt, klarer Karriereweg.',
   ];
 
   const details = [
     { label: 'Format', value: '8 Wochen Vollzeit (40 Unterrichtstage)' },
-    { label: 'Rhythmus', value: 'Mo-Fr, 9-16 Uhr, digital' },
+    { label: 'Rhythmus', value: 'Mo–Fr, 9–16 Uhr, online oder vor Ort in Köln' },
     { label: 'Teilnehmer', value: 'Max. 20 pro Kurs' },
-    { label: 'Zertifikat', value: 'Cert-IT (DIN EN ISO/IEC 17024)' },
+    { label: 'Abschluss', value: 'Abschlusszertifikat der STARTPLATZ Köln GmbH, optional Prüfung bei Cert-IT' },
     { label: 'Förderung', value: '100% Bildungsgutschein (AZAV)' },
     { label: 'Bewertung', value: '4,98/5 (290+ Bewertungen)' },
   ];
@@ -161,8 +161,8 @@ export default function ArbeitssuchendePage() {
     },
     {
       step: '3',
-      title: 'FortyDays starten',
-      description: '8 Wochen intensives Vollzeitprogramm — digital, eng begleitet, mit klarer Struktur von Tag 1.',
+      title: 'Weiterbildung starten',
+      description: '8 Wochen intensives Vollzeitprogramm — online oder vor Ort in Köln, eng begleitet, mit klarer Struktur von Tag 1.',
     },
   ];
 
@@ -285,8 +285,8 @@ export default function ArbeitssuchendePage() {
 
   const faq = [
     { q: 'Wie bekomme ich den Bildungsgutschein?', a: 'Du sprichst mit deiner Agentur für Arbeit oder deinem Jobcenter. Wir bereiten dich in einem kostenlosen Beratungsgespräch mit allen Kursdaten, Zielen und Argumenten gezielt auf dieses Gespräch vor.' },
-    { q: 'Wie sieht ein typischer Tag im FortyDays aus?', a: 'Mo–Fr, 9–16 Uhr (inkl. Mittagspause): Live-Theorie von 9–12 Uhr, betreute Praxis von 13–15 Uhr. 100% digital — du kannst von überall teilnehmen.' },
-    { q: 'Was ist die Cert-IT Zertifizierung?', a: 'Cert-IT zertifiziert Personen nach DIN EN ISO/IEC 17024 — dem internationalen Standard für Personenzertifizierungen. Das Zertifikat ist EU-weit anerkannt und belegt deine KI-Kompetenz offiziell.' },
+    { q: 'Wie sieht ein typischer Tag in der Weiterbildung aus?', a: 'Mo–Fr, 9–16 Uhr (inkl. Mittagspause): Live-Theorie von 9–12 Uhr, betreute Praxis von 13–15 Uhr. Du nimmst online oder vor Ort in Köln teil.' },
+    { q: 'Was ist die Cert-IT Prüfung?', a: 'Am Ende der Weiterbildung kannst du freiwillig eine unabhängige Abschlussprüfung bei Cert-IT ablegen. Cert-IT ist eine branchengetragene Zertifizierungsstelle, gegründet unter anderem von Fraunhofer, BITKOM und ZVEI. Dein Abschlusszertifikat „KI-Manager/in“ der STARTPLATZ Köln GmbH erhältst du unabhängig davon.' },
     { q: 'Brauche ich einen technischen Hintergrund?', a: 'Nein. Über 1.000 Absolventinnen und Absolventen aus allen Branchen — Marketing, HR, Journalismus, Vertrieb — haben es ohne Vorkenntnisse geschafft. Du lernst mit Tools wie ChatGPT, n8n und APIs.' },
     { q: 'Was passiert nach den 8 Wochen?', a: 'Du gehst mit einem anerkannten Zertifikat, einem eigenen Praxisprojekt und klarer Positionierung für Bewerbungen. Über 60.000 offene KI-Stellen warten — und du bist bereit.' },
   ];
@@ -298,7 +298,7 @@ export default function ArbeitssuchendePage() {
         badgeColor={tokens.colors.mint}
         badgeBg={tokens.colors.mintBg}
         title="In 8 Wochen von überfordert zu <span>selbstbewusst.</span>"
-        subtitle="FortyDays KI-Manager:in. Vollzeit, digital, komplett kostenfrei mit Bildungsgutschein."
+        subtitle="KI-Manager/in in Vollzeit. Online oder vor Ort in Köln, komplett kostenfrei mit Bildungsgutschein."
         breadcrumbs={[{ label: 'Arbeitssuchende', href: '/arbeitssuchende', active: true }]}
         accentColor={tokens.colors.mintBg}
         image="https://res.cloudinary.com/startplatz/image/upload/f_auto,q_auto,w_900/v1776469601/ai-hub/website/AI-Academy-Website-Images/target-audience-arbeitssuchende.png"
@@ -322,7 +322,7 @@ export default function ArbeitssuchendePage() {
 
       <SectionBlock
         badge="Produkt"
-        title="FortyDays <span>KI-Manager:in</span>"
+        title="KI-Manager/in <span>in Vollzeit</span>"
         subtitle="Ein klares Vollzeitformat für deinen Neustart in KI."
         variant="muted"
         accent={tokens.colors.glowMint}
@@ -333,7 +333,7 @@ export default function ArbeitssuchendePage() {
             <DetailTable items={details} />
           </Panel>
           <VisualSlot
-            title="FortyDays Lernreise"
+            title="KI-Manager Lernreise"
             image="https://res.cloudinary.com/startplatz/image/upload/f_auto,q_auto,w_900/v1776469601/ai-hub/website/AI-Academy-Website-Images/target-audience-arbeitssuchende.png"
             accentColor={tokens.colors.mint}
             prompt="Use case: infographic-diagram. Asset type: subpage visual. Structured 8-week AI learning roadmap, no readable small text, premium STARTPLATZ purple/teal palette, editorial, clean, no logos, no watermark."
@@ -353,7 +353,7 @@ export default function ArbeitssuchendePage() {
             kicker: `Woche ${item.step}`,
           }))}
           intro={{
-            kicker: 'FortyDays Lernpfad',
+            kicker: 'KI-Manager Lernpfad',
             title: 'Vom ersten Prompt bis zum eigenen KI-Agenten.',
             text: 'Der rote Faden bleibt sichtbar: Orientierung, Anwendung, Strategie und Zertifizierung bauen aufeinander auf.',
             meta: ['40 Unterrichtstage', 'Live begleitet', 'Portfolio-Projekt'],
@@ -418,7 +418,7 @@ export default function ArbeitssuchendePage() {
         variant="muted"
         accent={tokens.colors.glowMint}
       >
-        <QuoteViewport aria-label="Stimmen aus dem FortyDays Kurs">
+        <QuoteViewport aria-label="Stimmen aus der KI-Manager Weiterbildung">
           <QuoteTrack role="list">
             {[...testimonials, ...testimonials].map((item, index) => (
               <QuoteCard key={`${item.source}-${index}`} role="listitem">
@@ -466,7 +466,7 @@ export default function ArbeitssuchendePage() {
 
       <CTABanner
         title="Bereit für deinen <span>Neustart?</span>"
-        subtitle="Wir prüfen gemeinsam, ob FortyDays und der Bildungsgutschein zu deiner Situation passen."
+        subtitle="Wir prüfen gemeinsam, ob die Weiterbildung und der Bildungsgutschein zu deiner Situation passen."
       >
         <Button href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" variant="mint" size="lg" arrow>
           Kostenlos beraten lassen

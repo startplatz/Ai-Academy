@@ -32,11 +32,11 @@ export default function ExpertenPage() {
       initials: 'LG',
       name: 'Lorenz Gräf',
       role: 'Lead Dozent',
-      signal: 'FortyDays',
+      signal: 'KI-Manager',
       accent: tokens.colors.mint,
-      focus: 'Vom ersten Prompt bis zum Cert-IT Projekt: strukturiert, ruhig und anwendbar.',
+      focus: 'Vom ersten Prompt bis zum eigenen Praxisprojekt: strukturiert, ruhig und anwendbar.',
       tools: ['Prompting', 'KI-Manager', 'Zertifizierung'],
-      bio: 'Leitet den FortyDays KI-Manager:in und übersetzt komplexe KI-Themen in klare Lernpfade.',
+      bio: 'Leitet die KI-Manager Weiterbildung und übersetzt komplexe KI-Themen in klare Lernpfade.',
     },
     {
       initials: 'LS',
@@ -52,7 +52,7 @@ export default function ExpertenPage() {
 
   const trust = [
     { step: '1', title: 'Praxis statt Lehrbuch', description: 'Unsere Dozenten arbeiten selbst täglich mit KI-Tools, Workflows und echten Projekten.' },
-    { step: '2', title: 'Anerkannte Programme', description: 'FortyDays und AfterWork sind AZAV-zertifiziert und an klare Kompetenznachweise gekoppelt.' },
+    { step: '2', title: 'Anerkannte Programme', description: 'Die KI-Manager Weiterbildungen in Vollzeit und Teilzeit sind AZAV-zugelassen und enden mit Praxisprojekt und Abschlusszertifikat.' },
     { step: '3', title: 'NRW-Ökosystem', description: 'Köln, Düsseldorf, Events, Startups und Unternehmen bilden den Kontext der Academy.' },
   ];
 

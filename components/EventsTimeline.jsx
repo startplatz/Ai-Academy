@@ -22,7 +22,7 @@ const FALLBACK_EVENTS = [
     date: 'FEB 03',
     title: 'KI-Manager Bootcamp',
     tags: ['AZAV', '8 Wochen'],
-    description: 'FortyDays KI-Manager:in. Vollzeit, digital und 100% förderfähig.',
+    description: 'KI-Manager/in in Vollzeit. Online oder vor Ort und 100% förderfähig.',
     location: 'Köln + Online',
     cta: 'Bewerben',
     href: ALL_EVENTS_URL,

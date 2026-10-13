@@ -148,10 +148,10 @@ const LEVELS = [
     description: 'Du hast noch wenig Berührungspunkte mit KI gehabt. Kein Problem — die KI-Revolution beginnt gerade erst, und wer jetzt einsteigt, hat einen klaren Vorteil. Die Grundlagen sind schneller gelernt als du denkst.',
     color: tokens.colors.mint,
     program: {
-      title: 'FortyDays KI-Manager:in',
-      text: '8 Wochen Vollzeit, digital und 100% förderfähig mit Bildungsgutschein. Für deinen strukturierten KI-Neustart.',
+      title: 'KI-Manager/in (Vollzeit)',
+      text: '8 Wochen Vollzeit, online oder vor Ort und 100% förderfähig mit Bildungsgutschein. Für deinen strukturierten KI-Neustart.',
       href: '/arbeitssuchende',
-      cta: 'FortyDays ansehen',
+      cta: 'Weiterbildung ansehen',
     },
   },
   {
@@ -162,10 +162,10 @@ const LEVELS = [
     description: 'Du hast ein grundlegendes Verständnis von KI und nutzt sie gelegentlich. Dir fehlt aber noch die Tiefe, um KI strategisch und effizient in deinem Beruf einzusetzen. Mit dem richtigen Training kannst du den nächsten großen Sprung machen.',
     color: tokens.colors.navy,
     program: {
-      title: 'AfterWork AI Automation',
-      text: '8 Wochen berufsbegleitend, Di & Do. Für konkrete Workflows, n8n, GPT-APIs und sichere Anwendung im Job.',
+      title: 'KI-Manager/in (Teilzeit)',
+      text: '16 Wochen berufsbegleitend, Mo–Do ab 14 Uhr. Für konkrete Workflows, Automatisierung und sichere Anwendung im Job.',
       href: '/berufstaetige',
-      cta: 'AfterWork ansehen',
+      cta: 'Weiterbildung ansehen',
     },
   },
   {

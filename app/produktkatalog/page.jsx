@@ -585,7 +585,7 @@ export default function ProduktkatalogPage() {
         badgeColor={tokens.colors.primary}
         badgeBg={tokens.colors.primaryLighter}
         title="Alle Formate.<br /><span>Ein Überblick.</span>"
-        subtitle="Alle Preise netto, zzgl. 19 % MwSt. OneDay, FortyDays, AfterWork und Corporate Inhouse auf einen Blick."
+        subtitle="Alle Preise netto, zzgl. 19 % MwSt. OneDay, KI-Manager/in in Vollzeit und Teilzeit und Corporate Inhouse auf einen Blick."
         breadcrumbs={[{ label: 'Produktkatalog', href: '/produktkatalog', active: true }]}
         accentColor={tokens.colors.primaryLighter}
         image={PRODUCT_IMAGES.claudeCowork}
@@ -622,7 +622,7 @@ export default function ProduktkatalogPage() {
             <NoteKicker>Preislogik</NoteKicker>
             <NoteList>
               <li>OneDay Workshops haben feste Preisanker und eignen sich für schnelle Entscheidungen.</li>
-              <li>FortyDays und AfterWork sind AZAV-zertifiziert und bei passender Voraussetzung voll förderfähig.</li>
+              <li>Die KI-Manager Weiterbildungen in Vollzeit und Teilzeit sind AZAV-zugelassen und bei passender Voraussetzung förderfähig (Bildungsgutschein bzw. QCG).</li>
               <li>Corporate Inhouse ist für geschlossene Gruppen bis 10 Teilnehmer:innen pauschal kalkuliert.</li>
               <li>{PRICE_LIST_2026.note}</li>
             </NoteList>

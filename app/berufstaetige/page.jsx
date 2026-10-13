@@ -1,24 +1,56 @@
 'use client';
 
 import React from 'react';
+import styled from 'styled-components';
 import {
   BeforeAfter,
   Button,
   CTABanner,
+  DetailTable,
   FreebieConsole,
-  MiniFAQ,
+  MilestoneRail,
   PageHero,
   ProjectCinemaShowcase,
   SearchQuestionAnswers,
   SectionBlock,
   SpotlightBento,
   StatsRow,
+  TwoColumn,
 } from '../../components/ui';
 import SubpageLayout from '../../components/SubpageLayout';
 import { tokens } from '../../styles/tokens';
+import { clipBR, CHAMFER, CyberCorners } from '../../styles/cyberpunk';
 import { CALENDLY_URL } from '../../lib/site';
 import { PRODUCT_CATALOG_URL } from '../../lib/productCatalog';
 import { searchIntentQuestions } from '../../lib/searchIntentQuestions';
+import { getCourse, TRAEGER } from '../../lib/academyFacts';
+
+const course = getCourse('ki-manager-teilzeit');
+
+const Panel = styled.div`
+  position: relative;
+  padding: ${tokens.spacing['2xl']};
+  background: ${tokens.colors.surface};
+  border: 1px solid ${tokens.colors.glassBorder};
+  ${clipBR(CHAMFER.md)}
+`;
+
+const PanelTitle = styled.h3`
+  font-family: ${tokens.fonts.display};
+  font-size: ${tokens.fontSizes.xl};
+  font-weight: ${tokens.fontWeights.bold};
+  color: ${tokens.colors.text};
+  margin-bottom: ${tokens.spacing.md};
+`;
+
+const PanelText = styled.p`
+  color: ${tokens.colors.textMuted};
+  line-height: ${tokens.lineHeights.relaxed};
+
+  & + & {
+    margin-top: ${tokens.spacing.sm};
+  }
+`;
 
 export default function BerufstaetigePage() {
   const before = [
@@ -28,38 +60,89 @@ export default function BerufstaetigePage() {
   ];
 
   const after = [
-    'Du automatisierst Prozesse, die andere händisch machen.',
+    'Du setzt KI in deinen Abläufen gezielt ein.',
     'Du sagst: "Kann ich zeigen. Hier ist der Workflow."',
-    'Du stehst vor deinem Chef besser da.',
+    'Du bringst KI-Kompetenz ins Team, nicht nur Neugier.',
+  ];
+
+  const details = [
+    { label: 'Format', value: `${course.durationWeeks} Wochen in Teilzeit, ${course.teachingUnits} Unterrichtseinheiten` },
+    { label: 'Rhythmus', value: 'Montag bis Donnerstag, 14–18 Uhr' },
+    { label: 'Ort', value: 'Online oder vor Ort in Köln' },
+    { label: 'Förderung', value: 'Förderfähig über das Qualifizierungschancengesetz (QCG)' },
+    { label: 'Abschluss', value: `Abschlusszertifikat „KI-Manager/in“ der ${TRAEGER.name}` },
+    { label: 'Zulassung', value: `AZAV-Maßnahme ${course.massnahmennummer}, zertifiziert durch ${TRAEGER.azav.certifiedBy}` },
+  ];
+
+  const weekRhythm = [
+    {
+      label: 'Theorie',
+      title: 'Montag & Mittwoch',
+      description: 'Live-Unterricht von 14 bis 18 Uhr: Grundlagen, Methoden und Tools, die du in der Woche anwendest.',
+      metric: 'Mo · Mi',
+      size: 'wide',
+      chips: ['Live', '14–18 Uhr'],
+    },
+    {
+      label: 'Praxis',
+      title: 'Dienstag & Donnerstag',
+      description: 'Betreute Praxis-Tage: Du wendest das Gelernte an, wir unterstützen. Wenn der Job einmal vorgeht, verpasst du keine Theorie.',
+      metric: 'Di · Do',
+      size: 'md',
+      chips: ['Betreut', 'Freiwillig'],
+    },
   ];
 
   const curriculum = [
     {
-      icon: '01',
-      title: 'n8n Workflows',
-      description: 'Du baust Automationen, die wiederkehrende Aufgaben sichtbar reduzieren.',
+      step: '1',
+      title: 'KI-Grundlagen & Prompt Engineering',
+      description: 'Wie KI funktioniert, Fachsprache und Prompt Engineering. Du gewinnst Sicherheit und Orientierung.',
     },
     {
-      icon: '02',
-      title: 'GPT-APIs & Agents',
-      description: 'Du verbindest KI-Modelle mit Prozessen statt nur einzelne Prompts zu schreiben.',
+      step: '2',
+      title: 'KI-Tools & Automatisierung',
+      description: 'n8n, APIs und KI-Agenten. Du baust echte Workflows für wiederkehrende Aufgaben.',
     },
     {
-      icon: '03',
-      title: 'RAG & Wissen',
-      description: 'Du lernst, wie interne Dokumente und KI-Antworten sauber zusammenkommen.',
+      step: '3',
+      title: 'Prozesse, Ethik & Strategie',
+      description: 'Prozessoptimierung, EU AI Act, Governance und Datenschutz: KI sicher in echte Abläufe bringen.',
     },
     {
-      icon: '04',
-      title: 'Security & EU AI Act',
-      description: 'Du nutzt KI produktiv, ohne Datenschutz und Governance zu ignorieren.',
+      step: '4',
+      title: 'Praxisprojekt & Abschluss',
+      description: 'Dein eigenes KI-Projekt, idealerweise aus deinem Arbeitsalltag. Du präsentierst es und gehst mit Zertifikat raus.',
+    },
+  ];
+
+  const qcgSteps = [
+    {
+      step: '1',
+      title: 'Kostenloses Beratungsgespräch',
+      description: 'Wir prüfen gemeinsam, ob der Kurs zu dir passt, und klären die Fördermöglichkeiten für deine Situation.',
+    },
+    {
+      step: '2',
+      title: 'Gespräch mit deinem Arbeitgeber',
+      description: 'Du bekommst Kursunterlagen und Argumente. Dein Arbeitgeber stellt dich nachmittags ab 14 Uhr frei.',
+    },
+    {
+      step: '3',
+      title: 'Förderung beantragen',
+      description: 'Die Förderung über das QCG wird gemeinsam mit deinem Arbeitgeber bei der Agentur für Arbeit beantragt.',
+    },
+    {
+      step: '4',
+      title: 'Start',
+      description: `${course.durationWeeks} Wochen, vier Nachmittage pro Woche: Theorie und betreute Praxis im Wechsel.`,
     },
   ];
 
   const stats = [
     { value: 1000, label: 'Absolventen', suffix: '+' },
     { value: 20, label: 'Max. Teilnehmer pro Kurs' },
-    { displayValue: '2x', label: 'Pro Woche, Di & Do' },
+    { value: course.durationWeeks, label: 'Wochen, Mo–Do ab 14 Uhr' },
   ];
 
   const workflowExamples = [
@@ -136,7 +219,7 @@ export default function BerufstaetigePage() {
         },
       ],
       proof: ['Produktdenken', 'OCR Pipeline', 'Self-hosted'],
-      ctaLabel: 'Automation starten',
+      ctaLabel: 'Projekt besprechen',
     },
   ];
 
@@ -161,22 +244,14 @@ export default function BerufstaetigePage() {
     },
   ];
 
-  const faq = [
-    { q: 'Schaffe ich das neben meinem Vollzeitjob?', a: 'Ja, wenn du zwei feste Zeitfenster pro Woche blockst. Der Kurs ist bewusst auf berufsbegleitendes Lernen ausgelegt.' },
-    { q: 'Was lerne ich in den OneDay-Workshops?', a: 'OneDay ist kompakter: ein Tag, ein Thema, ein konkretes Deliverable. AfterWork führt dich tiefer über 8 Wochen.' },
-    { q: 'Kann mein Arbeitgeber die Kosten über QCG übernehmen?', a: 'Ja, AfterWork ist QCG-förderfähig. Wir helfen dir, die Argumentation und nächsten Schritte mit deinem Arbeitgeber vorzubereiten.' },
-    { q: 'Was ist der Unterschied zwischen AfterWork und FortyDays?', a: 'FortyDays ist Vollzeit für Arbeitssuchende. AfterWork läuft berufsbegleitend und fokussiert Automation im Job.' },
-    { q: 'Brauche ich Vorkenntnisse?', a: 'Nein. Grundlegende digitale Sicherheit reicht. Du lernst die Tools im Kurs und arbeitest an nachvollziehbaren Business Cases.' },
-  ];
-
   return (
     <SubpageLayout>
       <PageHero
-        badge="Berufsbegleitend"
+        badge="Berufsbegleitend · Teilzeit"
         badgeColor={tokens.colors.navy}
         badgeBg={tokens.colors.navyBg}
-        title="Du bringst zwei Abende. <span>Wir bringen den Rest.</span>"
-        subtitle="AfterWork AI Automation. 8 Wochen, neben dem Job, sofort anwendbar."
+        title="Nachmittags lernen. <span>Morgen anwenden.</span>"
+        subtitle={`KI-Manager/in in Teilzeit: ${course.durationWeeks} Wochen, Montag bis Donnerstag ab 14 Uhr, online oder vor Ort in Köln. Förderfähig über das Qualifizierungschancengesetz.`}
         breadcrumbs={[{ label: 'Berufstätige', href: '/berufstaetige', active: true }]}
         accentColor={tokens.colors.navyBg}
         image="https://res.cloudinary.com/startplatz/image/upload/f_auto,q_auto,w_900/v1776469600/ai-hub/website/AI-Academy-Website-Images/target-audience-berufstaetige.png"
@@ -192,16 +267,78 @@ export default function BerufstaetigePage() {
       <SectionBlock
         badge="Vorher / Nachher"
         title="Von Mitreden zu <span>Vormachen.</span>"
-        subtitle="AfterWork ist für Menschen gebaut, die KI im Job konkret einsetzen wollen."
+        subtitle="Für Berufstätige, die KI im Job konkret einsetzen wollen, ohne dafür den Job zu pausieren."
         accent={tokens.colors.glowNavy}
       >
         <BeforeAfter before={before} after={after} accentColor={tokens.colors.navy} />
       </SectionBlock>
 
       <SectionBlock
-        badge="Echte Workflow-Cases"
+        badge="Weiterbildung"
+        title="KI-Manager/in <span>in Teilzeit</span>"
+        subtitle="Dasselbe Programm wie die Vollzeit-Variante, verteilt auf 16 Wochen und vier Nachmittage pro Woche."
+        variant="muted"
+        accent={tokens.colors.glowNavy}
+      >
+        <TwoColumn>
+          <Panel>
+            <CyberCorners $color={tokens.colors.mint} $size={10} />
+            <DetailTable items={details} />
+          </Panel>
+          <Panel>
+            <CyberCorners $color={tokens.colors.mint} $size={10} />
+            <PanelTitle>Für wen?</PanelTitle>
+            <PanelText>
+              Für Berufstätige, die nachmittags ab 14 Uhr Zeit haben. Meistens stellt der Arbeitgeber dafür frei,
+              denn er profitiert direkt: Das Praxisprojekt entsteht idealerweise aus deinem eigenen Arbeitsalltag.
+            </PanelText>
+            <PanelText>
+              Keine Programmierkenntnisse nötig. Du lernst die Tools im Kurs und wendest sie an den Praxis-Tagen an.
+            </PanelText>
+          </Panel>
+        </TwoColumn>
+      </SectionBlock>
+
+      <SectionBlock
+        badge="Wochenrhythmus"
+        title="Zwei Tage Theorie, <span>zwei Tage Praxis.</span>"
+        subtitle="Die Praxis-Tage sind ein Angebot: Wir sind da und unterstützen. Wenn der Job einmal vorgeht, ist das so."
+        accent={tokens.colors.glowNavy}
+      >
+        <SpotlightBento
+          ariaLabel="Wochenrhythmus der KI-Manager Weiterbildung in Teilzeit"
+          accentColor={tokens.colors.navy}
+          accentBg={tokens.colors.navyBg}
+          items={weekRhythm}
+        />
+      </SectionBlock>
+
+      <SectionBlock
+        badge="Curriculum"
+        title="Vier Phasen, klar <span>geführt.</span>"
+        subtitle="Jede Phase baut auf der vorherigen auf und endet in praktischer Anwendung."
+        accent={tokens.colors.glowNavy}
+      >
+        <MilestoneRail
+          items={curriculum.map((item) => ({
+            ...item,
+            kicker: `Phase ${item.step}`,
+          }))}
+          intro={{
+            kicker: 'KI-Manager Lernpfad',
+            title: 'Vom ersten Prompt bis zum eigenen KI-Projekt.',
+            text: 'Theorie am Montag und Mittwoch, Anwendung am Dienstag und Donnerstag. So bleibt das Gelernte nicht liegen.',
+            meta: [`${course.teachingUnits} Unterrichtseinheiten`, 'Live begleitet', 'Praxisprojekt'],
+          }}
+          accentColor={tokens.colors.navy}
+          accentBg={tokens.colors.navyBg}
+        />
+      </SectionBlock>
+
+      <SectionBlock
+        badge="Projektbeispiele"
         title="Automation wird erst spannend, wenn sie <span>echte Arbeit</span> verändert."
-        subtitle="Drei reale KI-Manager Projekte als Entscheidungsfläche: Dokumentation, Jobsuche und Produktworkflow."
+        subtitle="Drei reale KI-Manager Projekte: Dokumentation, Jobsuche und Produktworkflow."
         variant="dark"
         accent={tokens.colors.glowNavy}
         allowOverflow
@@ -209,38 +346,33 @@ export default function BerufstaetigePage() {
         <ProjectCinemaShowcase
           projects={workflowExamples}
           accentColor={tokens.colors.navy}
-          eyebrow="AI Automation Project Cinema"
+          eyebrow="KI-Manager Project Cinema"
           title="So sehen Workflows aus, die nicht nach Demo riechen."
           text="Jedes Projekt nimmt einen konkreten Schmerzpunkt und übersetzt ihn in Trigger, KI-Schritt, Datenstruktur und verwertbaren Output."
           ctaHref={CALENDLY_URL}
-          ctaLabel="Workflow im Job finden"
+          ctaLabel="Projekt aus deinem Job finden"
         />
       </SectionBlock>
 
       <SectionBlock
-        badge="Skill-Stack"
-        title="Welche Bausteine du dafür <span>beherrschst.</span>"
-        subtitle="Die Tools sind nicht das Ziel. Sie sind die Bauteile, mit denen du wiederholbare Workflows entwirfst."
+        badge="Förderung"
+        title="Gefördert über das <span>Qualifizierungschancengesetz.</span>"
+        subtitle="Die Weiterbildung ist eine AZAV-zugelassene Maßnahme. Wie viel gefördert wird, hängt unter anderem von der Betriebsgröße ab, das klären wir im Beratungsgespräch."
         accent={tokens.colors.glowNavy}
       >
-        <SpotlightBento
-          ariaLabel="AfterWork AI Automation Ergebnisse"
+        <MilestoneRail
+          items={qcgSteps.map((item) => ({
+            ...item,
+            kicker: `Schritt ${item.step}`,
+          }))}
+          intro={{
+            kicker: 'QCG in vier Schritten',
+            title: 'Vom ersten Gespräch bis zum Kursstart.',
+            text: 'Wir begleiten dich und deinen Arbeitgeber durch den Förderprozess.',
+            meta: ['Für Beschäftigte', 'Mit deinem Arbeitgeber', 'AZAV-zugelassen'],
+          }}
           accentColor={tokens.colors.navy}
           accentBg={tokens.colors.navyBg}
-          items={curriculum.map((item, index) => ({
-            label: `Skill ${item.icon}`,
-            title: item.title,
-            description: item.description,
-            metric: item.icon,
-            size: index === 0 ? 'wide' : index === 1 ? 'sm' : 'md',
-            chips: index === 0
-              ? ['Routine weg', 'Zeit zurück']
-              : index === 1
-                ? ['API-Logik', 'Agenten']
-                : index === 2
-                  ? ['Wissen', 'Antwortqualität']
-                  : ['Governance', 'Sicherheit'],
-          }))}
         />
       </SectionBlock>
 
@@ -265,24 +397,17 @@ export default function BerufstaetigePage() {
       </SectionBlock>
 
       <SectionBlock
-        badge="Gefragte Suchfragen"
-        subtitle="Direkte Antworten auf Fragen, die Professionals vor einer berufsbegleitenden KI-Weiterbildung stellen."
+        badge="FAQ"
+        title="Fragen vor dem <span>Start.</span>"
+        subtitle="Direkte Antworten auf Fragen, die Berufstätige vor einer KI-Weiterbildung in Teilzeit stellen."
         accent={tokens.colors.glowNavy}
       >
         <SearchQuestionAnswers items={searchIntentQuestions.berufstaetige} accentColor={tokens.colors.navy} />
       </SectionBlock>
 
-      <SectionBlock
-        badge="FAQ"
-        title="Fragen vor dem <span>Feierabend-Kurs.</span>"
-        accent={tokens.colors.glowNavy}
-      >
-        <MiniFAQ items={faq} accentColor={tokens.colors.navy} />
-      </SectionBlock>
-
       <CTABanner
         title="Mach KI zu deinem <span>Arbeitsvorteil.</span>"
-        subtitle="Wir klären gemeinsam, ob AfterWork und eine Förderung über QCG für dich passen."
+        subtitle="Wir klären gemeinsam, ob die Weiterbildung und eine Förderung über das QCG für dich passen."
       >
         <Button href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" variant="navy" size="lg" arrow>
           Kostenlos beraten lassen

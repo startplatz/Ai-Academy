@@ -205,7 +205,7 @@ const config = {
     },
     {
       q: 'Was passiert nach dem Workshop?',
-      a: 'Du gehst mit Prompt-Bibliothek, Claude-Setup und einem klaren Transferplan raus. Wenn du weiter vertiefen willst, können AfterWork, OneDay-Folgetermine oder Inhouse-Formate anschließen.',
+      a: 'Du gehst mit Prompt-Bibliothek, Claude-Setup und einem klaren Transferplan raus. Wenn du weiter vertiefen willst, können die KI-Manager Weiterbildung in Teilzeit, OneDay-Folgetermine oder Inhouse-Formate anschließen.',
     },
     {
       q: 'Kann mein Team gemeinsam teilnehmen?',

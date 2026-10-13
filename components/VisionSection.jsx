@@ -127,7 +127,7 @@ export default function VisionSection() {
           <CardText>
             STARTPLATZ begleitet seit mehr als 13 Jahren Gründer und Unternehmen in NRW.
             Über 1.000 Absolventen, 500+ KI-Events und Dozenten, die selbst täglich
-            mit KI arbeiten. Das Format-System — OneDay, FortyDays, AfterWork —
+            mit KI arbeiten. Das Format-System — OneDay, KI-Manager/in in Vollzeit und Teilzeit —
             sortiert nach Lebenssituation, nicht nach Inhalt.
           </CardText>
         </GlassCard>
@@ -135,11 +135,11 @@ export default function VisionSection() {
         <GlassCard $gradient={`linear-gradient(90deg, ${tokens.colors.mint}, ${tokens.colors.teal})`}>
           <CyberCorners $color={tokens.colors.mint} $size={12} />
           <CardBadge>Anerkannt &amp; gefördert</CardBadge>
-          <CardTitle>AZAV-zertifiziert. Cert-IT geprüft.</CardTitle>
+          <CardTitle>AZAV-zugelassen. Unabhängig geprüft.</CardTitle>
           <CardText>
-            FortyDays und AfterWork sind AZAV-zertifiziert und über Bildungsgutschein
-            bzw. Qualifizierungschancengesetz förderfähig. Personenzertifizierung nach
-            Cert-IT (DIN EN ISO/IEC 17024). 4,98 von 5 Sternen bei 290+ Bewertungen.
+            Die KI-Manager Weiterbildungen sind AZAV-zugelassen und über Bildungsgutschein
+            bzw. Qualifizierungschancengesetz förderfähig. Optional mit unabhängiger
+            Abschlussprüfung bei Cert-IT. 4,98 von 5 Sternen bei 290+ Bewertungen.
           </CardText>
           <CertGrid>
             {CERT_LOGOS.map((logo) => (

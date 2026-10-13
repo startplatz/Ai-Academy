@@ -1,6 +1,6 @@
 # STARTPLATZ AI Academy — Vollständige Übersicht
 
-> STARTPLATZ AI Academy ist Deutschlands praxisnahester Anbieter für KI-Weiterbildungen. Wir bilden Menschen und Unternehmen im Umgang mit Künstlicher Intelligenz aus — von Einsteigern bis zu Führungskräften. AZAV-zertifiziert, Cert-IT-zertifiziert (DIN EN ISO/IEC 17024). Über 1.000 Absolventen, 4,98/5 Sterne bei 290+ Bewertungen. Die Kurse liefen früher unter der Marke STARTPLATZ AI Hub; der AI Hub ist heute die KI-Community von STARTPLATZ mit Formaten wie dem AI Friday.
+> STARTPLATZ AI Academy ist Deutschlands praxisnahester Anbieter für KI-Weiterbildungen. Wir bilden Menschen und Unternehmen im Umgang mit Künstlicher Intelligenz aus — von Einsteigern bis zu Führungskräften. AZAV-zugelassene Weiterbildungen (Träger: STARTPLATZ Köln GmbH, zertifiziert durch Kiwa ZERTPUNKT GmbH). Über 1.000 Absolventen, 4,98/5 Sterne bei 290+ Bewertungen. Die Kurse liefen früher unter der Marke STARTPLATZ AI Hub; der AI Hub ist heute die KI-Community von STARTPLATZ mit Formaten wie dem AI Friday.
 
 ## Warum STARTPLATZ AI Academy?
 
@@ -8,35 +8,35 @@ Die AI Academy ist Teil des STARTPLATZ Ökosystems — dem größten Startup-Ink
 
 Was uns unterscheidet:
 - Praxisnah: Unsere Dozenten arbeiten selbst täglich mit KI
-- Zertifiziert: AZAV für Bildungsgutschein, Cert-IT für Personenzertifizierung
+- Zugelassen: AZAV für Bildungsgutschein und QCG, optional unabhängige Abschlussprüfung bei Cert-IT (Vollzeit)
 - Bewährt: 4,98/5 Sterne bei 290+ Bewertungen
 - Ökosystem: Zugang zum STARTPLATZ Netzwerk mit Startups, Events und Unternehmen
-- Bundesweit: Programme digital verfügbar, Standorte in Köln und Düsseldorf
+- Bundesweit: Weiterbildungen online oder vor Ort in Köln, STARTPLATZ-Standorte in Köln und Düsseldorf
 
 ## Programmübersicht
 
-### 1. FortyDays KI-Manager:in (Vollzeit-Bootcamp)
+### 1. KI-Manager/in (Vollzeit)
 Für Arbeitssuchende und Karrierewechsler, die sich in 8 Wochen zur KI-Fachkraft qualifizieren möchten.
 
-- Dauer: 8 Wochen Vollzeit (Mo-Fr)
-- Format: Digital (mit optionaler Präsenz in Köln/Düsseldorf)
+- Dauer: 8 Wochen Vollzeit, 320 Unterrichtseinheiten, Mo–Fr 9–16 Uhr (inkl. 1 Stunde Mittagspause)
+- Format: online oder vor Ort in Köln
 - Preis: 3.552,00 EUR
-- Förderung: 100% über Bildungsgutschein (AZAV-zertifiziert) — Teilnehmende zahlen 0 EUR
-- Zertifikat: Cert-IT Personenzertifizierung KI-Manager:in (DIN EN ISO/IEC 17024)
-- Inhalte: KI-Grundlagen, Prompt Engineering, Datenanalyse, KI-Strategie, Projektarbeit, Zertifizierungsprüfung
-- Ergebnis: Anerkanntes KI-Zertifikat, Portfolio-Projekt, Zugang zum Alumni-Netzwerk
+- Förderung: bis zu 100 % über Bildungsgutschein (AZAV-Maßnahme 357/630/2025) — Teilnehmende zahlen 0 EUR
+- Abschluss: Abschlusszertifikat „KI-Manager/in“ der STARTPLATZ Köln GmbH; optional unabhängige Abschlussprüfung bei Cert-IT
+- Inhalte: KI-Grundlagen, Prompt Engineering, KI-Tools und Automatisierung (n8n, APIs, KI-Agenten), Prozesse, Ethik und EU AI Act, KI-Strategie, Praxisprojekt
+- Ergebnis: Abschlusszertifikat, Portfolio-Projekt, Zugang zum Alumni-Netzwerk
 - URL: https://startplatz-ai-academy.de/arbeitssuchende
 - Nächster Start: Laufende Termine auf der Website
 
-### 2. AfterWork AI Automation (Teilzeit, berufsbegleitend)
-Für Berufstätige, die KI-Automatisierung neben dem Job lernen möchten.
+### 2. KI-Manager/in (Teilzeit, berufsbegleitend)
+Für Berufstätige, die nachmittags ab 14 Uhr freigestellt werden und KI im Job einsetzen wollen.
 
-- Dauer: 8 Wochen, Di & Do 15:00-18:00 Uhr
-- Format: Digital
-- Preis: 1.022,08 EUR
-- Förderung: AZAV-zertifiziert, QCG-förderfähig (Qualifizierungschancengesetz über Arbeitgeber)
-- Inhalte: n8n Workflow-Automatisierung, GPT-APIs, AI Agents, Business Automation, praktische Projekte
-- Ergebnis: Eigene funktionierende KI-Workflows, die sofort im Arbeitsalltag eingesetzt werden können
+- Dauer: 16 Wochen, 320 Unterrichtseinheiten, Mo–Do 14–18 Uhr
+- Rhythmus: Montag und Mittwoch Theorie, Dienstag und Donnerstag betreute Praxis (freiwillig)
+- Format: online oder vor Ort in Köln
+- Förderung: über das Qualifizierungschancengesetz (QCG) gemeinsam mit dem Arbeitgeber, je nach Betriebsgröße (AZAV-Maßnahme 357/413/2026)
+- Abschluss: Abschlusszertifikat „KI-Manager/in“ der STARTPLATZ Köln GmbH
+- Inhalte: dasselbe Programm wie die Vollzeit-Variante
 - URL: https://startplatz-ai-academy.de/berufstaetige
 
 ### 3. OneDay Workshops (Tagesworkshops)
@@ -66,15 +66,15 @@ Maßgeschneiderte KI-Schulungen für Teams und Organisationen.
 ## Förderungsmöglichkeiten
 
 ### Bildungsgutschein (für Arbeitssuchende)
-- Fördert: FortyDays KI-Manager:in
+- Fördert: KI-Manager/in (Vollzeit)
 - Kostenübernahme: 100%
 - Voraussetzung: AZAV-Zertifizierung (vorhanden)
 - Beantragung: Über die Agentur für Arbeit oder das Jobcenter
 
 ### Qualifizierungschancengesetz (für Berufstätige)
-- Fördert: AfterWork AI Automation
-- Kostenübernahme: Bis zu 100% über den Arbeitgeber
-- Voraussetzung: Antrag über den Arbeitgeber bei der Agentur für Arbeit
+- Fördert: KI-Manager/in (Teilzeit)
+- Kostenübernahme: je nach Betriebsgröße teilweise oder vollständig
+- Voraussetzung: Beantragung gemeinsam mit dem Arbeitgeber bei der Agentur für Arbeit
 
 ### Bildungsscheck NRW
 - Fördert: Alle Programme
@@ -90,8 +90,6 @@ Maßgeschneiderte KI-Schulungen für Teams und Organisationen.
 
 ## Team & Dozenten
 - Jakow Smirin: CEO, baut seit 2023 KI-Weiterbildungen in NRW
-- Lorenz: Lead Dozent FortyDays KI-Manager:in
-- Lukas: Lead Dozent AfterWork AI Automation, Fokus n8n & GPT-APIs
 - Alle Dozenten arbeiten selbst täglich mit KI in echten Projekten
 
 ## Kontakt & Beratung
@@ -107,16 +105,16 @@ Maßgeschneiderte KI-Schulungen für Teams und Organisationen.
 ## Häufig gestellte Fragen
 
 ### Brauche ich Vorkenntnisse?
-Nein. FortyDays und AfterWork starten bei null. Die OneDay Workshops variieren je nach Thema.
+Nein. Die KI-Manager Weiterbildungen starten bei null. Die OneDay Workshops variieren je nach Thema.
 
 ### Ist die Weiterbildung anerkannt?
-Ja. FortyDays und AfterWork sind AZAV-zertifiziert. Die KI-Manager:in Zertifizierung erfolgt über Cert-IT nach DIN EN ISO/IEC 17024 — ein international anerkannter Standard.
+Ja. Die KI-Manager Weiterbildungen sind AZAV-zugelassene Maßnahmen (Träger: STARTPLATZ Köln GmbH, zertifiziert durch Kiwa ZERTPUNKT GmbH). In der Vollzeit-Variante kann zusätzlich eine freiwillige, unabhängige Abschlussprüfung bei Cert-IT abgelegt werden.
 
 ### Kann ich mit Bildungsgutschein teilnehmen?
-Ja, das FortyDays Programm ist zu 100% über den Bildungsgutschein finanzierbar. Die Agentur für Arbeit oder das Jobcenter übernimmt die gesamten Kosten.
+Ja, die KI-Manager/in Weiterbildung in Vollzeit ist bis zu 100 % über den Bildungsgutschein finanzierbar. Die Agentur für Arbeit oder das Jobcenter übernimmt die gesamten Kosten.
 
 ### Sind die Programme nur in NRW verfügbar?
-Nein. Alle Programme sind digital verfügbar und bundesweit zugänglich. Präsenzoptionen gibt es in Köln und Düsseldorf.
+Nein. Die Weiterbildungen laufen online oder vor Ort in Köln und sind bundesweit zugänglich.
 
 ### Was unterscheidet euch von anderen Anbietern?
-Praxisnähe (Dozenten arbeiten selbst mit KI), das STARTPLATZ Startup-Ökosystem, die Cert-IT Personenzertifizierung, und die Kombination aus geförderter Weiterbildung und starkem Netzwerk.
+Praxisnähe (Dozenten arbeiten selbst mit KI), das STARTPLATZ Startup-Ökosystem, AZAV-zugelassene Weiterbildungen mit optionaler Cert-IT-Prüfung, und die Kombination aus geförderter Weiterbildung und starkem Netzwerk.
