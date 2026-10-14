@@ -8,7 +8,7 @@ Die AI Academy ist Teil des STARTPLATZ Ökosystems — dem größten Startup-Ink
 
 Was uns unterscheidet:
 - Praxisnah: Unsere Dozenten arbeiten selbst täglich mit KI
-- Zugelassen: AZAV für Bildungsgutschein und QCG, optional unabhängige Abschlussprüfung bei Cert-IT (Vollzeit)
+- Zugelassen: AZAV für Bildungsgutschein und QCG, optional unabhängige Abschlussprüfung bei Cert-IT
 - Bewährt: 4,98/5 Sterne bei 290+ Bewertungen
 - Ökosystem: Zugang zum STARTPLATZ Netzwerk mit Startups, Events und Unternehmen
 - Bundesweit: Weiterbildungen online oder vor Ort in Köln, STARTPLATZ-Standorte in Köln und Düsseldorf
@@ -35,7 +35,7 @@ Für Berufstätige, die nachmittags ab 14 Uhr freigestellt werden und KI im Job 
 - Rhythmus: Montag und Mittwoch Theorie, Dienstag und Donnerstag betreute Praxis (freiwillig)
 - Format: online oder vor Ort in Köln
 - Förderung: über das Qualifizierungschancengesetz (QCG) gemeinsam mit dem Arbeitgeber, je nach Betriebsgröße (AZAV-Maßnahme 357/413/2026)
-- Abschluss: Abschlusszertifikat „KI-Manager/in“ der STARTPLATZ Köln GmbH
+- Abschluss: Abschlusszertifikat „KI-Manager/in“ der STARTPLATZ Köln GmbH; optional unabhängige Abschlussprüfung bei Cert-IT
 - Inhalte: dasselbe Programm wie die Vollzeit-Variante
 - URL: https://startplatz-ai-academy.de/berufstaetige
 
@@ -108,7 +108,7 @@ Maßgeschneiderte KI-Schulungen für Teams und Organisationen.
 Nein. Die KI-Manager Weiterbildungen starten bei null. Die OneDay Workshops variieren je nach Thema.
 
 ### Ist die Weiterbildung anerkannt?
-Ja. Die KI-Manager Weiterbildungen sind AZAV-zugelassene Maßnahmen (Träger: STARTPLATZ Köln GmbH, zertifiziert durch Kiwa ZERTPUNKT GmbH). In der Vollzeit-Variante kann zusätzlich eine freiwillige, unabhängige Abschlussprüfung bei Cert-IT abgelegt werden.
+Ja. Die KI-Manager Weiterbildungen sind AZAV-zugelassene Maßnahmen (Träger: STARTPLATZ Köln GmbH, zertifiziert durch Kiwa ZERTPUNKT GmbH). In Vollzeit und Teilzeit kann zusätzlich eine freiwillige, unabhängige Abschlussprüfung bei Cert-IT abgelegt werden.
 
 ### Kann ich mit Bildungsgutschein teilnehmen?
 Ja, die KI-Manager/in Weiterbildung in Vollzeit ist bis zu 100 % über den Bildungsgutschein finanzierbar. Die Agentur für Arbeit oder das Jobcenter übernimmt die gesamten Kosten.

@@ -70,7 +70,7 @@ export default function BerufstaetigePage() {
     { label: 'Rhythmus', value: 'Montag bis Donnerstag, 14–18 Uhr' },
     { label: 'Ort', value: 'Online oder vor Ort in Köln' },
     { label: 'Förderung', value: 'Förderfähig über das Qualifizierungschancengesetz (QCG)' },
-    { label: 'Abschluss', value: `Abschlusszertifikat „KI-Manager/in“ der ${TRAEGER.name}` },
+    { label: 'Abschluss', value: `Abschlusszertifikat „KI-Manager/in“ der ${TRAEGER.name}, optional Prüfung bei Cert-IT` },
     { label: 'Zulassung', value: `AZAV-Maßnahme ${course.massnahmennummer}, zertifiziert durch ${TRAEGER.azav.certifiedBy}` },
   ];
 
