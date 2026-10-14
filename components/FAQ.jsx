@@ -30,7 +30,7 @@ const QUESTIONS = [
   },
   {
     q: 'Was macht euch anders als andere Anbieter?',
-    a: 'Drei Dinge: Erstens, wir sind in einem echten Startup-Ökosystem verwurzelt — kein reiner Online-Kursanbieter. Zweitens, unsere Inhalte werden laufend aktualisiert, weil KI sich laufend verändert. Drittens, du lernst nicht für ein Zertifikat, sondern für echte Anwendung — mit einem Netzwerk, das auch nach dem Kurs trägt. Bewertung: 4,98 von 5 Sternen.',
+    a: 'Drei Dinge: Erstens, wir sind in einem echten Startup-Ökosystem verwurzelt — kein reiner Online-Kursanbieter. Zweitens, unsere Inhalte werden laufend aktualisiert, weil KI sich laufend verändert. Drittens, du lernst nicht für ein Zertifikat, sondern für echte Anwendung — mit einem Netzwerk, das auch nach dem Kurs trägt.',
   },
   {
     q: 'Wie finde ich heraus, was zu mir passt?',

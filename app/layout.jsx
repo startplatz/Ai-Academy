@@ -42,7 +42,7 @@ export const metadata = {
     template: '%s | STARTPLATZ AI Academy',
   },
   description:
-    'KI-Weiterbildung mit AZAV-Zertifizierung. Bis zu 100% gefördert mit Bildungsgutschein. KI-Manager/in in Vollzeit und Teilzeit & OneDay Workshops. 4,98/5 Sterne bei 290+ Bewertungen. Online oder vor Ort in Köln.',
+    'KI-Weiterbildung mit AZAV-Zertifizierung. Bis zu 100% gefördert mit Bildungsgutschein. KI-Manager/in in Vollzeit und Teilzeit & OneDay Workshops. Online oder vor Ort in Köln.',
   keywords:
     'KI Weiterbildung, KI Weiterbildung Deutschland, KI Weiterbildung gefördert, Bildungsgutschein KI, KI Manager Weiterbildung, KI Manager Zertifikat, AZAV KI Kurs, AI Bootcamp, KI Kurs online, Künstliche Intelligenz Kurs, STARTPLATZ, n8n Kurs, Prompt Engineering, KI Schulung Unternehmen, geförderte Weiterbildung, Cert-IT Zertifizierung, KI Weiterbildung berufsbegleitend',
   authors: [{ name: 'STARTPLATZ AI Academy' }],
@@ -65,7 +65,7 @@ export const metadata = {
     siteName: 'STARTPLATZ AI Academy',
     title: 'KI-Weiterbildung mit Zertifikat | STARTPLATZ AI Academy',
     description:
-      'KI-Weiterbildung mit Zertifikat. AZAV-zertifiziert, bis zu 100% gefördert. KI-Manager/in in Vollzeit und Teilzeit & OneDay Workshops. 4,98/5 Sterne.',
+      'KI-Weiterbildung mit Zertifikat. AZAV-zertifiziert, bis zu 100% gefördert. KI-Manager/in in Vollzeit und Teilzeit & OneDay Workshops.',
     url: 'https://startplatz-ai-academy.de/',
     images: [
       {
@@ -81,7 +81,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'KI-Weiterbildung mit Zertifikat | STARTPLATZ AI Academy',
     description:
-      'KI-Weiterbildung mit Zertifikat. AZAV-zertifiziert, bis zu 100% gefördert. 4,98/5 Sterne bei 290+ Bewertungen.',
+      'KI-Weiterbildung mit Zertifikat. AZAV-zertifiziert, bis zu 100% gefördert. Online oder vor Ort in Köln.',
     images: [
       {
         url: 'https://res.cloudinary.com/startplatz/image/upload/v1776469608/ai-hub/website/AI-Academy-Website-Images/team-gruppenfoto.png',

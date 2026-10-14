@@ -136,7 +136,7 @@ export default function VisionSection() {
           <CardText>
             Die KI-Manager Weiterbildungen sind AZAV-zugelassen und über Bildungsgutschein
             bzw. Qualifizierungschancengesetz förderfähig. Optional mit unabhängiger
-            Abschlussprüfung bei Cert-IT. 4,98 von 5 Sternen bei 290+ Bewertungen.
+            Abschlussprüfung bei Cert-IT.
           </CardText>
           <CertGrid>
             {CERT_LOGOS.map((logo) => (

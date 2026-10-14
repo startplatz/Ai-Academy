@@ -1,6 +1,6 @@
 # STARTPLATZ AI Academy
 
-> STARTPLATZ AI Academy ist Deutschlands praxisnahester Anbieter für KI-Weiterbildungen. AZAV-zugelassene Weiterbildungen (Träger: STARTPLATZ Köln GmbH, zertifiziert durch Kiwa ZERTPUNKT GmbH), mit über 1.000 Absolventen und einer Bewertung von 4,98/5 Sternen bei 290+ Bewertungen. Die Kurse liefen früher unter der Marke STARTPLATZ AI Hub, die heute die KI-Community von STARTPLATZ ist (z. B. AI Friday). Teil des STARTPLATZ Ökosystems (gegründet 2012) — dem größten Startup-Inkubator in NRW.
+> STARTPLATZ AI Academy ist Deutschlands praxisnahester Anbieter für KI-Weiterbildungen. AZAV-zugelassene Weiterbildungen (Träger: STARTPLATZ Köln GmbH, zertifiziert durch Kiwa ZERTPUNKT GmbH), mit über 1.000 Absolventen. Die Kurse liefen früher unter der Marke STARTPLATZ AI Hub, die heute die KI-Community von STARTPLATZ ist (z. B. AI Friday). Teil des STARTPLATZ Ökosystems (gegründet 2012) — dem größten Startup-Inkubator in NRW.
 
 ## Programme
 
@@ -37,7 +37,7 @@
 
 ## Fakten
 - 1.000+ Absolventen
-- 4,98/5 Sterne (290+ Bewertungen)
+- Bewertungen für STARTPLATZ insgesamt (Coworking, Events, Weiterbildung; keine reinen Kursbewertungen): 4,5/5 bei Google, 4,84/5 bei ProvenExpert
 - 100+ Unternehmenskunden
 - 13+ Jahre Ökosystem-Erfahrung (STARTPLATZ seit 2012)
 - AZAV-zugelassener Bildungsträger: STARTPLATZ Köln GmbH (Zertifikat A2403005, Kiwa ZERTPUNKT GmbH)

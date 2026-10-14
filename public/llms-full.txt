@@ -1,6 +1,6 @@
 # STARTPLATZ AI Academy — Vollständige Übersicht
 
-> STARTPLATZ AI Academy ist Deutschlands praxisnahester Anbieter für KI-Weiterbildungen. Wir bilden Menschen und Unternehmen im Umgang mit Künstlicher Intelligenz aus — von Einsteigern bis zu Führungskräften. AZAV-zugelassene Weiterbildungen (Träger: STARTPLATZ Köln GmbH, zertifiziert durch Kiwa ZERTPUNKT GmbH). Über 1.000 Absolventen, 4,98/5 Sterne bei 290+ Bewertungen. Die Kurse liefen früher unter der Marke STARTPLATZ AI Hub; der AI Hub ist heute die KI-Community von STARTPLATZ mit Formaten wie dem AI Friday.
+> STARTPLATZ AI Academy ist Deutschlands praxisnahester Anbieter für KI-Weiterbildungen. Wir bilden Menschen und Unternehmen im Umgang mit Künstlicher Intelligenz aus — von Einsteigern bis zu Führungskräften. AZAV-zugelassene Weiterbildungen (Träger: STARTPLATZ Köln GmbH, zertifiziert durch Kiwa ZERTPUNKT GmbH). Über 1.000 Absolventen. Die Kurse liefen früher unter der Marke STARTPLATZ AI Hub; der AI Hub ist heute die KI-Community von STARTPLATZ mit Formaten wie dem AI Friday.
 
 ## Warum STARTPLATZ AI Academy?
 
@@ -9,7 +9,6 @@ Die AI Academy ist Teil des STARTPLATZ Ökosystems — dem größten Startup-Ink
 Was uns unterscheidet:
 - Praxisnah: Unsere Dozenten arbeiten selbst täglich mit KI
 - Zugelassen: AZAV für Bildungsgutschein und QCG, optional unabhängige Abschlussprüfung bei Cert-IT
-- Bewährt: 4,98/5 Sterne bei 290+ Bewertungen
 - Ökosystem: Zugang zum STARTPLATZ Netzwerk mit Startups, Events und Unternehmen
 - Bundesweit: Weiterbildungen online oder vor Ort in Köln, STARTPLATZ-Standorte in Köln und Düsseldorf
 
@@ -83,7 +82,7 @@ Maßgeschneiderte KI-Schulungen für Teams und Organisationen.
 
 ## Kennzahlen
 - 1.000+ Absolventen seit Gründung
-- 4,98/5 Sterne Durchschnittsbewertung (290+ Bewertungen)
+- Bewertungen für STARTPLATZ insgesamt (Coworking, Events, Weiterbildung; keine reinen Kursbewertungen): 4,5/5 bei Google, 4,84/5 bei ProvenExpert
 - 100+ Unternehmenskunden
 - 13+ Jahre Ökosystem-Erfahrung (STARTPLATZ seit 2012)
 - Standorte in Köln (Im Mediapark 5) und Düsseldorf

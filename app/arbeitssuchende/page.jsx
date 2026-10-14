@@ -122,7 +122,6 @@ export default function ArbeitssuchendePage() {
     { label: 'Teilnehmer', value: 'Max. 20 pro Kurs' },
     { label: 'Abschluss', value: 'Abschlusszertifikat der STARTPLATZ Köln GmbH, optional Prüfung bei Cert-IT' },
     { label: 'Förderung', value: '100% Bildungsgutschein (AZAV)' },
-    { label: 'Bewertung', value: '4,98/5 (290+ Bewertungen)' },
   ];
 
   const curriculum = [
@@ -168,7 +167,7 @@ export default function ArbeitssuchendePage() {
 
   const stats = [
     { value: 1000, label: 'Absolventen', suffix: '+' },
-    { displayValue: '4,98/5', label: 'Bewertung' },
+    { value: 320, label: 'Unterrichtseinheiten' },
     { value: 100, label: 'Förderquote', suffix: '%' },
     { displayValue: '60.000', label: 'Offene KI-Stellen in Deutschland' },
   ];
@@ -414,7 +413,7 @@ export default function ArbeitssuchendePage() {
       <SectionBlock
         badge="Absolventen"
         title="Echte Stimmen aus dem <span>Kursalltag.</span>"
-        subtitle="Von 290+ Absolventinnen und Absolventen — echte Einblicke, ungefiltert."
+        subtitle="Stimmen von Absolventinnen und Absolventen — echte Einblicke, ungefiltert."
         variant="muted"
         accent={tokens.colors.glowMint}
       >

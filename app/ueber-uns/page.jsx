@@ -226,7 +226,7 @@ export default function UeberUnsPage() {
   const stats = [
     { value: 1000, label: 'Absolventen', suffix: '+' },
     { value: 100, label: 'Unternehmen geschult', suffix: '+' },
-    { displayValue: '4,98/5', label: 'Bewertung' },
+    { value: 13, label: 'Jahre STARTPLATZ', suffix: '+' },
     { value: 2, label: 'Standorte', suffix: '' },
   ];
 

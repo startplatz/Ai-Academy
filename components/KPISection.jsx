@@ -23,9 +23,9 @@ const KPIS = [
   },
   {
     value: null,
-    displayValue: '4,98/5',
-    label: 'Lernerfahrung, die wirklich hilft',
-    accent: '290+ Bewertungen',
+    displayValue: 'max. 20',
+    label: 'Teilnehmende pro Kurs, damit Zeit für deine Fragen bleibt',
+    accent: 'Kleine Gruppen',
     color: tokens.colors.primary,
   },
   {

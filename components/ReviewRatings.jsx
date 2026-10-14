@@ -22,7 +22,13 @@ const REVIEW_LOGOS = {
 
 const getLogo = (id, tone = 'light') => REVIEW_LOGOS[id]?.[tone] || REVIEW_LOGOS[id]?.light;
 
-const formatCount = (detail, suffix) => detail.replace(suffix, '');
+// "394 Bewertungen auf Google" -> "394 Bewertungen"
+const formatCount = (detail) => detail.replace(/ auf .*$/, '');
+
+// Es gibt keine eigenen Academy-Bewertungen: Die Werte gelten für STARTPLATZ
+// insgesamt und müssen auf der Seite auch so gekennzeichnet sein.
+const RATINGS_TITLE = 'Bewertungen für STARTPLATZ insgesamt';
+const RATINGS_NOTE = 'Gesamtbewertung von STARTPLATZ Köln (Coworking, Events, Weiterbildung), keine reinen Kursbewertungen.';
 
 const Rail = styled.section`
   position: relative;
@@ -58,6 +64,7 @@ const RailCopy = styled.div`
   flex-direction: column;
   gap: 3px;
   min-width: 0;
+  max-width: 420px;
 `;
 
 const RailLabel = styled.span`
@@ -123,29 +130,9 @@ const Score = styled.span`
   }
 `;
 
-const CountLink = styled.a`
-  display: inline-flex;
-  align-items: baseline;
-  gap: 5px;
-  min-height: 34px;
+const Count = styled.span`
   color: ${tokens.colors.textMuted};
-  text-decoration: none;
-  transition: color ${tokens.transitions.fast};
-
-  &:hover {
-    color: ${tokens.colors.primary};
-  }
-
-  strong {
-    color: ${tokens.colors.text};
-    font-family: ${tokens.fonts.display};
-    font-size: ${tokens.fontSizes.lg};
-    font-weight: ${tokens.fontWeights.black};
-  }
-
-  span {
-    font-size: ${tokens.fontSizes.xs};
-  }
+  font-size: ${tokens.fontSizes.xs};
 `;
 
 const FooterWrap = styled.div`
@@ -164,11 +151,18 @@ const FooterTitle = styled.a`
   letter-spacing: 0.12em;
   text-transform: uppercase;
   text-decoration: none;
-  margin-bottom: ${tokens.spacing.sm};
+  margin-bottom: 4px;
 
   &:hover {
     color: #fff;
   }
+`;
+
+const FooterNote = styled.p`
+  color: rgba(255,255,255,0.5);
+  font-size: 11px;
+  line-height: ${tokens.lineHeights.normal};
+  margin-bottom: ${tokens.spacing.sm};
 `;
 
 const FooterLine = styled.div`
@@ -227,11 +221,11 @@ export function ReviewTrustBar() {
   const ratings = useReviewRatings();
 
   return (
-    <Rail aria-label="STARTPLATZ Bewertungen">
+    <Rail aria-label={RATINGS_TITLE}>
       <RailInner>
         <RailCopy>
-          <RailLabel>STARTPLATZ Bewertungen</RailLabel>
-          <RailSource>{ratings.checkedAt}</RailSource>
+          <RailLabel>{RATINGS_TITLE}</RailLabel>
+          <RailSource>{RATINGS_NOTE} {ratings.checkedAt}</RailSource>
         </RailCopy>
         <Metrics>
           {ratings.platforms.map((rating) => {
@@ -242,7 +236,7 @@ export function ReviewTrustBar() {
                 href={rating.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`${rating.name}: ${rating.value}${rating.suffix} ${rating.label}`}
+                aria-label={`STARTPLATZ auf ${rating.name}: ${rating.value}${rating.suffix}, ${formatCount(rating.detail)}`}
               >
                 {logo && (
                   <LogoMark
@@ -256,13 +250,10 @@ export function ReviewTrustBar() {
                   {rating.value}
                   {rating.suffix && <small>{rating.suffix}</small>}
                 </Score>
+                <Count>{formatCount(rating.detail)}</Count>
               </MetricLink>
             );
           })}
-          <CountLink href={ratings.sourceUrl} target="_blank" rel="noopener noreferrer">
-            <strong>{ratings.total.value}</strong>
-            <span>{ratings.total.label}</span>
-          </CountLink>
         </Metrics>
       </RailInner>
     </Rail>
@@ -275,14 +266,12 @@ export function FooterReviewRatings() {
   const provenExpert = ratings.platforms.find((item) => item.id === 'provenexpert');
 
   return (
-    <FooterWrap aria-label="STARTPLATZ Bewertungen">
+    <FooterWrap aria-label={RATINGS_TITLE}>
       <FooterTitle href={ratings.sourceUrl} target="_blank" rel="noopener noreferrer">
-        STARTPLATZ Bewertungen
+        {RATINGS_TITLE}
       </FooterTitle>
+      <FooterNote>Coworking, Events und Weiterbildung, keine reinen Kursbewertungen</FooterNote>
       <FooterLine>
-        <FooterMetric href={ratings.sourceUrl} target="_blank" rel="noopener noreferrer">
-          <strong>{ratings.total.value}</strong> veröffentlicht
-        </FooterMetric>
         {google && (
           <FooterMetric href={google.href} target="_blank" rel="noopener noreferrer">
             <LogoMark
@@ -292,7 +281,7 @@ export function FooterReviewRatings() {
               $height={20}
             />
             <strong>{google.value}{google.suffix}</strong>
-            ({formatCount(google.detail, ' Bewertungen auf Google')})
+            ({formatCount(google.detail)})
           </FooterMetric>
         )}
         {provenExpert && (
@@ -304,7 +293,7 @@ export function FooterReviewRatings() {
               $height={16}
             />
             <strong>{provenExpert.value}{provenExpert.suffix}</strong>
-            ({formatCount(provenExpert.detail, ' Bewertungen auf ProvenExpert')})
+            ({formatCount(provenExpert.detail)})
           </FooterMetric>
         )}
       </FooterLine>
