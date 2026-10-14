@@ -12,11 +12,8 @@ import PlanetSection from './PlanetSection';
    Chamfered glass cards with corner accents
    ───────────────────────────────────────────── */
 
+// Kein Logo der Bundesagentur für Arbeit verwenden (Entscheidung 14.10.2026).
 const CERT_LOGOS = [
-  {
-    label: 'Bundesagentur für Arbeit',
-    src: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Bundesagentur_f%C3%BCr_Arbeit-Logo.svg',
-  },
   {
     label: 'Cert-IT',
     src: 'https://static.wixstatic.com/media/eef775_2769b02850834903af9ba5bf412e4684~mv2.png/v1/fill/w_158,h_114,al_c,q_85,enc_avif,quality_auto/cert-it%20logo%20dunkelpurpur.png',
@@ -91,9 +88,9 @@ const CertGrid = styled.div`
 const CertLogo = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   min-height: 82px;
-  padding: ${tokens.spacing.sm} ${tokens.spacing.md};
+  padding: ${tokens.spacing.sm} 0;
 
   img {
     max-width: 100%;
