@@ -11,7 +11,7 @@
 
     max-width: 780px;
     margin: 0 auto;
-    padding: 40px 24px 80px;
+    padding: calc(72px + 32px) 24px 80px; /* 72px = Höhe der fixierten Navigation */
     font-family: 'Source Sans Pro', Arial, sans-serif;
     line-height: 1.65;
     color: var(--sp-text);
