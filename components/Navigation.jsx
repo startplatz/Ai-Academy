@@ -42,10 +42,6 @@ const NAV_LINKS = [
   {
     label: 'Insights',
     href: '/insights',
-    children: [
-      { label: 'Übersicht', href: '/insights' },
-      { label: 'KI-News · Daily', href: '/insights/ki-news' },
-    ],
   },
 ];
 

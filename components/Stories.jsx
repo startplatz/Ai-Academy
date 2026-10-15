@@ -14,17 +14,17 @@ import PlanetSection from './PlanetSection';
    ───────────────────────────────────────────── */
 
 const MAIN_STORY = {
-  badge: 'Trend Report',
-  title: 'Wie Generative AI die Kreativbranche revolutioniert',
-  href: '/insights/generative-ai-kreativbranche',
-  meta: '15 Apr 2026 \u00b7 8 min Lesezeit',
+  badge: 'KI in der Praxis',
+  title: 'Entscheidungs-KI: Wenn KI nur noch Ja oder Nein sagt',
+  href: '/insights/entscheidungs-ki-jev-openai-microsoft',
+  meta: '15 Okt 2026 · 8 min Lesezeit',
   image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80&auto=format',
 };
 
 const SIDE_STORIES = [
+  { badge: 'Förderung', title: 'Bildungsgutschein für KI-Kurse: So läuft die Förderung', href: '/insights/bildungsgutschein-ki-kurse' },
   { badge: 'Karriere', title: '5 Skills, die jeder KI-Manager braucht', href: '/insights/5-skills-ki-manager' },
-  { badge: 'Tutorial', title: 'Prompt Engineering: Einsteiger Guide', href: '/insights/prompt-engineering-anfaenger' },
-  { badge: 'Interview', title: 'Interview: Die Zukunft der Arbeit', href: '/insights/interview-zukunft-arbeit-ki' },
+  { badge: 'Trend Report', title: 'Wie generative KI die Kreativbranche verändert', href: '/insights/generative-ai-kreativbranche' },
 ];
 
 const Grid = styled.div`
@@ -159,7 +159,7 @@ export default function Stories() {
       id="stories"
       badge="Wissen"
       title="<span>Insights</span>"
-      subtitle="Artikel, Tutorials und Interviews rund um KI, Karriere und Innovation."
+      subtitle="Artikel, Ratgeber und Prompt-Guides rund um KI, Karriere und Innovation."
     >
       <Grid>
         <MainCard href={MAIN_STORY.href}>

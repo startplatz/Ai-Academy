@@ -13,6 +13,9 @@ export const metadata = withSocial({
   description:
     'Der tägliche KI-Newsstream der STARTPLATZ AI Academy: die wichtigsten Modelle, Releases, Regulierung und Research-Trends — eingeordnet für den NRW-Mittelstand. Mit Lab-Ranking und News-Volumen.',
   alternates: { canonical: '/insights/ki-news' },
+  // Feed wird seit Juni 2026 nicht gepflegt: nicht indexieren und nicht
+  // verlinken, bis er wieder regelmäßig läuft (siehe app/sitemap.js).
+  robots: { index: false, follow: true },
   openGraph: {
     title: 'KI-News — täglicher Newsstream | STARTPLATZ AI Academy',
     description:

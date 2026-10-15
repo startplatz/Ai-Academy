@@ -9,20 +9,24 @@ import CTABanner from '../../../components/ui/CTABanner';
 import Button from '../../../components/ui/Button';
 import { CALENDLY_URL } from '../../../lib/site';
 import { withSocial } from '../../../lib/seo';
+import { CERT_IT, TRAEGER, getCourse } from '../../../lib/academyFacts';
+
+const KIM_VZ = getCourse('ki-manager-vollzeit');
+const KIM_TZ = getCourse('ki-manager-teilzeit');
 
 /* Blog content data mapping */
 const BLOG_CONTENT = {
   'generative-ai-kreativbranche': {
-    title: 'Wie Generative AI die Kreativbranche revolutioniert',
+    title: 'Wie generative KI die Kreativbranche verändert',
     badge: 'Trend Report',
     category: 'Trend Report',
     excerpt: 'Generative KI verändert Design, Content Creation und Fotografie. Hier siehst du, welche Chancen und Grenzen jetzt wichtig werden.',
     publishedAt: '15 Apr 2026',
-    readingTime: '8 min Lesezeit',
+    readingTime: '2 min Lesezeit',
     author: 'STARTPLATZ AI Academy',
     content: `
       <h2>Einleitung</h2>
-      <p>Die Kreativbranche steht an einem Wendepunkt. Generative Künstliche Intelligenz ist nicht mehr Science Fiction, sondern Realität. Tools wie DALL-E, Midjourney und Stable Diffusion ermöglichen es Kreativfachleuten, ihre Visionen schneller und effizienter zu realisieren. Gleichzeitig eröffnen diese Technologien völlig neue Möglichkeiten für Innovation und Experimentation.</p>
+      <p>Die Kreativbranche steht an einem Wendepunkt. Generative Künstliche Intelligenz ist im Arbeitsalltag vieler Kreativer angekommen. Bild-, Video- und Textgeneratoren ermöglichen es Kreativfachleuten, ihre Visionen schneller und effizienter zu realisieren. Gleichzeitig eröffnen diese Technologien völlig neue Möglichkeiten für Innovation und Experimentation.</p>
 
       <h2>Die transformative Kraft der generativen KI</h2>
       <p>Generative KI-Systeme lernen aus riesigen Mengen an Trainingsdaten und können anschließend völlig neue Inhalte erstellen – sei es Bilder, Text oder Code. Für die Kreativbranche bedeutet dies eine fundamentale Veränderung der Arbeitsweise:</p>
@@ -33,9 +37,9 @@ const BLOG_CONTENT = {
       </ul>
 
       <h2>Praktische Anwendungen</h2>
-      <p>Die praktischen Anwendungen sind vielfältig und wachsen täglich. In der Grafikdesign werden KI-Tools zur Komposition, zur Erstellung von Variationen und zur Automatisierung von wiederholten Aufgaben eingesetzt. Content Creator nutzen Text-zu-Bild-Modelle, um schnell visuelle Konzepte zu kommunizieren. Fotografen experimentieren mit KI-gestützter Bildbearbeitung und kreativen Filtern.</p>
+      <p>Die praktischen Anwendungen sind vielfältig und wachsen täglich. Im Grafikdesign werden KI-Tools zur Komposition, zur Erstellung von Variationen und zur Automatisierung von wiederholten Aufgaben eingesetzt. Content Creator nutzen Text-zu-Bild-Modelle, um schnell visuelle Konzepte zu kommunizieren. Fotografen experimentieren mit KI-gestützter Bildbearbeitung und kreativen Filtern.</p>
 
-      <p>Auch in der Werbung, dem Filmmaking und der Spielentwicklung zeigen sich enorme Potenziale. Es entstehen neue Rollen und neue Spezialisierungen – etwa der „AI-Prompt-Engineer" oder der „Kreative KI-Direktor".</p>
+      <p>Auch in der Werbung, dem Filmmaking und der Spielentwicklung zeigen sich enorme Potenziale. Es entstehen neue Rollen und Spezialisierungen, etwa für den Aufbau KI-gestützter Kreativ-Workflows.</p>
 
       <h2>Chancen und Herausforderungen</h2>
       <p>Die größten Chancen liegen in der Demokratisierung von kreativen Tools: Nicht nur große Studios mit großen Budgets können fotorealistische 3D-Umgebungen oder Illustrationen erstellen. Kleine Teams und Einzelne erhalten Zugang zu Fähigkeiten, die früher unerreichbar waren.</p>
@@ -52,12 +56,12 @@ const BLOG_CONTENT = {
       </ul>
 
       <h2>Fazit</h2>
-      <p>Generative KI revolutioniert nicht die Kreativbranche, sondern verschiebt sie. Die wichtigsten Fähigkeiten der Zukunft werden nicht darin bestehen, Techniken zu kennen, sondern zu wissen, wie man KI als Werkzeug effektiv einsetzt, um bessere, schneller und kreativer zu arbeiten. Kreative, die diesen Übergang aktiv gestalten und ihr Verständnis von KI vertiefen, werden in der kommenden Dekade führend sein.</p>
+      <p>Generative KI revolutioniert nicht die Kreativbranche, sondern verschiebt sie. Die wichtigsten Fähigkeiten der Zukunft werden nicht darin bestehen, Techniken zu kennen, sondern zu wissen, wie man KI als Werkzeug effektiv einsetzt, um besser, schneller und kreativer zu arbeiten. Kreative, die diesen Übergang aktiv gestalten und ihr Verständnis von KI vertiefen, werden in der kommenden Dekade führend sein.</p>
     `,
     relatedArticles: [
       {
         slug: 'prompt-engineering-anfaenger',
-        title: 'Prompt Engineering: Der ultimative Einsteiger Guide',
+        title: 'Prompt Engineering für Einsteiger: 5 Grundregeln',
         badge: 'Tutorial',
       },
       {
@@ -78,7 +82,7 @@ const BLOG_CONTENT = {
     category: 'Karriere',
     excerpt: 'Welche Kompetenzen brauchst du, um KI-Projekte sinnvoll zu führen? Diese fünf Skills machen den Unterschied.',
     publishedAt: '12 Apr 2026',
-    readingTime: '6 min Lesezeit',
+    readingTime: '1 min Lesezeit',
     author: 'STARTPLATZ AI Academy',
     content: `
       <h2>Warum KI-Management mehr ist als Tool-Wissen</h2>
@@ -102,28 +106,28 @@ const BLOG_CONTENT = {
     relatedArticles: [
       {
         slug: 'generative-ai-kreativbranche',
-        title: 'Wie Generative AI die Kreativbranche revolutioniert',
+        title: 'Wie generative KI die Kreativbranche verändert',
         badge: 'Trend Report',
       },
       {
         slug: 'interview-zukunft-arbeit-ki',
-        title: 'Interview: Die Zukunft der Arbeit mit KI',
-        badge: 'Interview',
+        title: 'Die Zukunft der Arbeit mit KI: 5 Thesen',
+        badge: 'Einordnung',
       },
       {
         slug: 'prompt-engineering-anfaenger',
-        title: 'Prompt Engineering: Der ultimative Einsteiger Guide',
+        title: 'Prompt Engineering für Einsteiger: 5 Grundregeln',
         badge: 'Tutorial',
       },
     ],
   },
   'prompt-engineering-anfaenger': {
-    title: 'Prompt Engineering: Der ultimative Einsteiger Guide',
+    title: 'Prompt Engineering für Einsteiger: 5 Grundregeln',
     badge: 'Tutorial',
     category: 'Tutorial',
-    excerpt: 'Lerne, wie du bessere Prompts schreibst, Ergebnisse prüfst und KI-Modelle im Alltag gezielter steuerst.',
+    excerpt: 'Fünf Grundregeln, mit denen du bessere Prompts schreibst, Ergebnisse prüfst und KI-Modelle im Alltag gezielter steuerst.',
     publishedAt: '10 Apr 2026',
-    readingTime: '10 min Lesezeit',
+    readingTime: '1 min Lesezeit',
     author: 'STARTPLATZ AI Academy',
     content: `
       <h2>Was ein guter Prompt leisten muss</h2>
@@ -144,7 +148,7 @@ const BLOG_CONTENT = {
     relatedArticles: [
       {
         slug: 'generative-ai-kreativbranche',
-        title: 'Wie Generative AI die Kreativbranche revolutioniert',
+        title: 'Wie generative KI die Kreativbranche verändert',
         badge: 'Trend Report',
       },
       {
@@ -154,18 +158,18 @@ const BLOG_CONTENT = {
       },
       {
         slug: 'chatgpt-claude-gemini-vergleich',
-        title: 'ChatGPT vs. Claude vs. Gemini: Der große Vergleich 2026',
-        badge: 'Vergleich',
+        title: 'ChatGPT, Claude oder Gemini? So findest du das passende Modell',
+        badge: 'Ratgeber',
       },
     ],
   },
   'interview-zukunft-arbeit-ki': {
-    title: 'Interview: Die Zukunft der Arbeit mit KI',
-    badge: 'Interview',
-    category: 'Interview',
-    excerpt: 'Führende Experten teilen ihre Perspektive auf die zukünftige Arbeitswelt mit KI.',
+    title: 'Die Zukunft der Arbeit mit KI: 5 Thesen',
+    badge: 'Einordnung',
+    category: 'Einordnung',
+    excerpt: 'Fünf Thesen der AI Academy dazu, wie KI Aufgaben, Rollen und Weiterbildung in Teams verändert.',
     publishedAt: '08 Apr 2026',
-    readingTime: '12 min Lesezeit',
+    readingTime: '1 min Lesezeit',
     author: 'STARTPLATZ AI Academy',
     content: `
       <h2>Was sich in Teams zuerst verändert</h2>
@@ -191,23 +195,23 @@ const BLOG_CONTENT = {
       },
       {
         slug: 'generative-ai-kreativbranche',
-        title: 'Wie Generative AI die Kreativbranche revolutioniert',
+        title: 'Wie generative KI die Kreativbranche verändert',
         badge: 'Trend Report',
       },
       {
         slug: 'bildungsgutschein-ki-kurse',
-        title: 'Bildungsgutschein für KI-Kurse: Alles was du wissen musst',
+        title: 'Bildungsgutschein für KI-Kurse: So läuft die Förderung',
         badge: 'Förderung',
       },
     ],
   },
   'chatgpt-claude-gemini-vergleich': {
-    title: 'ChatGPT vs. Claude vs. Gemini: Der große Vergleich 2026',
-    badge: 'Vergleich',
-    category: 'Vergleich',
-    excerpt: 'Ein umfassender Vergleich der führenden Sprachmodelle und ihrer jeweiligen Stärken.',
+    title: 'ChatGPT, Claude oder Gemini? So findest du das passende Modell',
+    badge: 'Ratgeber',
+    category: 'Ratgeber',
+    excerpt: 'Statt allgemeiner Rankings: wie du KI-Modelle mit deinen eigenen Aufgaben vergleichst.',
     publishedAt: '05 Apr 2026',
-    readingTime: '9 min Lesezeit',
+    readingTime: '1 min Lesezeit',
     author: 'STARTPLATZ AI Academy',
     content: `
       <h2>Warum es nicht das eine beste Modell gibt</h2>
@@ -228,7 +232,7 @@ const BLOG_CONTENT = {
     relatedArticles: [
       {
         slug: 'prompt-engineering-anfaenger',
-        title: 'Prompt Engineering: Der ultimative Einsteiger Guide',
+        title: 'Prompt Engineering für Einsteiger: 5 Grundregeln',
         badge: 'Tutorial',
       },
       {
@@ -238,34 +242,46 @@ const BLOG_CONTENT = {
       },
       {
         slug: 'generative-ai-kreativbranche',
-        title: 'Wie Generative AI die Kreativbranche revolutioniert',
+        title: 'Wie generative KI die Kreativbranche verändert',
         badge: 'Trend Report',
       },
     ],
   },
   'bildungsgutschein-ki-kurse': {
-    title: 'Bildungsgutschein für KI-Kurse: Alles was du wissen musst',
+    title: 'Bildungsgutschein für KI-Kurse: So läuft die Förderung',
     badge: 'Förderung',
     category: 'Förderung',
-    excerpt: 'So nutzt du Bildungsgutschein und Förderung, um deine KI-Weiterbildung gut vorbereitet anzugehen.',
-    publishedAt: '02 Apr 2026',
-    readingTime: '7 min Lesezeit',
+    excerpt: 'Wie du eine KI-Weiterbildung über Bildungsgutschein oder Qualifizierungschancengesetz fördern lässt und was du für das Gespräch mit der Agentur für Arbeit brauchst.',
+    publishedAt: '15 Okt 2026',
+    readingTime: '3 min Lesezeit',
     author: 'STARTPLATZ AI Academy',
     content: `
-      <h2>Was der Bildungsgutschein ermöglicht</h2>
-      <p>Ein Bildungsgutschein kann eine zertifizierte Weiterbildung vollständig fördern, wenn die Voraussetzungen erfüllt sind. Für Arbeitssuchende bedeutet das: Du kannst dich gezielt für neue Rollen qualifizieren, ohne die Kurskosten selbst tragen zu müssen.</p>
+      <h2>Was der Bildungsgutschein ist</h2>
+      <p>Mit einem Bildungsgutschein übernehmen die Agentur für Arbeit oder das Jobcenter bis zu 100 % der Kosten einer beruflichen Weiterbildung. Voraussetzung ist, dass die Weiterbildung nach AZAV zugelassen ist und dich näher an eine neue Stelle bringt. Einen Rechtsanspruch gibt es nicht: Deine Beratungsfachkraft entscheidet im Einzelfall.</p>
 
-      <h2>Welche Weiterbildung passt?</h2>
-      <p>Wichtig ist, dass die Weiterbildung anerkannt ist und zu deinem beruflichen Ziel passt. Bei KI-Kursen zählt besonders, dass du nicht nur Theorie lernst, sondern konkrete Fähigkeiten für Bewerbungen, Projekte und moderne Arbeitsprozesse aufbaust.</p>
+      <h2>Ist die KI-Weiterbildung förderfähig?</h2>
+      <p>Ja. Träger unserer geförderten Kurse ist die ${TRAEGER.name}, AZAV-zertifiziert durch ${TRAEGER.azav.certifiedBy} (Zertifikat ${TRAEGER.azav.certificateNumber}). Für Arbeitssuchende ist die Weiterbildung <a href="${KIM_VZ.path}">${KIM_VZ.name}</a> zugelassen:</p>
+      <ul>
+        <li><strong>Dauer:</strong> ${KIM_VZ.durationWeeks} Wochen, ${KIM_VZ.teachingUnits} Unterrichtseinheiten</li>
+        <li><strong>Zeiten:</strong> ${KIM_VZ.schedule}</li>
+        <li><strong>Ort:</strong> ${KIM_VZ.location}</li>
+        <li><strong>Maßnahmennummer:</strong> ${KIM_VZ.massnahmennummer}</li>
+        <li><strong>Abschluss:</strong> ${KIM_VZ.certificate}, dazu eine ${CERT_IT.label}</li>
+      </ul>
+
+      <h2>Und wenn ich berufstätig bin?</h2>
+      <p>Für Beschäftigte gibt es die <a href="${KIM_TZ.path}">${KIM_TZ.name}</a> mit Unterricht ${KIM_TZ.schedule}. Sie ist ${KIM_TZ.funding}. Die Förderung läuft über deinen Arbeitgeber und die Agentur für Arbeit.</p>
 
       <h2>So bereitest du das Gespräch vor</h2>
-      <p>Formuliere vor dem Termin bei der Agentur für Arbeit oder dem Jobcenter klar, warum KI-Kompetenz für deine berufliche Perspektive relevant ist. Hilfreich sind Zielrollen, Stellenanzeigen und eine kurze Begründung, welche Lücke die Weiterbildung schließt.</p>
-
-      <h2>Was du von uns bekommst</h2>
-      <p>Wir unterstützen dich mit Kursinformationen, Ablauf, Zertifizierungsdetails und den Argumenten, die du für dein Beratungsgespräch brauchst. So gehst du vorbereitet in den Prozess.</p>
+      <p>Formuliere vor dem Termin bei der Agentur für Arbeit oder dem Jobcenter klar, warum KI-Kompetenz für deine berufliche Perspektive wichtig ist. Hilfreich sind:</p>
+      <ul>
+        <li>zwei oder drei Stellenanzeigen, die KI-Kenntnisse verlangen</li>
+        <li>eine kurze Begründung, welche Lücke die Weiterbildung schließt</li>
+        <li>die Maßnahmennummer ${KIM_VZ.massnahmennummer}, damit die Beratungsfachkraft den Kurs direkt findet</li>
+      </ul>
 
       <h2>Der nächste Schritt</h2>
-      <p>Wenn du prüfen möchtest, ob die <a href="/arbeitssuchende">KI-Manager-Weiterbildung in Vollzeit</a> zu dir passt, starte mit einer Beratung. Wir schauen gemeinsam auf Ziel, Förderung und Timing.</p>
+      <p>Wenn du prüfen möchtest, ob die Weiterbildung zu dir passt, buch eine Beratung. Wir schauen gemeinsam auf dein Ziel, die Förderung und den nächsten Starttermin und geben dir die Kursinformationen für dein Gespräch mit.</p>
     `,
     relatedArticles: [
       {
@@ -275,8 +291,8 @@ const BLOG_CONTENT = {
       },
       {
         slug: 'interview-zukunft-arbeit-ki',
-        title: 'Interview: Die Zukunft der Arbeit mit KI',
-        badge: 'Interview',
+        title: 'Die Zukunft der Arbeit mit KI: 5 Thesen',
+        badge: 'Einordnung',
       },
       {
         slug: 'machine-learning-basics',
@@ -291,7 +307,7 @@ const BLOG_CONTENT = {
     category: 'Deep Dive',
     excerpt: 'Verstehe die Grundlagen von Machine Learning und warum sie für praktische KI-Projekte reichen.',
     publishedAt: '31 Mär 2026',
-    readingTime: '14 min Lesezeit',
+    readingTime: '1 min Lesezeit',
     author: 'STARTPLATZ AI Academy',
     content: `
       <h2>Machine Learning in einem Satz</h2>
@@ -312,18 +328,18 @@ const BLOG_CONTENT = {
     relatedArticles: [
       {
         slug: 'prompt-engineering-anfaenger',
-        title: 'Prompt Engineering: Der ultimative Einsteiger Guide',
+        title: 'Prompt Engineering für Einsteiger: 5 Grundregeln',
         badge: 'Tutorial',
       },
       {
         slug: 'generative-ai-kreativbranche',
-        title: 'Wie Generative AI die Kreativbranche revolutioniert',
+        title: 'Wie generative KI die Kreativbranche verändert',
         badge: 'Trend Report',
       },
       {
         slug: 'chatgpt-claude-gemini-vergleich',
-        title: 'ChatGPT vs. Claude vs. Gemini: Der große Vergleich 2026',
-        badge: 'Vergleich',
+        title: 'ChatGPT, Claude oder Gemini? So findest du das passende Modell',
+        badge: 'Ratgeber',
       },
     ],
   },
