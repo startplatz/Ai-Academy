@@ -46,7 +46,8 @@ const Foot = styled.footer`
   z-index: 1;
   background: ${tokens.colors.dark};
   color: ${tokens.colors.darkText};
-  padding: ${tokens.spacing['4xl']} ${tokens.spacing.lg} ${tokens.spacing['2xl']};
+  /* Unten Platz lassen: Der schwebende Kim-Button (unten rechts) darf Kontakt und Copyright nicht überdecken */
+  padding: ${tokens.spacing['4xl']} ${tokens.spacing.lg} 11rem;
   ${media.lg} {
     padding: ${tokens.spacing['4xl']} ${tokens.spacing['2xl']} ${tokens.spacing['2xl']};
   }
@@ -136,8 +137,9 @@ const Divider = styled.hr`
 const Bottom = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: ${tokens.spacing.md};
-  ${media.md} { flex-direction: row; justify-content: space-between; align-items: center; }
+  text-align: center;
 `;
 
 const Copyright = styled.p`
@@ -148,10 +150,11 @@ const Copyright = styled.p`
 const Contact = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: ${tokens.spacing.lg};
+  justify-content: center;
+  gap: ${tokens.spacing.sm} ${tokens.spacing.lg};
   font-size: ${tokens.fontSizes.xs};
-  color: rgba(255,255,255,0.35);
-  a { color: rgba(255,255,255,0.35); text-decoration: none; &:hover { color: ${tokens.colors.primaryLight}; } }
+  color: rgba(255,255,255,0.5);
+  a { color: rgba(255,255,255,0.5); text-decoration: none; &:hover { color: ${tokens.colors.primaryLight}; } }
 `;
 
 const FooterCornerDecor = styled.div`
