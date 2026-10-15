@@ -25,7 +25,8 @@
           "url": "https://startplatz-ai-academy.de/android-chrome-512x512.png"
         }
       },
-      "keywords": "Entscheidungs-KI, Entscheidungsmodell, Jev, TypeSafe AI, OpenAI Decisions API, Microsoft-Decision-1, KI-Automatisierung, Klassifizierung, Human in the Loop"
+      "keywords": "Entscheidungs-KI, Entscheidungsmodell, Jev, TypeSafe AI, OpenAI Decisions API, Microsoft-Decision-1, KI-Automatisierung, Klassifizierung, Human in the Loop",
+      "isBasedOn": "https://startplatz-ai-academy.beehiiv.com/p/schafft-meta-mit-muse-wonder-den-sprung-an-die-ki-spitze"
     },
     {
       "@type": "FAQPage",
