@@ -31,6 +31,7 @@ const routes = [
   { path: '/oneday/claude-cowork', priority: 0.8, changeFrequency: 'weekly', updated: '2026-05-17' },
   { path: '/oneday/immobilien', priority: 0.8, changeFrequency: 'weekly', updated: '2026-05-03' },
   // Insight articles
+  { path: '/insights/entscheidungs-ki-jev-openai-microsoft', priority: 0.7, changeFrequency: 'monthly', updated: '2026-10-15' },
   { path: '/insights/fable-5-reasoning-opus-4-8', priority: 0.7, changeFrequency: 'monthly', updated: '2026-07-24' },
   { path: '/insights/minecraft-hintergrund-prompt', priority: 0.6, changeFrequency: 'monthly', updated: '2026-07-24' },
   { path: '/insights/generative-ai-kreativbranche', priority: 0.7, changeFrequency: 'monthly', updated: '2026-04-30' },

@@ -1,0 +1,92 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Entscheidungs-KI: Jev, OpenAI und Microsoft im Vergleich",
+      "description": "Entscheidungs-KI wählt aus festen Optionen statt Text zu schreiben. Was Jev, OpenAIs Decisions API und Microsoft-Decision-1 können.",
+      "datePublished": "2026-10-15",
+      "dateModified": "2026-10-15",
+      "inLanguage": "de-DE",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://startplatz-ai-academy.de/insights/entscheidungs-ki-jev-openai-microsoft"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "STARTPLATZ AI Academy (Redaktion)",
+        "url": "https://startplatz-ai-academy.de"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "STARTPLATZ AI Academy",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://startplatz-ai-academy.de/android-chrome-512x512.png"
+        }
+      },
+      "keywords": "Entscheidungs-KI, Entscheidungsmodell, Jev, TypeSafe AI, OpenAI Decisions API, Microsoft-Decision-1, KI-Automatisierung, Klassifizierung, Human in the Loop"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Was ist der Unterschied zwischen Entscheidungs-KI und ChatGPT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ChatGPT basiert auf einem Sprachmodell, das Texte Wort für Wort erzeugt. Es kann Fragen beantworten, Texte schreiben und Inhalte zusammenfassen. Entscheidungs-KI erzeugt dagegen keinen Text. Sie bekommt eine feste Liste von Optionen und gibt zu jeder Option eine Wahrscheinlichkeit zurück. Damit ist sie auf eine einzige Aufgabe spezialisiert: auswählen. Für Ja-Nein-Fragen und Sortieraufgaben ist das schneller und günstiger, weil kein ganzer Text entstehen muss. Für offene Aufgaben wie Formulieren oder Zusammenfassen bleibt ein Sprachmodell die bessere Wahl."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Welche Anbieter von Entscheidungs-KI gibt es?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Im Oktober 2026 sind drei Angebote bekannt. Jev vom Startup TypeSafe AI erschien Mitte September 2026 und verarbeitet Text. OpenAI öffnete am 6. Oktober 2026 seine Decisions API als Testversion für alle Entwickler:innen, sie versteht auch Bilder. Microsoft stellte am 9. Oktober 2026 Microsoft-Decision-1 vor. Alle drei werden über eine Programmierschnittstelle angesprochen und richten sich damit zunächst an Entwickler:innen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann Entscheidungs-KI auch Bilder auswerten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Das hängt vom Anbieter ab. Die Decisions API von OpenAI verarbeitet zusätzlich Bilder, etwa Fotos oder Screenshots. Damit lassen sich auch visuelle Eingänge einordnen, zum Beispiel ein abfotografierter Beleg oder ein Screenshot aus einer Fehlermeldung. Jev von TypeSafe AI versteht bislang nur Text. Zu Microsoft-Decision-1 liegen dazu bisher keine Angaben vor. Wer Bilder sortieren möchte, sollte vor der Auswahl prüfen, welche Eingaben das jeweilige Modell aktuell unterstützt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie zuverlässig ist Entscheidungs-KI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Das ist die wichtigste offene Frage. Entscheidungs-KI liefert zu jeder Option eine Wahrscheinlichkeit, doch wie gut diese Werte im Praxiseinsatz zur tatsächlichen Trefferquote passen, ist noch nicht geklärt. Eine hohe Wahrscheinlichkeit garantiert keine richtige Entscheidung. Deshalb empfiehlt sich ein Test mit eigenen Daten: Lass das Modell bereits erledigte Fälle bewerten und vergleiche die Ergebnisse mit den echten Entscheidungen. Zusätzlich sollten unsichere Fälle automatisch an einen Menschen gehen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ersetzt Entscheidungs-KI Mitarbeitende?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Entscheidungs-KI übernimmt vor allem gleichförmige Sortier- und Zuordnungsaufgaben. Sie ist ausdrücklich darauf ausgelegt, unsichere Fälle an einen Menschen oder ein größeres Modell weiterzugeben. Die Arbeit verschiebt sich dadurch: weniger manuelles Sortieren, mehr Bearbeitung der schwierigen Fälle und mehr Kontrolle der Ergebnisse. Damit das funktioniert, braucht es Menschen, die verstehen, wie solche Systeme arbeiten, wo ihre Grenzen liegen und wie man Abläufe sinnvoll aufteilt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Brauche ich Programmierkenntnisse, um Entscheidungs-KI zu nutzen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Für die direkte Nutzung derzeit ja. Jev, die Decisions API und Microsoft-Decision-1 werden über eine Programmierschnittstelle angesprochen, also von Entwickler:innen in eigene Software eingebunden. Wer nicht programmiert, profitiert eher indirekt: über Automatisierungen, die ein Team im Unternehmen aufsetzt. Hilfreich ist trotzdem ein Grundverständnis von KI-Workflows. Wer weiß, welche Aufgaben sich eignen und wie eine Übergabe an Menschen aussieht, kann solche Projekte im eigenen Bereich gezielt anstoßen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wo fange ich mit Entscheidungs-KI im Team an?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Am besten bei einem einfachen Ablauf mit vielen gleichartigen Fällen, zum Beispiel beim Sortieren eingehender E-Mails oder Anfragen. Lege zuerst fest, welche Antwortmöglichkeiten es gibt, und sammle eine Stichprobe bereits entschiedener Fälle. Damit lässt sich prüfen, wie oft das Modell richtig liegt. Plane von Anfang an ein, was mit unsicheren Fällen passiert. Erst wenn der Test überzeugt, lohnt es sich, den Ablauf schrittweise zu automatisieren."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -14,6 +14,14 @@ import { CALENDLY_URL } from '../../lib/site';
 /* Blog posts data */
 const BLOG_POSTS = [
   {
+    id: 10,
+    slug: 'entscheidungs-ki-jev-openai-microsoft',
+    title: 'Entscheidungs-KI: Wenn KI nur noch Ja oder Nein sagt',
+    badge: 'KI in der Praxis',
+    excerpt: 'Jev, OpenAI und Microsoft bringen KI, die nicht schreibt, sondern entscheidet. Was das für Automatisierung im Job bedeutet.',
+    meta: '15 Okt 2026 • 8 min Lesezeit',
+  },
+  {
     id: 8,
     slug: 'fable-5-reasoning-opus-4-8',
     title: 'Fable-5-Reasoning in Opus 4.8 – mit einem einzigen Prompt',
