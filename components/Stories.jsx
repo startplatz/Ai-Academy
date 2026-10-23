@@ -15,9 +15,9 @@ import PlanetSection from './PlanetSection';
 
 const MAIN_STORY = {
   badge: 'KI in der Praxis',
-  title: 'Entscheidungs-KI: Wenn KI nur noch Ja oder Nein sagt',
-  href: '/insights/entscheidungs-ki-jev-openai-microsoft',
-  meta: '15 Okt 2026 · 8 min Lesezeit',
+  title: 'Voice Agents: Was Sprach-KI im Unternehmen leisten kann',
+  href: '/insights/voice-agents-voxtral-elevenlabs',
+  meta: '23 Okt 2026 · 8 min Lesezeit',
   image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80&auto=format',
 };
 

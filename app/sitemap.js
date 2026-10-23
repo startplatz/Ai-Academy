@@ -11,7 +11,7 @@ export const revalidate = 3600;
   wieder regelmäßig gepflegt wird.
 */
 const routes = [
-  { path: '/', priority: 1.0, changeFrequency: 'weekly', updated: '2026-10-15' },
+  { path: '/', priority: 1.0, changeFrequency: 'weekly', updated: '2026-10-23' },
   { path: '/arbeitssuchende', priority: 0.9, changeFrequency: 'weekly', updated: '2026-06-01' },
   { path: '/berufstaetige', priority: 0.9, changeFrequency: 'weekly', updated: '2026-10-09' },
   { path: '/unternehmen', priority: 0.9, changeFrequency: 'weekly', updated: '2026-10-09' },
@@ -21,7 +21,7 @@ const routes = [
   { path: '/ueber-uns', priority: 0.6, changeFrequency: 'monthly', updated: '2026-04-29' },
   { path: '/leitbild', priority: 0.5, changeFrequency: 'yearly', updated: '2026-08-10' },
   { path: '/karriere', priority: 0.6, changeFrequency: 'weekly', updated: '2026-09-08' },
-  { path: '/insights', priority: 0.8, changeFrequency: 'weekly', updated: '2026-10-15' },
+  { path: '/insights', priority: 0.8, changeFrequency: 'weekly', updated: '2026-10-23' },
   { path: '/bewerben-mit-ki', priority: 0.8, changeFrequency: 'monthly', updated: '2026-06-06' },
   { path: '/ki-im-kino', priority: 0.8, changeFrequency: 'monthly', updated: '2026-08-19' },
   { path: '/wissens-test', priority: 0.7, changeFrequency: 'monthly', updated: '2026-05-05' },
@@ -31,6 +31,7 @@ const routes = [
   { path: '/oneday/claude-cowork', priority: 0.8, changeFrequency: 'weekly', updated: '2026-05-17' },
   { path: '/oneday/immobilien', priority: 0.8, changeFrequency: 'weekly', updated: '2026-05-03' },
   // Insight articles
+  { path: '/insights/voice-agents-voxtral-elevenlabs', priority: 0.7, changeFrequency: 'monthly', updated: '2026-10-23' },
   { path: '/insights/entscheidungs-ki-jev-openai-microsoft', priority: 0.7, changeFrequency: 'monthly', updated: '2026-10-15' },
   { path: '/insights/fable-5-reasoning-opus-4-8', priority: 0.7, changeFrequency: 'monthly', updated: '2026-10-15' },
   { path: '/insights/minecraft-hintergrund-prompt', priority: 0.6, changeFrequency: 'monthly', updated: '2026-07-24' },

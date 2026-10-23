@@ -1,0 +1,93 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Voice Agents: Mistral Voxtral 3 und ElevenLabs im Vergleich",
+      "description": "Voice Agents verstehen Sprache und antworten mit Stimme. Was Mistral Voxtral 3 und ElevenLabs Eleven Realtime können und wofür sie sich eignen.",
+      "datePublished": "2026-10-23",
+      "dateModified": "2026-10-23",
+      "inLanguage": "de-DE",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://startplatz-ai-academy.de/insights/voice-agents-voxtral-elevenlabs"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "STARTPLATZ AI Academy (Redaktion)",
+        "url": "https://startplatz-ai-academy.de"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "STARTPLATZ AI Academy",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://startplatz-ai-academy.de/android-chrome-512x512.png"
+        }
+      },
+      "keywords": "Voice Agents, Sprach-KI, Voice Agent Unternehmen, Mistral Voxtral 3, ElevenLabs Eleven Realtime, Spracherkennung, Sprachausgabe, KI-Hotline, Terminbuchung mit KI, EU-Hosting",
+      "isBasedOn": "https://startplatz-ai-academy.beehiiv.com/p/macht-die-partnerschaft-mit-nvidia-deutschland-sta-rker-oder-abha-ngiger"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Was ist der Unterschied zwischen einem Voice Agent und einem Chatbot?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ein Chatbot arbeitet mit geschriebenem Text, ein Voice Agent mit gesprochener Sprache. Der Voice Agent muss deshalb zusätzlich zuhören und sprechen können. Dafür nutzt er Spracherkennung, ein Sprachmodell und eine Sprachausgabe, entweder als einzelne Bausteine oder in einem gemeinsamen Modell. Für Nutzer:innen fühlt sich das an wie ein Telefonat, nicht wie ein Chatfenster. Die Anforderungen an Verständnis und Reaktionszeit sind dadurch höher."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was ist Voxtral 3 von Mistral?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Voxtral 3 ist eine Familie von Sprachmodellen des KI-Unternehmens Mistral AI. Sie besteht aus dem Spracherkennungsmodell Voxtral Small Transcribe 3, dem Sprachausgabemodell Voxtral Mini TTS 3 und einem Voice-Agent-SDK auf Basis von LiveKit. Die Transkription unterstützt mehr als 50 Sprachen. Voxtral 3 ist vorerst eine Vorabversion und lässt sich auf eigener Infrastruktur oder über EU-gehostete APIs betreiben."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was ist Eleven Realtime von ElevenLabs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Eleven Realtime ist ein Angebot von ElevenLabs für gesprochene Gespräche mit KI. Die Modelle v1 Mini und v1 Max hören zu, denken nach und antworten in einem Zug, statt mehrere Einzelschritte hintereinanderzuschalten. Laut ElevenLabs antwortet v1 Max nach rund 0,57 Sekunden. Das Angebot umfasst über 90 Sprachen und über 17.000 Stimmen, die Schnittstelle ist mit der von OpenAI kompatibel."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was kostet ein Voice Agent?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Das hängt vom Anbieter, vom Gesprächsvolumen und von den genutzten Bausteinen ab. Bei Mistral starten die Preise für die Transkription mit Voxtral 3 bei 0,0035 Dollar pro Minute. Dazu kommen Kosten für Sprachausgabe, Sprachmodell und die Anbindung an eigene Systeme. Für eine realistische Rechnung lohnt sich ein Test mit einem klar abgegrenzten Ablauf und echten Gesprächszahlen aus dem eigenen Betrieb."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sind Voice Agents datenschutzkonform nutzbar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Das hängt davon ab, wo die Gesprächsdaten verarbeitet werden und welche Daten anfallen. Mistral bietet für Voxtral 3 den Betrieb auf eigener Infrastruktur oder über EU-gehostete APIs an, was für viele europäische Unternehmen ein wichtiges Kriterium ist. Unabhängig vom Anbieter sollten Datenschutzverantwortliche früh eingebunden werden. Klär vor dem Start, welche Informationen der Agent aufnimmt, wo sie gespeichert werden und wie Anrufende informiert werden."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ersetzen Voice Agents Mitarbeitende im Kundenservice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Voice Agents übernehmen vor allem wiederkehrende Gespräche mit klarem Ablauf, etwa Terminbuchungen oder Standardauskünfte. Gespräche mit Konfliktpotenzial, Sonderfällen oder Beratungsbedarf bleiben bei Menschen. Die Arbeit verschiebt sich dadurch: weniger Routineanrufe, mehr Zeit für schwierige Fälle. Damit das gelingt, braucht es Mitarbeitende, die verstehen, wie solche Systeme arbeiten, wo ihre Grenzen liegen und wann eine Übergabe an einen Menschen nötig ist."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie fange ich mit einem Voice Agent an?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Am besten mit einem einzelnen, klar abgegrenzten Gespräch, zum Beispiel der Terminbuchung. Beschreibe den Ablauf Schritt für Schritt und lege fest, wann der Agent an einen Menschen übergibt. Teste dann mit echten Beispielen, auch mit Dialekten und Hintergrundgeräuschen. Erst wenn der Agent Anliegen zuverlässig versteht, lohnt es sich, weitere Gespräche zu automatisieren und das System an andere Werkzeuge anzubinden."
+          }
+        }
+      ]
+    }
+  ]
+}

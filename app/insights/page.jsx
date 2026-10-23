@@ -13,14 +13,22 @@ import { CALENDLY_URL } from '../../lib/site';
 /* Blog posts data */
 const BLOG_POSTS = [
   {
+    id: 11,
+    slug: 'voice-agents-voxtral-elevenlabs',
+    title: 'Voice Agents: Was Sprach-KI im Unternehmen leisten kann',
+    badge: 'KI in der Praxis',
+    excerpt: 'Mistral und ElevenLabs bringen neue Sprach-KI für Hotlines und Termine. Zwei Ansätze im Vergleich und was das für dich bedeutet.',
+    meta: '23 Okt 2026 • 8 min Lesezeit',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80&auto=format',
+    featured: true,
+  },
+  {
     id: 10,
     slug: 'entscheidungs-ki-jev-openai-microsoft',
     title: 'Entscheidungs-KI: Wenn KI nur noch Ja oder Nein sagt',
     badge: 'KI in der Praxis',
     excerpt: 'Jev, OpenAI und Microsoft bringen KI, die nicht schreibt, sondern entscheidet. Was das für Automatisierung im Job bedeutet.',
     meta: '15 Okt 2026 • 8 min Lesezeit',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80&auto=format',
-    featured: true,
   },
   {
     id: 6,
