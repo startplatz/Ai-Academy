@@ -25,6 +25,9 @@ import { clipBR, CHAMFER, CyberCorners } from '../../styles/cyberpunk';
 import { CALENDLY_URL } from '../../lib/site';
 import { PRODUCT_CATALOG_URL } from '../../lib/productCatalog';
 import { searchIntentQuestions } from '../../lib/searchIntentQuestions';
+import { getCourse, TRAEGER } from '../../lib/academyFacts';
+
+const course = getCourse('ki-manager-vollzeit');
 
 const Panel = styled.div`
   position: relative;
@@ -117,11 +120,12 @@ export default function ArbeitssuchendePage() {
   ];
 
   const details = [
-    { label: 'Format', value: '8 Wochen Vollzeit (40 Unterrichtstage)' },
+    { label: 'Maßnahme', value: `AZAV-Maßnahme ${course.massnahmennummer}, Träger ${TRAEGER.name} (zertifiziert durch ${TRAEGER.azav.certifiedBy})` },
+    { label: 'Format', value: `${course.durationWeeks} Wochen Vollzeit, ${course.teachingUnits} Unterrichtseinheiten (40 Unterrichtstage)` },
     { label: 'Rhythmus', value: 'Mo–Fr, 9–16 Uhr, online oder vor Ort in Köln' },
-    { label: 'Teilnehmer', value: 'Max. 20 pro Kurs' },
-    { label: 'Abschluss', value: 'Abschlusszertifikat der STARTPLATZ Köln GmbH, optional Prüfung bei Cert-IT' },
-    { label: 'Förderung', value: '100% Bildungsgutschein (AZAV)' },
+    { label: 'Teilnehmer', value: 'Max. 20 pro Kurs, keine Programmierkenntnisse nötig' },
+    { label: 'Abschluss', value: `${course.certificate}, optional Prüfung bei Cert-IT` },
+    { label: 'Förderung', value: 'Über Bildungsgutschein bis zu 100 % förderfähig. Die Entscheidung trifft die Agentur für Arbeit bzw. das Jobcenter im Einzelfall.' },
   ];
 
   const curriculum = [
@@ -168,7 +172,7 @@ export default function ArbeitssuchendePage() {
   const stats = [
     { value: 1000, label: 'Absolventen', suffix: '+' },
     { value: 320, label: 'Unterrichtseinheiten' },
-    { value: 100, label: 'Förderquote', suffix: '%' },
+    { value: course.durationWeeks, label: 'Wochen Vollzeit' },
     { displayValue: '60.000', label: 'Offene KI-Stellen in Deutschland' },
   ];
 
@@ -293,11 +297,11 @@ export default function ArbeitssuchendePage() {
   return (
     <SubpageLayout>
       <PageHero
-        badge="100% Gefördert · AZAV"
+        badge={`AZAV · Maßnahme ${course.massnahmennummer}`}
         badgeColor={tokens.colors.mint}
         badgeBg={tokens.colors.mintBg}
-        title="In 8 Wochen von überfordert zu <span>selbstbewusst.</span>"
-        subtitle="KI-Manager/in in Vollzeit. Online oder vor Ort in Köln, komplett kostenfrei mit Bildungsgutschein."
+        title="KI-Manager Weiterbildung mit <span>Bildungsgutschein.</span>"
+        subtitle={`${course.durationWeeks} Wochen Vollzeit, ${course.teachingUnits} UE, online oder vor Ort in Köln. Praxisprojekt, keine Programmierkenntnisse nötig. Von überfordert zu selbstbewusst.`}
         breadcrumbs={[{ label: 'Arbeitssuchende', href: '/arbeitssuchende', active: true }]}
         accentColor={tokens.colors.mintBg}
         image="https://res.cloudinary.com/startplatz/image/upload/f_auto,q_auto,w_900/v1776469601/ai-hub/website/AI-Academy-Website-Images/target-audience-arbeitssuchende.png"
@@ -311,18 +315,9 @@ export default function ArbeitssuchendePage() {
       </PageHero>
 
       <SectionBlock
-        badge="Vorher / Nachher"
-        title="Aus Unsicherheit wird <span>Nachweis.</span>"
-        subtitle="Kein Motivationsspruch. Echte Struktur, echte Projekte, ein anerkanntes Zertifikat — in 8 Wochen."
-        accent={tokens.colors.glowMint}
-      >
-        <BeforeAfter before={before} after={after} accentColor={tokens.colors.mint} />
-      </SectionBlock>
-
-      <SectionBlock
-        badge="Produkt"
+        badge="Kursfakten"
         title="KI-Manager/in <span>in Vollzeit</span>"
-        subtitle="Ein klares Vollzeitformat für deinen Neustart in KI."
+        subtitle="Alle Angaben, die du für das Gespräch mit der Agentur für Arbeit oder dem Jobcenter brauchst."
         variant="muted"
         accent={tokens.colors.glowMint}
       >
@@ -338,6 +333,15 @@ export default function ArbeitssuchendePage() {
             prompt="Use case: infographic-diagram. Asset type: subpage visual. Structured 8-week AI learning roadmap, no readable small text, premium STARTPLATZ purple/teal palette, editorial, clean, no logos, no watermark."
           />
         </TwoColumn>
+      </SectionBlock>
+
+      <SectionBlock
+        badge="Vorher / Nachher"
+        title="Aus Unsicherheit wird <span>Nachweis.</span>"
+        subtitle="Kein Motivationsspruch. Echte Struktur, echte Projekte, ein anerkanntes Zertifikat — in 8 Wochen."
+        accent={tokens.colors.glowMint}
+      >
+        <BeforeAfter before={before} after={after} accentColor={tokens.colors.mint} />
       </SectionBlock>
 
       <SectionBlock
