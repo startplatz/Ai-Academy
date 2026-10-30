@@ -14,10 +14,10 @@ import PlanetSection from './PlanetSection';
    ───────────────────────────────────────────── */
 
 const MAIN_STORY = {
-  badge: 'KI in der Praxis',
-  title: 'Voice Agents: Was Sprach-KI im Unternehmen leisten kann',
-  href: '/insights/voice-agents-voxtral-elevenlabs',
-  meta: '23 Okt 2026 · 8 min Lesezeit',
+  badge: 'KI-Tools',
+  title: 'Canva Craft: Was das KI-Bildmodell für Designs kann',
+  href: '/insights/canva-craft-ki-bildmodell',
+  meta: '30 Okt 2026 · 8 min Lesezeit',
   image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80&auto=format',
 };
 

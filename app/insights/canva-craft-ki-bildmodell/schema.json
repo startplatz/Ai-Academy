@@ -1,0 +1,93 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Canva Craft: Das KI-Bildmodell für Designs erklärt",
+      "description": "Canva Craft ist das erste eigene KI-Bildmodell von Canva. Was es bei Postern, Folien und Infografiken kann, wo die Grenzen liegen und wie du startest.",
+      "datePublished": "2026-10-30",
+      "dateModified": "2026-10-30",
+      "inLanguage": "de-DE",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://startplatz-ai-academy.de/insights/canva-craft-ki-bildmodell"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "STARTPLATZ AI Academy (Redaktion)",
+        "url": "https://startplatz-ai-academy.de"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "STARTPLATZ AI Academy",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://startplatz-ai-academy.de/android-chrome-512x512.png"
+        }
+      },
+      "keywords": "Canva Craft, Canva KI, KI-Bildmodell, Canva Dream Lab, Magic Layers, KI-Design, Text in KI-Bildern, Präsentationen mit KI, Infografiken mit KI, Claude Design",
+      "isBasedOn": "https://startplatz-ai-academy.beehiiv.com/p/kw44-canva-baut-eigenes-bildmodell-und-fordert-google-und-openai-heraus"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Was ist Canva Craft?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Canva Craft ist ein KI-Bildmodell, das Canva nach eigenen Angaben als erstes selbst trainiertes Bildmodell vorgestellt hat. Entwickelt hat es die Einheit Canva Research. Craft ist auf Designs wie Poster, Folien und Infografiken mit viel Text ausgerichtet, nicht auf Fotokunst. Bisher hatte Canva für seine Bildfunktionen Modelle anderer Anbieter genutzt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wo finde ich Craft in Canva?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Craft ist im KI-Werkzeug Dream Lab nutzbar. Du erreichst es im Canva-Editor über das Drei-Punkte-Menü links und dann über „Dream Lab“. Zusätzlich gibt es eine Testversion über eine Programmierschnittstelle. Diese rechnet über das KI-Kontingent ab. Für einen ersten Eindruck reicht der Weg über den Editor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist Canva Craft kostenlos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Laut TechCrunch und Canva steht Craft zumindest vorerst allen Nutzer:innen zur Verfügung. Wie lange das so bleibt und ob es dabei Grenzen gibt, ist nicht bekannt. Wer Craft über die Programmierschnittstelle nutzt, zahlt über das KI-Kontingent. Prüf vor dem regelmäßigen Einsatz, welche Bedingungen für dein Konto gelten."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann Craft Text in Bildern richtig schreiben?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Genau darauf ist Craft ausgelegt. Das Modell plant zuerst Position, Größe und Text jedes Elements und erzeugt erst danach das Bild. Laut Canva setzt es Text in 55 Sprachen. Unabhängige Tests dazu stehen aber noch aus. Lies Namen, Daten und Zahlen im Ergebnis deshalb immer selbst gegen, bevor du ein Design verwendest."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Womit wurde Craft trainiert?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Laut Canva wurde Craft nicht auf Fotos trainiert, sondern auf Millionen Designvorlagen wie Postern, Präsentationen und Infografiken. Nach Angaben des Anbieters stammen diese Vorlagen aus der eigenen Bibliothek. Daraus erklärt sich der Fokus auf Gebrauchsgrafik mit Text und klarer Struktur statt auf fotorealistische Bilder."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie schneidet Craft gegen OpenAI und Google ab?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Belastbare Vergleiche fehlen bisher. Auf DesignArena, einer Rangliste per Publikumsabstimmung, lag Craft zum Start auf Platz vier hinter drei OpenAI-Modellen. Ansonsten zeigen vor allem Canvas eigene Auswertungen, wie gut Craft ist. Unabhängige Vergleichstests stehen noch aus. Für deinen Alltag zählt am Ende, ob die Designs zu deinen Aufgaben passen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich Craft-Ergebnisse nachbearbeiten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, mit Magic Layers lässt sich das Ergebnis in bearbeitbare Ebenen zerlegen. Die Funktion ist allerdings noch in der Beta. Das ist für Folien und Plakate wichtig, weil sich Texte, Daten oder Logos oft nachträglich ändern. Teste die Nachbearbeitung deshalb früh mit einem Design, das du wirklich brauchst."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -13,14 +13,22 @@ import { CALENDLY_URL } from '../../lib/site';
 /* Blog posts data */
 const BLOG_POSTS = [
   {
+    id: 12,
+    slug: 'canva-craft-ki-bildmodell',
+    title: 'Canva Craft: Was das KI-Bildmodell für Designs kann',
+    badge: 'KI-Tools',
+    excerpt: 'Canva hat mit Craft ein eigenes KI-Bildmodell für Poster, Folien und Infografiken gebaut. Was es kann und wie du es testest.',
+    meta: '30 Okt 2026 • 8 min Lesezeit',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80&auto=format',
+    featured: true,
+  },
+  {
     id: 11,
     slug: 'voice-agents-voxtral-elevenlabs',
     title: 'Voice Agents: Was Sprach-KI im Unternehmen leisten kann',
     badge: 'KI in der Praxis',
     excerpt: 'Mistral und ElevenLabs bringen neue Sprach-KI für Hotlines und Termine. Zwei Ansätze im Vergleich und was das für dich bedeutet.',
     meta: '23 Okt 2026 • 8 min Lesezeit',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80&auto=format',
-    featured: true,
   },
   {
     id: 10,
