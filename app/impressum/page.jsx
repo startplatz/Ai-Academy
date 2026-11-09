@@ -13,6 +13,8 @@ import { clipBR, CHAMFER, CyberCorners } from '../../styles/cyberpunk';
    Keine „Leitung“-Angabe: keine Pflichtangabe (Entscheidung Martin, 09.11.2026).
    § 18 Abs. 2 MStV: bewusst kein Verantwortlicher benannt
    (Entscheidung Martin Greguletz, 09.11.2026).
+   Kein Haftungsausschluss: ohne Rechtswirkung und mit nicht belegbaren
+   Aussagen; Urheberrecht auf Kurzfassung reduziert (09.11.2026).
    ───────────────────────────────────────────── */
 
 const Section = styled.section`
@@ -136,26 +138,14 @@ export default function ImpressumPage() {
               DE279993463
             </Text>
 
-            <SectionTitle>Verbraucherstreitbeilegung/Universalschlichtungsstelle</SectionTitle>
+            <SectionTitle>Verbraucherstreitbeilegung</SectionTitle>
             <Text>
               Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
             </Text>
 
-            <SectionTitle>Haftungsausschluss</SectionTitle>
-
-            <Text><strong>Haftung für Inhalte</strong></Text>
+            <SectionTitle>Urheberrecht</SectionTitle>
             <Text>
-              Für eigene Inhalte auf diesen Seiten sind wir nach den allgemeinen Gesetzen verantwortlich. Eine allgemeine Pflicht, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen, besteht nicht (Art. 8 Digital Services Act, Verordnung (EU) 2022/2065). Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
-            </Text>
-
-            <Text><strong>Haftung für Links</strong></Text>
-            <Text>
-              Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
-            </Text>
-
-            <Text><strong>Urheberrecht</strong></Text>
-            <Text>
-              Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet, soweit bei einzelnen Inhalten nichts anderes angegeben ist (zum Beispiel eine Creative-Commons-Lizenz oder das Pressematerial unter <Link href="/presse">Presse &amp; Medien</Link>). Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
+              Inhalte und Werke auf dieser Website sind urheberrechtlich geschützt. Eine Nutzung außerhalb der gesetzlichen Grenzen braucht unsere Zustimmung, soweit bei einzelnen Inhalten nichts anderes angegeben ist (zum Beispiel eine Creative-Commons-Lizenz oder das Pressematerial unter <Link href="/presse">Presse &amp; Medien</Link>).
             </Text>
           </Card>
         </Container>
