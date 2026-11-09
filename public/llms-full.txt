@@ -31,7 +31,7 @@ Für Arbeitssuchende und Karrierewechsler, die sich in 8 Wochen zur KI-Fachkraft
 Für Berufstätige, die nachmittags ab 14 Uhr freigestellt werden und KI im Job einsetzen wollen.
 
 - Dauer: 16 Wochen, 320 Unterrichtseinheiten, Mo–Do 14–18 Uhr
-- Rhythmus: Montag und Mittwoch Theorie, Dienstag und Donnerstag betreute Praxis (freiwillig)
+- Rhythmus: Montag und Mittwoch Theorie, Dienstag und Donnerstag betreute Praxis
 - Format: online oder vor Ort in Köln
 - Förderung: über das Qualifizierungschancengesetz (QCG) gemeinsam mit dem Arbeitgeber, je nach Betriebsgröße (AZAV-Maßnahme 357/413/2026)
 - Abschluss: Abschlusszertifikat „KI-Manager/in“ der STARTPLATZ Köln GmbH; optional unabhängige Abschlussprüfung bei Cert-IT

@@ -87,10 +87,10 @@ export default function BerufstaetigePage() {
     {
       label: 'Praxis',
       title: 'Dienstag & Donnerstag',
-      description: 'Betreute Praxis-Tage: Du wendest das Gelernte an, wir unterstützen. Wenn der Job einmal vorgeht, verpasst du keine Theorie.',
+      description: 'Betreute Praxis-Tage: Du wendest das Gelernte an echten Aufgaben an, idealerweise aus deinem Arbeitsalltag. Wir begleiten dich dabei.',
       metric: 'Di · Do',
       size: 'md',
-      chips: ['Betreut', 'Freiwillig'],
+      chips: ['Betreut', '14–18 Uhr'],
     },
   ];
 
@@ -303,7 +303,7 @@ export default function BerufstaetigePage() {
       <SectionBlock
         badge="Wochenrhythmus"
         title="Zwei Tage Theorie, <span>zwei Tage Praxis.</span>"
-        subtitle="Die Praxis-Tage sind ein Angebot: Wir sind da und unterstützen. Wenn der Job einmal vorgeht, ist das so."
+        subtitle="Montag und Mittwoch Live-Unterricht, Dienstag und Donnerstag betreute Praxis. Beides gehört fest zur Weiterbildung, so bleibt das Gelernte nicht liegen."
         accent={tokens.colors.glowNavy}
       >
         <SpotlightBento
