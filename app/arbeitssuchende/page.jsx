@@ -20,6 +20,7 @@ import {
   VisualSlot,
 } from '../../components/ui';
 import SubpageLayout from '../../components/SubpageLayout';
+import AiAutomationTeaser from '../../components/AiAutomationTeaser';
 import { tokens } from '../../styles/tokens';
 import { clipBR, CHAMFER, CyberCorners } from '../../styles/cyberpunk';
 import { CALENDLY_URL } from '../../lib/site';
@@ -450,6 +451,8 @@ export default function ArbeitssuchendePage() {
           accentBg={tokens.colors.mintBg}
         />
       </SectionBlock>
+
+      <AiAutomationTeaser audience="arbeitssuchende" />
 
       <SectionBlock
         badge="Gefragte Suchfragen"

@@ -38,7 +38,17 @@ Für Berufstätige, die nachmittags ab 14 Uhr freigestellt werden und KI im Job 
 - Inhalte: dasselbe Programm wie die Vollzeit-Variante
 - URL: https://startplatz-ai-academy.de/berufstaetige
 
-### 3. Für Unternehmen
+### 3. AI Automation Engineer (Vollzeit, kompakt)
+Für alle, die wiederkehrende Prozesse mit KI-Agenten und n8n selbst automatisieren wollen, ohne Programmierkenntnisse.
+- Dauer: 8 Kurstage Vollzeit, 64 Unterrichtseinheiten, täglich 9–12 und 13–16 Uhr, Start immer mittwochs
+- Inhalt: eigene n8n-Instanz, Security, KI-Agenten und Multi-Agent-Systeme, Custom Nodes, APIs, RAG, MCP-Server, EU AI Act, eigenes Praxisprojekt
+- Förderung: bis zu 100 % über Bildungsgutschein (AZAV-Maßnahme 357/420/2026); keine QCG-Förderung
+- Preis Selbst- und Firmenzahler: 1.950 EUR netto
+- Abschluss: Teilnahmebescheinigung, Wissenstest und Projektpräsentation
+- Format: live online
+- URL: https://startplatz-ai-academy.de/ai-automation-engineer
+
+### 4. Für Unternehmen
 Maßgeschneiderte KI-Schulungen für Teams und Organisationen.
 
 - Innovation Day: 1 Tag, Impulsvortrag + Workshop für Teams (auf Anfrage)
@@ -50,7 +60,7 @@ Maßgeschneiderte KI-Schulungen für Teams und Organisationen.
 ## Förderungsmöglichkeiten
 
 ### Bildungsgutschein (für Arbeitssuchende)
-- Fördert: KI-Manager/in (Vollzeit)
+- Fördert: KI-Manager/in (Vollzeit) und AI Automation Engineer
 - Kostenübernahme: 100%
 - Voraussetzung: AZAV-Zertifizierung (vorhanden)
 - Beantragung: Über die Agentur für Arbeit oder das Jobcenter
@@ -89,7 +99,7 @@ Maßgeschneiderte KI-Schulungen für Teams und Organisationen.
 ## Häufig gestellte Fragen
 
 ### Brauche ich Vorkenntnisse?
-Nein. Die KI-Manager Weiterbildungen starten bei null.
+Nein. Die KI-Manager Weiterbildungen starten bei null, und auch für den AI Automation Engineer brauchst du keine Programmierkenntnisse.
 
 ### Ist die Weiterbildung anerkannt?
 Ja. Die KI-Manager Weiterbildungen sind AZAV-zugelassene Maßnahmen (Träger: STARTPLATZ Köln GmbH, zertifiziert durch Kiwa ZERTPUNKT GmbH). In Vollzeit und Teilzeit kann zusätzlich eine freiwillige, unabhängige Abschlussprüfung bei Cert-IT abgelegt werden.

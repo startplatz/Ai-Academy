@@ -36,6 +36,7 @@ const AUDIENCES = [
     ],
     cta: 'Förderung prüfen',
     href: '/arbeitssuchende',
+    secondary: { label: 'Oder kompakt in 8 Tagen: AI Automation Engineer', href: '/ai-automation-engineer' },
     color: SOFT.teal,
     colorBg: SOFT.tealBg,
     image: 'https://res.cloudinary.com/startplatz/image/upload/f_auto,q_auto,w_600/v1776469601/ai-hub/website/AI-Academy-Website-Images/target-audience-arbeitssuchende.png',
@@ -52,6 +53,7 @@ const AUDIENCES = [
     ],
     cta: 'Kurse entdecken',
     href: '/berufstaetige',
+    secondary: { label: '8 Tage statt 16 Wochen: AI Automation Engineer', href: '/ai-automation-engineer' },
     color: SOFT.sky,
     colorBg: SOFT.skyBg,
     image: 'https://res.cloudinary.com/startplatz/image/upload/f_auto,q_auto,w_600,a_hflip/v1776469600/ai-hub/website/AI-Academy-Website-Images/target-audience-berufstaetige.png',
@@ -217,6 +219,25 @@ const Feature = styled.li`
   }
 `;
 
+const CardAltLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: ${tokens.spacing.sm};
+  font-size: ${tokens.fontSizes.sm};
+  font-weight: ${tokens.fontWeights.semi};
+  color: ${tokens.colors.textMuted};
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  align-self: flex-start;
+  transition: color ${tokens.transitions.fast}, border-color ${tokens.transitions.fast};
+
+  &:hover {
+    color: ${({ $color }) => $color};
+    border-bottom-color: ${({ $color }) => $color};
+  }
+`;
+
 const CardCTA = styled.a`
   display: inline-flex;
   align-items: center;
@@ -323,6 +344,11 @@ export default function TargetAudience() {
                 <CardCTA as={Link} href={a.href} $color={a.color}>
                   {a.cta}<ArrowSVG />
                 </CardCTA>
+                {a.secondary && (
+                  <CardAltLink as={Link} href={a.secondary.href} $color={a.color}>
+                    {a.secondary.label} →
+                  </CardAltLink>
+                )}
               </CardBody>
             </Card>
           </CardFrame>

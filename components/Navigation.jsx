@@ -16,6 +16,7 @@ const NAV_LINKS = [
     children: [
       { label: 'Arbeitssuchend', href: '/arbeitssuchende' },
       { label: 'Berufstätig', href: '/berufstaetige' },
+      { label: 'AI Automation Engineer', href: '/ai-automation-engineer' },
       { label: 'Preise & Formate', href: '/produktkatalog' },
     ],
   },

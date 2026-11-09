@@ -3,7 +3,7 @@ import { withSocial } from '../../lib/seo';
 export const metadata = withSocial({
   title: 'Preisliste 2026 & Produktkatalog',
   description:
-    'Preisliste 2026 und Produktkatalog der STARTPLATZ AI Academy: KI-Manager/in in Vollzeit und Teilzeit und Formate für Unternehmen.',
+    'Preisliste 2026 und Produktkatalog der STARTPLATZ AI Academy: KI-Manager/in in Vollzeit und Teilzeit, AI Automation Engineer und Formate für Unternehmen.',
   alternates: { canonical: '/produktkatalog' },
   openGraph: {
     title: 'Preisliste 2026 & Produktkatalog | STARTPLATZ AI Academy',

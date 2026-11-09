@@ -13,7 +13,8 @@ export const revalidate = 3600;
 const routes = [
   { path: '/', priority: 1.0, changeFrequency: 'weekly', updated: '2026-11-09' },
   { path: '/arbeitssuchende', priority: 0.9, changeFrequency: 'weekly', updated: '2026-06-01' },
-  { path: '/berufstaetige', priority: 0.9, changeFrequency: 'weekly', updated: '2026-10-09' },
+  { path: '/berufstaetige', priority: 0.9, changeFrequency: 'weekly', updated: '2026-11-09' },
+  { path: '/ai-automation-engineer', priority: 0.9, changeFrequency: 'weekly', updated: '2026-11-09' },
   { path: '/unternehmen', priority: 0.9, changeFrequency: 'weekly', updated: '2026-10-09' },
   { path: '/produktkatalog', priority: 0.8, changeFrequency: 'monthly', updated: '2026-05-03' },
   { path: '/experten', priority: 0.7, changeFrequency: 'monthly', updated: '2026-04-29' },

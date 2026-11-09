@@ -8,21 +8,21 @@ import { NextResponse } from 'next/server';
  * startplatz-ai-hub.de/*                    →  startplatz-ai-academy.de/
  * www.startplatz-ai-hub.de/*                →  startplatz-ai-academy.de/
  * bildungsgutschein.startplatz-ai-hub.de/*  →  startplatz-ai-academy.de/arbeitssuchende
- * afterwork.startplatz-ai-hub.de/*          →  startplatz-ai-academy.de/berufstaetige
+ * afterwork.startplatz-ai-hub.de/*          →  startplatz-ai-academy.de/ai-automation-engineer
  */
 
 const OLD_DOMAINS = new Map([
   ['startplatz-ai-hub.de', '/'],
   ['www.startplatz-ai-hub.de', '/'],
   ['bildungsgutschein.startplatz-ai-hub.de', '/arbeitssuchende'],
-  ['afterwork.startplatz-ai-hub.de', '/berufstaetige'],
+  ['afterwork.startplatz-ai-hub.de', '/ai-automation-engineer'],
 ]);
 
 // Bekannte Pfade auf der alten Hub-Domain → neue Ziele
 const PATH_MAP = new Map([
   ['/ki-manager-weiterbildung', '/arbeitssuchende'],
-  ['/afterwork', '/berufstaetige'],
-  ['/afterwork-ai-automation', '/berufstaetige'],
+  ['/afterwork', '/ai-automation-engineer'],
+  ['/afterwork-ai-automation', '/ai-automation-engineer'],
   ['/unternehmen', '/unternehmen'],
   ['/team', '/experten'],
   ['/about', '/ueber-uns'],

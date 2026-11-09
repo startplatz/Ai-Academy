@@ -563,7 +563,7 @@ function ProductTile({ product, compact = false }) {
 export default function ProduktkatalogPage() {
   const facts = [
     { value: '100%', label: 'Förderung möglich', color: tokens.colors.mint },
-    { value: '8 / 16 Wochen', label: 'KI-Manager/in VZ / TZ', color: tokens.colors.primary },
+    { value: '8 Tage', label: 'Kompaktkurs AI Automation', color: tokens.colors.primary },
     { value: 'auf Anfrage', label: 'Formate für Teams', color: tokens.colors.orange },
   ];
 
@@ -574,10 +574,10 @@ export default function ProduktkatalogPage() {
         badgeColor={tokens.colors.primary}
         badgeBg={tokens.colors.primaryLighter}
         title="Alle Formate.<br /><span>Ein Überblick.</span>"
-        subtitle="Alle Preise netto, zzgl. 19 % MwSt. KI-Manager/in in Vollzeit und Teilzeit und Formate für Unternehmen auf einen Blick."
+        subtitle="Alle Preise netto, zzgl. 19 % MwSt. KI-Manager/in in Vollzeit und Teilzeit, AI Automation Engineer und Formate für Unternehmen auf einen Blick."
         breadcrumbs={[{ label: 'Produktkatalog', href: '/produktkatalog', active: true }]}
         accentColor={tokens.colors.primaryLighter}
-        image={PRODUCT_IMAGES.arbeitssuchende}
+        image={PRODUCT_IMAGES.aiAutomationEngineer}
       >
         <Button href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" variant="primary" size="lg" arrow>
           Beratung buchen
@@ -594,7 +594,7 @@ export default function ProduktkatalogPage() {
             <IntroTitle>Der schnelle Blick auf das passende Produkt.</IntroTitle>
             <IntroText>
               Manche Formate sind klare offene Programme, andere werden auf Teamgröße, Zielbild und Branche angepasst.
-              Der Katalog hilft dir, schnell zwischen geförderter Weiterbildung und Unternehmensformat
+              Der Katalog hilft dir, schnell zwischen geförderter Weiterbildung, Kompaktkurs und Unternehmensformat
               zu unterscheiden.
             </IntroText>
             <MiniFacts>
@@ -611,6 +611,7 @@ export default function ProduktkatalogPage() {
             <NoteKicker>Preislogik</NoteKicker>
             <NoteList>
               <li>Die KI-Manager Weiterbildungen in Vollzeit und Teilzeit sind AZAV-zugelassen und bei passender Voraussetzung förderfähig (Bildungsgutschein bzw. QCG).</li>
+              <li>Der AI Automation Engineer ist das kompakte Format: 8 Kurstage, mit Bildungsgutschein förderfähig oder 1.950 € netto für Selbst- und Firmenzahler.</li>
               <li>Formate für Unternehmen kalkulieren wir nach Zielbild, Dauer und Teamgröße.</li>
               <li>{PRICE_LIST_2026.note}</li>
             </NoteList>
@@ -702,7 +703,7 @@ export default function ProduktkatalogPage() {
       <SectionBlock
         id="hauptformate"
         badge="Hauptformate"
-        title="Drei Wege in <span>KI-Kompetenz.</span>"
+        title="Vier Wege in <span>KI-Kompetenz.</span>"
         subtitle="Vom geförderten Neustart bis zum Teamprogramm: hier siehst du, welches Format für welche Situation gedacht ist."
         accent={tokens.colors.glow}
       >

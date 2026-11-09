@@ -124,7 +124,7 @@ export default function VisionSection() {
           <CardText>
             STARTPLATZ begleitet seit mehr als 13 Jahren Gründer und Unternehmen in NRW.
             Über 1.000 Absolventen, 500+ KI-Events und Dozenten, die selbst täglich
-            mit KI arbeiten. Das Format-System — KI-Manager/in in Vollzeit und Teilzeit sowie Formate für Unternehmen —
+            mit KI arbeiten. Das Format-System — KI-Manager/in in Vollzeit und Teilzeit, AI Automation Engineer —
             sortiert nach Lebenssituation, nicht nach Inhalt.
           </CardText>
         </GlassCard>

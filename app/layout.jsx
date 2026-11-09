@@ -42,7 +42,7 @@ export const metadata = {
     template: '%s | STARTPLATZ AI Academy',
   },
   description:
-    'KI-Weiterbildung mit AZAV-Zertifizierung. Bis zu 100% gefördert mit Bildungsgutschein. KI-Manager/in in Vollzeit und Teilzeit & KI-Schulungen für Unternehmen. Online oder vor Ort in Köln.',
+    'KI-Weiterbildung mit AZAV-Zertifizierung. Bis zu 100% gefördert mit Bildungsgutschein. KI-Manager/in in Vollzeit und Teilzeit & AI Automation Engineer. Online oder vor Ort in Köln.',
   keywords:
     'KI Weiterbildung, KI Weiterbildung Deutschland, KI Weiterbildung gefördert, Bildungsgutschein KI, KI Manager Weiterbildung, KI Manager Zertifikat, AZAV KI Kurs, AI Bootcamp, KI Kurs online, Künstliche Intelligenz Kurs, STARTPLATZ, n8n Kurs, Prompt Engineering, KI Schulung Unternehmen, geförderte Weiterbildung, Cert-IT Zertifizierung, KI Weiterbildung berufsbegleitend',
   authors: [{ name: 'STARTPLATZ AI Academy' }],
@@ -65,7 +65,7 @@ export const metadata = {
     siteName: 'STARTPLATZ AI Academy',
     title: 'KI-Weiterbildung mit Zertifikat | STARTPLATZ AI Academy',
     description:
-      'KI-Weiterbildung mit Zertifikat. AZAV-zertifiziert, bis zu 100% gefördert. KI-Manager/in in Vollzeit und Teilzeit & KI-Schulungen für Unternehmen.',
+      'KI-Weiterbildung mit Zertifikat. AZAV-zertifiziert, bis zu 100% gefördert. KI-Manager/in in Vollzeit und Teilzeit & AI Automation Engineer.',
     url: 'https://startplatz-ai-academy.de/',
     images: [
       {
@@ -103,7 +103,7 @@ const jsonLd = [
     url: 'https://startplatz-ai-academy.de/',
     logo: 'https://res.cloudinary.com/startplatz/image/upload/ai-hub/website/AI-Academy%20Logos/png/logo-full-color-on-light-800w.png',
     description:
-      'AZAV-zugelassene KI-Weiterbildungen (KI-Manager/in in Vollzeit und Teilzeit) und KI-Schulungen für Unternehmen. Online oder vor Ort in Köln.',
+      'AZAV-zugelassene KI-Weiterbildungen (KI-Manager/in in Vollzeit und Teilzeit, AI Automation Engineer) und KI-Schulungen für Unternehmen. Online oder vor Ort in Köln.',
     address: [
       {
         '@type': 'PostalAddress',

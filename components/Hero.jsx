@@ -27,7 +27,7 @@ const KEYWORDS = [
     word: 'SKILLS',
     color: tokens.colors.navy,
     sheenOpacity: 0.48,
-    sub: 'Abends lernen, täglich anwenden. Staatlich anerkannt.',
+    sub: 'Nachmittags lernen, morgen anwenden. AZAV-zugelassen.',
   },
   {
     word: 'ZUKUNFT',

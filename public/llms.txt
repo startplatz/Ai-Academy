@@ -22,6 +22,15 @@
 - Format: online oder vor Ort in Köln
 - URL: https://startplatz-ai-academy.de/berufstaetige
 
+### AI Automation Engineer (Vollzeit, kompakt)
+- Dauer: 8 Kurstage Vollzeit, 64 Unterrichtseinheiten, täglich 9–12 und 13–16 Uhr, Start immer mittwochs
+- Inhalt: Prozessautomatisierung mit n8n, KI-Agenten und Multi-Agent-Systeme, APIs, RAG, MCP, EU AI Act
+- Preis: 1.950 EUR netto für Selbst- und Firmenzahler; mit Bildungsgutschein bis zu 100 % förderbar (keine QCG-Förderung)
+- Zulassung: AZAV-Maßnahme 357/420/2026
+- Abschluss: Teilnahmebescheinigung (Wissenstest und Projektpräsentation am letzten Tag)
+- Format: live online
+- URL: https://startplatz-ai-academy.de/ai-automation-engineer
+
 ### Für Unternehmen
 - Innovation Day: 1 Tag, auf Anfrage
 - Inhouse Schulungen: 1-5 Tage, maßgeschneidert

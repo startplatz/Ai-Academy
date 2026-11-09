@@ -18,6 +18,7 @@ import {
   TwoColumn,
 } from '../../components/ui';
 import SubpageLayout from '../../components/SubpageLayout';
+import AiAutomationTeaser from '../../components/AiAutomationTeaser';
 import { tokens } from '../../styles/tokens';
 import { clipBR, CHAMFER, CyberCorners } from '../../styles/cyberpunk';
 import { CALENDLY_URL } from '../../lib/site';
@@ -395,6 +396,8 @@ export default function BerufstaetigePage() {
           accentBg={tokens.colors.navyBg}
         />
       </SectionBlock>
+
+      <AiAutomationTeaser audience="berufstaetige" />
 
       <SectionBlock
         badge="FAQ"

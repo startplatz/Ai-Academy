@@ -176,10 +176,10 @@ const LEVELS = [
     description: 'Du arbeitest regelmäßig mit KI-Tools, kennst die Grenzen und weißt, wie man Outputs kritisch bewertet. Dein nächster Schritt: Dieses Wissen strategisch in dein Team oder Unternehmen bringen und KI-Prozesse skalieren.',
     color: tokens.colors.primary,
     program: {
-      title: 'Inhouse KI-Schulung',
-      text: 'Bring KI strukturiert in dein Team: ein bis fünf Tage Training, zugeschnitten auf eure Prozesse, Tools und Rollen.',
-      href: '/unternehmen#inhouse-schulungen',
-      cta: 'Format ansehen',
+      title: 'AI Automation Engineer',
+      text: 'In 8 Kurstagen KI-Agenten und Automatisierungen mit n8n bauen, live online. Ideal, wenn du KI nicht nur nutzen, sondern Prozesse damit automatisieren willst.',
+      href: '/ai-automation-engineer',
+      cta: 'Kurs ansehen',
     },
   },
   {

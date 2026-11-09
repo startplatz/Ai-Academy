@@ -27,7 +27,7 @@ const PERSONAS = [
     id: 'professional',
     title: 'Berufstätig',
     subtitle: 'Neben dem Job',
-    description: 'Zwei Abende pro Woche. Automation lernen, ohne den Job zu pausieren.',
+    description: 'Vier Nachmittage pro Woche. KI-Manager/in werden, ohne den Job zu pausieren.',
     cta: 'Kurse entdecken',
     href: '/berufstaetige',
     color: tokens.colors.navy,
