@@ -7,8 +7,12 @@ import { tokens, media } from '../../styles/tokens';
 import { clipBR, CHAMFER, CyberCorners } from '../../styles/cyberpunk';
 
 /* ─────────────────────────────────────────────
-   IMPRESSUM – Rechtlich verbindlich nach § 5 TMG
-   und § 18 Abs. 2 MStV
+   IMPRESSUM – Anbieterkennzeichnung nach § 5 DDG
+   (das TMG gilt seit 14.05.2024 nicht mehr)
+   Geschäftsführer laut Handelsregister HRB 68126 (Abruf 03.08.2026).
+   Keine „Leitung“-Angabe: keine Pflichtangabe (Entscheidung Martin, 09.11.2026).
+   § 18 Abs. 2 MStV: bewusst kein Verantwortlicher benannt
+   (Entscheidung Martin Greguletz, 09.11.2026).
    ───────────────────────────────────────────── */
 
 const Section = styled.section`
@@ -100,7 +104,7 @@ export default function ImpressumPage() {
           <Card>
             <CyberCorners $color={tokens.colors.primary} $size={10} />
 
-            <SectionTitle>Angaben gemäß § 5 TMG</SectionTitle>
+            <SectionTitle>Angaben gemäß § 5 DDG</SectionTitle>
             <Text>
               <strong>STARTPLATZ AI Academy GmbH</strong><br />
               Im Mediapark 5<br />
@@ -110,14 +114,8 @@ export default function ImpressumPage() {
 
             <SectionTitle>Vertreten durch</SectionTitle>
             <Text>
-              Geschäftsführer: Dr. Lorenz Gräf, Jakow Smirin<br />
-              Persönlich haftende Gesellschafterin: STARTPLATZ Verwaltungs GmbH<br />
+              Geschäftsführer: Dr. Lorenz Gräf, Matthias Gräf, Jakow Smirin<br />
               Sitz der Gesellschaft: Köln
-            </Text>
-
-            <SectionTitle>Leitung STARTPLATZ AI Academy</SectionTitle>
-            <Text>
-              Jakow Smirin
             </Text>
 
             <SectionTitle>Kontakt</SectionTitle>
@@ -138,22 +136,16 @@ export default function ImpressumPage() {
               DE279993463
             </Text>
 
-            <SectionTitle>EU-Streitschlichtung</SectionTitle>
-            <Text>
-              Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <Link href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr/</Link>.
-              Unsere E-Mail-Adresse finden Sie oben im Impressum.
-            </Text>
-
             <SectionTitle>Verbraucherstreitbeilegung/Universalschlichtungsstelle</SectionTitle>
             <Text>
-              Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+              Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
             </Text>
 
             <SectionTitle>Haftungsausschluss</SectionTitle>
 
             <Text><strong>Haftung für Inhalte</strong></Text>
             <Text>
-              Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
+              Für eigene Inhalte auf diesen Seiten sind wir nach den allgemeinen Gesetzen verantwortlich. Eine allgemeine Pflicht, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen, besteht nicht (Art. 8 Digital Services Act, Verordnung (EU) 2022/2065). Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
             </Text>
 
             <Text><strong>Haftung für Links</strong></Text>
@@ -163,7 +155,7 @@ export default function ImpressumPage() {
 
             <Text><strong>Urheberrecht</strong></Text>
             <Text>
-              Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
+              Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet, soweit bei einzelnen Inhalten nichts anderes angegeben ist (zum Beispiel eine Creative-Commons-Lizenz oder das Pressematerial unter <Link href="/presse">Presse &amp; Medien</Link>). Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
             </Text>
           </Card>
         </Container>
