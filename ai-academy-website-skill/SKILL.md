@@ -97,7 +97,7 @@ Also verify `/blog/5-skills-ki-manager` redirects to `/insights/5-skills-ki-mana
 - Preserve `LiquidEther` GPU-tier fallback logic in `utils/gpuTier.js`.
 - Do not add large `backdrop-filter` surfaces over the animated background.
 - Calendly must remain lazy-loaded on click through `components/CalendlyWidget.jsx`.
-- ElevenLabs ConvAI must remain lazy-loaded and dismissible from `app/layout.jsx`.
+- ElevenLabs ConvAI loads only after click + privacy notice via `components/KimAssistantLauncher.jsx` (mounted in `app/layout.jsx`). Never load the widget script on page load.
 - Prefer `next/image` or Cloudinary `f_auto,q_auto` for important images.
 - Avoid new uncompressed local images over 1 MB unless deliberately justified.
 - Keep `/api/events` cache behavior: `s-maxage=1800`, `stale-while-revalidate=3600`.

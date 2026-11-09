@@ -1,7 +1,7 @@
-import Script from 'next/script';
 import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
 import StyledComponentsRegistry from '../lib/registry';
 import CalendlyWidget from '../components/CalendlyWidget';
+import KimAssistantLauncher from '../components/KimAssistantLauncher';
 import CookieConsent from '../components/CookieConsent';
 
 /* Consent Mode v2: Defaults (alles denied) MÜSSEN vor gtm.js/gtag.js in den
@@ -167,8 +167,6 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
 
-        {/* ElevenLabs ConvAI Widget — loaded via next/script to avoid hydration mismatch */}
-
         {/* JSON-LD */}
         {jsonLd.map((data, i) => (
           <script
@@ -216,16 +214,8 @@ export default function RootLayout({ children }) {
           <CookieConsent />
         </StyledComponentsRegistry>
         <CalendlyWidget />
-        <elevenlabs-convai
-          agent-id="agent_7801kphmjab6fmk921djmyxcz10x"
-          dismissible="true"
-          avatar-orb-color-1="#bea7ea"
-          avatar-orb-color-2="#fffaff"
-        />
-        <Script
-          src="https://unpkg.com/@elevenlabs/convai-widget-embed"
-          strategy="lazyOnload"
-        />
+        {/* ElevenLabs-Assistent „Kim“: lädt erst nach Klick + Datenschutzhinweis */}
+        <KimAssistantLauncher agentId="agent_7801kphmjab6fmk921djmyxcz10x" />
       </body>
     </html>
   );
