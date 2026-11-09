@@ -300,12 +300,16 @@ const PriceTable = styled.table`
       border-bottom: 0;
     }
 
+    /* Mobil: Spaltenname über dem Wert, lange Werte dürfen umbrechen */
     td {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: ${tokens.spacing.sm};
-      align-items: baseline;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 2px;
       color: ${tokens.colors.text};
+    }
+
+    td:not(:first-child) {
+      white-space: normal;
     }
 
     td::before {
