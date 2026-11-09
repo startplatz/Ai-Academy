@@ -289,7 +289,7 @@ export default function ArbeitssuchendePage() {
 
   const faq = [
     { q: 'Wie bekomme ich den Bildungsgutschein?', a: 'Du sprichst mit deiner Agentur für Arbeit oder deinem Jobcenter. Wir bereiten dich in einem kostenlosen Beratungsgespräch mit allen Kursdaten, Zielen und Argumenten gezielt auf dieses Gespräch vor.' },
-    { q: 'Wie sieht ein typischer Tag in der Weiterbildung aus?', a: 'Mo–Fr, 9–16 Uhr (inkl. Mittagspause): Live-Theorie von 9–12 Uhr, betreute Praxis von 13–15 Uhr. Du nimmst online oder vor Ort in Köln teil.' },
+    { q: 'Wie sieht ein typischer Tag in der Weiterbildung aus?', a: 'Mo–Fr, 9–16 Uhr (inkl. Mittagspause): Live-Theorie von 9–12 Uhr, betreute Praxis von 13–16 Uhr. Du nimmst online oder vor Ort in Köln teil.' },
     { q: 'Was ist die Cert-IT Prüfung?', a: 'Am Ende der Weiterbildung kannst du freiwillig eine unabhängige Abschlussprüfung bei Cert-IT ablegen. Cert-IT ist eine branchengetragene Zertifizierungsstelle, gegründet unter anderem von Fraunhofer, BITKOM und ZVEI. Dein Abschlusszertifikat „KI-Manager/in“ der STARTPLATZ Köln GmbH erhältst du unabhängig davon.' },
     { q: 'Brauche ich einen technischen Hintergrund?', a: 'Nein. Über 1.000 Absolventinnen und Absolventen aus allen Branchen — Marketing, HR, Journalismus, Vertrieb — haben es ohne Vorkenntnisse geschafft. Du lernst mit Tools wie ChatGPT, n8n und APIs.' },
     { q: 'Was passiert nach den 8 Wochen?', a: 'Du gehst mit einem anerkannten Zertifikat, einem eigenen Praxisprojekt und klarer Positionierung für Bewerbungen. Über 60.000 offene KI-Stellen warten — und du bist bereit.' },

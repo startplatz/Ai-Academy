@@ -276,12 +276,45 @@ export default function DatenschutzPage() {
               Weitere Informationen zur Datenverarbeitung durch Microsoft Clarity finden Sie in der Datenschutzerklärung von Microsoft: <Link href="https://privacy.microsoft.com/de-de/privacystatement" target="_blank" rel="noopener noreferrer">https://privacy.microsoft.com/de-de/privacystatement</Link> sowie in den Informationen zu Clarity: <Link href="https://learn.microsoft.com/en-us/clarity/setup-and-installation/cookie-list" target="_blank" rel="noopener noreferrer">https://learn.microsoft.com/en-us/clarity/setup-and-installation/cookie-list</Link>.
             </Text>
 
+            <SubTitle>Terminbuchung über Calendly</SubTitle>
+            <Text>
+              Für die Buchung von Beratungsgesprächen nutzen wir Calendly. Anbieter ist die Calendly, LLC, 115 E Main St., Ste A1B, Buford, GA 30518, USA („Calendly“). Erst wenn Sie auf einen Button zur Terminbuchung klicken, werden Skripte und Stylesheets von Servern von Calendly geladen und das Buchungsfenster geöffnet; dabei wird Ihre IP-Adresse an Calendly übertragen.
+            </Text>
+            <Text>
+              Die Angaben, die Sie bei der Buchung machen (z.B. Name, E-Mail-Adresse, Telefonnummer, gewünschter Termin und weitere freiwillige Angaben), werden von Calendly in unserem Auftrag verarbeitet und an uns übermittelt. Zusätzlich geben wir die Kampagnenparameter (UTM-Parameter) der aufgerufenen Seite an Calendly weiter, damit wir nachvollziehen können, über welchen Kanal die Buchung zustande kam. Die Termindaten übernehmen wir in unser CRM-System HubSpot (siehe unten).
+            </Text>
+            <Text>
+              Die Verarbeitung erfolgt zur Durchführung vorvertraglicher Maßnahmen auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO; die Auswertung der Kampagnenparameter beruht auf unserem berechtigten Interesse an der Messung unserer Marketingkanäle (Art. 6 Abs. 1 lit. f DSGVO). Calendly ist nach dem EU-US Data Privacy Framework zertifiziert; die Datenübertragung in die USA stützt sich darauf sowie ergänzend auf die Standardvertragsklauseln der EU-Kommission. Weitere Informationen: <Link href="https://calendly.com/privacy" target="_blank" rel="noopener noreferrer">https://calendly.com/privacy</Link>.
+            </Text>
+
+            <SubTitle>Kundenverwaltung mit HubSpot (CRM)</SubTitle>
+            <Text>
+              Zur Verwaltung von Anfragen, Beratungsterminen und Kundenbeziehungen nutzen wir das CRM-System HubSpot. Anbieter ist die HubSpot Ireland Limited, 1 Sir John Rogerson’s Quay, Dublin 2, Irland; Muttergesellschaft ist die HubSpot, Inc., USA. Auf dieser Website selbst ist HubSpot nicht technisch eingebunden; es werden keine HubSpot-Cookies oder Tracking-Skripte geladen.
+            </Text>
+            <Text>
+              In HubSpot speichern wir die Daten, die Sie uns bei einer Terminbuchung über Calendly, per E-Mail oder Telefon mitteilen (z.B. Name, Kontaktdaten, Ihr Interesse an einer Weiterbildung und Notizen aus Beratungsgesprächen). HubSpot verarbeitet diese Daten in unserem Auftrag. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen und Vertragserfüllung) sowie Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer effizienten Bearbeitung von Anfragen und Kundenbeziehungen).
+            </Text>
+            <Text>
+              Eine Übermittlung in die USA ist nicht ausgeschlossen. HubSpot ist nach dem EU-US Data Privacy Framework zertifiziert; ergänzend werden die Standardvertragsklauseln der EU-Kommission verwendet. Weitere Informationen: <Link href="https://legal.hubspot.com/privacy-policy" target="_blank" rel="noopener noreferrer">https://legal.hubspot.com/privacy-policy</Link>.
+            </Text>
+
+            <SubTitle>KI-Assistent von ElevenLabs</SubTitle>
+            <Text>
+              Auf dieser Website ist ein KI-Assistent eingebunden, mit dem Sie per Sprache oder Text Fragen zu unseren Weiterbildungen stellen können. Anbieter ist ElevenLabs (ElevenLabs Poland sp. z o.o., Plac Marszałka Józefa Piłsudskiego 8, 00-073 Warschau, Polen, sowie Eleven Labs Inc., 169 Madison Ave #2484, New York, NY 10016, USA).
+            </Text>
+            <Text>
+              Das Programm zur Darstellung des Assistenten wird nach dem Laden unserer Seite automatisch über das Content-Delivery-Netzwerk unpkg.com und von Servern von ElevenLabs abgerufen. Dabei werden Ihre IP-Adresse sowie technische Informationen (z.B. Browsertyp, Uhrzeit) übertragen. Wenn Sie den Assistenten starten, werden Ihre Spracheingaben bzw. Textnachrichten an ElevenLabs übertragen und dort verarbeitet, um die Antworten zu erzeugen; Gesprächsverläufe können gespeichert und uns zur Auswertung bereitgestellt werden. Bitte geben Sie im Gespräch keine sensiblen personenbezogenen Daten an. Sie können den Assistenten über das Schließen-Symbol ausblenden.
+            </Text>
+            <Text>
+              Die Einbindung erfolgt auf Grundlage unseres berechtigten Interesses an einem leicht erreichbaren Informationsangebot (Art. 6 Abs. 1 lit. f DSGVO). Soweit Sie über den Assistenten Fragen zu einer Weiterbildung klären, erfolgt die Verarbeitung zur Durchführung vorvertraglicher Maßnahmen (Art. 6 Abs. 1 lit. b DSGVO). Die US-Gesellschaft von ElevenLabs ist nach dem EU-US Data Privacy Framework zertifiziert; im Übrigen stützt sich eine Übermittlung in die USA auf die Standardvertragsklauseln der EU-Kommission. Weitere Informationen: <Link href="https://elevenlabs.io/privacy-policy" target="_blank" rel="noopener noreferrer">https://elevenlabs.io/privacy-policy</Link>.
+            </Text>
+
             <SectionTitle>6. Änderung dieser Datenschutzerklärung</SectionTitle>
             <Text>
               Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen in der Datenschutzerklärung umzusetzen. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung.
             </Text>
             <Text>
-              Stand: April 2026
+              Stand: November 2026
             </Text>
           </Card>
         </Container>
