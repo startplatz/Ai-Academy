@@ -22,13 +22,6 @@
 - Format: online oder vor Ort in Köln
 - URL: https://startplatz-ai-academy.de/berufstaetige
 
-### OneDay Workshops
-- Dauer: 1 Tag intensiv
-- Preis: ab 590 EUR (Early Bird) / 790 EUR (regulär)
-- Themen: Claude Cowork, KI-Kompetenz, KI-Start, Immobilien-KI
-- Zielgruppe: Berufstätige, Freelancer, Teams
-- URL: https://startplatz-ai-academy.de/oneday
-
 ### Für Unternehmen
 - Innovation Day: 1 Tag, auf Anfrage
 - Inhouse Schulungen: 1-5 Tage, maßgeschneidert

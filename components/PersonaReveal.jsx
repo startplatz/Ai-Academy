@@ -37,7 +37,7 @@ const PERSONAS = [
     id: 'enterprise',
     title: 'Unternehmen',
     subtitle: 'Für Teams',
-    description: 'Vom OneDay Workshop bis zur 12-monatigen Private Academy.',
+    description: 'Vom Innovation Day bis zur 12-monatigen Private Academy.',
     cta: 'Beratung anfragen',
     href: '/unternehmen',
     color: tokens.colors.orange,

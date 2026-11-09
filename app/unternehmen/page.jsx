@@ -127,12 +127,6 @@ export default function UnternehmenPage() {
       duration: '3-12 Monate',
       text: 'Eure eigene KI-Akademie. Maßgeschneidert. Begleitet. Messbar.',
     },
-    {
-      id: 'oneday-workshops',
-      title: 'OneDay Workshops',
-      duration: '1 Tag',
-      text: 'Spezifische Tools und Skills, direkt einsetzbar.',
-    },
   ];
 
   const offerDetails = [
@@ -216,7 +210,7 @@ export default function UnternehmenPage() {
         badgeColor={tokens.colors.orange}
         badgeBg={tokens.colors.orangeBg}
         title="Euer Team nutzt KI produktiv — <span>nicht nur zum Experimentieren.</span>"
-        subtitle="Von OneDay Workshops bis zur 12-monatigen Private Academy. 100+ Unternehmen vertrauen uns bereits."
+        subtitle="Vom Innovation Day bis zur 12-monatigen Private Academy. 100+ Unternehmen vertrauen uns bereits."
         breadcrumbs={[{ label: 'Unternehmen', href: '/unternehmen', active: true }]}
         accentColor={tokens.colors.orangeBg}
         image="https://res.cloudinary.com/startplatz/image/upload/f_auto,q_auto,w_900/v1776469603/ai-hub/website/AI-Academy-Website-Images/target-audience-unternehmen.png"
@@ -224,8 +218,8 @@ export default function UnternehmenPage() {
         <Button href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" variant="orange" size="lg" arrow>
           Gespräch buchen
         </Button>
-        <Button href="/oneday" variant="secondary" size="lg">
-          OneDay ansehen
+        <Button href="/unternehmen#angebote" variant="secondary" size="lg">
+          Formate ansehen
         </Button>
       </PageHero>
 
@@ -253,9 +247,9 @@ export default function UnternehmenPage() {
             label: offer.duration,
             title: offer.title,
             description: offer.text,
-            href: index < 3 ? `/unternehmen#${offer.id}` : '/oneday',
-            cta: index < 3 ? 'Format vertiefen' : 'OneDays vergleichen',
-            size: index === 0 ? 'wide' : index === 1 ? 'sm' : 'md',
+            href: `/unternehmen#${offer.id}`,
+            cta: 'Format vertiefen',
+            size: index === 0 ? 'wide' : index === 1 ? 'sm' : 'full',
             chips: index === 0
               ? ['Pilot', 'Roadmap']
               : index === 1

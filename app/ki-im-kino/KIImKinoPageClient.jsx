@@ -604,12 +604,9 @@ export default function KIImKinoPageClient() {
 
         <CTABanner
           title="Aus dem Download wird ein <span>funktionierendes Setup.</span>"
-          subtitle="Im Praxistag richten wir Hausprofil, Skills und sinnvolle Verbindungen gemeinsam ein. Wenn ihr erst klären möchtet, was zu eurem Haus passt, starten wir mit einer persönlichen Beratung."
+          subtitle="Ihr wollt Hausprofil, Skills und sinnvolle Verbindungen gemeinsam mit uns einrichten? In einer persönlichen Beratung klären wir, was zu eurem Haus passt."
         >
-          <Button href="/oneday" variant="primary" size="lg" arrow>
-            Praxistage ansehen
-          </Button>
-          <Button href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" variant="secondary" size="lg">
+          <Button href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" variant="primary" size="lg">
             Persönliche Beratung buchen
           </Button>
         </CTABanner>

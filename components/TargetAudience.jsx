@@ -60,7 +60,7 @@ const AUDIENCES = [
     badge: 'Individuell',
     title: 'Unternehmen',
     titleMeta: 'Für Teams',
-    description: 'Euer Team nutzt KI produktiv — nicht nur zum Experimentieren. Vom OneDay Workshop bis zur 12-monatigen Private Academy.',
+    description: 'Euer Team nutzt KI produktiv — nicht nur zum Experimentieren. Vom Innovation Day bis zur 12-monatigen Private Academy.',
     features: [
       'Innovation Day (1 Tag) bis Private Academy',
       '100+ Unternehmen bereits geschult',

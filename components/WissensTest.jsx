@@ -176,10 +176,10 @@ const LEVELS = [
     description: 'Du arbeitest regelmäßig mit KI-Tools, kennst die Grenzen und weißt, wie man Outputs kritisch bewertet. Dein nächster Schritt: Dieses Wissen strategisch in dein Team oder Unternehmen bringen und KI-Prozesse skalieren.',
     color: tokens.colors.primary,
     program: {
-      title: 'OneDay Workshops',
-      text: 'Ein Tag, ein Thema, ein konkretes Deliverable. Ideal, wenn du schnell Orientierung oder ein Tool-Setup brauchst.',
-      href: '/oneday',
-      cta: 'OneDay ansehen',
+      title: 'Inhouse KI-Schulung',
+      text: 'Bring KI strukturiert in dein Team: ein bis fünf Tage Training, zugeschnitten auf eure Prozesse, Tools und Rollen.',
+      href: '/unternehmen#inhouse-schulungen',
+      cta: 'Format ansehen',
     },
   },
   {
@@ -190,10 +190,10 @@ const LEVELS = [
     description: 'Beeindruckend! Du verstehst KI auf einem hohen Niveau, evaluierst Outputs kritisch und denkst strategisch über KI-Integration nach. Du bist genau die Art von Person, die die KI-Transformation in Unternehmen vorantreiben kann.',
     color: tokens.colors.primary,
     program: {
-      title: 'OneDay Deep Dive',
-      text: 'Für Fortgeschrittene passt ein fokussierter OneDay Deep Dive oder ein Teamformat, das direkt in Umsetzung geht.',
-      href: '/oneday',
-      cta: 'Deep Dive ansehen',
+      title: 'KI-Formate für Unternehmen',
+      text: 'Für Fortgeschrittene passt ein Teamformat, das direkt in Umsetzung geht: vom Innovation Day bis zur eigenen Private Academy.',
+      href: '/unternehmen',
+      cta: 'Formate ansehen',
     },
   },
 ];

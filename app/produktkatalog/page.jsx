@@ -16,7 +16,6 @@ import { clipBR, CHAMFER, CyberCorners } from '../../styles/cyberpunk';
 import { CALENDLY_URL } from '../../lib/site';
 import {
   FLAGSHIP_PRODUCTS,
-  ONE_DAY_PRODUCTS,
   PRICE_LIST_2026,
   PRODUCT_IMAGES,
 } from '../../lib/productCatalog';
@@ -339,10 +338,6 @@ const PriceAsideGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: ${tokens.spacing.md};
-
-  ${media.md} {
-    grid-template-columns: repeat(3, 1fr);
-  }
 `;
 
 const PriceAside = styled.article`
@@ -386,12 +381,6 @@ const ProductGrid = styled.div`
   ${media.md} {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-`;
-
-const OneDayGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
-  gap: ${tokens.spacing.lg};
 `;
 
 const ProductCard = styled.article`
@@ -573,9 +562,9 @@ function ProductTile({ product, compact = false }) {
 
 export default function ProduktkatalogPage() {
   const facts = [
-    { value: 'ab 250 €', label: 'OneDay Einstieg', color: tokens.colors.primary },
     { value: '100%', label: 'Förderung möglich', color: tokens.colors.mint },
-    { value: '7.900 €', label: 'Corporate Inhouse', color: tokens.colors.orange },
+    { value: '8 / 16 Wochen', label: 'KI-Manager/in VZ / TZ', color: tokens.colors.primary },
+    { value: 'auf Anfrage', label: 'Formate für Teams', color: tokens.colors.orange },
   ];
 
   return (
@@ -585,16 +574,16 @@ export default function ProduktkatalogPage() {
         badgeColor={tokens.colors.primary}
         badgeBg={tokens.colors.primaryLighter}
         title="Alle Formate.<br /><span>Ein Überblick.</span>"
-        subtitle="Alle Preise netto, zzgl. 19 % MwSt. OneDay, KI-Manager/in in Vollzeit und Teilzeit und Corporate Inhouse auf einen Blick."
+        subtitle="Alle Preise netto, zzgl. 19 % MwSt. KI-Manager/in in Vollzeit und Teilzeit und Formate für Unternehmen auf einen Blick."
         breadcrumbs={[{ label: 'Produktkatalog', href: '/produktkatalog', active: true }]}
         accentColor={tokens.colors.primaryLighter}
-        image={PRODUCT_IMAGES.claudeCowork}
+        image={PRODUCT_IMAGES.arbeitssuchende}
       >
         <Button href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" variant="primary" size="lg" arrow>
           Beratung buchen
         </Button>
-        <Button href="/oneday" variant="secondary" size="lg">
-          OneDays ansehen
+        <Button href="#hauptformate" variant="secondary" size="lg">
+          Programme vergleichen
         </Button>
       </PageHero>
 
@@ -605,7 +594,7 @@ export default function ProduktkatalogPage() {
             <IntroTitle>Der schnelle Blick auf das passende Produkt.</IntroTitle>
             <IntroText>
               Manche Formate sind klare offene Programme, andere werden auf Teamgröße, Zielbild und Branche angepasst.
-              Der Katalog hilft dir, schnell zwischen geförderter Weiterbildung, Tagesworkshop und Unternehmensformat
+              Der Katalog hilft dir, schnell zwischen geförderter Weiterbildung und Unternehmensformat
               zu unterscheiden.
             </IntroText>
             <MiniFacts>
@@ -621,9 +610,8 @@ export default function ProduktkatalogPage() {
             <CyberCorners $color={tokens.colors.primary} $size={10} />
             <NoteKicker>Preislogik</NoteKicker>
             <NoteList>
-              <li>OneDay Workshops haben feste Preisanker und eignen sich für schnelle Entscheidungen.</li>
               <li>Die KI-Manager Weiterbildungen in Vollzeit und Teilzeit sind AZAV-zugelassen und bei passender Voraussetzung förderfähig (Bildungsgutschein bzw. QCG).</li>
-              <li>Corporate Inhouse ist für geschlossene Gruppen bis 10 Teilnehmer:innen pauschal kalkuliert.</li>
+              <li>Formate für Unternehmen kalkulieren wir nach Zielbild, Dauer und Teamgröße.</li>
               <li>{PRICE_LIST_2026.note}</li>
             </NoteList>
           </NotePanel>
@@ -707,25 +695,14 @@ export default function ProduktkatalogPage() {
               <PriceAsideValue>{PRICE_LIST_2026.corporate.price}</PriceAsideValue>
               <PriceAsideText>{PRICE_LIST_2026.corporate.description}</PriceAsideText>
             </PriceAside>
-            <PriceAside $bg={tokens.colors.primaryLighter}>
-              <CyberCorners $color={tokens.colors.primary} $size={7} />
-              <PriceAsideLabel $color={tokens.colors.primary}>{PRICE_LIST_2026.addon.title}</PriceAsideLabel>
-              <PriceAsideValue>{PRICE_LIST_2026.addon.price}</PriceAsideValue>
-              <PriceAsideText>{PRICE_LIST_2026.addon.description}</PriceAsideText>
-            </PriceAside>
-            <PriceAside $bg={tokens.colors.surfaceAlt}>
-              <CyberCorners $color={tokens.colors.textDim} $size={7} />
-              <PriceAsideLabel $color={tokens.colors.textDim}>{PRICE_LIST_2026.summerWeek.title}</PriceAsideLabel>
-              <PriceAsideValue>{PRICE_LIST_2026.summerWeek.status}</PriceAsideValue>
-              <PriceAsideText>Das Format bleibt im Portfolio, wird aktuell aber nicht aktiv angeboten.</PriceAsideText>
-            </PriceAside>
           </PriceAsideGrid>
         </PriceSheet>
       </SectionBlock>
 
       <SectionBlock
+        id="hauptformate"
         badge="Hauptformate"
-        title="Vier Wege in <span>KI-Kompetenz.</span>"
+        title="Drei Wege in <span>KI-Kompetenz.</span>"
         subtitle="Vom geförderten Neustart bis zum Teamprogramm: hier siehst du, welches Format für welche Situation gedacht ist."
         accent={tokens.colors.glow}
       >
@@ -734,20 +711,6 @@ export default function ProduktkatalogPage() {
             <ProductTile key={product.title} product={product} />
           ))}
         </ProductGrid>
-      </SectionBlock>
-
-      <SectionBlock
-        badge="OneDay Preisliste"
-        title="Ein Tag, ein Thema, <span>klare Preise.</span>"
-        subtitle="Die OneDay-Reihe ist der schnellste Einstieg in ein konkretes KI-Thema. Ideal für Einzelpersonen, Professionals und Pilotgruppen."
-        variant="muted"
-        accent={tokens.colors.glow}
-      >
-        <OneDayGrid>
-          {ONE_DAY_PRODUCTS.filter((product) => product.title !== 'OneDay Immobilien').map((product) => (
-            <ProductTile key={product.title} product={product} compact />
-          ))}
-        </OneDayGrid>
       </SectionBlock>
 
       <SectionBlock
@@ -765,8 +728,8 @@ export default function ProduktkatalogPage() {
         <Button href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" variant="primary" size="lg" arrow>
           Beratung buchen
         </Button>
-        <Button href="/oneday" variant="secondary" size="lg">
-          OneDay Reihe ansehen
+        <Button href="/unternehmen" variant="secondary" size="lg">
+          Formate für Unternehmen
         </Button>
       </CTABanner>
     </SubpageLayout>

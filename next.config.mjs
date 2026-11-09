@@ -20,6 +20,11 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // OneDay-Workshops werden nicht mehr angeboten (Entscheidung Martin, 09.11.2026).
+      // Die Skill Library unter /oneday/claude-cowork/skill-library bleibt erreichbar.
+      { source: '/oneday', destination: '/produktkatalog', permanent: true },
+      { source: '/oneday/claude-cowork', destination: '/produktkatalog', permanent: true },
+      { source: '/oneday/immobilien', destination: '/produktkatalog', permanent: true },
       // Alte startplatz.de KI-Unterseiten → neue Domain
       {
         source: '/ki-weiterbildungen',

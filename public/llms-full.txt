@@ -38,22 +38,7 @@ Für Berufstätige, die nachmittags ab 14 Uhr freigestellt werden und KI im Job 
 - Inhalte: dasselbe Programm wie die Vollzeit-Variante
 - URL: https://startplatz-ai-academy.de/berufstaetige
 
-### 3. OneDay Workshops (Tagesworkshops)
-Intensive Praxistage zu spezifischen KI-Themen.
-
-- Dauer: 1 Tag (ca. 8 Stunden)
-- Format: Digital oder Präsenz
-- Preis: 590 EUR (Early Bird) / 790 EUR (regulär)
-- Keine Förderung nötig (Privatpersonen und Unternehmen)
-- Verfügbare Workshops:
-  - Claude Cowork: Einen Tag mit Claude arbeiten — Recherche, Schreiben, Analyse
-  - KI-Kompetenz: Grundlagen für den beruflichen Einsatz von KI
-  - KI-Start: Einstieg in die Welt der KI für Anfänger
-  - KI für Immobilien: KI-Workflows für Makler und Immobilienunternehmen
-- Ergebnis: Konkretes Deliverable, das sofort einsetzbar ist
-- URL: https://startplatz-ai-academy.de/oneday
-
-### 4. Für Unternehmen
+### 3. Für Unternehmen
 Maßgeschneiderte KI-Schulungen für Teams und Organisationen.
 
 - Innovation Day: 1 Tag, Impulsvortrag + Workshop für Teams (auf Anfrage)
@@ -104,7 +89,7 @@ Maßgeschneiderte KI-Schulungen für Teams und Organisationen.
 ## Häufig gestellte Fragen
 
 ### Brauche ich Vorkenntnisse?
-Nein. Die KI-Manager Weiterbildungen starten bei null. Die OneDay Workshops variieren je nach Thema.
+Nein. Die KI-Manager Weiterbildungen starten bei null.
 
 ### Ist die Weiterbildung anerkannt?
 Ja. Die KI-Manager Weiterbildungen sind AZAV-zugelassene Maßnahmen (Träger: STARTPLATZ Köln GmbH, zertifiziert durch Kiwa ZERTPUNKT GmbH). In Vollzeit und Teilzeit kann zusätzlich eine freiwillige, unabhängige Abschlussprüfung bei Cert-IT abgelegt werden.

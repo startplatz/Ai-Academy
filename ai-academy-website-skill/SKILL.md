@@ -75,9 +75,7 @@ Smoke-test these paths:
 - `/arbeitssuchende`
 - `/berufstaetige`
 - `/unternehmen`
-- `/oneday`
-- `/oneday/claude-cowork`
-- `/oneday/immobilien`
+- `/oneday`, `/oneday/claude-cowork`, `/oneday/immobilien` → Weiterleitung auf `/produktkatalog` (OneDays werden seit 11/2026 nicht mehr angeboten)
 - `/experten`
 - `/ueber-uns`
 - `/insights`

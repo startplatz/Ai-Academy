@@ -15,7 +15,6 @@ const routes = [
   { path: '/arbeitssuchende', priority: 0.9, changeFrequency: 'weekly', updated: '2026-06-01' },
   { path: '/berufstaetige', priority: 0.9, changeFrequency: 'weekly', updated: '2026-10-09' },
   { path: '/unternehmen', priority: 0.9, changeFrequency: 'weekly', updated: '2026-10-09' },
-  { path: '/oneday', priority: 0.9, changeFrequency: 'weekly', updated: '2026-05-03' },
   { path: '/produktkatalog', priority: 0.8, changeFrequency: 'monthly', updated: '2026-05-03' },
   { path: '/experten', priority: 0.7, changeFrequency: 'monthly', updated: '2026-04-29' },
   { path: '/ueber-uns', priority: 0.6, changeFrequency: 'monthly', updated: '2026-04-29' },
@@ -27,9 +26,6 @@ const routes = [
   { path: '/wissens-test', priority: 0.7, changeFrequency: 'monthly', updated: '2026-05-05' },
   { path: '/prompt-challenge', priority: 0.8, changeFrequency: 'monthly', updated: '2026-08-12' },
   { path: '/presse', priority: 0.5, changeFrequency: 'monthly', updated: '2026-04-25' },
-  // OneDay detail pages
-  { path: '/oneday/claude-cowork', priority: 0.8, changeFrequency: 'weekly', updated: '2026-05-17' },
-  { path: '/oneday/immobilien', priority: 0.8, changeFrequency: 'weekly', updated: '2026-05-03' },
   // Insight articles
   { path: '/insights/ki-ranglisten-gemini-4-carbon', priority: 0.7, changeFrequency: 'monthly', updated: '2026-11-09' },
   { path: '/insights/canva-craft-ki-bildmodell', priority: 0.7, changeFrequency: 'monthly', updated: '2026-10-30' },
