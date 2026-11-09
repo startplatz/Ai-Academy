@@ -1,0 +1,93 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "KI-Ranglisten: Ist Gemini 4 Carbon das beste Modell?",
+      "description": "Gemini 4 Carbon führt zwei wichtige KI-Ranglisten an, beim Coding liegt Claude vorn. Was Benchmarks messen und wie du das passende Modell findest.",
+      "datePublished": "2026-11-09",
+      "dateModified": "2026-11-09",
+      "inLanguage": "de-DE",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://startplatz-ai-academy.de/insights/ki-ranglisten-gemini-4-carbon"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "STARTPLATZ AI Academy (Redaktion)",
+        "url": "https://startplatz-ai-academy.de"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "STARTPLATZ AI Academy",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://startplatz-ai-academy.de/android-chrome-512x512.png"
+        }
+      },
+      "keywords": "KI-Ranglisten, KI-Benchmarks, Gemini 4 Carbon, Gemini 4 Argon, Artificial Analysis, Text Arena, Claude Opus 5.5, bestes KI-Modell, KI-Modell auswählen, Google Gemini",
+      "isBasedOn": "https://startplatz-ai-academy.beehiiv.com/p/kw45-ist-google-zurueck-an-der-ki-spitze"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Was ist Gemini 4 Carbon?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Gemini 4 Carbon ist das neueste Sprachmodell von Google DeepMind und nach Googles Angaben das bisher stärkste. Es erschien zwei Wochen nach Gemini 4 Argon und ist für schwierige technische Aufgaben gedacht, die über viele Schritte laufen. Vorerst können es nur ausgewählte Fachleute für Cyberabwehr und Partner nutzen. Das breit verfügbare Modell ist weiterhin Argon."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist Gemini 4 Carbon das beste KI-Modell?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Das hängt davon ab, wo man misst. In der Gesamtwertung von Artificial Analysis und in der Text Arena liegt Carbon vorn. Beim selbstständigen Programmieren führt dagegen Claude Opus 5.5 von Anthropic, Carbon folgt auf Platz zwei. Ein allgemein bestes Modell gibt es deshalb nicht, nur das beste Modell für eine bestimmte Aufgabe."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was ist die Text Arena?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Die Text Arena ist eine Rangliste, die auf Abstimmungen beruht. Nutzer:innen vergleichen zwei Antworten und wählen die bessere, daraus entsteht eine Punktzahl. Carbon liegt dort mit 1.528 Punkten knapp vor Argon mit 1.520. Platz eins und drei trennen nur 19 Punkte bei Werten um 1.500. Die Rangliste zeigt also vor allem, was Menschen gefällt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was ist der Artificial Analysis Intelligence Index?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Der Intelligence Index von Artificial Analysis bündelt viele einzelne Tests zu einer Gesamtwertung. Carbon kommt dort auf 59 Punkte und liegt damit vorn, Argon erreicht 50. Weil der Index viele Fähigkeiten zusammenfasst, eignet er sich gut für einen ersten Überblick. Wie gut ein Modell eine bestimmte Aufgabe löst, zeigt er aber nicht."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich Gemini 4 Carbon schon nutzen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vorerst nicht. Carbon steht zunächst nur ausgewählten Sicherheitsexpert:innen zur Verfügung, weitere Partner sollen folgen. Google will das Modell später für Entwickler:innen, Unternehmen und Privatnutzer:innen öffnen, einen Termin nennt Google bisher nicht. Nutzen kannst du Gemini 4 Argon, das in der Gemini-App mit Google AI Pro oder Ultra verfügbar ist."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie finde ich das passende KI-Modell für meine Arbeit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Leg zuerst fest, wofür du das Modell brauchst, und schau dir dann die Rangliste an, die genau diese Fähigkeit misst. Prüf danach, ob du Zugang hast und was eine Aufgabe kostet. Am Ende entscheidet ein eigener Test: Gib zwei oder drei Modellen dieselbe echte Aufgabe aus deinem Job und vergleiche die Ergebnisse."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Warum ist die Alphabet-Aktie trotz Spitzenplatz gefallen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Alphabet steigerte den Quartalsumsatz um 25 Prozent auf 127,6 Milliarden Dollar, trotzdem fiel die Aktie am Folgetag um 12,6 Prozent. Der Umsatz blieb knapp unter den Erwartungen, und die Börse schaute auf Investitionen von 51,4 Milliarden Dollar im Quartal. Die Zweifel an den hohen KI-Investitionen wuchsen, Ranglistenplätze allein überzeugten nicht."
+          }
+        }
+      ]
+    }
+  ]
+}

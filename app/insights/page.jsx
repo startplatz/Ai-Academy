@@ -13,14 +13,22 @@ import { CALENDLY_URL } from '../../lib/site';
 /* Blog posts data */
 const BLOG_POSTS = [
   {
+    id: 13,
+    slug: 'ki-ranglisten-gemini-4-carbon',
+    title: 'KI-Ranglisten: Ist Google mit Gemini 4 Carbon vorn?',
+    badge: 'KI-Modelle',
+    excerpt: 'Gemini 4 Carbon führt zwei KI-Ranglisten an, beim Coding liegt Claude vorn. Was Benchmarks messen und was das für dich heißt.',
+    meta: '09 Nov 2026 • 8 min Lesezeit',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80&auto=format',
+    featured: true,
+  },
+  {
     id: 12,
     slug: 'canva-craft-ki-bildmodell',
     title: 'Canva Craft: Was das KI-Bildmodell für Designs kann',
     badge: 'KI-Tools',
     excerpt: 'Canva hat mit Craft ein eigenes KI-Bildmodell für Poster, Folien und Infografiken gebaut. Was es kann und wie du es testest.',
     meta: '30 Okt 2026 • 8 min Lesezeit',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80&auto=format',
-    featured: true,
   },
   {
     id: 11,

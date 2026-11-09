@@ -14,10 +14,10 @@ import PlanetSection from './PlanetSection';
    ───────────────────────────────────────────── */
 
 const MAIN_STORY = {
-  badge: 'KI-Tools',
-  title: 'Canva Craft: Was das KI-Bildmodell für Designs kann',
-  href: '/insights/canva-craft-ki-bildmodell',
-  meta: '30 Okt 2026 · 8 min Lesezeit',
+  badge: 'KI-Modelle',
+  title: 'KI-Ranglisten: Ist Google mit Gemini 4 Carbon vorn?',
+  href: '/insights/ki-ranglisten-gemini-4-carbon',
+  meta: '09 Nov 2026 · 8 min Lesezeit',
   image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80&auto=format',
 };
 
