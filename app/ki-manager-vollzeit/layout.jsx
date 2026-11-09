@@ -2,13 +2,13 @@ import { withSocial } from '../../lib/seo';
 import { TRAEGER, getCourse } from '../../lib/academyFacts';
 
 const course = getCourse('ki-manager-vollzeit');
-const PAGE_URL = 'https://startplatz-ai-academy.de/arbeitssuchende';
+const PAGE_URL = 'https://startplatz-ai-academy.de/ki-manager-vollzeit';
 
 export const metadata = withSocial({
   title: 'KI-Manager Weiterbildung mit Bildungsgutschein — Köln & online',
   description:
     `KI-Manager/in in Vollzeit: ${course.durationWeeks} Wochen, ${course.teachingUnits} UE, online oder vor Ort in Köln. AZAV-Maßnahme ${course.massnahmennummer}, mit bewilligtem Bildungsgutschein ohne Kosten für dich. Praxisprojekt, optionale Prüfung bei Cert-IT.`,
-  alternates: { canonical: '/arbeitssuchende' },
+  alternates: { canonical: '/ki-manager-vollzeit' },
   openGraph: {
     title: 'KI-Manager Weiterbildung mit Bildungsgutschein — Köln & online',
     description:

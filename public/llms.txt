@@ -11,7 +11,7 @@
 - Abschluss: Abschlusszertifikat „KI-Manager/in“ der STARTPLATZ Köln GmbH, optional unabhängige Abschlussprüfung bei Cert-IT
 - Zielgruppe: Arbeitssuchende und Karrierewechsler
 - Format: online oder vor Ort in Köln
-- URL: https://startplatz-ai-academy.de/arbeitssuchende
+- URL: https://startplatz-ai-academy.de/ki-manager-vollzeit
 
 ### KI-Manager/in (Teilzeit)
 - Dauer: 16 Wochen, 320 Unterrichtseinheiten, Mo–Do 14–18 Uhr (Mo + Mi Theorie, Di + Do betreute Praxis)
@@ -20,7 +20,7 @@
 - Abschluss: Abschlusszertifikat „KI-Manager/in“ der STARTPLATZ Köln GmbH, optional unabhängige Abschlussprüfung bei Cert-IT
 - Zielgruppe: Berufstätige, die nachmittags ab 14 Uhr freigestellt werden
 - Format: online oder vor Ort in Köln
-- URL: https://startplatz-ai-academy.de/berufstaetige
+- URL: https://startplatz-ai-academy.de/ki-manager-teilzeit
 
 ### AI Automation Engineer (Vollzeit, kompakt)
 - Dauer: 8 Kurstage Vollzeit, 64 Unterrichtseinheiten, täglich 9–12 und 13–16 Uhr, Start immer mittwochs

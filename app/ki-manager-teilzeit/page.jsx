@@ -253,7 +253,7 @@ export default function BerufstaetigePage() {
         badgeBg={tokens.colors.navyBg}
         title="Nachmittags lernen. <span>Morgen anwenden.</span>"
         subtitle={`KI-Manager/in in Teilzeit: ${course.durationWeeks} Wochen, Montag bis Donnerstag ab 14 Uhr, online oder vor Ort in Köln. Förderfähig über das Qualifizierungschancengesetz.`}
-        breadcrumbs={[{ label: 'Berufstätige', href: '/berufstaetige', active: true }]}
+        breadcrumbs={[{ label: 'KI-Manager (Teilzeit)', href: '/ki-manager-teilzeit', active: true }]}
         accentColor={tokens.colors.navyBg}
         image="https://res.cloudinary.com/startplatz/image/upload/f_auto,q_auto,w_900/v1776469600/ai-hub/website/AI-Academy-Website-Images/target-audience-berufstaetige.png"
       >

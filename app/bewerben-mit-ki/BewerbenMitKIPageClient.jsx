@@ -518,7 +518,7 @@ export default function BewerbenMitKIPageClient() {
                 </BridgeText>
               </div>
               <ActionRow>
-                <PrimaryDownload as={Link} href="/arbeitssuchende">
+                <PrimaryDownload as={Link} href="/ki-manager-vollzeit">
                   KI-Manager ansehen
                 </PrimaryDownload>
                 <SecondaryLink href="/wissens-test">

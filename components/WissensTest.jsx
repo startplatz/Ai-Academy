@@ -150,7 +150,7 @@ const LEVELS = [
     program: {
       title: 'KI-Manager/in (Vollzeit)',
       text: '8 Wochen Vollzeit, online oder vor Ort und 100% förderfähig mit Bildungsgutschein. Für deinen strukturierten KI-Neustart.',
-      href: '/arbeitssuchende',
+      href: '/ki-manager-vollzeit',
       cta: 'Weiterbildung ansehen',
     },
   },
@@ -164,7 +164,7 @@ const LEVELS = [
     program: {
       title: 'KI-Manager/in (Teilzeit)',
       text: '16 Wochen berufsbegleitend, Mo–Do ab 14 Uhr. Für konkrete Workflows, Automatisierung und sichere Anwendung im Job.',
-      href: '/berufstaetige',
+      href: '/ki-manager-teilzeit',
       cta: 'Weiterbildung ansehen',
     },
   },

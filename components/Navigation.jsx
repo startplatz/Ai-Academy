@@ -12,10 +12,10 @@ const LOGO_URL = 'https://res.cloudinary.com/startplatz/image/upload/ai-hub/webs
 const NAV_LINKS = [
   {
     label: 'Weiterbildungen',
-    href: '/arbeitssuchende',
+    href: '/ki-manager-vollzeit',
     children: [
-      { label: 'Arbeitssuchend', href: '/arbeitssuchende' },
-      { label: 'Berufstätig', href: '/berufstaetige' },
+      { label: 'KI-Manager (Vollzeit)', href: '/ki-manager-vollzeit' },
+      { label: 'KI-Manager (Teilzeit)', href: '/ki-manager-teilzeit' },
       { label: 'AI Automation Engineer', href: '/ai-automation-engineer' },
       { label: 'Preise & Formate', href: '/produktkatalog' },
     ],

@@ -72,8 +72,9 @@ node -e "fetch('http://127.0.0.1:3000/insights/5-skills-ki-manager').then(r=>r.t
 Smoke-test these paths:
 
 - `/`
-- `/arbeitssuchende`
-- `/berufstaetige`
+- `/ki-manager-vollzeit` (alt `/arbeitssuchende`, 308)
+- `/ki-manager-teilzeit` (alt `/berufstaetige`, 308)
+- `/ai-automation-engineer`
 - `/unternehmen`
 - `/oneday`, `/oneday/claude-cowork`, `/oneday/immobilien` → Weiterleitung auf `/produktkatalog` (OneDays werden seit 11/2026 nicht mehr angeboten)
 - `/experten`
@@ -178,9 +179,9 @@ Then browser-check:
 
 - Home loads; preloader disappears and does not block clicks.
 - Hero H1 text content reads `ENTDECKE DEINE KARRIERE MIT KI.`.
-- Desktop navigation from Home to `/arbeitssuchende` works.
+- Desktop navigation from Home to `/ki-manager-vollzeit` works.
 - Logo navigation back to Home works.
-- Mobile menu link to `/arbeitssuchende` works.
+- Mobile menu link to `/ki-manager-vollzeit` works.
 - Events swipe on mobile and snap to the next card.
 - FAQ opens and closes.
 - `/api/events` returns 200 and events or a graceful fallback.

@@ -181,7 +181,7 @@
   },
   {
     "id": "subpage-arbeitssuchende-hero",
-    "placement": "app/arbeitssuchende/page.jsx → Hero",
+    "placement": "app/ki-manager-vollzeit/page.jsx → Hero",
     "description": "Subpage Hero Arbeitssuchende — Neuanfang, Tür zur Zukunft",
     "format": "portrait",
     "width": 600,
@@ -190,7 +190,7 @@
   },
   {
     "id": "subpage-berufstaetige-hero",
-    "placement": "app/berufstaetige/page.jsx → Hero",
+    "placement": "app/ki-manager-teilzeit/page.jsx → Hero",
     "description": "Subpage Hero Berufstätige — Zwei Kollegen in Bewegung",
     "format": "portrait",
     "width": 600,
@@ -208,7 +208,7 @@
   },
   {
     "id": "avatar-sarah",
-    "placement": "app/arbeitssuchende/page.jsx → Testimonial Avatar",
+    "placement": "app/ki-manager-vollzeit/page.jsx → Testimonial Avatar",
     "description": "Avatar Sarah — Arbeitssuchende Testimonial",
     "format": "square",
     "width": 256,
@@ -217,7 +217,7 @@
   },
   {
     "id": "avatar-marcus",
-    "placement": "app/arbeitssuchende/page.jsx → Testimonial Avatar",
+    "placement": "app/ki-manager-vollzeit/page.jsx → Testimonial Avatar",
     "description": "Avatar Marcus — Arbeitssuchende Testimonial",
     "format": "square",
     "width": 256,
@@ -226,7 +226,7 @@
   },
   {
     "id": "avatar-petra",
-    "placement": "app/berufstaetige/page.jsx → Testimonial Avatar",
+    "placement": "app/ki-manager-teilzeit/page.jsx → Testimonial Avatar",
     "description": "Avatar Petra — Berufstätige Testimonial",
     "format": "square",
     "width": 256,
@@ -235,7 +235,7 @@
   },
   {
     "id": "avatar-christian",
-    "placement": "app/berufstaetige/page.jsx → Testimonial Avatar",
+    "placement": "app/ki-manager-teilzeit/page.jsx → Testimonial Avatar",
     "description": "Avatar Christian — Berufstätige Testimonial",
     "format": "square",
     "width": 256,

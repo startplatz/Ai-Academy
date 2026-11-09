@@ -7,20 +7,20 @@ import { NextResponse } from 'next/server';
  * ─────────────────────────────────────────────────────────────
  * startplatz-ai-hub.de/*                    →  startplatz-ai-academy.de/
  * www.startplatz-ai-hub.de/*                →  startplatz-ai-academy.de/
- * bildungsgutschein.startplatz-ai-hub.de/*  →  startplatz-ai-academy.de/arbeitssuchende
+ * bildungsgutschein.startplatz-ai-hub.de/*  →  startplatz-ai-academy.de/ki-manager-vollzeit
  * afterwork.startplatz-ai-hub.de/*          →  startplatz-ai-academy.de/ai-automation-engineer
  */
 
 const OLD_DOMAINS = new Map([
   ['startplatz-ai-hub.de', '/'],
   ['www.startplatz-ai-hub.de', '/'],
-  ['bildungsgutschein.startplatz-ai-hub.de', '/arbeitssuchende'],
+  ['bildungsgutschein.startplatz-ai-hub.de', '/ki-manager-vollzeit'],
   ['afterwork.startplatz-ai-hub.de', '/ai-automation-engineer'],
 ]);
 
 // Bekannte Pfade auf der alten Hub-Domain → neue Ziele
 const PATH_MAP = new Map([
-  ['/ki-manager-weiterbildung', '/arbeitssuchende'],
+  ['/ki-manager-weiterbildung', '/ki-manager-vollzeit'],
   ['/afterwork', '/ai-automation-engineer'],
   ['/afterwork-ai-automation', '/ai-automation-engineer'],
   ['/unternehmen', '/unternehmen'],
@@ -28,7 +28,7 @@ const PATH_MAP = new Map([
   ['/about', '/ueber-uns'],
   ['/blog', '/insights'],
   ['/kontakt', '/'],
-  ['/bildungsgutschein', '/arbeitssuchende'],
+  ['/bildungsgutschein', '/ki-manager-vollzeit'],
 ]);
 
 const CANONICAL_HOST = 'startplatz-ai-academy.de';

@@ -303,7 +303,7 @@ export default function ArbeitssuchendePage() {
         badgeBg={tokens.colors.mintBg}
         title="KI-Manager Weiterbildung mit <span>Bildungsgutschein.</span>"
         subtitle={`${course.durationWeeks} Wochen Vollzeit, ${course.teachingUnits} UE, online oder vor Ort in Köln. Praxisprojekt, keine Programmierkenntnisse nötig. Von überfordert zu selbstbewusst.`}
-        breadcrumbs={[{ label: 'Arbeitssuchende', href: '/arbeitssuchende', active: true }]}
+        breadcrumbs={[{ label: 'KI-Manager (Vollzeit)', href: '/ki-manager-vollzeit', active: true }]}
         accentColor={tokens.colors.mintBg}
         image="https://res.cloudinary.com/startplatz/image/upload/f_auto,q_auto,w_900/v1776469601/ai-hub/website/AI-Academy-Website-Images/target-audience-arbeitssuchende.png"
       >

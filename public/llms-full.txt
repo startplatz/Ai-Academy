@@ -24,7 +24,7 @@ Für Arbeitssuchende und Karrierewechsler, die sich in 8 Wochen zur KI-Fachkraft
 - Abschluss: Abschlusszertifikat „KI-Manager/in“ der STARTPLATZ Köln GmbH; optional unabhängige Abschlussprüfung bei Cert-IT
 - Inhalte: KI-Grundlagen, Prompt Engineering, KI-Tools und Automatisierung (n8n, APIs, KI-Agenten), Prozesse, Ethik und EU AI Act, KI-Strategie, Praxisprojekt
 - Ergebnis: Abschlusszertifikat, Portfolio-Projekt, Zugang zum Alumni-Netzwerk
-- URL: https://startplatz-ai-academy.de/arbeitssuchende
+- URL: https://startplatz-ai-academy.de/ki-manager-vollzeit
 - Nächster Start: Laufende Termine auf der Website
 
 ### 2. KI-Manager/in (Teilzeit, berufsbegleitend)
@@ -36,7 +36,7 @@ Für Berufstätige, die nachmittags ab 14 Uhr freigestellt werden und KI im Job 
 - Förderung: über das Qualifizierungschancengesetz (QCG) gemeinsam mit dem Arbeitgeber, je nach Betriebsgröße (AZAV-Maßnahme 357/413/2026)
 - Abschluss: Abschlusszertifikat „KI-Manager/in“ der STARTPLATZ Köln GmbH; optional unabhängige Abschlussprüfung bei Cert-IT
 - Inhalte: dasselbe Programm wie die Vollzeit-Variante
-- URL: https://startplatz-ai-academy.de/berufstaetige
+- URL: https://startplatz-ai-academy.de/ki-manager-teilzeit
 
 ### 3. AI Automation Engineer (Vollzeit, kompakt)
 Für alle, die wiederkehrende Prozesse mit KI-Agenten und n8n selbst automatisieren wollen, ohne Programmierkenntnisse.

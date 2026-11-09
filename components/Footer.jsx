@@ -16,8 +16,8 @@ const LOGO_URL = 'https://res.cloudinary.com/startplatz/image/upload/ai-hub/webs
 
 const LINK_GROUPS = [
   { title: 'Programme', links: [
-    { label: 'Für Arbeitssuchende', href: '/arbeitssuchende' },
-    { label: 'Für Berufstätige', href: '/berufstaetige' },
+    { label: 'KI-Manager (Vollzeit)', href: '/ki-manager-vollzeit' },
+    { label: 'KI-Manager (Teilzeit)', href: '/ki-manager-teilzeit' },
     { label: 'AI Automation Engineer', href: '/ai-automation-engineer' },
     { label: 'Für Unternehmen', href: '/unternehmen' },
     { label: 'Produktkatalog', href: '/produktkatalog' },
