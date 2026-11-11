@@ -46,8 +46,7 @@ const Foot = styled.footer`
   z-index: 1;
   background: ${tokens.colors.dark};
   color: ${tokens.colors.darkText};
-  /* Unten Platz lassen: Der schwebende Kim-Button (unten rechts) darf Kontakt und Copyright nicht überdecken */
-  padding: ${tokens.spacing['4xl']} ${tokens.spacing.lg} 11rem;
+  padding: ${tokens.spacing['4xl']} ${tokens.spacing.lg} ${tokens.spacing['2xl']};
   ${media.lg} {
     padding: ${tokens.spacing['4xl']} ${tokens.spacing['2xl']} ${tokens.spacing['2xl']};
   }

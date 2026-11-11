@@ -1,7 +1,8 @@
 import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
 import StyledComponentsRegistry from '../lib/registry';
 import CalendlyWidget from '../components/CalendlyWidget';
-import KimAssistantLauncher from '../components/KimAssistantLauncher';
+// KI-Assistent „Kim“ (ElevenLabs) seit 11.11.2026 abgeschaltet. Reaktivieren: Import + Mount unten wieder einkommentieren.
+// import KimAssistantLauncher from '../components/KimAssistantLauncher';
 import CookieConsent from '../components/CookieConsent';
 
 /* Consent Mode v2: Defaults (alles denied) MÜSSEN vor gtm.js/gtag.js in den
@@ -214,8 +215,8 @@ export default function RootLayout({ children }) {
           <CookieConsent />
         </StyledComponentsRegistry>
         <CalendlyWidget />
-        {/* ElevenLabs-Assistent „Kim“: lädt erst nach Klick + Datenschutzhinweis */}
-        <KimAssistantLauncher agentId="agent_7801kphmjab6fmk921djmyxcz10x" />
+        {/* ElevenLabs-Assistent „Kim“ abgeschaltet (11.11.2026):
+        <KimAssistantLauncher agentId="agent_7801kphmjab6fmk921djmyxcz10x" /> */}
       </body>
     </html>
   );
