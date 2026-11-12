@@ -1,7 +1,7 @@
 import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
 import StyledComponentsRegistry from '../lib/registry';
 import CalendlyWidget from '../components/CalendlyWidget';
-// KI-Assistent „Kim“ (ElevenLabs) seit 11.11.2026 abgeschaltet. Reaktivieren: Import + Mount unten wieder einkommentieren.
+// KI-Assistent „Kim“ (ElevenLabs) seit 11.11.2026 abgeschaltet. Reaktivieren: Import + Mount unten wieder einkommentieren UND den ElevenLabs-Abschnitt in /datenschutz wiederherstellen (siehe Commit ea86b7e).
 // import KimAssistantLauncher from '../components/KimAssistantLauncher';
 import CookieConsent from '../components/CookieConsent';
 

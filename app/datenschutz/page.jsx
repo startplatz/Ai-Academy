@@ -298,17 +298,6 @@ export default function DatenschutzPage() {
               Eine Übermittlung in die USA ist nicht ausgeschlossen. HubSpot ist nach dem EU-US Data Privacy Framework zertifiziert; ergänzend werden die Standardvertragsklauseln der EU-Kommission verwendet. Weitere Informationen: <Link href="https://legal.hubspot.com/privacy-policy" target="_blank" rel="noopener noreferrer">https://legal.hubspot.com/privacy-policy</Link>.
             </Text>
 
-            <SubTitle>KI-Assistent von ElevenLabs</SubTitle>
-            <Text>
-              Auf dieser Website ist ein KI-Assistent eingebunden, mit dem Sie per Sprache oder Text Fragen zu unseren Weiterbildungen stellen können. Anbieter ist ElevenLabs (ElevenLabs Poland sp. z o.o., Plac Marszałka Józefa Piłsudskiego 8, 00-073 Warschau, Polen, sowie Eleven Labs Inc., 169 Madison Ave #2484, New York, NY 10016, USA).
-            </Text>
-            <Text>
-              Der Assistent wird erst geladen, wenn Sie auf „Rede mit Kim“ klicken, den Hinweis lesen und „Gespräch starten“ wählen. Bis dahin werden keine Daten an ElevenLabs oder an das Content-Delivery-Netzwerk unpkg.com übertragen. Danach wird das Programm zur Darstellung des Assistenten über unpkg.com und von Servern von ElevenLabs abgerufen; dabei werden Ihre IP-Adresse sowie technische Informationen (z.B. Browsertyp, Uhrzeit) übertragen. Ihre Spracheingaben bzw. Textnachrichten werden an ElevenLabs übertragen und dort verarbeitet, um die Antworten zu erzeugen; Gesprächsverläufe können gespeichert und uns zur Auswertung bereitgestellt werden. Bitte geben Sie im Gespräch keine sensiblen personenbezogenen Daten an. Ob Sie den Assistenten gestartet oder ausgeblendet haben, speichern wir nur für die Dauer der Browsersitzung lokal in Ihrem Browser (Session Storage).
-            </Text>
-            <Text>
-              Rechtsgrundlage für das Laden des Assistenten und die Verarbeitung Ihrer Eingaben ist Ihre Einwilligung, die Sie mit dem Klick auf „Gespräch starten“ erteilen (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG). Sie können die Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie das Gespräch beenden und den Browser-Tab schließen. Soweit Sie über den Assistenten Fragen zu einer Weiterbildung klären, erfolgt die Verarbeitung zudem zur Durchführung vorvertraglicher Maßnahmen (Art. 6 Abs. 1 lit. b DSGVO). Die US-Gesellschaft von ElevenLabs ist nach dem EU-US Data Privacy Framework zertifiziert; im Übrigen stützt sich eine Übermittlung in die USA auf die Standardvertragsklauseln der EU-Kommission. Weitere Informationen: <Link href="https://elevenlabs.io/privacy-policy" target="_blank" rel="noopener noreferrer">https://elevenlabs.io/privacy-policy</Link>.
-            </Text>
-
             <SectionTitle>6. Änderung dieser Datenschutzerklärung</SectionTitle>
             <Text>
               Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen in der Datenschutzerklärung umzusetzen. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung.
